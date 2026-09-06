@@ -1,24 +1,49 @@
-:root {
-  --cream: #fff3f2;
-  --ink: #2b0f1a;
-  --ink-soft: #6b4a54;
+@font-face {
+  font-family: "Brolia";
+  src: url("fonts/BroliaRegular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
-  --pink: #ff4f8b;
-  --pink-soft: #ffd6e6;
-  --purple: #c1123f;
-  --purple-deep: #5c0a22;
-  --purple-soft: #f7c6d9;
-  --coral: #ff4d3d;
-  --coral-soft: #ffe0d6;
-  --mustard: #e0263f;
-  --mustard-soft: #ffd0c4;
+@font-face {
+  font-family: "Brolia Ligature";
+  src: url("fonts/BroliaLigature.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Silk Serif";
+  src: url("fonts/SilkSerif-ExtraLight.otf") format("opentype");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --cream: #fbe3e7;
+  --ink: #240d14;
+  --ink-soft: #7a4a58;
+
+  --pink: #ff9fcd;
+  --pink-soft: #ffddec;
+  --purple: #c90018;
+  --purple-deep: #5c0111;
+  --purple-soft: #e878aa;
+  --coral: #c80203;
+  --coral-soft: #ffd6e0;
+  --mustard: #c80203;
+  --mustard-soft: #f7dde9;
 
   --white: #ffffff;
   --radius: 22px;
   --radius-sm: 14px;
 
-  --serif: "Fraunces", "Georgia", serif;
-  --script: "Caveat", cursive;
+  --serif: "Brolia", "Fraunces", "Georgia", serif;
+  --serif-light: "Silk Serif", "Fraunces", "Georgia", serif;
+  --script: "Brolia Ligature", "Caveat", cursive;
   --sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
   --display: "Anton", "Inter", sans-serif;
 }
@@ -261,7 +286,9 @@ img {
 .hero p.lede {
   max-width: 46ch;
   margin: 0 0 2rem;
-  font-size: 1.15rem;
+  font-family: var(--serif-light);
+  font-size: 1.35rem;
+  line-height: 1.5;
   color: var(--ink-soft);
 }
 
@@ -625,8 +652,10 @@ textarea:focus {
 .page-hero p {
   max-width: 56ch;
   margin: 0 auto;
+  font-family: var(--serif-light);
   color: var(--ink-soft);
-  font-size: 1.05rem;
+  font-size: 1.25rem;
+  line-height: 1.5;
 }
 
 /* About page */

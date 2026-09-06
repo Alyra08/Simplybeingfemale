@@ -31,17 +31,28 @@ feminine-brand aesthetic — think indie Squarespace template shops (Tuesday
 Marketing Co, Lucie Fink) crossed with punchy feminist-poster typography
 ("well behaved women...", "you're doing great bitch" style statement cards).
 
-- Palette (updated 2026-09-06): red/pink tonal family only — no purple, no
-  mustard/yellow as distinct hues. Pinkish cream base (#fff3f2), hot pink
-  (#ff4f8b), blush/rose pink (#ffd6e6, #f7c6d9), red-orange coral (#ff4d3d),
-  crimson (#e0263f), deep rose (#c1123f), near-black wine (#5c0a22 / ink
-  #2b0f1a). CSS variables `--purple`/`--purple-deep`/`--purple-soft` and
+- Palette (locked 2026-09-06, exact swatches the owner approved — do not
+  drift from these without asking): Rojo Intenso #c90018, Cherry #c80203,
+  Rosa Algodón #ff9fcd, Bubblegum #e878aa. Every other color in style.css is
+  a direct tint/shade of one of these four (light pinks, a deep wine
+  #5c0111, near-black ink #240d14, cream #fbe3e7) — no independently
+  invented hues. CSS variables `--purple`/`--purple-deep`/`--purple-soft` and
   `--mustard`/`--mustard-soft` are kept as internal names in style.css but
-  now hold red/rose/crimson values, not purple or yellow — don't reintroduce
+  hold these red/pink values, not purple or yellow — don't reintroduce
   actual purple or mustard/gold hues under those names.
-- Fonts: Fraunces (serif, editorial headings) + Caveat (handwritten script,
-  used as inline accent words) + Anton (bold condensed display, used for
-  punchy one-line "mantra"/quote statements) + Inter (sans, body).
+- Fonts (updated 2026-09-06, owner supplied real purchased brand font
+  files — see fonts/ folder): **Brolia** (unicase display serif, quirky
+  rounded terminals — used for all headings/brand wordmark), **Brolia
+  Ligature** (flowing italic/script companion — used for inline accent
+  words, e.g. the "Female" in the wordmark), **Silk Serif ExtraLight**
+  (thin elegant serif — used for larger intro/lede paragraphs only, too
+  thin for small body text), **Anton** (bold condensed display, Google
+  Fonts — used for punchy one-line "mantra"/quote statements), **Inter**
+  (sans, Google Fonts — body text, nav, buttons, labels).
+  IMPORTANT: confirm with the owner that their font license covers
+  self-hosted webfont/embedding use (not just desktop use) before this
+  site goes fully public — Monotype/MyFonts licenses often gate that
+  separately and the license file on hand didn't make the tier clear.
 - Signature elements: thick black borders + hard drop-shadows on cards/
   buttons (scrapbook/sticker feel), rotated "photo" collage blocks with a
   washi-tape accent, pill-shaped nav links and buttons, bold poster-style
