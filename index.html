@@ -3,24 +3,153 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Website</title>
+  <title>Simply Being Female — Home</title>
+  <meta name="description" content="Simply Being Female is a space for honest reflection, everyday wisdom, and community — for women navigating life exactly as they are." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>Welcome to My Website</h1>
-    <p>This site is live on Netlify, deployed straight from GitHub.</p>
+
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="index.html">Simply Being <span>Female</span></a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="journal.html">Journal</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
   <main>
-    <section>
-      <h2>About</h2>
-      <p>Edit this page in <code>index.html</code> and push to GitHub — Netlify will redeploy automatically.</p>
+
+    <section class="hero">
+      <p class="eyebrow">A space to exhale</p>
+      <h1>Real stories and gentle wisdom for simply being who you are.</h1>
+      <p class="lede">
+        Simply Being Female is a corner of the internet for honest reflection on womanhood —
+        the messy, the joyful, and everything in between. No performance, no perfection required.
+      </p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="journal.html">Read the Journal</a>
+        <a class="btn btn-outline" href="about.html">Our Story</a>
+      </div>
     </section>
+
+    <section class="pillars">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">What you'll find here</p>
+          <h2>Three things we care about</h2>
+        </div>
+        <div class="grid-3">
+          <div class="card">
+            <span class="icon">&#127807;</span>
+            <h3>Honest Reflection</h3>
+            <p>Essays and journal entries on identity, relationships, and growth — written without the gloss.</p>
+          </div>
+          <div class="card">
+            <span class="icon">&#129505;</span>
+            <h3>Everyday Wisdom</h3>
+            <p>Practical thoughts on wellbeing, boundaries, and self-trust that meet you where you are.</p>
+          </div>
+          <div class="card">
+            <span class="icon">&#127760;</span>
+            <h3>Community</h3>
+            <p>A quiet, welcoming space to feel less alone in the everyday experience of being a woman.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band">
+      <blockquote>
+        &ldquo;You don't have to have it figured out. You just have to be here, as you are.&rdquo;
+        <cite>— Simply Being Female</cite>
+      </blockquote>
+    </section>
+
+    <section class="latest">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">From the journal</p>
+          <h2>Latest reflections</h2>
+        </div>
+        <div class="grid-3">
+          <a class="post-card" href="journal.html">
+            <div class="post-media"></div>
+            <div class="post-body">
+              <p class="post-date">Coming soon</p>
+              <h3>Your first post title goes here</h3>
+              <p>A short excerpt introducing the piece will live in this space once it's written.</p>
+            </div>
+          </a>
+          <a class="post-card" href="journal.html">
+            <div class="post-media"></div>
+            <div class="post-body">
+              <p class="post-date">Coming soon</p>
+              <h3>Your second post title goes here</h3>
+              <p>A short excerpt introducing the piece will live in this space once it's written.</p>
+            </div>
+          </a>
+          <a class="post-card" href="journal.html">
+            <div class="post-media"></div>
+            <div class="post-body">
+              <p class="post-date">Coming soon</p>
+              <h3>Your third post title goes here</h3>
+              <p>A short excerpt introducing the piece will live in this space once it's written.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="newsletter-section">
+      <div class="container">
+        <div class="newsletter">
+          <h2>Stay in the loop</h2>
+          <p>New reflections, sent occasionally. No noise, no spam.</p>
+          <form class="signup-form" name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="newsletter" />
+            <p hidden><label>Don't fill this out: <input name="bot-field" /></label></p>
+            <div class="form-row">
+              <input type="email" name="email" placeholder="you@example.com" required aria-label="Email address" />
+              <button class="btn btn-primary" type="submit">Subscribe</button>
+            </div>
+          </form>
+          <p class="form-success">Thank you for subscribing — welcome to the community.</p>
+          <p class="form-note">We respect your inbox. Unsubscribe anytime.</p>
+        </div>
+      </div>
+    </section>
+
   </main>
 
-  <footer>
-    <p>&copy; 2026 My Website</p>
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html">Simply Being <span>Female</span></a>
+        <p>A space for honest reflection, everyday wisdom, and community.</p>
+      </div>
+      <div class="footer-links">
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="journal.html">Journal</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Simply Being Female. All rights reserved.
+    </div>
   </footer>
 
   <script src="script.js"></script>
