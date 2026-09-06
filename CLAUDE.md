@@ -1,94 +1,111 @@
 # Simply Being Female — Project Overview
 
-<!-- Fill in the sections below. Claude Code reads this file automatically
-     on every future session in this project, so anything you put here
-     becomes standing direction — no need to re-explain it each time. -->
+## Source of truth (2026-09-06)
+The owner has a Claude Design System project — "Simply Being Female Design
+System" (project id `e7b028be-5dce-46ec-b03b-465197351f19`, readable via the
+DesignSync tool) — built from her actual supplied logo files, purchased
+fonts, and moodboard. That project is now the authoritative brand spec.
+Everything below is derived from it. Before changing colors, fonts, or
+layout again, re-read that project's `readme.md` and `tokens/*.css` rather
+than guessing from chat history — several earlier approximations in this
+site (different reds, wrong font roles, hard black shadows, gradients,
+emoji) were wrong and have been replaced to match the design system exactly.
 
 ## Purpose
-Working assumption (not yet confirmed by the site owner): a space for honest,
-non-performative reflection on womanhood — essays, journal entries, and
-everyday wisdom. Update this once the real purpose/angle is confirmed.
+Simply Being Female (SBF) is a women's community brand offering group
+circles, 1:1 coaching, a day-rate service ("The Day"), and a weekly letter.
+Positioning line (verbatim from the client's own artwork): "A space for the
+unapologetically fierce, beautifully imperfect woman."
 
-## Audience
-Assumed: women looking for a warm, non-judgmental space rather than a
-polished lifestyle-brand feel. Confirm actual target audience.
+## Voice
+Second person for the reader, first person singular for the founder ("I
+read every one myself"). Sentence case in copy always — UPPERCASE is
+applied by the Brolia component/class, never typed by hand. Short
+declaratives, often a fragment. Italic emphasis on 2-3 words per headline
+(the brand's only emphasis device — no bold, no color change, no
+underline). Full stops in headlines. No exclamation marks. British
+spelling. No emoji anywhere — the only decorative glyph is ✦.
+Avoid: "empower", "journey", "unlock", "elevate", "we're on a mission",
+"game-changing". Use: honest, room, table, space, circle, shrinking,
+permission, out loud.
 
-## Tone & Voice
-Confirmed direction (2026-09-06): provocative, feminine, thought-provoking,
-and unapologetic — not warm/quiet. Bold statements, direct address, no
-hedging or corporate softness. Copy should read like it's daring the reader
-to agree, not asking permission.
+## Pages
+- Home (`index.html`) — red hero with photo, wavy manifesto card, three
+  offering cards, red testimonial band, FAQ accordion.
+- About (`about.html`) — oval portrait intro, four-belief hairline grid,
+  red press band.
+- The Circle (`circle.html`) — Tabs-driven plan switcher (Circles /
+  Coaching / Retreats) with pricing, next-dates card row.
+- The Day (`the-day.html`) — long-scroll sales page: four full-bleed color
+  blocks, taped-photo collage, paper checklist panel, orbit-text strip,
+  coral closing band.
+- Journal (`journal.html`) — category tag filter (functional), post grid,
+  red newsletter band.
+- Contact (`contact.html`) — full form (Netlify Forms) + wavy card + toast
+  on submit.
+- Shared: top marquee announcement band, centred-wordmark navbar (links
+  split either side), "Join us" opens a shared Dialog (`#join-dialog`) with
+  a two-step success state, red footer with columns + stamp.
 
-## Pages / Sections
-- Home
-- About
-- Journal (blog-style essay listing)
-- Contact (Netlify Forms contact form)
+## Design tokens (exact — see style.css :root, mirrors the design system's tokens/*.css)
+- Colors verified from the client's actual logo pixels: `--sbf-red`
+  #BF2026, `--sbf-blush` #F6DCDC, `--sbf-pink` #F59798. Full palette also
+  includes red-deep #8E1519, red-bright #D62B27, cherry #C80203, blush-deep
+  #EFC9C9, bubblegum #E878AA, cotton #FF9FCD, cream #FDF6F3 (page bg), ink
+  #2A1618 (body text — a plum-brown, never grey/black), ink-soft #6B4A4C,
+  line #E4C7C7 (hairline borders). Support accents coral #E8481F and apricot
+  #F2A488 appear at most once per page. A page carries at most two
+  background colors plus the red footer.
+- Fonts: **Silk Serif ExtraLight** (`--font-display`) for every heading,
+  22px+, one weight only — contrast comes from size and italic, not weight.
+  **Brolia** (`--font-deco`) uppercase-only, for eyebrows/buttons/nav/labels/
+  marquee — never body copy. **Nunito Sans** (Google Fonts, flagged in the
+  source system as a substitution for an unsupplied bold geometric sans) for
+  all body copy. Font files are in `fonts/` (Brolia Regular + Silk Serif
+  ExtraLight only — Brolia Ligature is unused by the real spec, ignore it).
+  UNCONFIRMED: whether the owner's font license covers self-hosted webfont
+  use, not just desktop — check before this goes fully public.
+- Shape: pills for buttons/inputs, 22px card corners, 32px dialogs, 4px
+  checkboxes (only tight radius). Photography is always masked — oval, arch
+  (pill-top), or 22px soft rectangle. Never a hard-cornered photo.
+- Shadows: warm red-tinted only (`rgba(143,20,25,...)`), offset down, never
+  grey, never a hard black offset shadow.
+- The `.wavy-card` scalloped quote card (SVG path, 1.6px outline, no
+  shadow) is used once per page maximum, for a manifesto/mission line.
+- No gradients anywhere in the real spec.
 
-## Design & Style
-Confirmed direction (from moodboard the owner shared): bold, maximalist,
-feminine-brand aesthetic — think indie Squarespace template shops (Tuesday
-Marketing Co, Lucie Fink) crossed with punchy feminist-poster typography
-("well behaved women...", "you're doing great bitch" style statement cards).
-
-- Palette (locked 2026-09-06, exact swatches the owner approved — do not
-  drift from these without asking): Rojo Intenso #c90018, Cherry #c80203,
-  Rosa Algodón #ff9fcd, Bubblegum #e878aa. Every other color in style.css is
-  a direct tint/shade of one of these four (light pinks, a deep wine
-  #5c0111, near-black ink #240d14, cream #fbe3e7) — no independently
-  invented hues. CSS variables `--purple`/`--purple-deep`/`--purple-soft` and
-  `--mustard`/`--mustard-soft` are kept as internal names in style.css but
-  hold these red/pink values, not purple or yellow — don't reintroduce
-  actual purple or mustard/gold hues under those names.
-- Fonts (updated 2026-09-06, owner supplied real purchased brand font
-  files — see fonts/ folder): **Brolia** (unicase display serif, quirky
-  rounded terminals — used for all headings/brand wordmark), **Brolia
-  Ligature** (flowing italic/script companion — used for inline accent
-  words, e.g. the "Female" in the wordmark), **Silk Serif ExtraLight**
-  (thin elegant serif — used for larger intro/lede paragraphs only, too
-  thin for small body text), **Anton** (bold condensed display, Google
-  Fonts — used for punchy one-line "mantra"/quote statements), **Inter**
-  (sans, Google Fonts — body text, nav, buttons, labels).
-  IMPORTANT: confirm with the owner that their font license covers
-  self-hosted webfont/embedding use (not just desktop use) before this
-  site goes fully public — Monotype/MyFonts licenses often gate that
-  separately and the license file on hand didn't make the tier clear.
-- Signature elements: thick black borders + hard drop-shadows on cards/
-  buttons (scrapbook/sticker feel), rotated "photo" collage blocks with a
-  washi-tape accent, pill-shaped nav links and buttons, bold poster-style
-  quote bands in all-caps Anton.
-- Added 2026-09-06 (owner sent a large moodboard of hand-drawn/playful
-  girly-pop references — hearts, sparkles, bows, wavy borders, ransom-note
-  collage lettering): a reusable **squiggle-frame** component
-  (`.squiggle-frame` in style.css) — a hand-wobbled border made with an SVG
-  `feTurbulence`/`feDisplacementMap` filter (`#squiggle`, defined inline near
-  the top of `<body>` in each page) applied to a normal bordered box, used
-  for mission-statement/pull-quote moments. Also added small hand-drawn-style
-  SVG doodle accents (`.doodle-heart`, `.doodle-sparkle`) as decorative
-  flourishes near those cards. Currently only wired up on index.html — worth
-  repeating on about/journal/contact for consistency. Not yet added: a
-  bubbly/rounded display font for extra-playful headline moments (references
-  included "Baloo 2"/"Fredoka"-style rounded type) — flagged for later, not
-  built yet.
-- Explicitly NOT the look: quiet neutral/cream minimalism, purple/mustard as
-  actual hues, muted terracotta-only palette, subtle shadows, hedging or
-  "warm and gentle" copy.
-
-## Content
-All current copy (hero text, post cards, about story, values) is placeholder
-and clearly marked as such. Needs to be replaced with the real story, voice,
-and actual journal posts.
+## Content status
+Photography: no usable real photos yet — the design system's actual
+lifestyle photos (`women-picnic.png`, `women-hiking.png`) and the logo
+files exceeded what could be pulled through this session's file-read tool
+(256KB cap; manual base64 transcription of the larger files proved
+unreliable and was abandoned). Every photo slot on the live site is
+currently a `.photo-mask` color-plate placeholder (labeled "photo — ...")
+using the correct oval/arch/soft shape — swap in real images by replacing
+those divs with `<img>` tags once the actual files can be added directly
+to `assets/`. Logo: navbar/footer currently use a styled text wordmark, not
+the real logo files, for the same reason.
+Copy: most page copy is the design system's own placeholder text (its
+readme says only the hero line, the manifesto line, and the "honey on the
+table" testimonial are taken from real supplied artwork — the rest,
+including the testimonial name "Renée, Manchester", the press logos, and
+all pricing/dates on the Circle page, is invented and needs the owner's
+confirmation before publishing as real claims).
 
 ## Technical Notes
 - Plain static HTML/CSS/JS, no build step or framework.
 - Deployed via Netlify, auto-deploying from the `main` branch of
   github.com/Alyra08/Simplybeingfemale.
-- Newsletter and Contact forms use Netlify Forms (`data-netlify="true"`,
-  honeypot field for spam). No backend needed — submissions land in the
-  Netlify dashboard under Forms.
+- Contact form and Join dialog use Netlify Forms (`data-netlify="true"`,
+  honeypot field) — the Join dialog's own email field is not yet wired to
+  Netlify Forms (it only runs the local two-step JS demo), only the Contact
+  page form actually submits.
+- Interactions (accordion, tabs, journal tag filter, dialog, mobile nav,
+  toast) are vanilla JS in `script.js` — no framework.
 - Domain: custom domain not yet connected; currently on
   simplybeingfemale.netlify.app.
 
-## Things to Avoid
-Nothing specified yet — add anything explicitly off-limits here (content,
-styles, features).
+## Things to avoid
+No gradients. No emoji. No hard black borders/drop-shadows (that was an
+earlier wrong direction — now corrected). No purple or mustard/gold as
+actual hues. No hedging or "warm and gentle" copy voice.

@@ -1,161 +1,144 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Simply Being Female — Home</title>
-  <meta name="description" content="Simply Being Female is a space for honest reflection, everyday wisdom, and community — for women navigating life exactly as they are." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,900;1,500&family=Caveat:wght@600&family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <title>Simply Being Female</title>
+  <meta name="description" content="A space for the unapologetically fierce, beautifully imperfect woman. Circles, coaching and a weekly letter." />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-    <filter id="squiggle">
-      <feTurbulence type="fractalNoise" baseFrequency="0.012 0.06" numOctaves="2" seed="4" result="noise" />
-      <feDisplacementMap in="SourceGraphic" in2="noise" scale="7" />
-    </filter>
-  </svg>
+  <div class="marquee" role="note">
+    <div class="marquee-track">
+      <span>The circle opens on the first Sunday of every month</span>
+      <span>The circle opens on the first Sunday of every month</span>
+      <span>The circle opens on the first Sunday of every month</span>
+      <span>The circle opens on the first Sunday of every month</span>
+    </div>
+  </div>
 
   <header class="site-header">
-    <nav class="nav">
-      <a class="brand" href="index.html">Simply Being <span>Female</span></a>
-      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
-      <ul class="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="journal.html">Journal</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+    <nav class="nav-half" id="nav-left">
+      <a class="nav-link active" href="index.html">Home</a>
+      <a class="nav-link" href="about.html">About</a>
+      <a class="nav-link" href="circle.html">The circle</a>
     </nav>
+    <a class="brand-wordmark" href="index.html">Simply Being Female</a>
+    <nav class="nav-half end" id="nav-right">
+      <a class="nav-link" href="the-day.html">The day</a>
+      <a class="nav-link" href="journal.html">Journal</a>
+      <a class="nav-link" href="contact.html">Contact</a>
+      <a class="btn btn-primary btn-sm" href="#" data-open-join>Join us</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-controls="nav-right">&#9776;</button>
   </header>
 
   <main>
 
-    <section class="hero">
-      <div class="hero-grid">
-        <div class="hero-text">
-          <span class="pill-badge">&#10024; Unapologetically us</span>
-          <h1>Real stories, <span class="script">unfiltered</span> truths, zero apologies.</h1>
-          <p class="lede">
-            Simply Being Female is where womanhood gets said out loud — the messy, the furious,
-            the tender, the unfinished. No filters. No performance. No shrinking to fit.
-          </p>
+    <section style="background: var(--sbf-red); color: var(--sbf-blush); padding: clamp(48px,7vw,96px) var(--gutter-page);">
+      <div class="two-up" style="max-width: var(--container-max); margin: 0 auto; grid-template-columns: minmax(0,1.15fr) minmax(0,.85fr);">
+        <div class="stack">
+          <div class="eyebrow on-blush">Simply being female</div>
+          <h1 style="color: var(--sbf-blush); font-size: clamp(36px,6vw,76px);">for the women<br />who are building <em>something real</em></h1>
+          <p class="lede" style="color: var(--sbf-blush); opacity: .92;">The ones who chose themselves even when it didn't make sense to anyone else.</p>
           <div class="btn-row">
-            <a class="btn btn-primary" href="journal.html">Read the Journal</a>
-            <a class="btn btn-outline" href="about.html">Our Story</a>
+            <a class="btn btn-onred btn-lg" href="#" data-open-join>Join the circle</a>
+            <a class="btn btn-ghost btn-lg" style="color: var(--sbf-blush);" href="about.html">Read her story</a>
           </div>
         </div>
-        <div class="hero-visual">
-          <div class="collage">
-            <div class="tape"></div>
-            <div class="collage-block collage-1">photo</div>
-            <div class="collage-block collage-2">photo</div>
-            <div class="collage-block collage-3">photo</div>
+        <div class="photo-mask arch">photo — women, picnic</div>
+      </div>
+    </section>
+
+    <section class="section tone-blush">
+      <div class="section-inner wide two-up">
+        <div class="wavy-card">
+          <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M 6 6 q 7.333 -9.09 14.667 0 q 7.333 9.09 14.667 0 q 7.333 -9.09 14.667 0 q 7.333 9.09 14.667 0 q 7.333 -9.09 14.667 0 q 7.333 9.09 14.667 0 q 9.09 7.333 0 14.667 q -9.09 7.333 0 14.667 q 9.09 7.333 0 14.667 q -9.09 7.333 0 14.667 q 9.09 7.333 0 14.667 q -9.09 7.333 0 14.667 q -7.333 9.09 -14.667 0 q -7.333 -9.09 -14.667 0 q -7.333 9.09 -14.667 0 q -7.333 -9.09 -14.667 0 q -7.333 9.09 -14.667 0 q -7.333 -9.09 -14.667 0 q -9.09 -7.333 0 -14.667 q 9.09 -7.333 0 -14.667 q -9.09 -7.333 0 -14.667 q 9.09 -7.333 0 -14.667 q -9.09 -7.333 0 -14.667 q 9.09 -7.333 0 -14.667 Z"
+              fill="var(--sbf-cream)" stroke="var(--sbf-red)" stroke-width="1.6" vector-effect="non-scaling-stroke" stroke-linejoin="round" />
+          </svg>
+          <div class="wavy-card-inner">
+            <p>A space for the unapologetically fierce, beautifully imperfect woman.</p>
+          </div>
+        </div>
+        <div class="stack">
+          <div class="eyebrow rule">Why we're here</div>
+          <h2>You are not too much.</h2>
+          <p class="lede" style="color: var(--sbf-red); opacity: .85; max-width: 46ch;">Simply Being Female is a community for women who are done shrinking to fit. Circles, coaching and a weekly letter — no fixing, no performance, no advice unless you ask for it.</p>
+          <a class="btn btn-outline" href="about.html">What we believe</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-inner wide">
+        <div class="stack center" style="margin-bottom: var(--space-10);">
+          <div class="eyebrow rule center">Ways in</div>
+          <h2>Three doors, one room.</h2>
+        </div>
+        <div class="grid-auto">
+          <div class="card hoverable">
+            <div class="card-media photo-mask" style="border-radius:0;">photo — picnic</div>
+            <div class="card-body">
+              <span class="card-eyebrow">Monthly</span>
+              <h3 class="card-title">The circle</h3>
+              <p>Eight women, ninety minutes, one prompt. Held on the first Sunday of every month.</p>
+              <div class="card-footer"><a class="btn btn-ghost btn-sm" href="circle.html">See dates</a></div>
+            </div>
+          </div>
+          <div class="card hoverable">
+            <div class="card-media photo-mask" style="border-radius:0;">photo — hiking</div>
+            <div class="card-body">
+              <span class="card-eyebrow">1:1</span>
+              <h3 class="card-title">Coaching</h3>
+              <p>Twelve weeks of honest work on the thing you keep putting off.</p>
+              <div class="card-footer"><a class="btn btn-ghost btn-sm" href="contact.html">Enquire</a></div>
+            </div>
+          </div>
+          <div class="card tone-red">
+            <div class="card-body">
+              <span class="card-eyebrow">Free</span>
+              <h3 class="card-title">The Sunday note</h3>
+              <p style="opacity:.92;">One letter a week. Short, unpolished, and never a pitch.</p>
+              <div class="card-footer"><a class="btn btn-onred btn-sm" href="#" data-open-join>Subscribe</a></div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="squiggle-section">
-      <div class="container">
-        <div class="squiggle-frame">
-          <div class="squiggle-border" aria-hidden="true"></div>
-          <svg class="doodle doodle-heart" style="top:-18px; left:8%;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7.5-4.6-10-9.3C.4 8.4 2.2 5 5.6 5c2 0 3.3 1 4.4 2.4C11.1 6 12.4 5 14.4 5c3.4 0 5.2 3.4 3.6 6.7C15.5 16.4 12 21 12 21z"/></svg>
-          <svg class="doodle doodle-sparkle" style="bottom:-14px; right:10%;" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8L12 2z"/></svg>
-          <p>There's nothing polished about becoming who you actually are — and that's exactly the point.</p>
-        </div>
+    <section class="section tone-red" style="padding-top: var(--space-20); padding-bottom: var(--space-20);">
+      <div class="section-inner stack center">
+        <span class="badge badge-pink">Member, two years</span>
+        <h2 style="max-width: 26ch;">I stopped leaving <em>honey on the table.</em></h2>
+        <p style="font-family: var(--font-deco); font-size: var(--text-micro); letter-spacing: var(--tracking-deco); text-transform: uppercase; color: var(--sbf-pink);">Renée, Manchester</p>
       </div>
     </section>
 
-    <section class="pillars">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">What you'll find here</p>
-          <h2>Three things we <span class="script">won't</span> apologize for</h2>
+    <section class="section">
+      <div class="section-inner wide" style="display:grid; gap: var(--space-8);">
+        <div class="stack" style="gap: var(--space-3);">
+          <div class="eyebrow">Before you ask</div>
+          <h2>The honest answers.</h2>
         </div>
-        <div class="grid-3">
-          <div class="card c-pink">
-            <span class="icon">&#127807;</span>
-            <h3>Unfiltered Truth</h3>
-            <p>Essays and journal entries on identity, relationships, and growth — written without the gloss, and without asking permission.</p>
+        <div class="accordion">
+          <div class="accordion-item open">
+            <button class="accordion-trigger">Who is this for?<span class="accordion-plus"></span></button>
+            <div class="accordion-panel">Any woman ready to stop apologising for taking up space — whether you are starting over or starting out.</div>
           </div>
-          <div class="card c-purple">
-            <span class="icon">&#129505;</span>
-            <h3>Hard-Won Wisdom</h3>
-            <p>Practical thoughts on boundaries, self-trust, and rebuilding on your own terms — not anyone else's.</p>
+          <div class="accordion-item">
+            <button class="accordion-trigger">What actually happens in a circle?<span class="accordion-plus"></span></button>
+            <div class="accordion-panel">We sit down, one prompt goes around the room, and everyone gets uninterrupted time. No fixing, no advice unless you ask for it.</div>
           </div>
-          <div class="card c-mustard">
-            <span class="icon">&#127760;</span>
-            <h3>Fierce Community</h3>
-            <p>A space that doesn't ask you to soften, perform, or shrink to make anyone else comfortable.</p>
+          <div class="accordion-item">
+            <button class="accordion-trigger">Can I join mid-season?<span class="accordion-plus"></span></button>
+            <div class="accordion-panel">Yes. Circles open on the first Sunday of every month and you can start with any of them.</div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="band">
-      <blockquote>Stop apologizing for taking up space.</blockquote>
-      <cite>— we said what we said</cite>
-    </section>
-
-    <section class="mantra-band">
-      <p>Unbothered. Unapologetic. Unstoppable.</p>
-      <span class="handle">@SIMPLYBEINGFEMALE</span>
-    </section>
-
-    <section class="latest">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">From the journal</p>
-          <h2>Latest <span class="script">reflections</span></h2>
-        </div>
-        <div class="grid-3">
-          <a class="post-card" href="journal.html">
-            <div class="post-media"></div>
-            <div class="post-body">
-              <p class="post-date">Coming soon</p>
-              <h3>Your first post title goes here</h3>
-              <p>A short excerpt introducing the piece will live in this space once it's written.</p>
-            </div>
-          </a>
-          <a class="post-card" href="journal.html">
-            <div class="post-media"></div>
-            <div class="post-body">
-              <p class="post-date">Coming soon</p>
-              <h3>Your second post title goes here</h3>
-              <p>A short excerpt introducing the piece will live in this space once it's written.</p>
-            </div>
-          </a>
-          <a class="post-card" href="journal.html">
-            <div class="post-media"></div>
-            <div class="post-body">
-              <p class="post-date">Coming soon</p>
-              <h3>Your third post title goes here</h3>
-              <p>A short excerpt introducing the piece will live in this space once it's written.</p>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="newsletter-section">
-      <div class="container">
-        <div class="newsletter">
-          <h2>Stay in the <span class="script">loop</span></h2>
-          <p>New reflections, sent occasionally. No noise, no spam.</p>
-          <form class="signup-form" name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-            <input type="hidden" name="form-name" value="newsletter" />
-            <p hidden><label>Don't fill this out: <input name="bot-field" /></label></p>
-            <div class="form-row">
-              <input type="email" name="email" placeholder="you@example.com" required aria-label="Email address" />
-              <button class="btn btn-primary" type="submit">Subscribe</button>
-            </div>
-          </form>
-          <p class="form-success">Thank you for subscribing — welcome to the community.</p>
-          <p class="form-note">We respect your inbox. Unsubscribe anytime.</p>
+          <div class="accordion-item">
+            <button class="accordion-trigger">Is it online or in person?<span class="accordion-plus"></span></button>
+            <div class="accordion-panel">Both. In-person circles run in Manchester and London; the online circle runs on the same Sunday, an hour earlier.</div>
+          </div>
         </div>
       </div>
     </section>
@@ -164,26 +147,58 @@
 
   <footer class="site-footer">
     <div class="footer-grid">
-      <div class="footer-brand">
-        <a class="brand" href="index.html">Simply Being <span>Female</span></a>
-        <p>A space for honest reflection, everyday wisdom, and community.</p>
+      <div>
+        <div class="footer-stamp">SBF</div>
+        <p class="footer-tagline">Unapologetically fierce. Beautifully imperfect.</p>
       </div>
-      <div class="footer-links">
-        <div>
-          <h4>Explore</h4>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="journal.html">Journal</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
+      <div class="footer-col">
+        <span class="footer-col-title">Explore</span>
+        <a href="about.html">About</a>
+        <a href="circle.html">The circle</a>
+        <a href="journal.html">Journal</a>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-title">Join</span>
+        <a href="circle.html">Membership</a>
+        <a href="circle.html">Events</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-title">Legal</span>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
       </div>
     </div>
     <div class="footer-bottom">
-      &copy; 2026 Simply Being Female. All rights reserved.
+      <span>© 2026 Simply Being Female</span>
+      <div class="footer-social"><a href="#">Instagram</a><a href="#">TikTok</a><a href="#">Email</a></div>
     </div>
   </footer>
+
+  <div class="dialog-scrim" id="join-dialog">
+    <div class="dialog-box" role="dialog" aria-modal="true">
+      <button class="dialog-close" data-close-join aria-label="Close">&times;</button>
+      <div id="join-step-1">
+        <h2>Join the circle</h2>
+        <form id="join-form" style="display:grid; gap: var(--space-4); margin-top: var(--space-5);">
+          <p>One letter a week and first sight of every new circle date.</p>
+          <div class="field">
+            <span class="field-label">Email</span>
+            <input type="email" placeholder="you@email.com" required />
+          </div>
+          <div class="dialog-footer">
+            <button class="btn btn-primary" type="submit">Send it</button>
+            <button class="btn btn-ghost" type="button" data-close-join>Not now</button>
+          </div>
+        </form>
+      </div>
+      <div id="join-step-2" style="display:none;">
+        <h2>You're in.</h2>
+        <p class="dialog-body">Check your inbox for the welcome note — it lands within the hour.</p>
+        <div class="dialog-footer"><button class="btn btn-primary" data-close-join>Take me back</button></div>
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>

@@ -1,90 +1,114 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Journal — Simply Being Female</title>
-  <meta name="description" content="Essays and reflections from Simply Being Female." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,900;1,500&family=Caveat:wght@600&family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <meta name="description" content="Notes from the middle of it." />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
+  <div class="marquee" role="note">
+    <div class="marquee-track">
+      <span>The circle opens on the first Sunday of every month</span>
+      <span>The circle opens on the first Sunday of every month</span>
+      <span>The circle opens on the first Sunday of every month</span>
+      <span>The circle opens on the first Sunday of every month</span>
+    </div>
+  </div>
+
   <header class="site-header">
-    <nav class="nav">
-      <a class="brand" href="index.html">Simply Being <span>Female</span></a>
-      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="journal.html" class="active">Journal</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+    <nav class="nav-half" id="nav-left">
+      <a class="nav-link" href="index.html">Home</a>
+      <a class="nav-link" href="about.html">About</a>
+      <a class="nav-link" href="circle.html">The circle</a>
     </nav>
+    <a class="brand-wordmark" href="index.html">Simply Being Female</a>
+    <nav class="nav-half end" id="nav-right">
+      <a class="nav-link" href="the-day.html">The day</a>
+      <a class="nav-link active" href="journal.html">Journal</a>
+      <a class="nav-link" href="contact.html">Contact</a>
+      <a class="btn btn-primary btn-sm" href="#" data-open-join>Join us</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-controls="nav-right">&#9776;</button>
   </header>
 
   <main>
 
-    <section class="page-hero c-purple">
-      <p class="eyebrow">The journal</p>
-      <h1>Essays &amp; <span class="script">reflections</span></h1>
-      <p>Replace these placeholder cards with your own posts as you write them.</p>
+    <section class="section tone-blush" style="padding-bottom: var(--space-12);">
+      <div class="section-inner wide stack">
+        <div class="eyebrow">The journal</div>
+        <h1 style="max-width: 22ch;">Notes from the <em>middle of it.</em></h1>
+      </div>
     </section>
 
-    <section>
-      <div class="container">
-        <div class="grid-3">
-          <a class="post-card" href="#">
-            <div class="post-media"></div>
-            <div class="post-body">
-              <p class="post-date">Draft</p>
-              <h3>Post title one</h3>
-              <p>Short excerpt or summary of the post goes here, a sentence or two.</p>
+    <section class="section">
+      <div class="section-inner wide" style="display:grid; gap: var(--space-8);">
+        <div style="display:flex; gap: var(--space-3); flex-wrap:wrap; align-items:center;" id="journal-tags">
+          <button class="tag active" data-cat="All">All</button>
+          <button class="tag" data-cat="Body">Body</button>
+          <button class="tag" data-cat="Mind">Mind</button>
+          <button class="tag" data-cat="Money">Money</button>
+          <span style="margin-left:auto; font-size: var(--text-body-sm); color: var(--text-muted);" id="journal-count">6 pieces</span>
+        </div>
+        <div class="grid-auto" id="journal-grid">
+          <a class="card hoverable" href="#" data-cat="Body">
+            <div class="card-media photo-mask" style="border-radius:0;">photo — picnic</div>
+            <div class="card-body">
+              <span class="card-eyebrow">Body · 6 min</span>
+              <h3 class="card-title">On being the loudest woman at the table</h3>
+              <div class="card-footer"><span class="btn btn-ghost btn-sm">Read</span></div>
             </div>
           </a>
-          <a class="post-card" href="#">
-            <div class="post-media"></div>
-            <div class="post-body">
-              <p class="post-date">Draft</p>
-              <h3>Post title two</h3>
-              <p>Short excerpt or summary of the post goes here, a sentence or two.</p>
+          <a class="card hoverable" href="#" data-cat="Money">
+            <div class="card-media photo-mask" style="border-radius:0;">photo — hiking</div>
+            <div class="card-body">
+              <span class="card-eyebrow">Money · 4 min</span>
+              <h3 class="card-title">Say the number out loud</h3>
+              <div class="card-footer"><span class="btn btn-ghost btn-sm">Read</span></div>
             </div>
           </a>
-          <a class="post-card" href="#">
-            <div class="post-media"></div>
-            <div class="post-body">
-              <p class="post-date">Draft</p>
-              <h3>Post title three</h3>
-              <p>Short excerpt or summary of the post goes here, a sentence or two.</p>
+          <a class="card hoverable" href="#" data-cat="Mind">
+            <div class="card-media photo-mask" style="border-radius:0;">photo</div>
+            <div class="card-body">
+              <span class="card-eyebrow">Mind · 8 min</span>
+              <h3 class="card-title">What I learned from a year of saying no</h3>
+              <div class="card-footer"><span class="btn btn-ghost btn-sm">Read</span></div>
             </div>
           </a>
-          <a class="post-card" href="#">
-            <div class="post-media"></div>
-            <div class="post-body">
-              <p class="post-date">Draft</p>
-              <h3>Post title four</h3>
-              <p>Short excerpt or summary of the post goes here, a sentence or two.</p>
+          <a class="card hoverable" href="#" data-cat="Body">
+            <div class="card-media photo-mask" style="border-radius:0;">photo</div>
+            <div class="card-body">
+              <span class="card-eyebrow">Body · 3 min</span>
+              <h3 class="card-title">Rest is not a reward</h3>
+              <div class="card-footer"><span class="btn btn-ghost btn-sm">Read</span></div>
             </div>
           </a>
-          <a class="post-card" href="#">
-            <div class="post-media"></div>
-            <div class="post-body">
-              <p class="post-date">Draft</p>
-              <h3>Post title five</h3>
-              <p>Short excerpt or summary of the post goes here, a sentence or two.</p>
+          <a class="card hoverable" href="#" data-cat="Money">
+            <div class="card-media photo-mask" style="border-radius:0;">photo — picnic</div>
+            <div class="card-body">
+              <span class="card-eyebrow">Money · 5 min</span>
+              <h3 class="card-title">The invoice I was too scared to send</h3>
+              <div class="card-footer"><span class="btn btn-ghost btn-sm">Read</span></div>
             </div>
           </a>
-          <a class="post-card" href="#">
-            <div class="post-media"></div>
-            <div class="post-body">
-              <p class="post-date">Draft</p>
-              <h3>Post title six</h3>
-              <p>Short excerpt or summary of the post goes here, a sentence or two.</p>
+          <a class="card hoverable" href="#" data-cat="Mind">
+            <div class="card-media photo-mask" style="border-radius:0;">photo — hiking</div>
+            <div class="card-body">
+              <span class="card-eyebrow">Mind · 7 min</span>
+              <h3 class="card-title">Nobody is coming, and that is good news</h3>
+              <div class="card-footer"><span class="btn btn-ghost btn-sm">Read</span></div>
             </div>
           </a>
         </div>
+      </div>
+    </section>
+
+    <section class="section tone-red">
+      <div class="section-inner stack center">
+        <span class="badge badge-pink">Every Sunday</span>
+        <h2 style="max-width: 24ch;">One letter a week. <em>Never a pitch.</em></h2>
       </div>
     </section>
 
@@ -92,26 +116,58 @@
 
   <footer class="site-footer">
     <div class="footer-grid">
-      <div class="footer-brand">
-        <a class="brand" href="index.html">Simply Being <span>Female</span></a>
-        <p>A space for honest reflection, everyday wisdom, and community.</p>
+      <div>
+        <div class="footer-stamp">SBF</div>
+        <p class="footer-tagline">Unapologetically fierce. Beautifully imperfect.</p>
       </div>
-      <div class="footer-links">
-        <div>
-          <h4>Explore</h4>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="journal.html">Journal</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
+      <div class="footer-col">
+        <span class="footer-col-title">Explore</span>
+        <a href="about.html">About</a>
+        <a href="circle.html">The circle</a>
+        <a href="journal.html">Journal</a>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-title">Join</span>
+        <a href="circle.html">Membership</a>
+        <a href="circle.html">Events</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-title">Legal</span>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
       </div>
     </div>
     <div class="footer-bottom">
-      &copy; 2026 Simply Being Female. All rights reserved.
+      <span>© 2026 Simply Being Female</span>
+      <div class="footer-social"><a href="#">Instagram</a><a href="#">TikTok</a><a href="#">Email</a></div>
     </div>
   </footer>
+
+  <div class="dialog-scrim" id="join-dialog">
+    <div class="dialog-box" role="dialog" aria-modal="true">
+      <button class="dialog-close" data-close-join aria-label="Close">&times;</button>
+      <div id="join-step-1">
+        <h2>Join the circle</h2>
+        <form id="join-form" style="display:grid; gap: var(--space-4); margin-top: var(--space-5);">
+          <p>One letter a week and first sight of every new circle date.</p>
+          <div class="field">
+            <span class="field-label">Email</span>
+            <input type="email" placeholder="you@email.com" required />
+          </div>
+          <div class="dialog-footer">
+            <button class="btn btn-primary" type="submit">Send it</button>
+            <button class="btn btn-ghost" type="button" data-close-join>Not now</button>
+          </div>
+        </form>
+      </div>
+      <div id="join-step-2" style="display:none;">
+        <h2>You're in.</h2>
+        <p class="dialog-body">Check your inbox for the welcome note — it lands within the hour.</p>
+        <div class="dialog-footer"><button class="btn btn-primary" data-close-join>Take me back</button></div>
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>

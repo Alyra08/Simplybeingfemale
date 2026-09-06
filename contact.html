@@ -1,71 +1,89 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact — Simply Being Female</title>
-  <meta name="description" content="Get in touch with Simply Being Female." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,900;1,500&family=Caveat:wght@600&family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <meta name="description" content="Tell me where you're at. No form-filling theatre." />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
+  <div class="marquee" role="note">
+    <div class="marquee-track">
+      <span>The circle opens on the first Sunday of every month</span>
+      <span>The circle opens on the first Sunday of every month</span>
+      <span>The circle opens on the first Sunday of every month</span>
+      <span>The circle opens on the first Sunday of every month</span>
+    </div>
+  </div>
+
   <header class="site-header">
-    <nav class="nav">
-      <a class="brand" href="index.html">Simply Being <span>Female</span></a>
-      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="journal.html">Journal</a></li>
-        <li><a href="contact.html" class="active">Contact</a></li>
-      </ul>
+    <nav class="nav-half" id="nav-left">
+      <a class="nav-link" href="index.html">Home</a>
+      <a class="nav-link" href="about.html">About</a>
+      <a class="nav-link" href="circle.html">The circle</a>
     </nav>
+    <a class="brand-wordmark" href="index.html">Simply Being Female</a>
+    <nav class="nav-half end" id="nav-right">
+      <a class="nav-link" href="the-day.html">The day</a>
+      <a class="nav-link" href="journal.html">Journal</a>
+      <a class="nav-link active" href="contact.html">Contact</a>
+      <a class="btn btn-primary btn-sm" href="#" data-open-join>Join us</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-controls="nav-right">&#9776;</button>
   </header>
 
   <main>
 
-    <section class="page-hero c-mustard">
-      <p class="eyebrow">Say hello</p>
-      <h1>Get in <span class="script">touch</span></h1>
-      <p>Questions, collaboration ideas, or just want to say hi — the form below goes straight to the inbox.</p>
-    </section>
-
-    <section>
-      <div class="container contact-grid">
-        <div>
-          <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-            <input type="hidden" name="form-name" value="contact" />
-            <p hidden><label>Don't fill this out: <input name="bot-field" /></label></p>
-            <div class="form-row">
-              <input type="text" name="name" placeholder="Your name" required class="full" aria-label="Your name" />
+    <section class="section">
+      <div class="section-inner wide two-up" style="align-items:start;">
+        <div class="stack">
+          <div class="eyebrow">Say hello</div>
+          <h1>Tell me where <em>you're at.</em></h1>
+          <p class="lede" style="color: var(--text-muted); max-width:38ch;">No form-filling theatre. Two lines is plenty — I read every one myself and answer within a week.</p>
+          <div class="wavy-card" style="max-width: 340px;">
+            <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+              <path d="M 6 6 q 7.333 -9.09 14.667 0 q 7.333 9.09 14.667 0 q 7.333 -9.09 14.667 0 q 7.333 9.09 14.667 0 q 7.333 -9.09 14.667 0 q 7.333 9.09 14.667 0 q 9.09 7.333 0 14.667 q -9.09 7.333 0 14.667 q 9.09 7.333 0 14.667 q -9.09 7.333 0 14.667 q 9.09 7.333 0 14.667 q -9.09 7.333 0 14.667 q -7.333 9.09 -14.667 0 q -7.333 -9.09 -14.667 0 q -7.333 9.09 -14.667 0 q -7.333 -9.09 -14.667 0 q -7.333 9.09 -14.667 0 q -7.333 -9.09 -14.667 0 q -9.09 -7.333 0 -14.667 q 9.09 -7.333 0 -14.667 q -9.09 -7.333 0 -14.667 q 9.09 -7.333 0 -14.667 q -9.09 -7.333 0 -14.667 q 9.09 -7.333 0 -14.667 Z"
+                fill="var(--sbf-blush)" stroke="var(--sbf-red)" stroke-width="1.6" vector-effect="non-scaling-stroke" stroke-linejoin="round" />
+            </svg>
+            <div class="wavy-card-inner">
+              <p style="font-size:20px;">You don't need to be ready. You just need to be honest.</p>
             </div>
-            <div class="form-row">
-              <input type="email" name="email" placeholder="Your email" required class="full" aria-label="Your email" />
-            </div>
-            <div class="form-row">
-              <textarea name="message" placeholder="Your message" required aria-label="Your message"></textarea>
-            </div>
-            <div class="form-row">
-              <button class="btn btn-primary" type="submit">Send message</button>
-            </div>
-          </form>
-          <p class="form-success">Thanks for reaching out — we'll be in touch soon.</p>
-        </div>
-
-        <div class="contact-info">
-          <h3>Email</h3>
-          <p><a href="mailto:hello@simplybeingfemale.com">hello@simplybeingfemale.com</a></p>
-
-          <h3>Follow along</h3>
-          <div class="social-row">
-            <a href="#" aria-label="Instagram">IG</a>
-            <a href="#" aria-label="Pinterest">P</a>
-            <a href="#" aria-label="TikTok">TT</a>
           </div>
         </div>
+        <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-success-toast="contact-toast" style="display:grid; gap: var(--space-5);">
+          <input type="hidden" name="form-name" value="contact" />
+          <p hidden><label>Don't fill this out: <input name="bot-field" /></label></p>
+          <div class="field">
+            <span class="field-label">Your name</span>
+            <input type="text" name="name" placeholder="Renée" required />
+          </div>
+          <div class="field">
+            <span class="field-label">Email</span>
+            <input type="email" name="email" placeholder="you@email.com" required />
+            <span class="field-hint">Used once, to reply.</span>
+          </div>
+          <div class="field">
+            <span class="field-label">I'm here for</span>
+            <select name="interest">
+              <option>A circle</option>
+              <option>Coaching</option>
+              <option>A retreat</option>
+              <option>Something else</option>
+            </select>
+          </div>
+          <div class="field">
+            <span class="field-label">Where you're at</span>
+            <textarea name="message" rows="4" placeholder="Start anywhere."></textarea>
+          </div>
+          <label class="checkbox-row">
+            <input type="checkbox" name="sunday_note" />
+            <span class="checkbox-box"></span>
+            <span>Send me the Sunday note too</span>
+          </label>
+          <button class="btn btn-primary btn-lg" type="submit" style="width:100%;">Send it</button>
+        </form>
       </div>
     </section>
 
@@ -73,26 +91,66 @@
 
   <footer class="site-footer">
     <div class="footer-grid">
-      <div class="footer-brand">
-        <a class="brand" href="index.html">Simply Being <span>Female</span></a>
-        <p>A space for honest reflection, everyday wisdom, and community.</p>
+      <div>
+        <div class="footer-stamp">SBF</div>
+        <p class="footer-tagline">Unapologetically fierce. Beautifully imperfect.</p>
       </div>
-      <div class="footer-links">
-        <div>
-          <h4>Explore</h4>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="journal.html">Journal</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
+      <div class="footer-col">
+        <span class="footer-col-title">Explore</span>
+        <a href="about.html">About</a>
+        <a href="circle.html">The circle</a>
+        <a href="journal.html">Journal</a>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-title">Join</span>
+        <a href="circle.html">Membership</a>
+        <a href="circle.html">Events</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-title">Legal</span>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
       </div>
     </div>
     <div class="footer-bottom">
-      &copy; 2026 Simply Being Female. All rights reserved.
+      <span>© 2026 Simply Being Female</span>
+      <div class="footer-social"><a href="#">Instagram</a><a href="#">TikTok</a><a href="#">Email</a></div>
     </div>
   </footer>
+
+  <div class="toast" id="contact-toast">
+    <div style="display:grid; gap:2px; flex:1;">
+      <span class="toast-title">Sent</span>
+      <span class="toast-body">Thank you — I'll write back within the week.</span>
+    </div>
+    <button class="toast-close" aria-label="Dismiss">&times;</button>
+  </div>
+
+  <div class="dialog-scrim" id="join-dialog">
+    <div class="dialog-box" role="dialog" aria-modal="true">
+      <button class="dialog-close" data-close-join aria-label="Close">&times;</button>
+      <div id="join-step-1">
+        <h2>Join the circle</h2>
+        <form id="join-form" style="display:grid; gap: var(--space-4); margin-top: var(--space-5);">
+          <p>One letter a week and first sight of every new circle date.</p>
+          <div class="field">
+            <span class="field-label">Email</span>
+            <input type="email" placeholder="you@email.com" required />
+          </div>
+          <div class="dialog-footer">
+            <button class="btn btn-primary" type="submit">Send it</button>
+            <button class="btn btn-ghost" type="button" data-close-join>Not now</button>
+          </div>
+        </form>
+      </div>
+      <div id="join-step-2" style="display:none;">
+        <h2>You're in.</h2>
+        <p class="dialog-body">Check your inbox for the welcome note — it lands within the hour.</p>
+        <div class="dialog-footer"><button class="btn btn-primary" data-close-join>Take me back</button></div>
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>

@@ -1,116 +1,150 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About — Simply Being Female</title>
-  <meta name="description" content="The story and values behind Simply Being Female." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,900;1,500&family=Caveat:wght@600&family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <meta name="description" content="I'm the one who left the room first. The story behind Simply Being Female." />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
+  <div class="marquee" role="note">
+    <div class="marquee-track">
+      <span>The circle opens on the first Sunday of every month</span>
+      <span>The circle opens on the first Sunday of every month</span>
+      <span>The circle opens on the first Sunday of every month</span>
+      <span>The circle opens on the first Sunday of every month</span>
+    </div>
+  </div>
+
   <header class="site-header">
-    <nav class="nav">
-      <a class="brand" href="index.html">Simply Being <span>Female</span></a>
-      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html" class="active">About</a></li>
-        <li><a href="journal.html">Journal</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+    <nav class="nav-half" id="nav-left">
+      <a class="nav-link" href="index.html">Home</a>
+      <a class="nav-link active" href="about.html">About</a>
+      <a class="nav-link" href="circle.html">The circle</a>
     </nav>
+    <a class="brand-wordmark" href="index.html">Simply Being Female</a>
+    <nav class="nav-half end" id="nav-right">
+      <a class="nav-link" href="the-day.html">The day</a>
+      <a class="nav-link" href="journal.html">Journal</a>
+      <a class="nav-link" href="contact.html">Contact</a>
+      <a class="btn btn-primary btn-sm" href="#" data-open-join>Join us</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-controls="nav-right">&#9776;</button>
   </header>
 
   <main>
 
-    <section class="page-hero c-pink">
-      <p class="eyebrow">Our story</p>
-      <h1>Why this <span class="script">space</span> exists</h1>
-      <p>Add a paragraph or two here about why you started Simply Being Female and what moment or feeling sparked it.</p>
-    </section>
-
-    <section>
-      <div class="container two-col">
-        <div class="media"></div>
-        <div>
-          <h2>A little about the <span class="script">person</span> behind it</h2>
-          <p>
-            This is placeholder copy — replace it with your own story. Talk about your background,
-            what led you here, and why you wanted to create a space focused on simply being female:
-            without pretense, comparison, or the pressure to have it all figured out.
-          </p>
-          <p>
-            Keep it personal and specific. Readers connect with real details, not generic statements.
-          </p>
+    <section class="section tone-blush" style="padding-bottom: var(--space-16);">
+      <div class="section-inner wide two-up" style="grid-template-columns: minmax(0,.8fr) minmax(0,1.2fr);">
+        <div class="photo-mask oval">photo — hiking</div>
+        <div class="stack">
+          <div class="eyebrow rule">Hello</div>
+          <h1 style="font-size: var(--text-display);">I'm the one who <em>left the room</em> first.</h1>
+          <p class="lede" style="color: var(--sbf-red); opacity: .86; max-width: 42ch;">I built a company, lost it, and rebuilt something smaller and truer. Simply Being Female came out of the conversations I had in between.</p>
+          <a class="btn btn-primary" href="#" data-open-join>Work with me</a>
         </div>
       </div>
     </section>
 
-    <section>
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">What we believe</p>
-          <h2>Our <span class="script">values</span></h2>
+    <section class="section">
+      <div class="section-inner wide" style="display:grid; gap: var(--space-10);">
+        <div class="stack center" style="gap: var(--space-3);">
+          <div class="eyebrow rule center">What we believe</div>
+          <h2>Four things, held loosely.</h2>
         </div>
-        <ul class="values-list" style="max-width: 640px; margin: 0 auto;">
-          <li>
-            <span class="num">01</span>
-            <div>
-              <h3 style="font-family: var(--serif); margin: 0 0 0.25rem;">Truth over performance</h3>
-              <p style="color: var(--ink-soft); margin: 0;">We'd rather say the true thing than the polished thing.</p>
-            </div>
-          </li>
-          <li>
-            <span class="num">02</span>
-            <div>
-              <h3 style="font-family: var(--serif); margin: 0 0 0.25rem;">No apology required</h3>
-              <p style="color: var(--ink-soft); margin: 0;">Wherever you are in life, however loud or unfinished — there's room for you exactly as you are.</p>
-            </div>
-          </li>
-          <li>
-            <span class="num">03</span>
-            <div>
-              <h3 style="font-family: var(--serif); margin: 0 0 0.25rem;">Solidarity, not comparison</h3>
-              <p style="color: var(--ink-soft); margin: 0;">We rise by lifting each other, not by ranking each other.</p>
-            </div>
-          </li>
-        </ul>
+        <div class="belief-grid">
+          <div class="belief-item">
+            <span class="belief-num">01</span>
+            <h3>Softness is not a weakness</h3>
+            <p>You can be gentle and still take up the whole room.</p>
+          </div>
+          <div class="belief-item">
+            <span class="belief-num">02</span>
+            <h3>Nobody is coming</h3>
+            <p>The permission you are waiting for is already yours.</p>
+          </div>
+          <div class="belief-item">
+            <span class="belief-num">03</span>
+            <h3>Say the number out loud</h3>
+            <p>Money talk is not rude. It is maintenance.</p>
+          </div>
+          <div class="belief-item">
+            <span class="belief-num">04</span>
+            <h3>Bring your whole self</h3>
+            <p>The version of you that is tired counts too.</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="band">
-      <blockquote>Take up space. All of it.</blockquote>
-      <cite>— replace with your own mission line</cite>
+    <section class="section tone-red">
+      <div class="section-inner stack" style="gap: var(--space-5);">
+        <span class="badge badge-pink">Press</span>
+        <h2 style="max-width: 30ch;">As heard on the podcasts your sister sends you.</h2>
+        <div class="press-strip">
+          <span>The Wing</span><span>Business Insider</span><span>Elle</span><span>Fortune 500</span><span>Vogue</span>
+        </div>
+      </div>
     </section>
 
   </main>
 
   <footer class="site-footer">
     <div class="footer-grid">
-      <div class="footer-brand">
-        <a class="brand" href="index.html">Simply Being <span>Female</span></a>
-        <p>A space for honest reflection, everyday wisdom, and community.</p>
+      <div>
+        <div class="footer-stamp">SBF</div>
+        <p class="footer-tagline">Unapologetically fierce. Beautifully imperfect.</p>
       </div>
-      <div class="footer-links">
-        <div>
-          <h4>Explore</h4>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="journal.html">Journal</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
+      <div class="footer-col">
+        <span class="footer-col-title">Explore</span>
+        <a href="about.html">About</a>
+        <a href="circle.html">The circle</a>
+        <a href="journal.html">Journal</a>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-title">Join</span>
+        <a href="circle.html">Membership</a>
+        <a href="circle.html">Events</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-title">Legal</span>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
       </div>
     </div>
     <div class="footer-bottom">
-      &copy; 2026 Simply Being Female. All rights reserved.
+      <span>© 2026 Simply Being Female</span>
+      <div class="footer-social"><a href="#">Instagram</a><a href="#">TikTok</a><a href="#">Email</a></div>
     </div>
   </footer>
+
+  <div class="dialog-scrim" id="join-dialog">
+    <div class="dialog-box" role="dialog" aria-modal="true">
+      <button class="dialog-close" data-close-join aria-label="Close">&times;</button>
+      <div id="join-step-1">
+        <h2>Join the circle</h2>
+        <form id="join-form" style="display:grid; gap: var(--space-4); margin-top: var(--space-5);">
+          <p>One letter a week and first sight of every new circle date.</p>
+          <div class="field">
+            <span class="field-label">Email</span>
+            <input type="email" placeholder="you@email.com" required />
+          </div>
+          <div class="dialog-footer">
+            <button class="btn btn-primary" type="submit">Send it</button>
+            <button class="btn btn-ghost" type="button" data-close-join>Not now</button>
+          </div>
+        </form>
+      </div>
+      <div id="join-step-2" style="display:none;">
+        <h2>You're in.</h2>
+        <p class="dialog-body">Check your inbox for the welcome note — it lands within the hour.</p>
+        <div class="dialog-footer"><button class="btn btn-primary" data-close-join>Take me back</button></div>
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
