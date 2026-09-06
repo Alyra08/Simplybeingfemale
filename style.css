@@ -17,26 +17,31 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap");
 
 :root {
-  /* Base palette — verified from the client's logo files */
-  --sbf-red: #BF2026;
-  --sbf-red-deep: #8E1519;
-  --sbf-red-bright: #D62B27;
-  --sbf-cherry: #C80203;
+  /* Base palette — designed 2026-09-06 as a tightened system: one
+     unambiguous signature (the logo-verified red), one clear secondary
+     pink with a real light/dark range, one clear orange accent, and
+     proper warm neutrals. Replaces an earlier 7-swatch owner-supplied
+     list that had three near-duplicate vivid reds/pinks and two
+     competing "primary" candidates (red vs orange) — see CLAUDE.md. */
+  --sbf-red: #BF2026;        /* signature — logo-verified, do not change without the owner's say-so */
+  --sbf-red-deep: #8E1519;   /* hover/pressed state on red */
+  --sbf-red-bright: #D8232B; /* one bright variant for large-display emphasis only */
+  --sbf-cherry: #8E1519;     /* alias of red-deep — no longer a separate near-duplicate red */
 
-  --sbf-blush: #F9C6DC;
-  --sbf-blush-deep: #F3A8C7;
-  --sbf-pink: #F76B9E;
-  --sbf-bubblegum: #E14F97;
-  --sbf-cotton: #FF7FC0;
+  --sbf-pink: #F0609A;       /* secondary — single clear vivid pink, distinct hue from red */
+  --sbf-bubblegum: #E8478F;  /* slightly deeper pink for rare statement emphasis */
+  --sbf-blush: #FAD3E3;      /* light pink tint — soft backgrounds */
+  --sbf-blush-deep: #F5B8D2; /* mid tint — hover state on blush */
+  --sbf-cotton: #F5B8D2;     /* alias of blush-deep */
 
-  --sbf-cream: #FDF6F3;
+  --sbf-cream: #FFF4EE;      /* neutral page background — deliberately lighter/warmer than blush so the two read as distinct surfaces */
   --sbf-paper: #FFFFFF;
   --sbf-ink: #2A1618;
   --sbf-ink-soft: #6B4A4C;
   --sbf-line: #E4C7C7;
 
-  --sbf-coral: #E8481F;
-  --sbf-apricot: #F2A488;
+  --sbf-coral: #F2760D;      /* accent — single true orange, clearly separated in hue from red so it doesn't read as "another red" */
+  --sbf-apricot: #FBCBAE;    /* light tint of the orange accent */
   --sbf-yellow: #F7B733;
 
   --text-heading: var(--sbf-red);
@@ -289,7 +294,7 @@ img { max-width: 100%; display: block; }
 }
 .badge-red { background: var(--sbf-red); color: var(--sbf-blush); }
 .badge-blush { background: var(--sbf-blush); color: var(--sbf-red); }
-.badge-pink { background: var(--sbf-pink); color: var(--sbf-red-deep); }
+.badge-pink { background: var(--sbf-pink); color: var(--sbf-ink); }
 .badge-outline { background: transparent; color: var(--sbf-red); box-shadow: inset 0 0 0 1px var(--sbf-red); }
 .badge-yellow { background: var(--sbf-yellow); color: var(--sbf-red-deep); }
 
@@ -319,7 +324,7 @@ img { max-width: 100%; display: block; }
   padding: 10px 0;
   font-size: var(--text-micro);
 }
-.marquee.tone-pink { background: var(--sbf-pink); color: var(--sbf-red-deep); }
+.marquee.tone-pink { background: var(--sbf-pink); color: var(--sbf-ink); }
 .marquee-track {
   display: inline-flex;
   animation: sbf-marquee var(--marquee-duration) linear infinite;
@@ -443,7 +448,7 @@ img { max-width: 100%; display: block; }
   font-size: var(--text-micro);
   letter-spacing: var(--tracking-deco);
   text-transform: uppercase;
-  color: var(--sbf-pink);
+  color: var(--sbf-blush);
   display: block;
   margin-bottom: var(--space-3);
 }
@@ -481,8 +486,8 @@ img { max-width: 100%; display: block; }
 .section.tone-blush { background: var(--sbf-blush); color: var(--sbf-red); }
 .section.tone-red { background: var(--sbf-red); color: var(--sbf-blush); }
 .section.tone-red h1, .section.tone-red h2, .section.tone-red h3 { color: var(--sbf-blush); }
-.section.tone-coral { background: var(--sbf-coral); color: var(--sbf-cream); }
-.section.tone-coral h1, .section.tone-coral h2 { color: var(--sbf-cream); }
+.section.tone-coral { background: var(--sbf-coral); color: var(--sbf-ink); }
+.section.tone-coral h1, .section.tone-coral h2 { color: var(--sbf-ink); }
 .section.tone-paper { background: var(--sbf-paper); }
 .section-inner { max-width: var(--container-narrow); margin: 0 auto; }
 .section-inner.wide { max-width: var(--container-max); }
@@ -553,7 +558,7 @@ img { max-width: 100%; display: block; }
   text-transform: uppercase;
   color: var(--sbf-red);
 }
-.card.tone-red .card-eyebrow { color: var(--sbf-pink); }
+.card.tone-red .card-eyebrow { color: var(--sbf-blush); }
 .card-title {
   font-family: var(--font-display);
   font-weight: var(--weight-light);

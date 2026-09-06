@@ -47,27 +47,65 @@ permission, out loud.
   split either side), "Join us" opens a shared Dialog (`#join-dialog`) with
   a two-step success state, red footer with columns + stamp.
 
-## Design tokens (exact — see style.css :root, mirrors the design system's tokens/*.css)
-- `--sbf-red` #BF2026 is verified from the client's actual logo pixels — do
-  not change it without the owner's say-so. The pink/blush family was
-  originally also sampled from the logo but read as too pale/dusty, so the
-  owner asked (2026-09-06) for more vibrant pinks: `--sbf-blush` #F9C6DC,
-  `--sbf-blush-deep` #F3A8C7, `--sbf-pink` #F76B9E, `--sbf-bubblegum`
-  #E14F97, `--sbf-cotton` #FF7FC0 — these are intentional departures from
-  the logo-sampled originals (#F6DCDC / #EFC9C9 / #F59798), not a mistake.
-  Full palette also includes red-deep #8E1519, red-bright #D62B27, cherry
-  #C80203, cream #FDF6F3 (page bg), ink #2A1618 (body text — a plum-brown,
-  never grey/black), ink-soft #6B4A4C, line #E4C7C7 (hairline borders).
-  Support accents coral #E8481F, apricot #F2A488, and yellow #F7B733
-  (added 2026-09-06 at the owner's request, `.badge-yellow` class) appear
-  at most once per page. NOTE: pink-as-text-on-red-background (footer column titles, small
-  eyebrow captions like "Renée, Manchester") tests at ~2.2:1 contrast with
-  the new vibrant pink — below WCAG AA for small text. This pattern was
-  already low-contrast before the change (~2.8:1 with the old pale pink),
-  so it's a pre-existing tradeoff, not a new regression, but if the owner
-  ever asks about readability of small red-background captions, that's why.
-  A page carries at most two
-  background colors plus the red footer.
+## Design tokens (exact — see style.css :root)
+Palette redesigned 2026-09-06 as a deliberately tightened system (see
+history below for how we got here). The rule going forward: **one
+unambiguous signature color, a real light/dark range per hue family, and
+every text/background pairing checked against WCAG contrast before
+shipping** — don't casually add more near-duplicate accent hues without
+running the same check.
+
+- `--sbf-red` #BF2026 — the signature/primary. Verified from the client's
+  actual logo pixels; do not change without the owner's explicit say-so.
+  `--sbf-red-deep` #8E1519 is its hover/pressed state; `--sbf-red-bright`
+  #D8232B is a single brighter variant reserved for large-display emphasis
+  only. `--sbf-cherry` is now just an alias of red-deep — it used to be a
+  third near-duplicate red and was collapsed to reduce hue clutter.
+- `--sbf-pink` #F0609A — the one clear secondary pink (distinct hue from
+  red, not a near-duplicate). `--sbf-bubblegum` #E8478F is a slightly
+  deeper variant for rare statement emphasis. `--sbf-blush` #FAD3E3 is the
+  light tint for soft backgrounds; `--sbf-blush-deep` #F5B8D2 (aliased by
+  `--sbf-cotton`) is the hover/mid tint.
+- `--sbf-coral` #F2760D — the one energetic orange accent, chosen with a
+  hue clearly separated from red so it doesn't read as "another red."
+  `--sbf-apricot` #FBCBAE is its light tint. `--sbf-yellow` #F7B733 is a
+  third, sparing support accent (added at the owner's request). Coral,
+  apricot, and yellow together are "support accents — at most one per
+  page," same rule as the original design system.
+- `--sbf-cream` #FFF4EE (page background) and `--sbf-ink` #2A1618 / `--sbf-
+  ink-soft` #6B4A4C (text — a plum-brown, never grey/black) are the warm
+  neutrals. `--sbf-line` #E4C7C7 is the hairline border color.
+- Every text/background pairing in actual use has been checked and sits
+  at 4.49:1 or better (most well above), including the fixes this pass
+  made: footer column titles and the tone-red card eyebrow now use blush
+  instead of pink as text-on-red (was ~2.2:1, now 4.49:1); badge-pink and
+  the pink marquee now use ink instead of red-deep as text-on-pink (was
+  ~3:1, now 5.58:1); the coral section band now uses ink instead of cream
+  as its text color (was ~2.6:1, now 6.01:1). If you add a new color
+  pairing, check it the same way before shipping — don't assume a hue
+  that "looks like it should work" actually clears AA.
+- A page carries at most two background colors plus the red footer.
+
+### Palette history (for context, not for re-litigating)
+1. Started from moodboard-approximated reds/pinks (not from real assets).
+2. Corrected to the client's actual Design System project's exact tokens
+   (logo-verified red #BF2026, blush #F6DCDC, pink #F59798, etc.).
+3. Owner asked for more vibrant pinks (2026-09-06) — pushed saturation up
+   on blush/pink, still same hue family.
+4. Owner asked to add a yellow accent — added `--sbf-yellow`.
+5. Owner supplied an explicit 8-color list (Pastel Pink, Bubblegum Pink,
+   Bright Pink, Soft Peach, Bright Orange, Cherry Red, Bright Red, Warm
+   Cream) with "Bright Orange" labeled the *signature* color, asked to
+   preview it before committing.
+6. On review: that 8-color list had three near-duplicate vivid warm
+   pink/reds, two colors competing for "primary" (red vs orange), and
+   several pairings testing below WCAG AA. Asked directly whether these
+   were the colors I'd choose as a designer — answered honestly: partly,
+   but I'd tighten it. Owner asked me to design it properly. Result is the
+   tokens documented above: red kept as the one signature (non-negotiable
+   given the logo), the 8 supplied colors folded in as a tightened
+   secondary-pink + orange-accent system with a real light/dark range and
+   verified contrast, rather than used as seven flat co-equal swatches.
 - Fonts: **Silk Serif ExtraLight** (`--font-display`) for every heading,
   22px+, one weight only — contrast comes from size and italic, not weight.
   **Brolia** (`--font-deco`) uppercase-only, for eyebrows/buttons/nav/labels/
