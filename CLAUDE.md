@@ -58,8 +58,9 @@ permission, out loud.
   Full palette also includes red-deep #8E1519, red-bright #D62B27, cherry
   #C80203, cream #FDF6F3 (page bg), ink #2A1618 (body text — a plum-brown,
   never grey/black), ink-soft #6B4A4C, line #E4C7C7 (hairline borders).
-  Support accents coral #E8481F and apricot #F2A488 appear at most once per
-  page. NOTE: pink-as-text-on-red-background (footer column titles, small
+  Support accents coral #E8481F, apricot #F2A488, and yellow #F7B733
+  (added 2026-09-06 at the owner's request, `.badge-yellow` class) appear
+  at most once per page. NOTE: pink-as-text-on-red-background (footer column titles, small
   eyebrow captions like "Renée, Manchester") tests at ~2.2:1 contrast with
   the new vibrant pink — below WCAG AA for small text. This pattern was
   already low-contrast before the change (~2.8:1 with the old pale pink),

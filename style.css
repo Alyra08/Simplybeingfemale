@@ -37,6 +37,7 @@
 
   --sbf-coral: #E8481F;
   --sbf-apricot: #F2A488;
+  --sbf-yellow: #F7B733;
 
   --text-heading: var(--sbf-red);
   --text-body: var(--sbf-ink);
@@ -290,6 +291,7 @@ img { max-width: 100%; display: block; }
 .badge-blush { background: var(--sbf-blush); color: var(--sbf-red); }
 .badge-pink { background: var(--sbf-pink); color: var(--sbf-red-deep); }
 .badge-outline { background: transparent; color: var(--sbf-red); box-shadow: inset 0 0 0 1px var(--sbf-red); }
+.badge-yellow { background: var(--sbf-yellow); color: var(--sbf-red-deep); }
 
 /* Tag — journal filter chip */
 .tag {
