@@ -24,11 +24,24 @@ overly clinical language.
 - Contact (Netlify Forms contact form)
 
 ## Design & Style
-- Palette: warm cream background (#faf6f1), terracotta/rust accent (#b5654a),
-  deep plum accent band (#4a3b4e), near-black warm ink text (#2a2420).
-- Fonts: Fraunces (serif, headings) + Inter (sans, body), via Google Fonts.
-- Editorial/magazine feel — generous whitespace, soft rounded cards, no stock
-  "corporate feminine" clichés (no pink gradients, no glitter).
+Confirmed direction (from moodboard the owner shared): bold, maximalist,
+feminine-brand aesthetic — think indie Squarespace template shops (Tuesday
+Marketing Co, Lucie Fink) crossed with punchy feminist-poster typography
+("well behaved women...", "you're doing great bitch" style statement cards).
+
+- Palette: cream base (#fff6ec), hot pink (#ff5fa2), purple (#7b2ff7), coral/
+  red-orange (#ff4d3d), mustard (#f2a93b), deep ink (#241a2e). Color-blocked
+  sections (each band/card gets a solid or gradient color), not muted/neutral.
+- Fonts: Fraunces (serif, editorial headings) + Caveat (handwritten script,
+  used as inline accent words) + Anton (bold condensed display, used for
+  punchy one-line "mantra"/quote statements) + Inter (sans, body).
+- Signature elements: thick black borders + hard drop-shadows on cards/
+  buttons (scrapbook/sticker feel), rotated "photo" collage blocks with a
+  washi-tape accent, pill-shaped nav links and buttons, bold poster-style
+  quote bands in all-caps Anton.
+- Explicitly NOT the look: quiet neutral/cream minimalism, muted terracotta-
+  only palette, subtle shadows. (An earlier quiet-editorial pass was
+  replaced with this bolder direction on 2026-09-06.)
 
 ## Content
 All current copy (hero text, post cards, about story, values) is placeholder

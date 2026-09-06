@@ -7,7 +7,7 @@
   <meta name="description" content="Simply Being Female is a space for honest reflection, everyday wisdom, and community — for women navigating life exactly as they are." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,900;1,500&family=Caveat:wght@600&family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -28,15 +28,27 @@
   <main>
 
     <section class="hero">
-      <p class="eyebrow">A space to exhale</p>
-      <h1>Real stories and gentle wisdom for simply being who you are.</h1>
-      <p class="lede">
-        Simply Being Female is a corner of the internet for honest reflection on womanhood —
-        the messy, the joyful, and everything in between. No performance, no perfection required.
-      </p>
-      <div class="btn-row">
-        <a class="btn btn-primary" href="journal.html">Read the Journal</a>
-        <a class="btn btn-outline" href="about.html">Our Story</a>
+      <div class="hero-grid">
+        <div class="hero-text">
+          <span class="pill-badge">&#10024; A space to exhale</span>
+          <h1>Real stories, <span class="script">gentle</span> wisdom, and zero performance.</h1>
+          <p class="lede">
+            Simply Being Female is a corner of the internet for honest reflection on womanhood —
+            the messy, the joyful, and everything in between. No performance, no perfection required.
+          </p>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="journal.html">Read the Journal</a>
+            <a class="btn btn-outline" href="about.html">Our Story</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="collage">
+            <div class="tape"></div>
+            <div class="collage-block collage-1">photo</div>
+            <div class="collage-block collage-2">photo</div>
+            <div class="collage-block collage-3">photo</div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -44,20 +56,20 @@
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">What you'll find here</p>
-          <h2>Three things we care about</h2>
+          <h2>Three things we <span class="script">care</span> about</h2>
         </div>
         <div class="grid-3">
-          <div class="card">
+          <div class="card c-pink">
             <span class="icon">&#127807;</span>
             <h3>Honest Reflection</h3>
             <p>Essays and journal entries on identity, relationships, and growth — written without the gloss.</p>
           </div>
-          <div class="card">
+          <div class="card c-purple">
             <span class="icon">&#129505;</span>
             <h3>Everyday Wisdom</h3>
             <p>Practical thoughts on wellbeing, boundaries, and self-trust that meet you where you are.</p>
           </div>
-          <div class="card">
+          <div class="card c-mustard">
             <span class="icon">&#127760;</span>
             <h3>Community</h3>
             <p>A quiet, welcoming space to feel less alone in the everyday experience of being a woman.</p>
@@ -67,17 +79,20 @@
     </section>
 
     <section class="band">
-      <blockquote>
-        &ldquo;You don't have to have it figured out. You just have to be here, as you are.&rdquo;
-        <cite>— Simply Being Female</cite>
-      </blockquote>
+      <blockquote>You don't have to have it figured out.</blockquote>
+      <cite>— just show up as you are</cite>
+    </section>
+
+    <section class="mantra-band">
+      <p>Simply showing up is the whole point.</p>
+      <span class="handle">@SIMPLYBEINGFEMALE</span>
     </section>
 
     <section class="latest">
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">From the journal</p>
-          <h2>Latest reflections</h2>
+          <h2>Latest <span class="script">reflections</span></h2>
         </div>
         <div class="grid-3">
           <a class="post-card" href="journal.html">
@@ -111,7 +126,7 @@
     <section class="newsletter-section">
       <div class="container">
         <div class="newsletter">
-          <h2>Stay in the loop</h2>
+          <h2>Stay in the <span class="script">loop</span></h2>
           <p>New reflections, sent occasionally. No noise, no spam.</p>
           <form class="signup-form" name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field">
             <input type="hidden" name="form-name" value="newsletter" />
