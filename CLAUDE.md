@@ -48,13 +48,24 @@ permission, out loud.
   a two-step success state, red footer with columns + stamp.
 
 ## Design tokens (exact — see style.css :root, mirrors the design system's tokens/*.css)
-- Colors verified from the client's actual logo pixels: `--sbf-red`
-  #BF2026, `--sbf-blush` #F6DCDC, `--sbf-pink` #F59798. Full palette also
-  includes red-deep #8E1519, red-bright #D62B27, cherry #C80203, blush-deep
-  #EFC9C9, bubblegum #E878AA, cotton #FF9FCD, cream #FDF6F3 (page bg), ink
-  #2A1618 (body text — a plum-brown, never grey/black), ink-soft #6B4A4C,
-  line #E4C7C7 (hairline borders). Support accents coral #E8481F and apricot
-  #F2A488 appear at most once per page. A page carries at most two
+- `--sbf-red` #BF2026 is verified from the client's actual logo pixels — do
+  not change it without the owner's say-so. The pink/blush family was
+  originally also sampled from the logo but read as too pale/dusty, so the
+  owner asked (2026-09-06) for more vibrant pinks: `--sbf-blush` #F9C6DC,
+  `--sbf-blush-deep` #F3A8C7, `--sbf-pink` #F76B9E, `--sbf-bubblegum`
+  #E14F97, `--sbf-cotton` #FF7FC0 — these are intentional departures from
+  the logo-sampled originals (#F6DCDC / #EFC9C9 / #F59798), not a mistake.
+  Full palette also includes red-deep #8E1519, red-bright #D62B27, cherry
+  #C80203, cream #FDF6F3 (page bg), ink #2A1618 (body text — a plum-brown,
+  never grey/black), ink-soft #6B4A4C, line #E4C7C7 (hairline borders).
+  Support accents coral #E8481F and apricot #F2A488 appear at most once per
+  page. NOTE: pink-as-text-on-red-background (footer column titles, small
+  eyebrow captions like "Renée, Manchester") tests at ~2.2:1 contrast with
+  the new vibrant pink — below WCAG AA for small text. This pattern was
+  already low-contrast before the change (~2.8:1 with the old pale pink),
+  so it's a pre-existing tradeoff, not a new regression, but if the owner
+  ever asks about readability of small red-background captions, that's why.
+  A page carries at most two
   background colors plus the red footer.
 - Fonts: **Silk Serif ExtraLight** (`--font-display`) for every heading,
   22px+, one weight only — contrast comes from size and italic, not weight.
