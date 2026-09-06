@@ -481,6 +481,47 @@ section {
   color: var(--pink-soft);
 }
 
+/* Squiggle-frame mission card */
+.squiggle-section {
+  padding: 3.5rem 0;
+}
+
+.squiggle-frame {
+  position: relative;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 3rem 3rem;
+  text-align: center;
+}
+
+.squiggle-frame .squiggle-border {
+  position: absolute;
+  inset: 0;
+  border: 4px solid var(--coral);
+  border-radius: 32px;
+  filter: url(#squiggle);
+  pointer-events: none;
+}
+
+.squiggle-frame p {
+  position: relative;
+  font-family: var(--serif);
+  font-size: clamp(1.3rem, 3vw, 1.8rem);
+  line-height: 1.4;
+  margin: 0;
+  color: var(--ink);
+}
+
+/* Hand-drawn doodle accents */
+.doodle {
+  position: absolute;
+  pointer-events: none;
+  color: var(--pink);
+}
+
+.doodle-heart { width: 34px; height: 34px; }
+.doodle-sparkle { width: 26px; height: 26px; color: var(--coral); }
+
 /* Journal / post cards */
 .post-card {
   border: 3px solid var(--ink);

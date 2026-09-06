@@ -57,6 +57,19 @@ Marketing Co, Lucie Fink) crossed with punchy feminist-poster typography
   buttons (scrapbook/sticker feel), rotated "photo" collage blocks with a
   washi-tape accent, pill-shaped nav links and buttons, bold poster-style
   quote bands in all-caps Anton.
+- Added 2026-09-06 (owner sent a large moodboard of hand-drawn/playful
+  girly-pop references — hearts, sparkles, bows, wavy borders, ransom-note
+  collage lettering): a reusable **squiggle-frame** component
+  (`.squiggle-frame` in style.css) — a hand-wobbled border made with an SVG
+  `feTurbulence`/`feDisplacementMap` filter (`#squiggle`, defined inline near
+  the top of `<body>` in each page) applied to a normal bordered box, used
+  for mission-statement/pull-quote moments. Also added small hand-drawn-style
+  SVG doodle accents (`.doodle-heart`, `.doodle-sparkle`) as decorative
+  flourishes near those cards. Currently only wired up on index.html — worth
+  repeating on about/journal/contact for consistency. Not yet added: a
+  bubbly/rounded display font for extra-playful headline moments (references
+  included "Baloo 2"/"Fredoka"-style rounded type) — flagged for later, not
+  built yet.
 - Explicitly NOT the look: quiet neutral/cream minimalism, purple/mustard as
   actual hues, muted terracotta-only palette, subtle shadows, hedging or
   "warm and gentle" copy.

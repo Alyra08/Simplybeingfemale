@@ -12,6 +12,13 @@
 </head>
 <body>
 
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <filter id="squiggle">
+      <feTurbulence type="fractalNoise" baseFrequency="0.012 0.06" numOctaves="2" seed="4" result="noise" />
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="7" />
+    </filter>
+  </svg>
+
   <header class="site-header">
     <nav class="nav">
       <a class="brand" href="index.html">Simply Being <span>Female</span></a>
@@ -48,6 +55,17 @@
             <div class="collage-block collage-2">photo</div>
             <div class="collage-block collage-3">photo</div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="squiggle-section">
+      <div class="container">
+        <div class="squiggle-frame">
+          <div class="squiggle-border" aria-hidden="true"></div>
+          <svg class="doodle doodle-heart" style="top:-18px; left:8%;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7.5-4.6-10-9.3C.4 8.4 2.2 5 5.6 5c2 0 3.3 1 4.4 2.4C11.1 6 12.4 5 14.4 5c3.4 0 5.2 3.4 3.6 6.7C15.5 16.4 12 21 12 21z"/></svg>
+          <svg class="doodle doodle-sparkle" style="bottom:-14px; right:10%;" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8L12 2z"/></svg>
+          <p>There's nothing polished about becoming who you actually are — and that's exactly the point.</p>
         </div>
       </div>
     </section>
