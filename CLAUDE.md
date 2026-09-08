@@ -41,6 +41,21 @@ permission, out loud.
   placeholders, not real figures — confirm with the owner before treating
   them as real claims, same caveat as the testimonial/press content noted
   below.
+  Updated 2026-09-08 (owner asked to "emulate luciefink.com/work-with-me
+  more"): added a services marquee right after the hero ("The circle /
+  Coaching / The day / The Sunday note"), a real tablist/tabpanel
+  "offerings" section mirroring Lucie's "Bringing brands to life" section
+  exactly (5 tabs — Circle/Coaching/Day/Note/Retreats — each with its own
+  description + CTA, reusing the same `.tabs`/`data-tabs` mechanism already
+  built for the Circle page's pricing tabs), and a closing "Still have
+  questions? Reach out" CTA band + a second bookend marquee ("Simply being
+  female" repeated) right before the footer — mirroring Lucie's page
+  structure end-to-end (hero → services marquee → offerings tabs → stats →
+  founder/FAQ → other-ways cards → closing CTA → closing marquee →
+  footer). The pre-existing "Three doors, one room" cards section is now
+  framed as the "other ways in" (Lucie's second, simpler offerings list),
+  since the new tabs section covers the primary "ways to work with me"
+  role Lucie's tabs originally served.
 - About (`about.html`) — oval portrait intro, four-belief hairline grid,
   red press band.
 - The Circle (`circle.html`) — Tabs-driven plan switcher (Circles /
