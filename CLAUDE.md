@@ -30,8 +30,17 @@ Avoid: "empower", "journey", "unlock", "elevate", "we're on a mission",
 permission, out loud.
 
 ## Pages
-- Home (`index.html`) — red hero with photo, wavy manifesto card, three
-  offering cards, red testimonial band, FAQ accordion.
+- Home (`index.html`) — red hero with photo, a floating white signup card
+  overlapping the hero/next-section seam (pattern borrowed from
+  luciefink.com/work-with-me, 2026-09-08, at the owner's request — "want
+  in? The Sunday note" email capture), wavy manifesto card, a "by the
+  numbers" community stats band, a short "meet the founder" intro strip
+  (pattern borrowed from jennakutcher.com's "I'm Jenna, nice to meet you"),
+  three offering cards, red testimonial band, FAQ accordion. The stat
+  numbers (500+ women, 40+ circles, 3 cities, weekly letter) are invented
+  placeholders, not real figures — confirm with the owner before treating
+  them as real claims, same caveat as the testimonial/press content noted
+  below.
 - About (`about.html`) — oval portrait intro, four-belief hairline grid,
   red press band.
 - The Circle (`circle.html`) — Tabs-driven plan switcher (Circles /

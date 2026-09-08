@@ -512,6 +512,53 @@ img { max-width: 100%; display: block; }
   .two-up { grid-template-columns: 1fr; }
 }
 
+/* Hero floating signup card — overlaps the hero/next-section seam */
+.hero-wrap { position: relative; }
+.hero-float-card {
+  position: absolute;
+  right: var(--gutter-page);
+  bottom: -64px;
+  z-index: 5;
+  background: var(--sbf-paper);
+  color: var(--sbf-red);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lift);
+  padding: var(--space-6);
+  width: min(280px, 86%);
+  display: grid;
+  gap: var(--space-3);
+}
+.hero-float-card h3 { font-size: var(--text-h3); }
+.hero-float-card p { font-size: var(--text-body-sm); color: var(--text-muted); }
+@media (max-width: 860px) {
+  .hero-float-card { position: static; margin: var(--space-6) auto 0; width: 100%; max-width: 340px; }
+}
+
+/* Stats band */
+.stats-band { padding: var(--space-16) 0 var(--space-10); }
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: var(--space-8);
+  text-align: center;
+}
+.stat-number {
+  font-family: var(--font-display);
+  font-weight: var(--weight-light);
+  font-size: clamp(30px, 4vw, 48px);
+  color: var(--sbf-red);
+  line-height: 1;
+}
+.stat-label {
+  font-family: var(--font-deco);
+  font-size: var(--text-micro);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: var(--space-2);
+  display: block;
+}
+
 /* Oval image masks — the brand's three photo shapes, plate fallback when no real photo */
 .photo-mask {
   background: var(--sbf-blush);

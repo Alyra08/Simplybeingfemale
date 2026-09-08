@@ -36,22 +36,35 @@
 
   <main>
 
-    <section style="background: var(--sbf-red); color: var(--sbf-blush); padding: clamp(48px,7vw,96px) var(--gutter-page);">
-      <div class="two-up" style="max-width: var(--container-max); margin: 0 auto; grid-template-columns: minmax(0,1.15fr) minmax(0,.85fr);">
-        <div class="stack">
-          <div class="eyebrow on-blush">Simply being female</div>
-          <h1 style="color: var(--sbf-blush); font-size: clamp(36px,6vw,76px);">for the women<br />who are building <em>something real</em></h1>
-          <p class="lede" style="color: var(--sbf-blush); opacity: .92;">The ones who chose themselves even when it didn't make sense to anyone else.</p>
-          <div class="btn-row">
-            <a class="btn btn-onred btn-lg" href="#" data-open-join>Join the circle</a>
-            <a class="btn btn-ghost btn-lg" style="color: var(--sbf-blush);" href="about.html">Read her story</a>
+    <div class="hero-wrap">
+      <section style="background: var(--sbf-red); color: var(--sbf-blush); padding: clamp(48px,7vw,96px) var(--gutter-page);">
+        <div class="two-up" style="max-width: var(--container-max); margin: 0 auto; grid-template-columns: minmax(0,1.15fr) minmax(0,.85fr);">
+          <div class="stack">
+            <div class="eyebrow on-blush">Simply being female</div>
+            <h1 style="color: var(--sbf-blush); font-size: clamp(36px,6vw,76px);">for the women<br />who are building <em>something real</em></h1>
+            <p class="lede" style="color: var(--sbf-blush); opacity: .92;">The ones who chose themselves even when it didn't make sense to anyone else.</p>
+            <div class="btn-row">
+              <a class="btn btn-onred btn-lg" href="#" data-open-join>Join the circle</a>
+              <a class="btn btn-ghost btn-lg" style="color: var(--sbf-blush);" href="about.html">Read her story</a>
+            </div>
           </div>
+          <div class="photo-mask arch">photo — women, picnic</div>
         </div>
-        <div class="photo-mask arch">photo — women, picnic</div>
+      </section>
+      <div class="hero-float-card">
+        <span class="eyebrow" style="margin:0;">Want in?</span>
+        <h3>The Sunday note</h3>
+        <p>One honest letter a week. Drop your email and I'll send the next one.</p>
+        <form name="hero-signup" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-success-toast="hero-toast" style="display:grid; gap: var(--space-3);">
+          <input type="hidden" name="form-name" value="hero-signup" />
+          <p hidden><label>Don't fill this out: <input name="bot-field" /></label></p>
+          <input type="email" name="email" placeholder="you@email.com" required style="padding:11px 16px; border-radius:var(--radius-pill); border:1px solid var(--border-hairline); font:inherit; font-size:var(--text-body-sm);" />
+          <button class="btn btn-primary btn-sm" type="submit" style="width:100%;">Join the list</button>
+        </form>
       </div>
-    </section>
+    </div>
 
-    <section class="section tone-blush">
+    <section class="section tone-blush" style="padding-top: calc(var(--section-y) + 40px);">
       <div class="section-inner wide two-up">
         <div class="wavy-card">
           <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
@@ -67,6 +80,39 @@
           <h2>You are not too much.</h2>
           <p class="lede" style="color: var(--sbf-red); opacity: .85; max-width: 46ch;">Simply Being Female is a community for women who are done shrinking to fit. Circles, coaching and a weekly letter — no fixing, no performance, no advice unless you ask for it.</p>
           <a class="btn btn-outline" href="about.html">What we believe</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats-band">
+      <div class="section-inner wide stats-grid">
+        <div>
+          <span class="stat-number">500+</span>
+          <span class="stat-label">Women in the circle</span>
+        </div>
+        <div>
+          <span class="stat-number">40+</span>
+          <span class="stat-label">Circles held since 2019</span>
+        </div>
+        <div>
+          <span class="stat-number">3</span>
+          <span class="stat-label">Cities, one community</span>
+        </div>
+        <div>
+          <span class="stat-number">1</span>
+          <span class="stat-label">Honest letter, every Sunday</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section tone-blush">
+      <div class="section-inner wide two-up" style="grid-template-columns: minmax(0,.75fr) minmax(0,1.25fr);">
+        <div class="photo-mask oval">photo — founder</div>
+        <div class="stack">
+          <div class="eyebrow rule">Hello</div>
+          <h2>I'm the one who <em>left the room</em> first.</h2>
+          <p class="lede" style="color: var(--sbf-red); opacity: .86; max-width: 46ch;">I built a company, lost it, and rebuilt something smaller and truer. Nice to meet you — I'm glad you're here.</p>
+          <a class="btn btn-outline" href="about.html">Read the full story</a>
         </div>
       </div>
     </section>
@@ -174,6 +220,14 @@
       <div class="footer-social"><a href="#">Instagram</a><a href="#">TikTok</a><a href="#">Email</a></div>
     </div>
   </footer>
+
+  <div class="toast" id="hero-toast">
+    <div style="display:grid; gap:2px; flex:1;">
+      <span class="toast-title">Sent</span>
+      <span class="toast-body">You're on the list — the next Sunday note is on its way.</span>
+    </div>
+    <button class="toast-close" aria-label="Dismiss">&times;</button>
+  </div>
 
   <div class="dialog-scrim" id="join-dialog">
     <div class="dialog-box" role="dialog" aria-modal="true">
