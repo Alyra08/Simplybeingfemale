@@ -18,6 +18,10 @@
       <feTurbulence type="fractalNoise" baseFrequency="0.025 0.06" numOctaves="2" seed="11" result="noise" />
       <feDisplacementMap in="SourceGraphic" in2="noise" scale="5" />
     </filter>
+    <filter id="squiggleThick">
+      <feTurbulence type="fractalNoise" baseFrequency="0.008 0.02" numOctaves="2" seed="7" result="noise" />
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="14" />
+    </filter>
   </svg>
 
   <div class="marquee" role="note">
@@ -149,11 +153,14 @@
             <p>A space for the unapologetically fierce, beautifully imperfect woman.</p>
           </div>
         </div>
-        <div class="stack right">
-          <div class="eyebrow rule">Why we're here</div>
-          <h2>You are not too much.</h2>
-          <p class="lede" style="color: var(--sbf-red); opacity: .85; max-width: 46ch;">Simply Being Female is a community for women who are done shrinking to fit. Circles, coaching and a weekly letter — no fixing, no performance, no advice unless you ask for it.</p>
-          <a class="btn btn-outline" href="about.html">What we believe</a>
+        <div class="wavy-frame">
+          <div class="wavy-frame-border" aria-hidden="true"></div>
+          <div class="wavy-frame-inner stack right">
+            <div class="eyebrow rule">Why we're here</div>
+            <h2>You are not too much.</h2>
+            <p class="lede" style="color: var(--sbf-red); opacity: .85; max-width: 46ch;">Simply Being Female is a community for women who are done shrinking to fit. Circles, coaching and a weekly letter — no fixing, no performance, no advice unless you ask for it.</p>
+            <a class="btn btn-outline" href="about.html">What we believe</a>
+          </div>
         </div>
       </div>
     </section>

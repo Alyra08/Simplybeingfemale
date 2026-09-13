@@ -656,6 +656,24 @@ img { max-width: 100%; display: block; }
   color: var(--sbf-red);
 }
 
+/* Wavy frame — thick, smooth, single-color wave border (invitation-card style) */
+.wavy-frame {
+  position: relative;
+  padding: clamp(32px, 6%, 56px);
+}
+.wavy-frame-border {
+  position: absolute;
+  inset: 0;
+  border: 9px solid var(--sbf-pink);
+  border-radius: 40px;
+  filter: url(#squiggleThick);
+  pointer-events: none;
+}
+.wavy-frame-inner {
+  position: relative;
+  z-index: 1;
+}
+
 /* Accordion */
 .accordion { border-top: 1px solid var(--border-hairline); }
 .accordion-item { border-bottom: 1px solid var(--border-hairline); }

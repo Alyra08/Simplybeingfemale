@@ -169,6 +169,24 @@ running the same check.
   contact.html) — copy that `<svg><filter>...</filter></svg>` block into
   any new page before using the component there, or the border renders as
   a plain straight rectangle with no filter applied.
+- A second, distinct component — `.wavy-frame` — was added 2026-09-13 for
+  a different reference (a "Save the Date" invitation card with a thick,
+  smooth, single-color pink wave border, not the thin organic double-line
+  of `.wavy-card`). First attempt used a hand-authored square-viewBox SVG
+  path with `preserveAspectRatio="none"`, copying the old `.wavy-card`
+  technique — this broke badly on a wide/short box (the content column is
+  much wider than tall), stretching the wave into an unreadable blob that
+  didn't contain the text. Fixed by switching to the same filter-based
+  technique as `.wavy-squiggle` instead: a plain `.wavy-frame-border` div
+  (border + border-radius) run through a new `#squiggleThick` filter
+  (lower baseFrequency / higher scale than squiggleA/B, for a bigger,
+  smoother wave) — this adapts correctly to any box's actual aspect ratio
+  since it distorts a normal CSS border rather than stretching a
+  fixed-proportion path. LESSON: never use the hand-authored
+  square-viewBox path + `preserveAspectRatio="none"` approach on a
+  non-square or content-sized box — only the turbulence-filter-on-a-normal-
+  border technique is safe for arbitrary aspect ratios. `#squiggleThick`
+  must be defined in the same shared `<svg>` filter block as squiggleA/B.
 - No gradients anywhere in the real spec.
 
 ## Content status
