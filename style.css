@@ -17,32 +17,37 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&display=swap");
 
 :root {
-  /* Base palette — designed 2026-09-06 as a tightened system: one
-     unambiguous signature (the logo-verified red), one clear secondary
-     pink with a real light/dark range, one clear orange accent, and
-     proper warm neutrals. Replaces an earlier 7-swatch owner-supplied
-     list that had three near-duplicate vivid reds/pinks and two
-     competing "primary" candidates (red vs orange) — see CLAUDE.md. */
-  --sbf-red: #BF2026;        /* signature — logo-verified, do not change without the owner's say-so */
-  --sbf-red-deep: #8E1519;   /* hover/pressed state on red */
-  --sbf-red-bright: #D8232B; /* one bright variant for large-display emphasis only */
-  --sbf-cherry: #8E1519;     /* alias of red-deep — no longer a separate near-duplicate red */
+  /* Base palette — updated 2026-09-14 with an owner-supplied 7-swatch
+     list (#d61f25 #a8161b #d91b36 #e7c7c8 #f4dbdb #ec8a96 #ee6230).
+     Mapped by lightness/role rather than pasted in as-is: the vivid red
+     (#d61f25) is nearly identical to the old logo-verified signature
+     (#BF2026) so it becomes the new signature; the darkest red is the
+     hover/deep state; the medium pink is the one clear secondary; the
+     two light pinks become blush/cream; the orange is the one accent.
+     Everything not covered by the 7 swatches (bubblegum, blush-deep,
+     apricot, ink, yellow) is a derived tint/shade of them, not an
+     independently invented hue — see CLAUDE.md for the full mapping
+     and the contrast fixes this pass required. */
+  --sbf-red: #D61F25;        /* signature — owner-supplied, ~identical to the old logo-verified #BF2026 */
+  --sbf-red-deep: #A8161B;   /* hover/pressed state on red — owner-supplied darkest red */
+  --sbf-red-bright: #D91B36; /* owner-supplied crimson — bright variant for large-display emphasis only */
+  --sbf-cherry: #A8161B;     /* alias of red-deep */
 
-  --sbf-pink: #F0609A;       /* secondary — single clear vivid pink, distinct hue from red */
-  --sbf-bubblegum: #E8478F;  /* slightly deeper pink for rare statement emphasis */
-  --sbf-blush: #FAD3E3;      /* light pink tint — soft backgrounds */
-  --sbf-blush-deep: #F5B8D2; /* mid tint — hover state on blush */
-  --sbf-cotton: #F5B8D2;     /* alias of blush-deep */
+  --sbf-pink: #EC8A96;       /* secondary — owner-supplied medium pink */
+  --sbf-bubblegum: #E56A74;  /* derived: pink blended toward red, for rare statement emphasis */
+  --sbf-blush: #E7C7C8;      /* owner-supplied light dusty pink — soft backgrounds */
+  --sbf-blush-deep: #EAA9AF; /* derived: midpoint between blush and pink — hover state on blush */
+  --sbf-cotton: #EAA9AF;     /* alias of blush-deep */
 
-  --sbf-cream: #FFF4EE;      /* neutral page background — deliberately lighter/warmer than blush so the two read as distinct surfaces */
+  --sbf-cream: #F4DBDB;      /* owner-supplied lightest pink — neutral page background */
   --sbf-paper: #FFFFFF;
   --sbf-ink: #2A1618;
   --sbf-ink-soft: #6B4A4C;
-  --sbf-line: #E4C7C7;
+  --sbf-line: #E7C7C8;       /* aliased to blush — was already almost this exact value */
 
-  --sbf-coral: #F2760D;      /* accent — single true orange, clearly separated in hue from red so it doesn't read as "another red" */
-  --sbf-apricot: #FBCBAE;    /* light tint of the orange accent */
-  --sbf-yellow: #F7B733;
+  --sbf-coral: #EE6230;      /* accent — owner-supplied orange, clearly separated in hue from red */
+  --sbf-apricot: #F8B9A2;    /* derived: light tint of the orange accent */
+  --sbf-yellow: #F7B733;     /* unchanged — not part of the owner's 7-swatch list, kept as the sparing third accent */
 
   --text-heading: var(--sbf-red);
   --text-body: var(--sbf-ink);
@@ -331,7 +336,7 @@ img { max-width: 100%; display: block; }
   overflow: hidden;
   white-space: nowrap;
   background: var(--sbf-red);
-  color: var(--sbf-blush);
+  color: var(--sbf-cream);
   padding: 10px 0;
   font-size: 13px;
 }
@@ -479,7 +484,7 @@ img { max-width: 100%; display: block; }
   font-size: var(--text-micro);
   letter-spacing: var(--tracking-deco);
   text-transform: uppercase;
-  color: var(--sbf-blush);
+  color: var(--sbf-cream);
   display: block;
   margin-bottom: var(--space-3);
 }
@@ -641,7 +646,7 @@ img { max-width: 100%; display: block; }
   text-transform: uppercase;
   color: var(--sbf-red);
 }
-.card.tone-red .card-eyebrow { color: var(--sbf-blush); }
+.card.tone-red .card-eyebrow { color: var(--sbf-cream); }
 .card-title {
   font-family: var(--font-display);
   font-weight: var(--weight-light);
@@ -899,7 +904,7 @@ img { max-width: 100%; display: block; }
 /* Values / belief list */
 .belief-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: var(--space-8); }
 .belief-item { display: grid; gap: var(--space-3); border-top: 1px solid var(--border-hairline); padding-top: var(--space-5); }
-.belief-num { font-family: var(--font-deco); font-size: var(--text-micro); letter-spacing: var(--tracking-micro); color: var(--sbf-pink); }
+.belief-num { font-family: var(--font-deco); font-size: var(--text-micro); letter-spacing: var(--tracking-micro); color: var(--sbf-red); }
 .belief-item p { font-size: var(--text-body-sm); line-height: var(--leading-body); color: var(--text-muted); }
 
 /* Press strip */

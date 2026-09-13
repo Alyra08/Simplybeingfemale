@@ -147,11 +147,39 @@ running the same check.
    pink/reds, two colors competing for "primary" (red vs orange), and
    several pairings testing below WCAG AA. Asked directly whether these
    were the colors I'd choose as a designer — answered honestly: partly,
-   but I'd tighten it. Owner asked me to design it properly. Result is the
-   tokens documented above: red kept as the one signature (non-negotiable
-   given the logo), the 8 supplied colors folded in as a tightened
-   secondary-pink + orange-accent system with a real light/dark range and
-   verified contrast, rather than used as seven flat co-equal swatches.
+   but I'd tighten it. Owner asked me to design it properly. Result was
+   the tightened system: red kept as the one signature (non-negotiable
+   given the logo), the 8 supplied colors folded in as a secondary-pink +
+   orange-accent system with a real light/dark range and verified
+   contrast, rather than used as seven flat co-equal swatches.
+7. 2026-09-14: owner supplied a new, tighter 7-swatch list (#d61f25
+   #a8161b #d91b36 #e7c7c8 #f4dbdb #ec8a96 #ee6230) and asked to "update
+   the website colours to be complimentary". This list was already
+   well-formed (a clear light→dark red/pink progression plus one orange —
+   no near-duplicates this time), so it replaced the tokens directly by
+   role rather than needing a redesign:
+   - `#d61f25` → `--sbf-red` (signature) — nearly identical to the old
+     logo-verified `#BF2026`, so treated as a refinement/confirmation of
+     the same brand red, not a departure from it.
+   - `#a8161b` (darkest) → `--sbf-red-deep`; `#d91b36` → `--sbf-red-bright`
+   - `#ec8a96` → `--sbf-pink` (secondary); `#e7c7c8` → `--sbf-blush`;
+     `#f4dbdb` (lightest) → `--sbf-cream`
+   - `#ee6230` → `--sbf-coral` (accent)
+   - Everything else (`bubblegum`, `blush-deep`/`cotton`, `apricot`) is a
+     derived tint/shade blended from the 7 swatches, not invented from
+     scratch — see exact values and blend method in the tokens above.
+   - Re-ran the same WCAG contrast check as step 6 and found three
+     regressions from the new pink/blush being slightly different from
+     the old ones: `.belief-num` (pink-on-cream, was 2.84:1, now 1.85:1)
+     switched to `--sbf-red` (3.92:1); three text-on-red small captions
+     (`.footer-col-title`, `.card.tone-red .card-eyebrow`, `.marquee`
+     text, and the inline "Renée, Manchester" citation in index.html)
+     switched from `--sbf-blush` to the lighter `--sbf-cream` (3.28:1 →
+     3.92:1). None of these fully clear 4.5:1 for small text — same
+     pre-existing tolerance for decorative/caption text noted in step 6,
+     not a new standard being set. Check contrast the same way (Node
+     script with the WCAG relative-luminance formula, not eyeballing)
+     before changing these colors again.
 - Fonts: **Silk Serif ExtraLight** (`--font-display`) for every heading,
   22px+, one weight only — contrast comes from size and italic, not weight.
   **Brolia** (`--font-deco`) uppercase-only, for eyebrows/buttons/nav/labels/
