@@ -398,7 +398,7 @@ img { max-width: 100%; display: block; }
   border: none;
   cursor: pointer;
 }
-.brand-wordmark img { height: 42px; width: auto; display: block; }
+.brand-wordmark img { height: 64px; width: auto; display: block; }
 .nav-toggle {
   display: none;
   background: none;
