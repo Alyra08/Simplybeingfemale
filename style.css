@@ -556,13 +556,14 @@ img { max-width: 100%; display: block; }
 }
 .stat-number {
   font-family: var(--font-display);
-  font-weight: var(--weight-light);
+  font-weight: 600;
   font-size: clamp(30px, 4vw, 48px);
   color: var(--sbf-red);
   line-height: 1;
 }
 .stat-label {
   font-family: var(--font-deco);
+  font-weight: 600;
   font-size: var(--text-micro);
   letter-spacing: var(--tracking-wide);
   text-transform: uppercase;
