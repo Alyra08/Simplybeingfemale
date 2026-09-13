@@ -167,14 +167,15 @@ abandoned). Most photo slots on the live site are still a `.photo-mask`
 color-plate placeholder (labeled "photo — ...") using the correct
 oval/arch/soft shape — swap in real images by replacing those divs with
 `<img>` tags once the actual files can be added directly to `assets/`.
-One slot (the Home hero, `.photo-mask.arch` in index.html) was filled
-2026-09-13 with a real photo hotlinked from Unsplash (`images.unsplash.com/
-photo-1492092960955-8fedc95c23c6`, by Toa Heftiba, free license, no
-attribution required but appreciated) at the owner's request — this is a
-live external hotlink, not a self-hosted asset, so it depends on Unsplash's
-CDN staying up; for a permanent/production version, download the file and
-serve it from `assets/` instead. `.photo-mask img { object-fit: cover }`
-in style.css handles cropping any real `<img>` placed inside these masks.
+The Home hero (`.photo-mask.arch` in index.html) briefly used a hotlinked
+Unsplash stock photo, then was replaced 2026-09-13 with the owner's own
+real photo — `assets/imagery/SBF - Social Media NOV25.png` (referenced in
+HTML with the spaces URL-encoded as `%20`) — a portrait of the founder.
+This is the first self-hosted real photo on the site; the owner uploads
+her own images into `assets/imagery/` (or `assets/logos/` for logo files)
+and tells Claude the filename + which placeholder to swap it into.
+`.photo-mask img { object-fit: cover }` in style.css handles cropping any
+real `<img>` placed inside these masks, whichever shape (oval/arch/soft).
 Logo: navbar/footer currently use a styled text wordmark, not the real
 logo files, for the same reason.
 Copy: most page copy is the design system's own placeholder text (its
