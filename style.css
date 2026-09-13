@@ -505,7 +505,7 @@ img { max-width: 100%; display: block; }
 .stack.center { justify-items: center; text-align: center; }
 .stack.right { justify-items: end; text-align: right; }
 .lede {
-  font-family: "Cormorant Garamond", var(--font-display);
+  font-family: var(--font-display);
   font-weight: 400;
   font-size: calc(var(--text-lead) + 1px);
   line-height: var(--leading-snug);
