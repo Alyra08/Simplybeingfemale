@@ -353,26 +353,37 @@ img { max-width: 100%; display: block; }
 @keyframes sbf-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
 /* Navbar — centred wordmark, links split either side */
-.site-header {
+.nav-utility {
+  position: sticky;
+  top: 0;
+  z-index: 20;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--space-6);
+  gap: var(--space-4);
+  padding: 12px var(--gutter-page);
+  background: var(--surface-page);
+  border-bottom: 1px solid var(--border-hairline);
+}
+.nav-links-all {
+  display: flex;
+  gap: var(--space-5);
+  flex-wrap: wrap;
+}
+.nav-utility-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+.logo-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: var(--space-6) var(--gutter-page);
   background: var(--surface-page);
   color: var(--sbf-red);
   border-bottom: 1px solid var(--border-hairline);
-  position: sticky;
-  top: 0;
-  z-index: 20;
 }
-.nav-half {
-  display: flex;
-  gap: var(--space-6);
-  flex: 1;
-  flex-wrap: wrap;
-}
-.nav-half.end { justify-content: flex-end; align-items: center; }
 .nav-link {
   background: none;
   border: none;
@@ -410,10 +421,21 @@ img { max-width: 100%; display: block; }
   cursor: pointer;
 }
 @media (max-width: 860px) {
-  .nav-half { display: none; }
-  .nav-half.open { display: flex; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: var(--surface-page); padding: var(--space-4) var(--gutter-page); border-bottom: 1px solid var(--border-hairline); }
+  .nav-links-all { display: none; }
+  .nav-links-all.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--surface-page);
+    padding: var(--space-4) var(--gutter-page);
+    border-bottom: 1px solid var(--border-hairline);
+    z-index: 21;
+  }
   .nav-toggle { display: inline-flex; }
-  .site-header { position: relative; }
+  .nav-utility { position: sticky; }
 }
 
 /* Footer */

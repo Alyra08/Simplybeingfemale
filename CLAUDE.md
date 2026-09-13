@@ -67,9 +67,31 @@ permission, out loud.
   red newsletter band.
 - Contact (`contact.html`) — full form (Netlify Forms) + wavy card + toast
   on submit.
-- Shared: top marquee announcement band, centred-wordmark navbar (links
-  split either side), "Join us" opens a shared Dialog (`#join-dialog`) with
-  a two-step success state, red footer with columns + stamp.
+- Shared: top marquee announcement band, "Join us" opens a shared Dialog
+  (`#join-dialog`) with a two-step success state, red footer with columns +
+  stamp.
+- Header restructured 2026-09-13 (owner supplied a reference site with a
+  thin utility nav bar on top and a big centered logo in its own row
+  below): replaced the original centered-wordmark-with-links-split-either-
+  side pattern (which was the actual client design system's own documented
+  "structural signature", sourced from real client website references —
+  worth knowing if the owner ever asks to go back to it) with two stacked
+  pieces — `.nav-utility` (all 6 nav links left, "Join us" + mobile
+  hamburger right, `position: sticky; top: 0`) directly followed by
+  `.logo-row` (the big logo alone, centered, NOT sticky — scrolls away
+  normally). IMPORTANT STRUCTURAL GOTCHA: both must be direct children of
+  `<body>`, NOT wrapped in a `<header>` div. `position: sticky`'s
+  containing block is the nearest block-level ancestor regardless of that
+  ancestor's own position value — wrapping `.nav-utility` in a short
+  `<header>` (just tall enough for the 2-row nav) caused it to only stick
+  within that short box's own height, then fall away with it after
+  scrolling past ~150px. Removing the wrapper so `.nav-utility`'s
+  containing block is `<body>` (full page height) fixed it. If anyone
+  reintroduces a wrapping element around `.nav-utility`, the sticky bar
+  will silently break the same way — verify by scrolling a real page
+  (e.g. `window.scrollTo(0, 2000)` and checking the nav's
+  `getBoundingClientRect().top` is still `0`), don't just eyeball the top
+  of the page.
 
 ## Design tokens (exact — see style.css :root)
 Palette redesigned 2026-09-06 as a deliberately tightened system (see
