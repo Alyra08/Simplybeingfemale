@@ -333,7 +333,7 @@ img { max-width: 100%; display: block; }
   background: var(--sbf-red);
   color: var(--sbf-blush);
   padding: 10px 0;
-  font-size: var(--text-micro);
+  font-size: 13px;
 }
 .marquee.tone-pink { background: var(--sbf-pink); color: var(--sbf-ink); }
 .marquee-track {
