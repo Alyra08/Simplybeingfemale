@@ -154,8 +154,21 @@ running the same check.
   `--btn-shadow-y` custom properties per variant/size so hover/press states
   (button lifts slightly on hover, shadow collapses to 0 on click/press —
   see `.btn:active`) stay in sync automatically.
-- The `.wavy-card` scalloped quote card (SVG path, 1.6px outline, no
-  shadow) is used once per page maximum, for a manifesto/mission line.
+- The `.wavy-card` quote card is used once per page maximum, for a
+  manifesto/mission line. Redesigned 2026-09-13 (owner supplied a
+  reference photo of hand-lettered place cards with organic, irregular
+  double-line squiggle frames): it's now a plain rounded-rect card
+  (background set per-instance via inline `style="--wavy-bg: ..."`) with
+  two nested hand-wobbled frame lines drawn on top — `.wavy-squiggle.outer`
+  (red) and `.wavy-squiggle.inner` (coral, inset 10px) — each an empty div
+  with a solid border run through an SVG `feTurbulence`/`feDisplacementMap`
+  filter (`#squiggleA`/`#squiggleB`, different seeds so the two lines don't
+  track each other) instead of the old uniform mathematically-scalloped
+  SVG path. The two filters must be defined once near the top of `<body>`
+  in every page that uses `.wavy-card` (currently index.html and
+  contact.html) — copy that `<svg><filter>...</filter></svg>` block into
+  any new page before using the component there, or the border renders as
+  a plain straight rectangle with no filter applied.
 - No gradients anywhere in the real spec.
 
 ## Content status

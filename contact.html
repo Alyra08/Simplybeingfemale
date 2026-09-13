@@ -9,6 +9,17 @@
 </head>
 <body>
 
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <filter id="squiggleA">
+      <feTurbulence type="fractalNoise" baseFrequency="0.02 0.05" numOctaves="2" seed="3" result="noise" />
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="6" />
+    </filter>
+    <filter id="squiggleB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.025 0.06" numOctaves="2" seed="11" result="noise" />
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="5" />
+    </filter>
+  </svg>
+
   <div class="marquee" role="note">
     <div class="marquee-track">
       <span>The circle opens on the first Sunday of every month</span>
@@ -42,11 +53,9 @@
           <div class="eyebrow">Say hello</div>
           <h1>Tell me where <em>you're at.</em></h1>
           <p class="lede" style="color: var(--text-muted); max-width:38ch;">No form-filling theatre. Two lines is plenty — I read every one myself and answer within a week.</p>
-          <div class="wavy-card" style="max-width: 340px;">
-            <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
-              <path d="M 6 6 q 7.333 -9.09 14.667 0 q 7.333 9.09 14.667 0 q 7.333 -9.09 14.667 0 q 7.333 9.09 14.667 0 q 7.333 -9.09 14.667 0 q 7.333 9.09 14.667 0 q 9.09 7.333 0 14.667 q -9.09 7.333 0 14.667 q 9.09 7.333 0 14.667 q -9.09 7.333 0 14.667 q 9.09 7.333 0 14.667 q -9.09 7.333 0 14.667 q -7.333 9.09 -14.667 0 q -7.333 -9.09 -14.667 0 q -7.333 9.09 -14.667 0 q -7.333 -9.09 -14.667 0 q -7.333 9.09 -14.667 0 q -7.333 -9.09 -14.667 0 q -9.09 -7.333 0 -14.667 q 9.09 -7.333 0 -14.667 q -9.09 -7.333 0 -14.667 q 9.09 -7.333 0 -14.667 q -9.09 -7.333 0 -14.667 q 9.09 -7.333 0 -14.667 Z"
-                fill="var(--sbf-blush)" stroke="var(--sbf-red)" stroke-width="1.6" vector-effect="non-scaling-stroke" stroke-linejoin="round" />
-            </svg>
+          <div class="wavy-card" style="max-width: 340px; --wavy-bg: var(--sbf-blush);">
+            <div class="wavy-squiggle outer" aria-hidden="true"></div>
+            <div class="wavy-squiggle inner" aria-hidden="true"></div>
             <div class="wavy-card-inner">
               <p style="font-size:20px;">You don't need to be ready. You just need to be honest.</p>
             </div>
