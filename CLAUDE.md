@@ -92,6 +92,13 @@ permission, out loud.
   (e.g. `window.scrollTo(0, 2000)` and checking the nav's
   `getBoundingClientRect().top` is still `0`), don't just eyeball the top
   of the page.
+  Updated 2026-09-13 (owner asked to "reduce the banner background opacity
+  by half"): `.nav-utility`'s background changed from solid `--surface-page`
+  to `color-mix(in srgb, var(--surface-page) 50%, transparent)`, plus
+  `backdrop-filter: blur(6px)` added so scrolled content behind the bar
+  reads as a soft blur rather than a distracting sharp double-image (same
+  pattern as `.dialog-scrim`'s existing `blur(3px)`). Verified the sticky
+  bar stays legible over the red hero when scrolled.
 
 ## Design tokens (exact — see style.css :root)
 Palette redesigned 2026-09-06 as a deliberately tightened system (see

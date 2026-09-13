@@ -367,7 +367,8 @@ img { max-width: 100%; display: block; }
   justify-content: space-between;
   gap: var(--space-4);
   padding: 12px var(--gutter-page);
-  background: var(--surface-page);
+  background: color-mix(in srgb, var(--surface-page) 50%, transparent);
+  backdrop-filter: blur(6px);
   border-bottom: 1px solid var(--border-hairline);
 }
 .nav-links-all {
