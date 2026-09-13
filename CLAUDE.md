@@ -149,16 +149,24 @@ running the same check.
 - No gradients anywhere in the real spec.
 
 ## Content status
-Photography: no usable real photos yet — the design system's actual
-lifestyle photos (`women-picnic.png`, `women-hiking.png`) and the logo
-files exceeded what could be pulled through this session's file-read tool
-(256KB cap; manual base64 transcription of the larger files proved
-unreliable and was abandoned). Every photo slot on the live site is
-currently a `.photo-mask` color-plate placeholder (labeled "photo — ...")
-using the correct oval/arch/soft shape — swap in real images by replacing
-those divs with `<img>` tags once the actual files can be added directly
-to `assets/`. Logo: navbar/footer currently use a styled text wordmark, not
-the real logo files, for the same reason.
+Photography: the design system's actual lifestyle photos
+(`women-picnic.png`, `women-hiking.png`) and the logo files exceeded what
+could be pulled through this session's file-read tool (256KB cap; manual
+base64 transcription of the larger files proved unreliable and was
+abandoned). Most photo slots on the live site are still a `.photo-mask`
+color-plate placeholder (labeled "photo — ...") using the correct
+oval/arch/soft shape — swap in real images by replacing those divs with
+`<img>` tags once the actual files can be added directly to `assets/`.
+One slot (the Home hero, `.photo-mask.arch` in index.html) was filled
+2026-09-13 with a real photo hotlinked from Unsplash (`images.unsplash.com/
+photo-1492092960955-8fedc95c23c6`, by Toa Heftiba, free license, no
+attribution required but appreciated) at the owner's request — this is a
+live external hotlink, not a self-hosted asset, so it depends on Unsplash's
+CDN staying up; for a permanent/production version, download the file and
+serve it from `assets/` instead. `.photo-mask img { object-fit: cover }`
+in style.css handles cropping any real `<img>` placed inside these masks.
+Logo: navbar/footer currently use a styled text wordmark, not the real
+logo files, for the same reason.
 Copy: most page copy is the design system's own placeholder text (its
 readme says only the hero line, the manifesto line, and the "honey on the
 table" testimonial are taken from real supplied artwork — the rest,
