@@ -379,7 +379,7 @@ img { max-width: 100%; display: block; }
   cursor: pointer;
   padding: 4px 0;
   font-family: var(--font-deco);
-  font-size: var(--text-micro);
+  font-size: 13px;
   letter-spacing: var(--tracking-deco);
   text-transform: uppercase;
   color: inherit;
