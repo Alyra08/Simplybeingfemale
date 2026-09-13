@@ -506,7 +506,7 @@ img { max-width: 100%; display: block; }
 .lede {
   font-family: "Cormorant Garamond", var(--font-display);
   font-weight: 400;
-  font-size: calc(var(--text-lead) + 4px);
+  font-size: calc(var(--text-lead) + 1px);
   line-height: var(--leading-snug);
   max-width: 44ch;
   opacity: .88;
