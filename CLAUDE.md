@@ -143,7 +143,17 @@ running the same check.
   checkboxes (only tight radius). Photography is always masked — oval, arch
   (pill-top), or 22px soft rectangle. Never a hard-cornered photo.
 - Shadows: warm red-tinted only (`rgba(143,20,25,...)`), offset down, never
-  grey, never a hard black offset shadow.
+  grey. EXCEPTION (added 2026-09-13 at the owner's explicit request, with a
+  reference screenshot): buttons (`.btn` and all its variants except
+  `.btn-ghost`) intentionally use a hard, unblurred, brand-colored offset
+  shadow + a 3px white border + 18px corner radius — a "sticker/neubrutalist"
+  button look. This was a deliberate override of the design system's
+  original "no hard shadow" rule for this one component; don't revert it
+  back to soft/no-shadow buttons without checking with the owner first.
+  Shadow color and offset are driven by `--btn-shadow-color`/`--btn-shadow-x`/
+  `--btn-shadow-y` custom properties per variant/size so hover/press states
+  (button lifts slightly on hover, shadow collapses to 0 on click/press —
+  see `.btn:active`) stay in sync automatically.
 - The `.wavy-card` scalloped quote card (SVG path, 1.6px outline, no
   shadow) is used once per page maximum, for a manifesto/mission line.
 - No gradients anywhere in the real spec.
