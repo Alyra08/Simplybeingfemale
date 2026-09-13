@@ -189,8 +189,14 @@ her own images into `assets/imagery/` (or `assets/logos/` for logo files)
 and tells Claude the filename + which placeholder to swap it into.
 `.photo-mask img { object-fit: cover }` in style.css handles cropping any
 real `<img>` placed inside these masks, whichever shape (oval/arch/soft).
-Logo: navbar/footer currently use a styled text wordmark, not the real
-logo files, for the same reason.
+Logo: the navbar (`.brand-wordmark` in every page's header) now uses the
+owner's real two-line logo file — `assets/logos/SBF Logo V2.png` (spaces
+URL-encoded as `%20` in the `<img src>`), 42px tall via `.brand-wordmark
+img` in style.css — replacing the earlier styled text wordmark. The footer
+still uses a plain circular "SBF" text badge (`.footer-stamp`), not a real
+image, since the owner has only supplied the wordmark logo so far, not the
+round stamp/seal variant referenced in the original design system readme
+— swap that in too once/if that file is provided.
 Copy: most page copy is the design system's own placeholder text (its
 readme says only the hero line, the manifesto line, and the "honey on the
 table" testimonial are taken from real supplied artwork — the rest,

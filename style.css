@@ -390,17 +390,15 @@ img { max-width: 100%; display: block; }
 }
 .nav-link:hover, .nav-link.active { opacity: 1; border-bottom-color: currentColor; color: var(--sbf-red); }
 .brand-wordmark {
-  font-family: var(--font-display);
-  font-weight: var(--weight-light);
-  font-size: 26px;
-  letter-spacing: var(--tracking-display);
-  color: var(--sbf-red);
+  display: inline-flex;
+  align-items: center;
   text-decoration: none;
   white-space: nowrap;
   background: none;
   border: none;
   cursor: pointer;
 }
+.brand-wordmark img { height: 42px; width: auto; display: block; }
 .nav-toggle {
   display: none;
   background: none;
