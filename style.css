@@ -503,6 +503,7 @@ img { max-width: 100%; display: block; }
 
 .stack { display: grid; gap: var(--space-5); justify-items: start; }
 .stack.center { justify-items: center; text-align: center; }
+.stack.right { justify-items: end; text-align: right; }
 .lede {
   font-family: "Cormorant Garamond", var(--font-display);
   font-weight: 400;
