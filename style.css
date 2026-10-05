@@ -1095,6 +1095,7 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
 }
 .founder-heading em { font-weight: 600; }
 .founder-hello { display: block; margin-bottom: .2em; }
+.founder-line, .founder-line em { font-family: var(--font-display); font-weight: 400; } /* owner: same font as the paragraph below (.lede) */
 
 /* Centred statement on white, with colour-highlighted phrases */
 .statement { padding-top: calc(var(--section-y) + 70px); }
