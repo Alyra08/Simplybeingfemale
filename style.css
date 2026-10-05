@@ -658,7 +658,7 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
   color: var(--sbf-red);
 }
 .card.tone-red .card-title { color: var(--sbf-blush); }
-.card-title-stack { font-family: var(--font-numeral); font-weight: 800; font-variation-settings: "opsz" 144; font-size: clamp(38px, 4vw, 52px); line-height: .95; letter-spacing: -0.02em; } /* owner: The / Sunday / note, bolder + larger */
+.card-title-stack { font-family: var(--font-numeral); font-weight: 700; font-variation-settings: "opsz" 144; font-size: clamp(32px, 3.3vw, 44px); line-height: .95; letter-spacing: -0.02em; } /* owner: The / Sunday / note, bolder + larger */
 .card-body p { font-size: var(--text-body-sm); line-height: var(--leading-body); opacity: .85; }
 .card-footer { margin-top: auto; padding-top: var(--space-3); }
 
