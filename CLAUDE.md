@@ -277,6 +277,11 @@ running the same check.
 - Shape: pills for buttons/inputs, 22px card corners, 32px dialogs, 4px
   checkboxes (only tight radius). Photography is always masked — oval, arch
   (pill-top), or 22px soft rectangle. Never a hard-cornered photo.
+- BUTTONS CHANGED 2026-10-05 (owner: "plain button no outline, but a slight
+  drop shadow"): the white-border hard-offset sticker style described below is
+  GONE — all `.btn` variants now have a transparent border and a soft shadow
+  `0 6px 16px -6px rgba(84,8,14,.45)` (lifts 1px on hover). The note below is
+  history only.
 - Shadows: warm red-tinted only (`rgba(143,20,25,...)`), offset down, never
   grey. EXCEPTION (added 2026-09-13 at the owner's explicit request, with a
   reference screenshot): buttons (`.btn` and all its variants except

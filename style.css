@@ -271,34 +271,28 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
   line-height: 1;
   border-style: solid;
   border-width: 3px;
-  border-color: var(--sbf-paper);
+  border-color: transparent; /* owner: plain buttons, no outline, slight drop shadow (replaced the white-border sticker look) */
   padding: 13px 26px;
   font-size: var(--text-label);
-  --btn-shadow-x: 4px;
-  --btn-shadow-y: 5px;
-  --btn-shadow-color: var(--sbf-red-deep);
-  box-shadow: var(--btn-shadow-x) var(--btn-shadow-y) 0 0 var(--btn-shadow-color);
+  box-shadow: 0 6px 16px -6px rgba(84, 8, 14, .45);
   transition: transform var(--duration-fast) var(--ease-out), box-shadow var(--duration-fast) var(--ease-out), background-color var(--duration-fast) var(--ease-out), border-color var(--duration-fast) var(--ease-out), color var(--duration-fast) var(--ease-out);
 }
-.btn:hover { transform: translate(-1px, -1px); }
-.btn:active {
-  transform: translate(var(--btn-shadow-x), var(--btn-shadow-y));
-  box-shadow: 0 0 0 0 var(--btn-shadow-color);
-}
-.btn-sm { padding: 9px 18px; font-size: 13px; border-width: 2px; border-radius: 14px; --btn-shadow-x: 3px; --btn-shadow-y: 3px; }
-.btn-lg { padding: 17px 34px; font-size: var(--text-body-sm); border-radius: 20px; --btn-shadow-x: 5px; --btn-shadow-y: 6px; }
+.btn:hover { transform: translateY(-1px); box-shadow: 0 10px 22px -8px rgba(84, 8, 14, .5); }
+.btn:active { transform: translateY(0); box-shadow: 0 3px 8px -4px rgba(84, 8, 14, .45); }
+.btn-sm { padding: 9px 18px; font-size: 13px; border-width: 2px; border-radius: 14px; }
+.btn-lg { padding: 17px 34px; font-size: var(--text-body-sm); border-radius: 20px; }
 
-.btn-primary { background: var(--sbf-red); color: var(--sbf-paper); border-color: var(--sbf-paper); --btn-shadow-color: var(--sbf-red-deep); }
+.btn-primary { background: var(--sbf-red); color: var(--sbf-paper); border-color: transparent; }
 .btn-primary:hover { background: var(--sbf-red-deep); }
 
-.btn-secondary { background: var(--sbf-blush); color: var(--sbf-red); border-color: var(--sbf-red); --btn-shadow-color: var(--sbf-red); }
+.btn-secondary { background: var(--sbf-blush); color: var(--sbf-red); border-color: transparent; }
 .btn-secondary:hover { background: var(--sbf-blush-deep); }
 
-.btn-outline { background: var(--sbf-paper); color: var(--sbf-red); border-color: var(--sbf-red); --btn-shadow-color: var(--sbf-red); }
-.btn-outline:hover { background: var(--sbf-red); color: var(--sbf-paper); --btn-shadow-color: var(--sbf-red-deep); }
+.btn-outline { background: var(--sbf-paper); color: var(--sbf-red); border-color: transparent; }
+.btn-outline:hover { background: var(--sbf-red); color: var(--sbf-paper); }
 
 .btn-ghost { background: transparent; color: var(--sbf-red); border-color: transparent; box-shadow: none; }
-.btn-ghost:hover { background: var(--sbf-blush); color: var(--sbf-red); }
+.btn-ghost:hover { background: var(--sbf-blush); color: var(--sbf-red); box-shadow: none; }
 .btn-ghost:active { transform: none; box-shadow: none; }
 /* Small card buttons (See dates / Enquire / Read): always the pale-pink pill
    (owner: "make it like this all the time"), a touch larger and heavier,
@@ -313,7 +307,7 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
 }
 .btn-ghost.btn-sm:hover { background: var(--sbf-blush-deep); color: var(--sbf-orange); }
 
-.btn-onred { background: var(--sbf-paper); color: var(--sbf-red); border-color: var(--sbf-paper); --btn-shadow-color: var(--sbf-red-deep); }
+.btn-onred { background: var(--sbf-paper); color: var(--sbf-red); border-color: transparent; }
 .btn-onred:hover { background: var(--sbf-blush); }
 
 .btn-block { width: 100%; }
