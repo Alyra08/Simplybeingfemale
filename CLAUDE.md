@@ -28,6 +28,17 @@ spelling. No emoji anywhere — the only decorative glyph is ✦.
 Avoid: "empower", "journey", "unlock", "elevate", "we're on a mission",
 "game-changing". Use: honest, room, table, space, circle, shrinking,
 permission, out loud.
+Voice shift 2026-10-05 (owner's direction): keep the look, but the copy
+moved from gentle permission ("you are not too much") to collective
+refusal — "now is our time", "we refuse to stay small", done being
+talked over / underpaid / told to wait. The owner then clarified it must
+stay female- and friendship-focused (women together, sisterhood, "women
+who've got your back"), not combative — so no war/army/uprising words,
+and it's explicitly pro-women, not anti-men (there's an FAQ saying so).
+Lean on: our time, together, refuse, owed, take your seat, no
+gatekeepers, out loud, holding the door. The client's own artwork lines
+(the manifesto line, "honey on the table" testimonial, footer tagline)
+were deliberately left unchanged.
 
 ## Pages
 - Home (`index.html`) — red hero with photo, a floating white signup card
@@ -289,6 +300,15 @@ confirmation before publishing as real claims).
   page form actually submits.
 - Interactions (accordion, tabs, journal tag filter, dialog, mobile nav,
   toast) are vanilla JS in `script.js` — no framework.
+- Consolidated 2026-10-05: repeated inline styles were moved into shared
+  classes in style.css (`.feature-list`/`.feature-row`/`.price-label` on
+  Circle, `.offer-panel*` on Home tabs, `.grid-stack`, `.two-up.top`,
+  `.btn-block`, `.join-form`, `.toast-content`, `.hero-signup`), and the SVG
+  squiggle filter block is now identical on every page that has one. Reuse
+  these classes rather than re-adding inline styles; remaining inline styles
+  are genuine one-off layout tweaks. The Google Fonts `@import` must stay the
+  first rule in style.css — it sat below the `@font-face` blocks before, which
+  made browsers silently drop it (Nunito Sans never loaded).
 - Domain: custom domain not yet connected; currently on
   simplybeingfemale.netlify.app.
 

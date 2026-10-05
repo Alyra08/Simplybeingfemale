@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&display=swap");
+
 @font-face {
   font-family: "Brolia";
   src: url("fonts/BroliaRegular.otf") format("opentype");
@@ -13,8 +15,6 @@
   font-style: normal;
   font-display: swap;
 }
-
-@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&display=swap");
 
 :root {
   /* Base palette — updated 2026-09-14 with an owner-supplied 7-swatch
@@ -292,6 +292,8 @@ img { max-width: 100%; display: block; }
 .btn-onred { background: var(--sbf-blush); color: var(--sbf-red); border-color: var(--sbf-paper); --btn-shadow-color: var(--sbf-red-deep); }
 .btn-onred:hover { background: var(--sbf-pink); }
 
+.btn-block { width: 100%; }
+
 .btn-row { display: flex; gap: var(--space-3); flex-wrap: wrap; }
 .btn-row.center { justify-content: center; }
 
@@ -357,7 +359,7 @@ img { max-width: 100%; display: block; }
 .marquee-track span::after { content: "✦"; opacity: .6; margin-left: var(--space-6); }
 @keyframes sbf-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-/* Navbar — centred wordmark, links split either side */
+/* Navbar — sticky utility bar, then big centred logo row (both direct children of <body>) */
 .nav-utility {
   position: sticky;
   top: 0;
@@ -441,7 +443,6 @@ img { max-width: 100%; display: block; }
     z-index: 21;
   }
   .nav-toggle { display: inline-flex; }
-  .nav-utility { position: sticky; }
 }
 
 /* Footer */
@@ -529,6 +530,8 @@ img { max-width: 100%; display: block; }
 .section-inner { max-width: var(--container-narrow); margin: 0 auto; }
 .section-inner.wide { max-width: var(--container-max); }
 
+.section-inner.grid-stack { display: grid; gap: var(--space-8); }
+
 .stack { display: grid; gap: var(--space-5); justify-items: start; }
 .stack.center { justify-items: center; text-align: center; }
 .stack.right { justify-items: end; text-align: right; }
@@ -548,6 +551,7 @@ img { max-width: 100%; display: block; }
   gap: clamp(28px, 5vw, 72px);
   align-items: center;
 }
+.two-up.top { align-items: start; }
 @media (max-width: 800px) {
   .two-up { grid-template-columns: 1fr; }
 }
@@ -570,6 +574,14 @@ img { max-width: 100%; display: block; }
 }
 .hero-float-card h3 { font-size: var(--text-h3); }
 .hero-float-card p { font-size: var(--text-body-sm); color: var(--text-muted); }
+.hero-signup { display: grid; gap: var(--space-3); }
+.hero-signup input[type="email"] {
+  padding: 11px 16px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-hairline);
+  font: inherit;
+  font-size: var(--text-body-sm);
+}
 @media (max-width: 860px) {
   .hero-float-card { position: static; margin: var(--space-6) auto 0; width: 100%; max-width: 340px; }
 }
@@ -639,6 +651,7 @@ img { max-width: 100%; display: block; }
 .card.tone-blush { background: var(--sbf-blush); color: var(--sbf-red); }
 .card.tone-red { background: var(--sbf-red); color: var(--sbf-blush); }
 .card-media { aspect-ratio: 4 / 3; }
+.card-media.photo-mask { border-radius: 0; }
 .card-body { padding: var(--space-6); display: grid; gap: var(--space-3); flex: 1; }
 .card-eyebrow {
   font-family: var(--font-deco);
@@ -765,6 +778,30 @@ img { max-width: 100%; display: block; }
 }
 .tab.active { opacity: 1; border-bottom-color: var(--sbf-red); }
 
+/* Home offerings tab panels */
+.offer-panel { padding-top: var(--space-8); }
+.offer-panel-body { max-width: 56ch; }
+.offer-title { font-size: var(--text-h2); color: var(--sbf-red); }
+.offer-copy { color: var(--text-muted); font-size: var(--text-body-lg); }
+
+/* Circle plan feature list + price */
+.feature-list { display: grid; gap: var(--space-4); }
+.feature-row {
+  display: flex;
+  gap: var(--space-4);
+  align-items: baseline;
+  border-bottom: 1px solid var(--border-hairline);
+  padding-bottom: var(--space-4);
+}
+.feature-mark { color: var(--sbf-pink); }
+.price-label {
+  font-family: var(--font-deco);
+  font-size: var(--text-label);
+  letter-spacing: var(--tracking-deco);
+  text-transform: uppercase;
+  color: var(--sbf-red);
+}
+
 /* Forms */
 .field { display: grid; gap: var(--space-2); }
 .field-label {
@@ -854,6 +891,7 @@ img { max-width: 100%; display: block; }
   color: var(--sbf-red); letter-spacing: var(--tracking-display); line-height: var(--leading-snug);
 }
 .dialog-body { font-size: var(--text-body-md); line-height: var(--leading-body); color: var(--text-body); }
+.join-form { display: grid; gap: var(--space-4); margin-top: var(--space-5); }
 .dialog-footer { display: flex; gap: var(--space-3); flex-wrap: wrap; }
 
 /* Toast */
@@ -866,6 +904,7 @@ img { max-width: 100%; display: block; }
   padding: var(--space-4) var(--space-5); max-width: 380px;
 }
 .toast.open { display: flex; }
+.toast-content { display: grid; gap: 2px; flex: 1; }
 .toast-title { font-family: var(--font-deco); font-size: var(--text-micro); letter-spacing: var(--tracking-deco); text-transform: uppercase; display: block; }
 .toast-body { font-size: var(--text-body-sm); color: var(--sbf-ink); }
 .toast-close { background: none; border: none; cursor: pointer; color: var(--sbf-red); font-size: 16px; line-height: 1; padding: 0; }

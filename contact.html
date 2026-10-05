@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact — Simply Being Female</title>
-  <meta name="description" content="Tell me where you're at. No form-filling theatre." />
+  <meta name="description" content="Say it out loud. No form-filling theatre." />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -18,39 +18,43 @@
       <feTurbulence type="fractalNoise" baseFrequency="0.025 0.06" numOctaves="2" seed="11" result="noise" />
       <feDisplacementMap in="SourceGraphic" in2="noise" scale="5" />
     </filter>
+    <filter id="squiggleThick">
+      <feTurbulence type="fractalNoise" baseFrequency="0.008 0.02" numOctaves="2" seed="7" result="noise" />
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="14" />
+    </filter>
   </svg>
 
-    <div class="nav-utility">
-      <nav class="nav-links-all" id="nav-links-all">
-        <a class="nav-link" href="index.html">Home</a>
-        <a class="nav-link" href="about.html">About</a>
-        <a class="nav-link" href="circle.html">The circle</a>
-        <a class="nav-link" href="the-day.html">The day</a>
-        <a class="nav-link" href="journal.html">Journal</a>
-        <a class="nav-link active" href="contact.html">Contact</a>
-      </nav>
-      <div class="nav-utility-actions">
-        <a class="btn btn-primary btn-sm" href="#" data-open-join>Join us</a>
-        <button class="nav-toggle" aria-label="Toggle menu" aria-controls="nav-links-all">&#9776;</button>
-      </div>
+  <div class="nav-utility">
+    <nav class="nav-links-all" id="nav-links-all">
+      <a class="nav-link" href="index.html">Home</a>
+      <a class="nav-link" href="about.html">About</a>
+      <a class="nav-link" href="circle.html">The circle</a>
+      <a class="nav-link" href="the-day.html">The day</a>
+      <a class="nav-link" href="journal.html">Journal</a>
+      <a class="nav-link active" href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-utility-actions">
+      <a class="btn btn-primary btn-sm" href="#" data-open-join>Join us</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-controls="nav-links-all">&#9776;</button>
     </div>
-    <div class="logo-row">
-      <a class="brand-wordmark" href="index.html"><img src="assets/logos/SBF%20Logo%20V2.png" alt="Simply Being Female" /></a>
-    </div>
+  </div>
+  <div class="logo-row">
+    <a class="brand-wordmark" href="index.html"><img src="assets/logos/SBF%20Logo%20V2.png" alt="Simply Being Female" /></a>
+  </div>
 
   <main>
 
     <section class="section">
-      <div class="section-inner wide two-up" style="align-items:start;">
+      <div class="section-inner wide two-up top">
         <div class="stack">
           <div class="eyebrow">Say hello</div>
-          <h1>Tell me where <em>you're at.</em></h1>
+          <h1>Say it <em>out loud.</em></h1>
           <p class="lede" style="color: var(--text-muted); max-width:38ch;">No form-filling theatre. Two lines is plenty — I read every one myself and answer within a week.</p>
           <div class="wavy-card" style="max-width: 340px; --wavy-bg: var(--sbf-blush);">
             <div class="wavy-squiggle outer" aria-hidden="true"></div>
             <div class="wavy-squiggle inner" aria-hidden="true"></div>
             <div class="wavy-card-inner">
-              <p style="font-size:20px;">You don't need to be ready. You just need to be honest.</p>
+              <p style="font-size:20px;">You don't need to be ready. You just need to stop staying quiet.</p>
             </div>
           </div>
         </div>
@@ -84,7 +88,7 @@
             <span class="checkbox-box"></span>
             <span>Send me the Sunday note too</span>
           </label>
-          <button class="btn btn-primary btn-lg" type="submit" style="width:100%;">Send it</button>
+          <button class="btn btn-primary btn-lg btn-block" type="submit">Send it</button>
         </form>
       </div>
     </section>
@@ -122,7 +126,7 @@
   </footer>
 
   <div class="toast" id="contact-toast">
-    <div style="display:grid; gap:2px; flex:1;">
+    <div class="toast-content">
       <span class="toast-title">Sent</span>
       <span class="toast-body">Thank you — I'll write back within the week.</span>
     </div>
@@ -134,7 +138,7 @@
       <button class="dialog-close" data-close-join aria-label="Close">&times;</button>
       <div id="join-step-1">
         <h2>Join the circle</h2>
-        <form id="join-form" style="display:grid; gap: var(--space-4); margin-top: var(--space-5);">
+        <form id="join-form" class="join-form">
           <p>One letter a week and first sight of every new circle date.</p>
           <div class="field">
             <span class="field-label">Email</span>
