@@ -139,6 +139,12 @@ were deliberately left unchanged.
 - Shared: top marquee announcement band, "Join us" opens a shared Dialog
   (`#join-dialog`) with a two-step success state, red footer with columns +
   stamp.
+- CURRENT HEADER (2026-10-05, owner request): a single sticky
+  `.nav-utility` bar — logo (`.brand-wordmark`, 58px tall, 46px on
+  mobile) on the far left, the six links immediately beside it
+  (`.nav-links-all` has `margin-right: auto`), "Join us" + diamond menu
+  toggle on the right. The separate `.logo-row` was removed from every
+  page and from style.css. The sticky-wrapper gotcha below still applies.
 - Header restructured 2026-09-13 (owner supplied a reference site with a
   thin utility nav bar on top and a big centered logo in its own row
   below): replaced the original centered-wordmark-with-links-split-either-
