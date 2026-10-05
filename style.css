@@ -47,8 +47,8 @@
   --sbf-ink-soft: #6E4448;
   --sbf-line: #F5DADF;       /* hairline borders */
 
-  --sbf-coral: #E35A2B;      /* terracotta orange (owner ref: säge café logo) — highlight words, large only on white */
-  --sbf-orange: #E35A2B;     /* terracotta orange — bands, blocks (ink text) */
+  --sbf-coral: #FC3D00;      /* vermilion — sampled from owner ref (säge café logo); highlight words, large only on white */
+  --sbf-orange: #FC3D00;     /* vermilion — bands, blocks (ink text) */
   --sbf-apricot: #FEECE1;    /* pale orange tint */
   --sbf-yellow: #FEB500;     /* Marigold — small pops only: badge, starburst (ink text) */
   --sbf-wine: #BF0C18;       /* legacy name — Scarlet */
@@ -1068,7 +1068,7 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
 .hl-coral { color: var(--sbf-coral); }
 .squiggle-under {
   padding-bottom: 6px;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 10'%3E%3Cpath d='M0 5 C2.5 0 7.5 0 10 5 S17.5 10 20 5 S27.5 0 30 5 S37.5 10 40 5' fill='none' stroke='%23E35A2B' stroke-width='2.5'/%3E%3C/svg%3E") left bottom / 40px 10px repeat-x;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 10'%3E%3Cpath d='M0 5 C2.5 0 7.5 0 10 5 S17.5 10 20 5 S27.5 0 30 5 S37.5 10 40 5' fill='none' stroke='%23FC3D00' stroke-width='2.5'/%3E%3C/svg%3E") left bottom / 40px 10px repeat-x;
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
 }
