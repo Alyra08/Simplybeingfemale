@@ -19,7 +19,8 @@
 :root {
   /* Palette — 2026-10-05 (final): owner-chosen six — Scarlet #BF0C18,
      Crimson apple #D20D1A, Rose blush #D94549, Strawberry #EF476F;
-     orange = vermilion #FC3D00 and yellow = golden #FFBE00 (both sampled
+     orange = Papaya punch #FF6634 (owner-supplied, replaced vermilion
+     #FC3D00) and yellow = golden #FFBE00 (sampled
      from the owner's säge café reference, replacing Tiger and Marigold) — plus pale strawberry tints and white.
      Superseded mapping below kept for history: built from two owner-supplied reference palettes
      (#D81A51 #E66021 #F4A1BD #C50B18 #EA8A96 + "Morning sky" #E4623A
@@ -49,9 +50,9 @@
   --sbf-ink-soft: #6E4448;
   --sbf-line: #F5DADF;       /* hairline borders */
 
-  --sbf-coral: #FC3D00;      /* vermilion — sampled from owner ref (säge café logo); highlight words, large only on white */
-  --sbf-orange: #FC3D00;     /* vermilion — bands, blocks (ink text) */
-  --sbf-apricot: #FFECE6;    /* pale vermilion tint (unused so far) */
+  --sbf-coral: #FF6634;      /* Papaya punch (owner-supplied) — highlight words: 2.9 on white, keep them large */
+  --sbf-orange: #FF6634;     /* Papaya punch — bands, blocks (ink text 5.8; white only 2.9) */
+  --sbf-apricot: #FFF0EB;    /* pale papaya tint (unused so far) */
   --sbf-yellow: #FFBE00;     /* golden yellow — sampled from owner ref (säge); small pops: badge, starburst (ink text 10:1, never white) */
   --sbf-wine: #BF0C18;       /* legacy name — Scarlet */
   --sbf-burnt: #BF0C18;      /* legacy name — Scarlet */
@@ -1075,7 +1076,7 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
 .hl-coral { color: var(--sbf-coral); }
 .squiggle-under {
   padding-bottom: 6px;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 10'%3E%3Cpath d='M0 5 C2.5 0 7.5 0 10 5 S17.5 10 20 5 S27.5 0 30 5 S37.5 10 40 5' fill='none' stroke='%23FC3D00' stroke-width='2.5'/%3E%3C/svg%3E") left bottom / 40px 10px repeat-x;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 10'%3E%3Cpath d='M0 5 C2.5 0 7.5 0 10 5 S17.5 10 20 5 S27.5 0 30 5 S37.5 10 40 5' fill='none' stroke='%23FF6634' stroke-width='2.5'/%3E%3C/svg%3E") left bottom / 40px 10px repeat-x;
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
 }
