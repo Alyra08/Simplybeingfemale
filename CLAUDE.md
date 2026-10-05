@@ -68,7 +68,8 @@ were deliberately left unchanged.
   white), Tiger #F86201 (--sbf-orange/--sbf-coral, bands + highlights),
   ORANGE NOW vermilion #FC3D00 (pixel-sampled from the owner's "säge café"
   logo reference — she said "I like this orange"; replaced Tiger).
-  Marigold #FEB500 (--sbf-yellow, small pops only: spin badge, starburst —
+  Yellow now #FFBE00 (sampled from the same säge reference, replaced
+  Marigold #FEB500) (--sbf-yellow, small pops only: spin badge, starburst —
   never text, never white text on it), pale strawberry #FDE9EE sections,
   #FAC8D4 big words on reds. Known trade-off flagged to owner: Scarlet and
   Crimson are near-identical, so the "ready" block reads like the hero —
