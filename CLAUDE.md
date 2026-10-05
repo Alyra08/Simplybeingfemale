@@ -62,8 +62,14 @@ were deliberately left unchanged.
   below the words instead of overlapping them.
   PALETTE REPLACED same day (owner rejected two proposals, then supplied
   two reference palettes to combine): cherry #C50B18 (signature
-  --sbf-red), raspberry #C4114B, tangerine #F47D11, coral #E4623A, rose
-  #F48A98, light pink #F4A1BD, pale pink #F4C9D0, off-white #FAF6F3 page,
+  --sbf-red), raspberry #C4114B, ONE orange #FF5500 (owner rejected the
+  yellow-leaning tangerine #F47D11 and the soft coral #E4623A as "wrong
+  colour" / not vibrant enough; --sbf-orange and --sbf-coral both =
+  #FF5500, which is already fully saturated — don't chase "more vibrant"
+  by shifting toward yellow), rose #F48A98, light pink #F4A1BD, pale-pink
+  section bg #FCE6EA (lightened from #F4C9D0 on request; #F4C9D0 lives on
+  as --sbf-petal for the giant hero lettering and photo placeholders),
+  off-white #FAF6F3 page,
   white sections, berry-brown ink #3B0A12 for text. Contrast rules (checked):
   cherry/raspberry blocks take WHITE text (6.1 / 6.0); orange, coral, rose
   and light pink take INK text (6.3 / 4.9 / 7.2 / 8.6) — white on them is
