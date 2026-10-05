@@ -1132,7 +1132,7 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
 .ready-title { display: grid; color: var(--sbf-paper); line-height: .98; }
 .ready-title span {
   font-family: var(--font-display);
-  font-size: clamp(40px, 5.4vw, 76px);
+  font-size: clamp(34px, 4.6vw, 64px); /* owner: slightly smaller */
   text-transform: uppercase;
   letter-spacing: .02em;
 }
