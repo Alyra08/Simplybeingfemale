@@ -44,34 +44,33 @@
 
   <main>
 
-    <div class="hero-wrap">
-      <section style="background: var(--sbf-red); color: var(--sbf-blush); padding: clamp(48px,7vw,96px) var(--gutter-page);">
-        <div class="two-up" style="max-width: var(--container-max); margin: 0 auto; grid-template-columns: minmax(0,1.15fr) minmax(0,.85fr);">
-          <div class="stack">
-            <h1 style="color: var(--sbf-blush); font-size: clamp(36px,6vw,76px);">now is<br /><em>our time.</em></h1>
-            <p class="lede" style="color: var(--sbf-paper); opacity: .92;">For every woman who was told to soften it, shrink it, or wait her turn.<br />We're done waiting — and we're doing it together.</p>
-            <div class="btn-row">
-              <a class="btn btn-onred btn-lg" href="#" data-open-join>Join the circle</a>
-              <a class="btn btn-ghost btn-lg" style="color: var(--sbf-blush);" href="about.html">Read her story</a>
-            </div>
-          </div>
-          <div class="photo-mask arch"><img src="assets/imagery/SBF%20-%20Social%20Media%20NOV25.png" alt="Founder of Simply Being Female" loading="lazy" /></div>
-        </div>
-      </section>
-      <div class="hero-float-card">
-        <span class="eyebrow" style="margin:0;">Want in?</span>
-        <h3>The Sunday note</h3>
-        <p>One honest letter a week, from one woman to another. Drop your email and I'll send the next one.</p>
-        <form name="hero-signup" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-success-toast="hero-toast" class="hero-signup">
-          <input type="hidden" name="form-name" value="hero-signup" />
-          <p hidden><label>Don't fill this out: <input name="bot-field" /></label></p>
-          <input type="email" name="email" placeholder="you@email.com" required />
-          <button class="btn btn-primary btn-sm btn-block" type="submit">Join the list</button>
-        </form>
+    <section class="hero-giant-wrap">
+      <h1 class="hero-giant"><span>Simply being</span><span><em>female.</em></span></h1>
+      <div class="hero-photo photo-mask arch"><img src="assets/imagery/SBF%20-%20Social%20Media%20NOV25.png" alt="Founder of Simply Being Female" /></div>
+      <p class="hero-side left">Now is <em>our time</em> to stop shrinking…</p>
+      <p class="hero-side right">…and we're doing it <span class="script">together.</span></p>
+      <div class="spin-badge" aria-hidden="true">
+        <svg viewBox="0 0 160 160">
+          <defs><path id="badgepath" fill="none" d="M 80 80 m -62 0 a 62 62 0 1 1 124 0 a 62 62 0 1 1 -124 0" /></defs>
+          <text textLength="384" lengthAdjust="spacing"><textPath href="#badgepath">Nice to meet you · Now is our time · </textPath></text>
+        </svg>
+        <span class="spin-badge-mark">SBF</span>
       </div>
-    </div>
+    </section>
 
-    <div class="marquee" role="note">
+    <section class="section tone-wine statement">
+      <div class="section-inner stack center">
+        <p class="statement-big">I bring together <span class="hl-candy">fierce</span>, <span class="hl-orange">beautifully imperfect</span> women who are <span class="hl-yellow">done shrinking</span> — to <span class="hl-candy squiggle-under">say it out loud</span>, <span class="hl-orange">take up room</span>, and stop accepting <span class="hl-yellow squiggle-under">less than we're owed.</span></p>
+        <p class="statement-copy">For every woman who was told to soften it, shrink it, or wait her turn. We're done waiting — and we're doing it together.</p>
+        <p class="statement-copy">Here you'll find monthly circles, 1:1 coaching, a focused day to build the thing, and a letter every Sunday — all made for women who've got each other's back.</p>
+        <div class="btn-row center">
+          <a class="btn btn-onred btn-lg" href="#" data-open-join>Join the circle</a>
+          <a class="btn btn-ghost btn-lg on-dark" href="about.html">Read her story</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee tone-pink marquee-lg" role="note">
       <div class="marquee-track">
         <span>The circle</span>
         <span>Coaching</span>
@@ -137,7 +136,7 @@
       </div>
     </section>
 
-    <section class="section tone-blush" style="padding-top: calc(var(--section-y) + 40px);">
+    <section class="section tone-blush">
       <div class="section-inner wide two-up">
         <div class="wavy-card" style="--wavy-bg: var(--sbf-cream);">
           <div class="wavy-squiggle outer" aria-hidden="true"></div>
@@ -175,6 +174,25 @@
         <div>
           <span class="stat-number">1</span>
           <span class="stat-label">Honest letter, every Sunday</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section tone-burnt ready">
+      <div class="section-inner wide two-up">
+        <div class="stack">
+          <h2 class="ready-title"><span>Are you ready</span><span>to be</span><span class="punch">heard?</span></h2>
+          <p class="ready-copy">The Sunday note is one honest letter a week, from one woman to another — the thing nobody else is saying out loud, plus first sight of every new circle date. Drop your email and I'll send the next one.</p>
+          <form name="hero-signup" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-success-toast="hero-toast" class="ready-signup">
+            <input type="hidden" name="form-name" value="hero-signup" />
+            <p hidden><label>Don't fill this out: <input name="bot-field" /></label></p>
+            <input type="email" name="email" placeholder="you@email.com" aria-label="Email" required />
+            <button class="btn btn-onred" type="submit">Join the list</button>
+          </form>
+        </div>
+        <div class="ready-art">
+          <div class="photo-mask arch">photo — founder</div>
+          <div class="starburst"><span>Free<br />every Sunday</span></div>
         </div>
       </div>
     </section>
@@ -267,14 +285,14 @@
       </div>
     </section>
 
-    <section class="section tone-blush" style="text-align:center;">
+    <section class="section tone-hot" style="text-align:center;">
       <div class="section-inner stack center">
-        <h2 style="max-width: 18ch;">Ready to <em>take your seat?</em></h2>
+        <h2 style="max-width: 16ch; font-size: var(--text-display);">Ready to <em>take your seat?</em></h2>
         <a class="btn btn-primary btn-lg" href="contact.html">Reach out</a>
       </div>
     </section>
 
-    <div class="marquee" role="note">
+    <div class="marquee tone-wine marquee-lg" role="note">
       <div class="marquee-track">
         <span>Simply being female</span>
         <span>Now is our time</span>

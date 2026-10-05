@@ -41,7 +41,38 @@ gatekeepers, out loud, holding the door. The client's own artwork lines
 were deliberately left unchanged.
 
 ## Pages
-- Home (`index.html`) — red hero with photo, a floating white signup card
+- Home REDESIGNED 2026-10-05 (owner: "love this website vibe, want this to
+  emulate" — jennakutcher.com + a "Club Paradiso" jewellery site — "with
+  the existing colours but more contrast"). Current order: giant-name hero
+  (`.hero-giant-wrap` — "Simply being / female." huge Silk Serif in blush
+  behind the founder's arch photo, two `.hero-side` taglines, rotating
+  `.spin-badge` overlapping into the next section) → wine `.statement`
+  (centred big serif line with `.hl-candy/.hl-orange/.hl-yellow` coloured
+  phrases + `.squiggle-under` hand-drawn underlines) → hot-pink services
+  marquee → offerings tabs → wavy pair → stats → burnt-orange `.ready`
+  block ("Are you ready to be HEARD?" — thin serif caps + one Anton
+  `.punch` word, the Sunday note signup form, arch photo placeholder +
+  yellow `.starburst` badge) → founder → cards → testimonial → FAQ →
+  hot-pink closing CTA → wine marquee → footer. The old floating signup
+  card was removed; its Netlify form (`name="hero-signup"`) now lives in
+  the `.ready` block, same form name so submissions keep flowing.
+  GOTCHA: `.hero-giant` needs `align-self/align-content: start` or it
+  stretches to the photo's height and spaces the two lines far apart (on
+  mobile that hid "female." behind the photo). On ≤760px the photo starts
+  below the words instead of overlapping them.
+  Palette pushed apart for contrast (same family): hot pink `--sbf-pink`
+  #F25C8A, `--sbf-candy` #FF8FB1 (text on wine only), brighter blush
+  #F7C9D4 and cream #FFF1EC, new `--sbf-wine` #7A0F14 and `--sbf-burnt`
+  #C9461C as full-bleed blocks. New fonts: Anton (`--font-punch`, one
+  word per section) and Mrs Saint Delafield (`--font-script`, `.script`,
+  one accent word). Checked pairings: cream/wine 9.99, candy/wine 5.15,
+  white/burnt 4.80, blush/burnt 3.26 (large punch word only), wine/hot
+  pink 3.50 (large headings only), ink/hot pink 5.44, red/cream 4.67.
+  Coloured-word highlights intentionally break the old "italic is the
+  only emphasis" rule — owner asked for this look. Mobile menu button is
+  a pink diamond. Only Home has the new layout so far; other pages just
+  inherit the new palette.
+  Previous Home (for history): red hero with photo, a floating white signup card
   overlapping the hero/next-section seam (pattern borrowed from
   luciefink.com/work-with-me, 2026-09-08, at the owner's request — "want
   in? The Sunday note" email capture), wavy manifesto card, a "by the
