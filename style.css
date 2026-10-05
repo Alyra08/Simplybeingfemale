@@ -34,6 +34,7 @@
   --sbf-cherry: #D20D1A;     /* alias of red */
   --sbf-raspberry: #BF0C18;  /* Scarlet — bold block (white text 6.4) */
 
+  --sbf-berry: #732235;      /* deep strawberry (strawberry at 48%) — high-contrast block: white 10.4, pale pink 7.1 */
   --sbf-pink: #EF476F;       /* Strawberry — blocks and accents (ink text 4.7) */
   --sbf-candy: #FAC8D4;      /* pale strawberry — big words on reds */
   --sbf-bubblegum: #D94549;  /* Rose blush — highlight words on white (4.3) */
@@ -958,6 +959,9 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
 .section.tone-raspberry h1, .section.tone-raspberry h2, .section.tone-raspberry h3 { color: var(--sbf-paper); }
 .section.tone-orange { background: var(--sbf-orange); color: var(--sbf-ink); }
 .section.tone-orange h1, .section.tone-orange h2, .section.tone-orange h3 { color: var(--sbf-ink); }
+.section.tone-berry { background: var(--sbf-berry); color: var(--sbf-paper); }
+.section.tone-berry h1, .section.tone-berry h2, .section.tone-berry h3 { color: var(--sbf-paper); }
+.section.tone-berry em { color: var(--sbf-candy); }
 .section.tone-rose { background: var(--sbf-pink); color: var(--sbf-ink); }
 .section.tone-rose h1, .section.tone-rose h2, .section.tone-rose h3 { color: var(--sbf-ink); }
 .section.tone-coral h3 { color: var(--sbf-ink); }
