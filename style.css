@@ -963,6 +963,10 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
 .section.tone-berry { background: var(--sbf-berry); color: var(--sbf-paper); }
 .section.tone-berry h1, .section.tone-berry h2, .section.tone-berry h3 { color: var(--sbf-paper); }
 .section.tone-berry em { color: var(--sbf-candy); }
+.section.tone-strawberry { background: var(--sbf-pink); color: var(--sbf-ink); } /* bright pink, balanced: white headline (3.6, large only), ink emphasis + small text (4.7), berry badge */
+.section.tone-strawberry h1, .section.tone-strawberry h2, .section.tone-strawberry h3 { color: var(--sbf-paper); }
+.section.tone-strawberry em { color: var(--sbf-ink); }
+.badge-berry { background: var(--sbf-berry); color: var(--sbf-paper); }
 .section.tone-rose { background: var(--sbf-pink); color: var(--sbf-ink); }
 .section.tone-rose h1, .section.tone-rose h2, .section.tone-rose h3 { color: var(--sbf-ink); }
 .section.tone-coral h3 { color: var(--sbf-ink); }
