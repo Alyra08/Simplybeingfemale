@@ -1080,7 +1080,7 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
 /* Desktop/tablet: photo on the right (owner request), giant name left-aligned
    so it reads, both taglines stacked bottom-left, badge centred under the photo. */
 @media (min-width: 761px) {
-  .hero-giant-wrap { --photo-w: clamp(210px, 27vw, 380px); --photo-inset: clamp(0px, 5vw, 80px); }
+  .hero-giant-wrap { --photo-w: clamp(210px, 27vw, 380px); --photo-inset: calc(-1 * var(--gutter-page)); /* flush against the right edge of the screen (owner request) */ }
   .hero-giant { justify-self: start; justify-items: start; text-align: left; }
   .hero-photo.photo-mask.arch { justify-self: end; width: var(--photo-w); margin-right: var(--photo-inset); }
   .hero-side { max-width: 24ch; }
