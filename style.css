@@ -300,6 +300,27 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
 .btn-ghost { background: transparent; color: var(--sbf-red); border-color: transparent; box-shadow: none; }
 .btn-ghost:hover { background: var(--sbf-blush); color: var(--sbf-red); }
 .btn-ghost:active { transform: none; box-shadow: none; }
+/* Small card buttons (See dates / Enquire / Read): always the pale-pink pill
+   (owner: "make it like this all the time"), a touch larger and heavier,
+   with a papaya swirl under the word. */
+.btn-ghost.btn-sm {
+  position: relative;
+  background: var(--sbf-blush);
+  font-size: 14.5px;
+  -webkit-text-stroke: 0.35px currentColor;
+  padding: 10px 20px 16px;
+  border-radius: 16px;
+}
+.btn-ghost.btn-sm:hover { background: var(--sbf-blush-deep); }
+.btn-ghost.btn-sm::after {
+  content: "";
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 6px;
+  height: 6px;
+  background: url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 20 6%27%3E%3Cpath d=%27M0 3 C2.5 0 7.5 0 10 3 S17.5 6 20 3%27 fill=%27none%27 stroke=%27%23FF6634%27 stroke-width=%271.6%27/%3E%3C/svg%3E") left center / 20px 6px repeat-x;
+}
 
 .btn-onred { background: var(--sbf-paper); color: var(--sbf-red); border-color: var(--sbf-paper); --btn-shadow-color: var(--sbf-red-deep); }
 .btn-onred:hover { background: var(--sbf-blush); }
