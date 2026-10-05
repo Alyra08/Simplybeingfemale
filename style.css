@@ -300,9 +300,9 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
 .btn-ghost.btn-sm {
   background: var(--sbf-blush);
   color: var(--sbf-orange);
-  font-size: 16px;
-  -webkit-text-stroke: 0.6px currentColor;
-  padding: 12px 22px;
+  font-size: 15px;
+  -webkit-text-stroke: 0.5px currentColor;
+  padding: 11px 21px;
   border-radius: 16px;
 }
 .btn-ghost.btn-sm:hover { background: var(--sbf-blush-deep); color: var(--sbf-orange); }
