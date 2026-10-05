@@ -426,13 +426,13 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
   display: none;
   align-items: center;
   justify-content: center;
-  width: 62px;
-  height: 38px;
-  background: var(--sbf-pink);
+  width: 44px;
+  height: 44px;
+  background: none;
   border: none;
-  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
-  color: var(--sbf-ink);
-  font-size: 1.15rem;
+  color: var(--sbf-pink); /* owner: just the lines, in pink, no other colour */
+  font-size: 1.7rem;
+  line-height: 1;
   padding: 0;
   cursor: pointer;
 }
