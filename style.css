@@ -17,39 +17,42 @@
 }
 
 :root {
-  /* Palette — 2026-10-05, built from two owner-supplied reference palettes
+  /* Palette — 2026-10-05 (final): owner-chosen six — Scarlet #BF0C18,
+     Crimson apple #D20D1A, Rose blush #D94549, Tiger #F86201, Marigold
+     #FEB500, Strawberry #EF476F — plus pale strawberry tints and white.
+     Superseded mapping below kept for history: built from two owner-supplied reference palettes
      (#D81A51 #E66021 #F4A1BD #C50B18 #EA8A96 + "Morning sky" #E4623A
      #F4C9D0 #F48A98 #F47D11 #C4114B). Rule of thumb, from a contrast check:
      cherry + raspberry blocks take WHITE text; orange, coral and the pinks
      take INK text (white on them is only 2-3:1); white / off-white / pale
      pink sections take cherry headings + ink body. Alternate one bold block
      with one white or pale section. Full table in CLAUDE.md. */
-  --sbf-red: #C50B18;        /* cherry — signature */
-  --sbf-red-deep: #9C0813;   /* hover/pressed cherry; red text on pale pink */
+  --sbf-red: #D20D1A;        /* Crimson apple — signature (~ logo red) */
+  --sbf-red-deep: #BF0C18;   /* Scarlet — hover; red text on pale pink */
   --sbf-red-bright: #D81A51; /* bright raspberry — large display only */
-  --sbf-cherry: #C50B18;     /* alias of red */
-  --sbf-raspberry: #C4114B;  /* second bold block colour (white text) */
+  --sbf-cherry: #D20D1A;     /* alias of red */
+  --sbf-raspberry: #BF0C18;  /* Scarlet — bold block (white text 6.4) */
 
-  --sbf-pink: #F48A98;       /* rose pink — blocks and accents (ink text) */
-  --sbf-candy: #F4A1BD;      /* light pink — big highlight words on cherry/raspberry */
-  --sbf-bubblegum: #E88E96;  /* dusty rose */
-  --sbf-blush: #FCE6EA;      /* very pale pink — soft sections (was #F4C9D0, owner asked lighter) */
-  --sbf-petal: #F4C9D0;      /* pale pink — giant hero lettering on cherry */
-  --sbf-blush-deep: #F8D3DB; /* hover on blush */
-  --sbf-cotton: #F8D3DB;     /* alias of blush-deep */
+  --sbf-pink: #EF476F;       /* Strawberry — blocks and accents (ink text 4.7) */
+  --sbf-candy: #FAC8D4;      /* pale strawberry — big words on reds */
+  --sbf-bubblegum: #D94549;  /* Rose blush — highlight words on white (4.3) */
+  --sbf-blush: #FDE9EE;      /* very pale strawberry — soft sections */
+  --sbf-petal: #FAC8D4;      /* pale strawberry — giant hero lettering, photo placeholders */
+  --sbf-blush-deep: #FBD9E1; /* hover on blush */
+  --sbf-cotton: #FBD9E1;     /* alias of blush-deep */
 
   --sbf-cream: #FAF6F3;      /* off-white page background */
   --sbf-paper: #FFFFFF;      /* white sections — the breathing room */
   --sbf-ink: #3B0A12;        /* berry-brown text — never grey/black */
   --sbf-ink-soft: #6E4448;
-  --sbf-line: #F0DCDD;       /* hairline borders */
+  --sbf-line: #F5DADF;       /* hairline borders */
 
-  --sbf-coral: #FF5500;      /* vivid orange — highlight words (large only on white, 3.2) and blocks (ink text) */
-  --sbf-orange: #FF5500;     /* one orange site-wide: vivid red-orange — bands, blocks, badges (ink text 5.3) */
-  --sbf-apricot: #FDE3CF;    /* pale orange tint */
-  --sbf-yellow: #FF5500;     /* legacy name — now points at tangerine */
-  --sbf-wine: #C4114B;       /* legacy name — now points at raspberry */
-  --sbf-burnt: #C4114B;      /* legacy name — now points at raspberry */
+  --sbf-coral: #F86201;      /* Tiger — highlight words (large only on white, 3.1) */
+  --sbf-orange: #F86201;     /* Tiger — bands, blocks (ink text 5.4) */
+  --sbf-apricot: #FEECE1;    /* pale orange tint */
+  --sbf-yellow: #FEB500;     /* Marigold — small pops only: badge, starburst (ink text) */
+  --sbf-wine: #BF0C18;       /* legacy name — Scarlet */
+  --sbf-burnt: #BF0C18;      /* legacy name — Scarlet */
 
   --text-heading: var(--sbf-red);
   --text-body: var(--sbf-ink);
@@ -1028,7 +1031,7 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
   width: clamp(124px, 12vw, 160px);
   aspect-ratio: 1;
   border-radius: 50%;
-  background: var(--sbf-orange);
+  background: var(--sbf-yellow);
   border: 3px solid var(--sbf-paper);
   display: grid;
   place-items: center;
@@ -1061,11 +1064,11 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
   color: var(--sbf-ink);
 }
 .hl-cherry { color: var(--sbf-red); }
-.hl-rasp { color: var(--sbf-raspberry); }
+.hl-rasp { color: var(--sbf-bubblegum); } /* rose blush on white 4.3 */
 .hl-coral { color: var(--sbf-coral); }
 .squiggle-under {
   padding-bottom: 6px;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 10'%3E%3Cpath d='M0 5 Q5 0 10 5 T20 5 T30 5 T40 5' fill='none' stroke='%23FF5500' stroke-width='2.5'/%3E%3C/svg%3E") left bottom / 40px 10px repeat-x;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 10'%3E%3Cpath d='M0 5 Q5 0 10 5 T20 5 T30 5 T40 5' fill='none' stroke='%23F86201' stroke-width='2.5'/%3E%3C/svg%3E") left bottom / 40px 10px repeat-x;
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
 }
@@ -1112,7 +1115,7 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
   aspect-ratio: 1;
   display: grid;
   place-items: center;
-  background: var(--sbf-orange);
+  background: var(--sbf-yellow);
   color: var(--sbf-ink);
   clip-path: polygon(50.0% 0.0%, 58.9% 11.0%, 71.7% 5.0%, 74.9% 18.7%, 89.1% 18.8%, 86.0% 32.6%, 98.7% 38.9%, 90.0% 50.0%, 98.7% 61.1%, 86.0% 67.4%, 89.1% 81.2%, 74.9% 81.3%, 71.7% 95.0%, 58.9% 89.0%, 50.0% 100.0%, 41.1% 89.0%, 28.3% 95.0%, 25.1% 81.3%, 10.9% 81.2%, 14.0% 67.4%, 1.3% 61.1%, 10.0% 50.0%, 1.3% 38.9%, 14.0% 32.6%, 10.9% 18.8%, 25.1% 18.7%, 28.3% 5.0%, 41.1% 11.0%);
   transform: rotate(-10deg);

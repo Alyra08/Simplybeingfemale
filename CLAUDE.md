@@ -60,6 +60,19 @@ were deliberately left unchanged.
   stretches to the photo's height and spaces the two lines far apart (on
   mobile that hid "female." behind the photo). On ≤760px the photo starts
   below the words instead of overlapping them.
+  CURRENT PALETTE (final, 2026-10-05 — owner previewed it on a copy of the
+  site and said push): Crimson apple #D20D1A (--sbf-red, hero/buttons/
+  footer, ~ logo red), Scarlet #BF0C18 (--sbf-red-deep + --sbf-raspberry,
+  bold block with white text), Strawberry #EF476F (--sbf-pink, blocks with
+  ink text), Rose blush #D94549 (--sbf-bubblegum, highlight words on
+  white), Tiger #F86201 (--sbf-orange/--sbf-coral, bands + highlights),
+  Marigold #FEB500 (--sbf-yellow, small pops only: spin badge, starburst —
+  never text, never white text on it), pale strawberry #FDE9EE sections,
+  #FAC8D4 big words on reds. Known trade-off flagged to owner: Scarlet and
+  Crimson are near-identical, so the "ready" block reads like the hero —
+  suggested switching it to Strawberry or Tiger; owner hasn't decided.
+  Contrast rules from the cherry/raspberry palette below still hold by
+  role. Superseded history follows.
   PALETTE REPLACED same day (owner rejected two proposals, then supplied
   two reference palettes to combine): cherry #C50B18 (signature
   --sbf-red), raspberry #C4114B, ONE orange #FF5500 (owner rejected the
