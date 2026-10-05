@@ -17,44 +17,38 @@
 }
 
 :root {
-  /* Base palette — updated 2026-09-14 with an owner-supplied 7-swatch
-     list (#d61f25 #a8161b #d91b36 #e7c7c8 #f4dbdb #ec8a96 #ee6230).
-     Mapped by lightness/role rather than pasted in as-is: the vivid red
-     (#d61f25) is nearly identical to the old logo-verified signature
-     (#BF2026) so it becomes the new signature; the darkest red is the
-     hover/deep state; the medium pink is the one clear secondary; the
-     two light pinks become blush/cream; the orange is the one accent.
-     Everything not covered by the 7 swatches (bubblegum, blush-deep,
-     apricot, ink, yellow) is a derived tint/shade of them, not an
-     independently invented hue — see CLAUDE.md for the full mapping
-     and the contrast fixes this pass required. */
-  --sbf-red: #D61F25;        /* signature — owner-supplied, ~identical to the old logo-verified #BF2026 */
-  --sbf-red-deep: #A8161B;   /* hover/pressed state on red — owner-supplied darkest red */
-  --sbf-red-bright: #D91B36; /* owner-supplied crimson — bright variant for large-display emphasis only */
-  --sbf-cherry: #A8161B;     /* alias of red-deep */
+  /* Palette — 2026-10-05, built from two owner-supplied reference palettes
+     (#D81A51 #E66021 #F4A1BD #C50B18 #EA8A96 + "Morning sky" #E4623A
+     #F4C9D0 #F48A98 #F47D11 #C4114B). Rule of thumb, from a contrast check:
+     cherry + raspberry blocks take WHITE text; orange, coral and the pinks
+     take INK text (white on them is only 2-3:1); white / off-white / pale
+     pink sections take cherry headings + ink body. Alternate one bold block
+     with one white or pale section. Full table in CLAUDE.md. */
+  --sbf-red: #C50B18;        /* cherry — signature */
+  --sbf-red-deep: #9C0813;   /* hover/pressed cherry; red text on pale pink */
+  --sbf-red-bright: #D81A51; /* bright raspberry — large display only */
+  --sbf-cherry: #C50B18;     /* alias of red */
+  --sbf-raspberry: #C4114B;  /* second bold block colour (white text) */
 
-  /* 2026-10-05: owner asked for more contrast between the pinks, reds and
-     orange (Jenna Kutcher-style colour blocking). Same hue family, pushed
-     further apart: hot pink, brighter blush/cream, plus a darker wine and
-     burnt orange to carry light text. Pairings checked — see CLAUDE.md. */
-  --sbf-wine: #7A0F14;       /* darkest red — full-bleed blocks carrying cream/candy text */
-  --sbf-pink: #F25C8A;       /* secondary — hot pink (was dusty #EC8A96) */
-  --sbf-candy: #FF8FB1;      /* light vivid pink — highlight text on wine/deep red only */
-  --sbf-bubblegum: #E56A74;  /* derived: pink blended toward red, for rare statement emphasis */
-  --sbf-blush: #F7C9D4;      /* light pink — soft backgrounds (was #E7C7C8) */
-  --sbf-blush-deep: #F4A9BE; /* derived: midpoint between blush and pink — hover state on blush */
-  --sbf-cotton: #F4A9BE;     /* alias of blush-deep */
+  --sbf-pink: #F48A98;       /* rose pink — blocks and accents (ink text) */
+  --sbf-candy: #F4A1BD;      /* light pink — big highlight words on cherry/raspberry */
+  --sbf-bubblegum: #E88E96;  /* dusty rose */
+  --sbf-blush: #F4C9D0;      /* pale pink — soft sections */
+  --sbf-blush-deep: #F4B3C4; /* hover on blush */
+  --sbf-cotton: #F4B3C4;     /* alias of blush-deep */
 
-  --sbf-cream: #FFF1EC;      /* warm near-white page background (was #F4DBDB) */
-  --sbf-paper: #FFFFFF;
-  --sbf-ink: #2A1618;
-  --sbf-ink-soft: #6B4A4C;
-  --sbf-line: #EFC3CC;       /* hairline borders */
+  --sbf-cream: #FAF6F3;      /* off-white page background */
+  --sbf-paper: #FFFFFF;      /* white sections — the breathing room */
+  --sbf-ink: #3B0A12;        /* berry-brown text — never grey/black */
+  --sbf-ink-soft: #6E4448;
+  --sbf-line: #F0DCDD;       /* hairline borders */
 
-  --sbf-coral: #EE6230;      /* accent — owner-supplied orange, clearly separated in hue from red */
-  --sbf-apricot: #FFC9A8;    /* light tint of the orange accent */
-  --sbf-burnt: #C9461C;      /* deep orange — full-bleed block carrying white/blush text */
-  --sbf-yellow: #F7B733;     /* unchanged — not part of the owner's 7-swatch list, kept as the sparing third accent */
+  --sbf-coral: #E4623A;      /* coral-orange (ink text) */
+  --sbf-orange: #F47D11;     /* tangerine — bands, badges (ink text) */
+  --sbf-apricot: #FDE3CF;    /* pale orange tint */
+  --sbf-yellow: #F47D11;     /* legacy name — now points at tangerine */
+  --sbf-wine: #C4114B;       /* legacy name — now points at raspberry */
+  --sbf-burnt: #C4114B;      /* legacy name — now points at raspberry */
 
   --text-heading: var(--sbf-red);
   --text-body: var(--sbf-ink);
@@ -286,7 +280,7 @@ img { max-width: 100%; display: block; }
 .btn-sm { padding: 9px 18px; font-size: 13px; border-width: 2px; border-radius: 14px; --btn-shadow-x: 3px; --btn-shadow-y: 3px; }
 .btn-lg { padding: 17px 34px; font-size: var(--text-body-sm); border-radius: 20px; --btn-shadow-x: 5px; --btn-shadow-y: 6px; }
 
-.btn-primary { background: var(--sbf-red); color: var(--sbf-blush); border-color: var(--sbf-paper); --btn-shadow-color: var(--sbf-red-deep); }
+.btn-primary { background: var(--sbf-red); color: var(--sbf-paper); border-color: var(--sbf-paper); --btn-shadow-color: var(--sbf-red-deep); }
 .btn-primary:hover { background: var(--sbf-red-deep); }
 
 .btn-secondary { background: var(--sbf-blush); color: var(--sbf-red); border-color: var(--sbf-red); --btn-shadow-color: var(--sbf-red); }
@@ -299,8 +293,8 @@ img { max-width: 100%; display: block; }
 .btn-ghost:hover { background: var(--sbf-blush); color: var(--sbf-red); }
 .btn-ghost:active { transform: none; box-shadow: none; }
 
-.btn-onred { background: var(--sbf-blush); color: var(--sbf-red); border-color: var(--sbf-paper); --btn-shadow-color: var(--sbf-red-deep); }
-.btn-onred:hover { background: var(--sbf-pink); }
+.btn-onred { background: var(--sbf-paper); color: var(--sbf-red); border-color: var(--sbf-paper); --btn-shadow-color: var(--sbf-red-deep); }
+.btn-onred:hover { background: var(--sbf-blush); }
 
 .btn-block { width: 100%; }
 
@@ -324,7 +318,7 @@ img { max-width: 100%; display: block; }
 .badge-blush { background: var(--sbf-blush); color: var(--sbf-red); }
 .badge-pink { background: var(--sbf-pink); color: var(--sbf-ink); }
 .badge-outline { background: transparent; color: var(--sbf-red); box-shadow: inset 0 0 0 1px var(--sbf-red); }
-.badge-yellow { background: var(--sbf-yellow); color: var(--sbf-red-deep); }
+.badge-yellow { background: var(--sbf-orange); color: var(--sbf-ink); }
 
 /* Tag — journal filter chip */
 .tag {
@@ -348,7 +342,7 @@ img { max-width: 100%; display: block; }
   overflow: hidden;
   white-space: nowrap;
   background: var(--sbf-red);
-  color: var(--sbf-cream);
+  color: var(--sbf-paper);
   padding: 10px 0;
   font-size: 13px;
 }
@@ -437,7 +431,7 @@ img { max-width: 100%; display: block; }
   background: var(--sbf-pink);
   border: none;
   clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
-  color: var(--sbf-wine);
+  color: var(--sbf-ink);
   font-size: 1.15rem;
   padding: 0;
   cursor: pointer;
@@ -505,14 +499,14 @@ img { max-width: 100%; display: block; }
   margin-bottom: var(--space-3);
 }
 .footer-col a {
-  color: var(--sbf-blush);
+  color: var(--sbf-paper);
   font-size: var(--text-body-sm);
   text-decoration: none;
   opacity: .85;
   display: block;
   margin-bottom: var(--space-3);
 }
-.footer-col a:hover { opacity: 1; color: var(--sbf-blush); }
+.footer-col a:hover { opacity: 1; color: var(--sbf-paper); }
 .footer-bottom {
   max-width: var(--container-max);
   margin: var(--space-12) auto 0;
@@ -572,7 +566,7 @@ img { max-width: 100%; display: block; }
 
 
 /* Stats band */
-.stats-band { padding: var(--space-16) 0 var(--space-10); }
+.stats-band { padding: var(--space-16) 0 var(--space-12); background: var(--sbf-paper); }
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
@@ -939,23 +933,27 @@ img { max-width: 100%; display: block; }
 .press-strip {
   display: flex; gap: var(--space-8); flex-wrap: wrap; padding-top: var(--space-3);
   font-family: var(--font-deco); font-size: var(--text-label); letter-spacing: var(--tracking-deco);
-  text-transform: uppercase; color: var(--sbf-blush); opacity: .75;
+  text-transform: uppercase; color: var(--sbf-paper); opacity: .9;
 }
 
-/* ===== 2026-10-05 colour-block redesign (Jenna Kutcher / Club Paradiso references) ===== */
+/* ===== Colour blocks + giant-name homepage (2026-10-05) ===== */
 
-/* More contrast on soft sections: deep red text instead of signature red */
+/* Section tones — one bold block, then a white or pale one */
+.section.tone-white { background: var(--sbf-paper); }
 .section.tone-blush { color: var(--sbf-red-deep); }
-.section.tone-wine { background: var(--sbf-wine); color: var(--sbf-cream); }
-.section.tone-wine h1, .section.tone-wine h2, .section.tone-wine h3 { color: var(--sbf-cream); }
-.section.tone-burnt { background: var(--sbf-burnt); color: var(--sbf-paper); }
-.section.tone-hot { background: var(--sbf-pink); color: var(--sbf-wine); }
-.section.tone-hot h1, .section.tone-hot h2, .section.tone-hot h3 { color: var(--sbf-wine); }
+.section.tone-red { color: var(--sbf-paper); }
+.section.tone-raspberry { background: var(--sbf-raspberry); color: var(--sbf-paper); }
+.section.tone-raspberry h1, .section.tone-raspberry h2, .section.tone-raspberry h3 { color: var(--sbf-paper); }
+.section.tone-orange { background: var(--sbf-orange); color: var(--sbf-ink); }
+.section.tone-orange h1, .section.tone-orange h2, .section.tone-orange h3 { color: var(--sbf-ink); }
+.section.tone-rose { background: var(--sbf-pink); color: var(--sbf-ink); }
+.section.tone-rose h1, .section.tone-rose h2, .section.tone-rose h3 { color: var(--sbf-ink); }
+.section.tone-coral h3 { color: var(--sbf-ink); }
 
-.btn-ghost.on-dark { color: var(--sbf-cream); }
-.btn-ghost.on-dark:hover { background: rgba(255, 241, 236, .14); color: var(--sbf-cream); }
+.btn-ghost.on-dark { color: var(--sbf-paper); }
+.btn-ghost.on-dark:hover { background: rgba(255, 255, 255, .16); color: var(--sbf-paper); }
 
-/* Handwritten accent word — use on one word at a time */
+/* Handwritten accent word — one at a time */
 .script {
   font-family: var(--font-script);
   font-weight: 400;
@@ -965,7 +963,7 @@ img { max-width: 100%; display: block; }
   letter-spacing: 0;
   display: inline-block;
   transform: rotate(-5deg);
-  color: var(--sbf-blush);
+  color: var(--sbf-candy);
 }
 
 /* Giant-name hero: huge type behind an arch photo, side taglines, spinning badge */
@@ -974,7 +972,7 @@ img { max-width: 100%; display: block; }
   display: grid;
   justify-items: center;
   background: var(--sbf-red);
-  color: var(--sbf-cream);
+  color: var(--sbf-paper);
   padding: clamp(24px, 4vw, 52px) var(--gutter-page) 0;
   overflow-x: clip;
 }
@@ -1011,7 +1009,7 @@ img { max-width: 100%; display: block; }
   font-weight: 800;
   font-size: clamp(17px, 1.7vw, 23px);
   line-height: 1.3;
-  color: var(--sbf-cream);
+  color: var(--sbf-paper);
 }
 .hero-side.left { left: var(--gutter-page); }
 .hero-side.right { right: var(--gutter-page); text-align: right; }
@@ -1024,29 +1022,29 @@ img { max-width: 100%; display: block; }
   width: clamp(124px, 12vw, 160px);
   aspect-ratio: 1;
   border-radius: 50%;
-  background: var(--sbf-wine);
-  border: 2px solid var(--sbf-cream);
+  background: var(--sbf-orange);
+  border: 3px solid var(--sbf-paper);
   display: grid;
   place-items: center;
 }
 .spin-badge svg { position: absolute; inset: 0; width: 100%; height: 100%; animation: sbf-spin 22s linear infinite; }
 .spin-badge text {
-  fill: var(--sbf-cream);
+  fill: var(--sbf-ink);
   font-family: var(--font-deco);
   font-size: 12.5px;
   letter-spacing: .18em;
   text-transform: uppercase;
 }
-.spin-badge-mark { font-family: var(--font-display); font-style: italic; font-size: 30px; color: var(--sbf-candy); letter-spacing: .02em; }
+.spin-badge-mark { font-family: var(--font-display); font-style: italic; font-size: 30px; color: var(--sbf-ink); letter-spacing: .02em; }
 @keyframes sbf-spin { to { transform: rotate(360deg); } }
 @media (prefers-reduced-motion: reduce) { .spin-badge svg { animation: none; } }
 @media (max-width: 760px) {
-  .hero-photo.photo-mask.arch { margin-top: 112px; width: min(68vw, 280px); }
+  .hero-photo.photo-mask.arch { margin-top: calc(max(60px, 14.5vw) * 1.95); width: min(68vw, 280px); }
   .hero-side { position: static; max-width: none; text-align: center; padding-top: var(--space-4); }
   .hero-side.right { text-align: center; padding-bottom: 90px; }
 }
 
-/* Centred statement with colour-highlighted phrases */
+/* Centred statement on white, with colour-highlighted phrases */
 .statement { padding-top: calc(var(--section-y) + 70px); }
 .statement-big {
   font-family: var(--font-display);
@@ -1054,24 +1052,25 @@ img { max-width: 100%; display: block; }
   line-height: 1.3;
   letter-spacing: -0.01em;
   max-width: 30ch;
-  color: var(--sbf-cream);
+  color: var(--sbf-ink);
 }
-.hl-candy { color: var(--sbf-candy); }
-.hl-orange { color: var(--sbf-coral); }
-.hl-yellow { color: var(--sbf-yellow); }
+.hl-cherry { color: var(--sbf-red); }
+.hl-rasp { color: var(--sbf-raspberry); }
+.hl-coral { color: var(--sbf-coral); }
 .squiggle-under {
   padding-bottom: 6px;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 10'%3E%3Cpath d='M0 5 Q5 0 10 5 T20 5 T30 5 T40 5' fill='none' stroke='%23F25C8A' stroke-width='2.5'/%3E%3C/svg%3E") left bottom / 40px 10px repeat-x;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 10'%3E%3Cpath d='M0 5 Q5 0 10 5 T20 5 T30 5 T40 5' fill='none' stroke='%23F47D11' stroke-width='2.5'/%3E%3C/svg%3E") left bottom / 40px 10px repeat-x;
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
 }
-.statement-copy { max-width: 62ch; font-size: var(--text-body-md); line-height: var(--leading-body); color: var(--sbf-cream); opacity: .92; }
+.statement-copy { max-width: 62ch; font-size: var(--text-body-md); line-height: var(--leading-body); color: var(--text-muted); }
 
-/* Bigger marquee band (Club Paradiso) */
-.marquee.tone-wine { background: var(--sbf-wine); color: var(--sbf-cream); }
+/* Marquee bands */
+.marquee.tone-orange { background: var(--sbf-orange); color: var(--sbf-ink); }
+.marquee.tone-raspberry { background: var(--sbf-raspberry); color: var(--sbf-paper); }
 .marquee-lg { padding: 16px 0; font-size: 16px; }
 
-/* "Are you ready to be heard?" block — thin serif caps + one chunky punch word */
+/* "Are you ready to be heard?" — thin serif caps + one chunky punch word, on raspberry */
 .ready-title { display: grid; color: var(--sbf-paper); line-height: .98; }
 .ready-title span {
   font-family: var(--font-display);
@@ -1082,7 +1081,7 @@ img { max-width: 100%; display: block; }
 .ready-title .punch {
   font-family: var(--font-punch);
   font-size: clamp(66px, 9vw, 132px);
-  color: var(--sbf-blush);
+  color: var(--sbf-candy);
   letter-spacing: .01em;
   line-height: .95;
 }
@@ -1098,7 +1097,7 @@ img { max-width: 100%; display: block; }
   font: inherit;
 }
 .ready-art { position: relative; width: 100%; max-width: 380px; justify-self: center; }
-.ready-art .photo-mask { background: var(--sbf-apricot); color: var(--sbf-wine); }
+.ready-art .photo-mask { background: var(--sbf-blush); color: var(--sbf-red-deep); }
 .starburst {
   position: absolute;
   top: -18px;
@@ -1107,8 +1106,8 @@ img { max-width: 100%; display: block; }
   aspect-ratio: 1;
   display: grid;
   place-items: center;
-  background: var(--sbf-yellow);
-  color: var(--sbf-wine);
+  background: var(--sbf-orange);
+  color: var(--sbf-ink);
   clip-path: polygon(50.0% 0.0%, 58.9% 11.0%, 71.7% 5.0%, 74.9% 18.7%, 89.1% 18.8%, 86.0% 32.6%, 98.7% 38.9%, 90.0% 50.0%, 98.7% 61.1%, 86.0% 67.4%, 89.1% 81.2%, 74.9% 81.3%, 71.7% 95.0%, 58.9% 89.0%, 50.0% 100.0%, 41.1% 89.0%, 28.3% 95.0%, 25.1% 81.3%, 10.9% 81.2%, 14.0% 67.4%, 1.3% 61.1%, 10.0% 50.0%, 1.3% 38.9%, 14.0% 32.6%, 10.9% 18.8%, 25.1% 18.7%, 28.3% 5.0%, 41.1% 11.0%);
   transform: rotate(-10deg);
   font-family: var(--font-deco);

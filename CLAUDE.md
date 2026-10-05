@@ -60,16 +60,24 @@ were deliberately left unchanged.
   stretches to the photo's height and spaces the two lines far apart (on
   mobile that hid "female." behind the photo). On ≤760px the photo starts
   below the words instead of overlapping them.
-  Palette pushed apart for contrast (same family): hot pink `--sbf-pink`
-  #F25C8A, `--sbf-candy` #FF8FB1 (text on wine only), brighter blush
-  #F7C9D4 and cream #FFF1EC, new `--sbf-wine` #7A0F14 and `--sbf-burnt`
-  #C9461C as full-bleed blocks. New fonts: Anton (`--font-punch`, one
-  word per section) and Mrs Saint Delafield (`--font-script`, `.script`,
-  one accent word). Checked pairings: cream/wine 9.99, candy/wine 5.15,
-  white/burnt 4.80, blush/burnt 3.26 (large punch word only), wine/hot
-  pink 3.50 (large headings only), ink/hot pink 5.44, red/cream 4.67.
-  Coloured-word highlights intentionally break the old "italic is the
-  only emphasis" rule — owner asked for this look. Mobile menu button is
+  PALETTE REPLACED same day (owner rejected two proposals, then supplied
+  two reference palettes to combine): cherry #C50B18 (signature
+  --sbf-red), raspberry #C4114B, tangerine #F47D11, coral #E4623A, rose
+  #F48A98, light pink #F4A1BD, pale pink #F4C9D0, off-white #FAF6F3 page,
+  white sections, berry-brown ink #3B0A12 for text. Contrast rules (checked):
+  cherry/raspberry blocks take WHITE text (6.1 / 6.0); orange, coral, rose
+  and light pink take INK text (6.3 / 4.9 / 7.2 / 8.6) — white on them is
+  only 2-3:1, never use it; white/off-white/pale pink take cherry headings
+  + ink body. Light pink #F4A1BD is for big words on cherry/raspberry only
+  (3.0-3.1). Layout rule the owner asked for ("balance, contrast, white
+  space"): alternate one bold block with one white/off-white/pale section,
+  never two bold blocks touching. Home order: cherry hero → white
+  statement → orange band → off-white tabs → pale wavy pair → white stats
+  → raspberry "ready" → pale founder → off-white cards → rose testimonial
+  → white FAQ → coral CTA → raspberry band → cherry footer. Legacy token
+  names --sbf-wine/--sbf-burnt/--sbf-yellow now alias raspberry/tangerine.
+  New fonts: Anton (--font-punch, one word per section) and Mrs Saint
+  Delafield (--font-script, .script, one accent word). Mobile menu button is
   a pink diamond. Only Home has the new layout so far; other pages just
   inherit the new palette.
   Previous Home (for history): red hero with photo, a floating white signup card
