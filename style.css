@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&family=Fraunces:ital,opsz,wght@0,9..144,700..900;1,9..144,700..900&family=Anton&family=Mrs+Saint+Delafield&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&family=Fraunces:ital,opsz,wght@0,9..144,700..900;1,9..144,700..900&family=Anton&family=Mrs+Saint+Delafield&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,600&display=swap");
 
 @font-face {
   font-family: "Brolia";
@@ -1082,6 +1082,19 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
   .hero-side.right { left: var(--gutter-page); right: auto; text-align: left; }
   .spin-badge { left: auto; right: calc(var(--gutter-page) + var(--photo-inset) + var(--photo-w) / 2); transform: translate(50%, 50%); }
 }
+
+/* Homepage founder heading (owner: drop the "Hello" label, open with the
+   greeting, bolder and slightly larger). Silk Serif only ships ExtraLight,
+   so this uses Cormorant Garamond semi-bold, a matching elegant serif. */
+.founder-heading {
+  font-family: "Cormorant Garamond", var(--font-display);
+  font-weight: 600;
+  font-size: clamp(28px, 3.2vw, 40px);
+  line-height: 1.15;
+  letter-spacing: -0.005em;
+}
+.founder-heading em { font-weight: 600; }
+.founder-hello { display: block; margin-bottom: .2em; }
 
 /* Centred statement on white, with colour-highlighted phrases */
 .statement { padding-top: calc(var(--section-y) + 70px); }
