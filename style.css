@@ -1064,6 +1064,17 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
   .hero-side { position: static; max-width: none; text-align: center; padding-top: var(--space-4); }
   .hero-side.right { text-align: center; padding-bottom: 90px; }
 }
+/* Desktop/tablet: photo on the right (owner request), giant name left-aligned
+   so it reads, both taglines stacked bottom-left, badge centred under the photo. */
+@media (min-width: 761px) {
+  .hero-giant-wrap { --photo-w: clamp(210px, 27vw, 380px); --photo-inset: clamp(0px, 5vw, 80px); }
+  .hero-giant { justify-self: start; justify-items: start; text-align: left; }
+  .hero-photo.photo-mask.arch { justify-self: end; width: var(--photo-w); margin-right: var(--photo-inset); }
+  .hero-side { max-width: 24ch; }
+  .hero-side.left { bottom: calc(clamp(20px, 3.5vw, 56px) + 3.6em); }
+  .hero-side.right { left: var(--gutter-page); right: auto; text-align: left; }
+  .spin-badge { left: auto; right: calc(var(--gutter-page) + var(--photo-inset) + var(--photo-w) / 2); transform: translate(50%, 50%); }
+}
 
 /* Centred statement on white, with colour-highlighted phrases */
 .statement { padding-top: calc(var(--section-y) + 70px); }
