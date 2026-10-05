@@ -39,7 +39,7 @@
   --sbf-pink: #EF476F;       /* Strawberry — blocks and accents (ink text 4.7) */
   --sbf-candy: #FAC8D4;      /* pale strawberry — big words on reds */
   --sbf-bubblegum: #D94549;  /* Rose blush — highlight words on white (4.3) */
-  --sbf-blush: #FAE6E7;      /* misty rose — pale pink sections (owner-supplied) */
+  --sbf-blush: #FCEDEE;      /* pale pink sections — a step lighter than misty rose #FAE6E7 (owner request) */
   --sbf-petal: #FAC8D4;      /* pale strawberry — giant hero lettering, photo placeholders */
   --sbf-blush-deep: #F4D6D8; /* hover on blush */
   --sbf-cotton: #F4D6D8;     /* alias of blush-deep */
