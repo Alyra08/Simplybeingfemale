@@ -45,9 +45,9 @@
   --sbf-line: #F0DCDD;       /* hairline borders */
 
   --sbf-coral: #FF5500;      /* vivid orange — highlight words (large only on white, 3.2) and blocks (ink text) */
-  --sbf-orange: #FF7A00;     /* bright tangerine — bands, badges (ink text) */
+  --sbf-orange: #FF5500;     /* one orange site-wide: vivid red-orange — bands, blocks, badges (ink text 5.3) */
   --sbf-apricot: #FDE3CF;    /* pale orange tint */
-  --sbf-yellow: #FF7A00;     /* legacy name — now points at tangerine */
+  --sbf-yellow: #FF5500;     /* legacy name — now points at tangerine */
   --sbf-wine: #C4114B;       /* legacy name — now points at raspberry */
   --sbf-burnt: #C4114B;      /* legacy name — now points at raspberry */
 
@@ -212,6 +212,7 @@ em { font-style: italic; }
 ::selection { background: var(--sbf-pink); color: var(--sbf-red-deep); }
 :focus-visible { outline: none; box-shadow: var(--shadow-focus); }
 img { max-width: 100%; display: block; }
+main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways scroll on phones */
 
 .container {
   max-width: var(--container-max);
@@ -466,6 +467,10 @@ img { max-width: 100%; display: block; }
   display: grid;
   gap: var(--space-12);
   grid-template-columns: minmax(200px, 1fr) repeat(auto-fit, minmax(140px, auto));
+}
+@media (max-width: 600px) {
+  .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-8); }
+  .footer-grid > :first-child { grid-column: 1 / -1; }
 }
 .footer-stamp {
   width: 92px;
@@ -1060,7 +1065,7 @@ img { max-width: 100%; display: block; }
 .hl-coral { color: var(--sbf-coral); }
 .squiggle-under {
   padding-bottom: 6px;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 10'%3E%3Cpath d='M0 5 Q5 0 10 5 T20 5 T30 5 T40 5' fill='none' stroke='%23FF7A00' stroke-width='2.5'/%3E%3C/svg%3E") left bottom / 40px 10px repeat-x;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 10'%3E%3Cpath d='M0 5 Q5 0 10 5 T20 5 T30 5 T40 5' fill='none' stroke='%23FF5500' stroke-width='2.5'/%3E%3C/svg%3E") left bottom / 40px 10px repeat-x;
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
 }
