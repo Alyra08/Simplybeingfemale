@@ -662,28 +662,33 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
 /* Wavy card — scalloped manifesto quote card, filled + 1.6px outline, no shadow. One per page. */
 .wavy-card {
   position: relative;
-  background: var(--wavy-bg, var(--sbf-cream));
-  border-radius: 26px;
+  --wavy-bg: var(--sbf-cream);
 }
-/* Wave frame — one continuous wavy line drawn all the way round a rounded
-   rectangle (script.js builds the SVG and redraws on resize). The wave
-   length is nudged so a whole number of waves fits the perimeter, so the
-   line closes with no seam and flows round the corners. Tune per frame:
-   --wave-len (target wavelength), --wave-amp (height), --wave-stroke
-   (line thickness), --wave-radius (corner), --wave-color. */
+/* Wave frame — invitation-card scallops (owner reference: a wavy-edged
+   wedding invite + RSVP card). script.js traces a rounded rectangle sized
+   to each box; every straight side gets a WHOLE number of big, slow waves
+   arranged so both ends sit on an outward peak, and the corners stay on
+   that peak — so the edge is symmetric, bulges at the corners and joins
+   seamlessly all the way round. Two modes:
+     --wave-mode: fill   → the box itself is the wavy shape (--wave-fill),
+                           with an offset backing card (--wave-back,
+                           --wave-back-x/-y) peeking out behind it
+     --wave-mode: stroke → a thin wavy line (--wave-color, --wave-stroke)
+   Shape: --wave-len (target wavelength, px), --wave-amp (depth), --wave-radius. */
 .wave-frame {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  --wave-len: 48;
-  --wave-amp: 3.5;
+  --wave-mode: stroke;
+  --wave-len: 90;
+  --wave-amp: 6;
   --wave-stroke: 2.5;
-  --wave-radius: 22;
+  --wave-radius: 18;
   color: var(--wave-color, var(--sbf-red));
 }
 .wave-frame svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
-.wavy-squiggle.outer { --wave-color: var(--sbf-red); }
-.wavy-squiggle.inner { --wave-color: var(--sbf-coral); inset: 14px; --wave-radius: 14; }
+.wavy-squiggle.outer { --wave-mode: fill; --wave-fill: var(--wavy-bg); --wave-back: var(--sbf-orange); --wave-back-x: 10; --wave-back-y: 10; --wave-len: 100; --wave-amp: 7; z-index: 0; }
+.wavy-squiggle.inner { --wave-color: var(--sbf-red); inset: 16px; --wave-len: 80; --wave-amp: 4; --wave-stroke: 1.5; --wave-radius: 12; z-index: 0; }
 .wavy-card-inner { position: relative; z-index: 1; padding: clamp(30px, 7%, 58px); }
 .wavy-card-inner p {
   font-family: var(--font-body);
@@ -698,7 +703,7 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
   position: relative;
   padding: clamp(32px, 6%, 56px);
 }
-.wavy-frame-border { --wave-color: var(--sbf-pink); --wave-len: 77; --wave-amp: 5.5; --wave-stroke: 4; --wave-radius: 34; } /* thick: 4px line */
+.wavy-frame-border { --wave-color: var(--sbf-pink); --wave-len: 110; --wave-amp: 7; --wave-stroke: 3; --wave-radius: 22; } /* RSVP-style line */
 .wavy-frame-inner {
   position: relative;
   z-index: 1;

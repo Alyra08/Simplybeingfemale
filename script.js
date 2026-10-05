@@ -104,55 +104,65 @@ document.querySelectorAll("form[data-netlify='true']").forEach((form) => {
   });
 });
 
-// Wave frames: one continuous wavy line round a rounded rectangle, sized to
-// each box. Wavelength is adjusted so a whole number of waves fits the
-// perimeter, so the line joins up seamlessly all the way round.
+// Wave frames: invitation-card scallops round a rounded rectangle sized to
+// each box. Each straight side gets a whole number of waves with both ends
+// on an outward peak, and corners stay on that peak, so the edge is
+// symmetric and joins seamlessly. See the .wave-frame comment in style.css.
 (function () {
   const frames = document.querySelectorAll(".wave-frame");
   if (!frames.length) return;
-  const num = (cs, name, fallback) => parseFloat(cs.getPropertyValue(name)) || fallback;
+  const num = (cs, name, fallback) => {
+    const v = parseFloat(cs.getPropertyValue(name));
+    return isNaN(v) ? fallback : v;
+  };
+
+  function shape(w, h, pad, len, amp, radius) {
+    const x0 = pad, y0 = pad, x1 = w - pad, y1 = h - pad;
+    const r = Math.min(radius, (x1 - x0) / 2, (y1 - y0) / 2);
+    const sw = x1 - x0 - 2 * r, sh = y1 - y0 - 2 * r;
+    const pts = [];
+    const add = (x, y, nx, ny, o) => pts.push((x + nx * o).toFixed(1) + " " + (y + ny * o).toFixed(1));
+    // straight side: start point, direction, outward normal
+    const side = (sx, sy, dx, dy, nx, ny, L) => {
+      const n = Math.max(1, Math.round(L / len));
+      for (let t = 0; t < L; t += 2) add(sx + dx * t, sy + dy * t, nx, ny, amp * Math.cos((2 * Math.PI * n * t) / L));
+    };
+    // corner: arc held on the outward peak
+    const corner = (cx, cy, start) => {
+      for (let a = 0; a < Math.PI / 2; a += 2 / Math.max(r, 1)) {
+        const c = Math.cos(start + a), s = Math.sin(start + a);
+        add(cx + r * c, cy + r * s, c, s, amp);
+      }
+    };
+    side(x0 + r, y0, 1, 0, 0, -1, sw);
+    corner(x1 - r, y0 + r, -Math.PI / 2);
+    side(x1, y0 + r, 0, 1, 1, 0, sh);
+    corner(x1 - r, y1 - r, 0);
+    side(x1 - r, y1, -1, 0, 0, 1, sw);
+    corner(x0 + r, y1 - r, Math.PI / 2);
+    side(x0, y1 - r, 0, -1, -1, 0, sh);
+    corner(x0 + r, y0 + r, Math.PI);
+    return "M" + pts.join(" L") + " Z";
+  }
 
   function draw(el) {
     const w = el.clientWidth, h = el.clientHeight;
     if (!w || !h) return;
     const cs = getComputedStyle(el);
-    const len = num(cs, "--wave-len", 48), amp = num(cs, "--wave-amp", 3.5);
-    const stroke = num(cs, "--wave-stroke", 2.5);
-    const pad = amp + stroke / 2;
-    const x0 = pad, y0 = pad, x1 = w - pad, y1 = h - pad;
-    const r = Math.min(num(cs, "--wave-radius", 22), (x1 - x0) / 2, (y1 - y0) / 2);
-    const sw = x1 - x0 - 2 * r, sh = y1 - y0 - 2 * r, arc = Math.PI * r / 2;
-    const segs = [sw, arc, sh, arc, sw, arc, sh, arc];
-    const P = segs.reduce((a, b) => a + b, 0);
-    const lambda = P / Math.max(1, Math.round(P / len));
-
-    // point + outward normal at distance t along the rounded-rect perimeter (clockwise from top-left straight)
-    function at(t) {
-      const corner = (cx, cy, start, d) => {
-        const a = start + d / r;
-        return [cx + r * Math.cos(a), cy + r * Math.sin(a), Math.cos(a), Math.sin(a)];
-      };
-      let d = t;
-      if ((d -= 0) < sw) return [x0 + r + d, y0, 0, -1];
-      if ((d -= sw) < arc) return corner(x1 - r, y0 + r, -Math.PI / 2, d);
-      if ((d -= arc) < sh) return [x1, y0 + r + d, 1, 0];
-      if ((d -= sh) < arc) return corner(x1 - r, y1 - r, 0, d);
-      if ((d -= arc) < sw) return [x1 - r - d, y1, 0, 1];
-      if ((d -= sw) < arc) return corner(x0 + r, y1 - r, Math.PI / 2, d);
-      if ((d -= arc) < sh) return [x0, y1 - r - d, -1, 0];
-      d -= sh;
-      return corner(x0 + r, y0 + r, Math.PI, Math.min(d, arc));
+    const mode = cs.getPropertyValue("--wave-mode").trim() || "stroke";
+    const len = num(cs, "--wave-len", 90), amp = num(cs, "--wave-amp", 6);
+    const stroke = num(cs, "--wave-stroke", 2.5), radius = num(cs, "--wave-radius", 18);
+    let svg = '<svg viewBox="0 0 ' + w + " " + h + '" aria-hidden="true">';
+    if (mode === "fill") {
+      const d = shape(w, h, amp, len, amp, radius);
+      const bx = num(cs, "--wave-back-x", 0), by = num(cs, "--wave-back-y", 0);
+      if (bx || by) svg += '<path d="' + d + '" transform="translate(' + bx + " " + by + ')" style="fill: var(--wave-back)"/>';
+      svg += '<path d="' + d + '" style="fill: var(--wave-fill)"/>';
+    } else {
+      svg += '<path d="' + shape(w, h, amp + stroke / 2, len, amp, radius) +
+        '" fill="none" stroke="currentColor" stroke-width="' + stroke + '" stroke-linejoin="round"/>';
     }
-
-    const step = 2, pts = [];
-    for (let t = 0; t < P; t += step) {
-      const [x, y, nx, ny] = at(t);
-      const o = amp * Math.sin((2 * Math.PI * t) / lambda);
-      pts.push((x + nx * o).toFixed(1) + " " + (y + ny * o).toFixed(1));
-    }
-    el.innerHTML =
-      '<svg viewBox="0 0 ' + w + " " + h + '" aria-hidden="true"><path d="M' + pts.join(" L") +
-      ' Z" fill="none" stroke="currentColor" stroke-width="' + stroke + '" stroke-linejoin="round"/></svg>';
+    el.innerHTML = svg + "</svg>";
   }
 
   const ro = new ResizeObserver((entries) => entries.forEach((e) => draw(e.target)));
