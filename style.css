@@ -1078,7 +1078,8 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
 .statement-copy { max-width: 62ch; font-size: var(--text-body-md); line-height: var(--leading-body); color: var(--text-muted); }
 
 /* Marquee bands */
-.marquee.tone-orange { background: var(--sbf-orange); color: var(--sbf-ink); }
+.marquee.tone-orange { background: var(--sbf-orange); color: var(--sbf-paper); } /* owner asked: white words, pink stars */
+.marquee.tone-orange .marquee-track span::after { color: var(--sbf-candy); opacity: 1; }
 .marquee.tone-raspberry { background: var(--sbf-raspberry); color: var(--sbf-paper); }
 .marquee-lg { padding: 16px 0; font-size: 16px; }
 
