@@ -479,8 +479,8 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
   .footer-grid > :first-child { grid-column: 1 / -1; }
 }
 .footer-stamp {
-  width: 92px;
-  height: 92px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   background: var(--sbf-blush);
   color: var(--sbf-red);
@@ -493,6 +493,7 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
   text-align: center;
   text-transform: uppercase;
 }
+.footer-stamp img { width: 78%; height: auto; } /* real logo replaced the SBF text (owner request) */
 .footer-tagline {
   font-family: var(--font-display);
   font-size: var(--text-h3);
