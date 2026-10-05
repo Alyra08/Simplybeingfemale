@@ -1085,6 +1085,8 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
 .marquee.tone-orange { background: var(--sbf-orange); color: var(--sbf-paper); } /* owner asked: white words, pink stars */
 .marquee.tone-orange .marquee-track span::after { color: var(--sbf-candy); opacity: 1; }
 .marquee.tone-raspberry { background: var(--sbf-raspberry); color: var(--sbf-paper); }
+.marquee.tone-blush { background: var(--sbf-blush); color: var(--sbf-red-deep); } /* pastel pink band: scarlet words 5.4 */
+.marquee.tone-blush .marquee-track span::after { color: var(--sbf-pink); opacity: 1; }
 .marquee-lg { padding: 16px 0; font-size: 16px; }
 
 /* "Are you ready to be heard?" — thin serif caps + one chunky punch word, on raspberry */
