@@ -978,7 +978,7 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
 .badge-berry { background: var(--sbf-berry); color: var(--sbf-paper); }
 .section.tone-petal { background: var(--sbf-petal); color: var(--sbf-berry); } /* owner: #FAC8D4 testimonial; red headline 3.7 (large), berry emphasis + caption 7.1 */
 .section.tone-petal h1, .section.tone-petal h2, .section.tone-petal h3 { color: var(--sbf-red); }
-.section.tone-petal em { color: var(--sbf-berry); }
+.section.tone-petal em { color: var(--sbf-paper); } /* owner: white "honey on the table" (only 1.5:1 on #FAC8D4) */
 .section.tone-rose { background: var(--sbf-pink); color: var(--sbf-ink); }
 .section.tone-rose h1, .section.tone-rose h2, .section.tone-rose h3 { color: var(--sbf-ink); }
 .section.tone-coral h3 { color: var(--sbf-ink); }
