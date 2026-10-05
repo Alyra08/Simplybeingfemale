@@ -39,10 +39,10 @@
   --sbf-pink: #EF476F;       /* Strawberry — blocks and accents (ink text 4.7) */
   --sbf-candy: #FAC8D4;      /* pale strawberry — big words on reds */
   --sbf-bubblegum: #D94549;  /* Rose blush — highlight words on white (4.3) */
-  --sbf-blush: #FCEDEE;      /* pale pink sections — a step lighter than misty rose #FAE6E7 (owner request) */
+  --sbf-blush: #FEF6F6;      /* pale pink sections — half the tint of #FCEDEE (owner: "at least half lighter") */
   --sbf-petal: #FAC8D4;      /* pale strawberry — giant hero lettering, photo placeholders */
-  --sbf-blush-deep: #F4D6D8; /* hover on blush */
-  --sbf-cotton: #F4D6D8;     /* alias of blush-deep */
+  --sbf-blush-deep: #FAE6E7; /* hover on blush */
+  --sbf-cotton: #FAE6E7;     /* alias of blush-deep */
 
   --sbf-cream: #FAF6F3;      /* off-white page background */
   --sbf-paper: #FFFFFF;      /* white sections — the breathing room */
