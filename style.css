@@ -33,9 +33,10 @@
   --sbf-pink: #F48A98;       /* rose pink — blocks and accents (ink text) */
   --sbf-candy: #F4A1BD;      /* light pink — big highlight words on cherry/raspberry */
   --sbf-bubblegum: #E88E96;  /* dusty rose */
-  --sbf-blush: #F4C9D0;      /* pale pink — soft sections */
-  --sbf-blush-deep: #F4B3C4; /* hover on blush */
-  --sbf-cotton: #F4B3C4;     /* alias of blush-deep */
+  --sbf-blush: #FCE6EA;      /* very pale pink — soft sections (was #F4C9D0, owner asked lighter) */
+  --sbf-petal: #F4C9D0;      /* pale pink — giant hero lettering on cherry */
+  --sbf-blush-deep: #F8D3DB; /* hover on blush */
+  --sbf-cotton: #F8D3DB;     /* alias of blush-deep */
 
   --sbf-cream: #FAF6F3;      /* off-white page background */
   --sbf-paper: #FFFFFF;      /* white sections — the breathing room */
@@ -43,10 +44,10 @@
   --sbf-ink-soft: #6E4448;
   --sbf-line: #F0DCDD;       /* hairline borders */
 
-  --sbf-coral: #E4623A;      /* coral-orange (ink text) */
-  --sbf-orange: #F47D11;     /* tangerine — bands, badges (ink text) */
+  --sbf-coral: #FF5500;      /* vivid orange — highlight words (large only on white, 3.2) and blocks (ink text) */
+  --sbf-orange: #FF7A00;     /* bright tangerine — bands, badges (ink text) */
   --sbf-apricot: #FDE3CF;    /* pale orange tint */
-  --sbf-yellow: #F47D11;     /* legacy name — now points at tangerine */
+  --sbf-yellow: #FF7A00;     /* legacy name — now points at tangerine */
   --sbf-wine: #C4114B;       /* legacy name — now points at raspberry */
   --sbf-burnt: #C4114B;      /* legacy name — now points at raspberry */
 
@@ -596,7 +597,7 @@ img { max-width: 100%; display: block; }
 
 /* Oval image masks — the brand's three photo shapes, plate fallback when no real photo */
 .photo-mask {
-  background: var(--sbf-blush);
+  background: var(--sbf-petal);
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -986,7 +987,7 @@ img { max-width: 100%; display: block; }
   font-size: clamp(60px, 14.5vw, 236px);
   line-height: .84;
   letter-spacing: -0.035em;
-  color: var(--sbf-blush);
+  color: var(--sbf-petal);
   text-align: center;
   white-space: nowrap;
 }
@@ -1059,7 +1060,7 @@ img { max-width: 100%; display: block; }
 .hl-coral { color: var(--sbf-coral); }
 .squiggle-under {
   padding-bottom: 6px;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 10'%3E%3Cpath d='M0 5 Q5 0 10 5 T20 5 T30 5 T40 5' fill='none' stroke='%23F47D11' stroke-width='2.5'/%3E%3C/svg%3E") left bottom / 40px 10px repeat-x;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 10'%3E%3Cpath d='M0 5 Q5 0 10 5 T20 5 T30 5 T40 5' fill='none' stroke='%23FF7A00' stroke-width='2.5'/%3E%3C/svg%3E") left bottom / 40px 10px repeat-x;
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
 }
