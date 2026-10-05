@@ -47,8 +47,8 @@
   --sbf-ink-soft: #6E4448;
   --sbf-line: #F5DADF;       /* hairline borders */
 
-  --sbf-coral: #F86201;      /* Tiger — highlight words (large only on white, 3.1) */
-  --sbf-orange: #F86201;     /* Tiger — bands, blocks (ink text 5.4) */
+  --sbf-coral: #E35A2B;      /* terracotta orange (owner ref: säge café logo) — highlight words, large only on white */
+  --sbf-orange: #E35A2B;     /* terracotta orange — bands, blocks (ink text) */
   --sbf-apricot: #FEECE1;    /* pale orange tint */
   --sbf-yellow: #FEB500;     /* Marigold — small pops only: badge, starburst (ink text) */
   --sbf-wine: #BF0C18;       /* legacy name — Scarlet */
@@ -664,15 +664,28 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
   background: var(--wavy-bg, var(--sbf-cream));
   border-radius: 26px;
 }
-.wavy-squiggle {
+/* Wave frame — the same even wave as .squiggle-under, drawn on all four
+   sides. The wave shape is a mask, so its colour is just background-color.
+   "round" fits a whole number of waves along each edge so they never cut
+   off mid-wave. Tile size sets the thickness (40x10 = 2.5px line). */
+.wave-frame {
   position: absolute;
   inset: 0;
-  border-radius: 26px;
   pointer-events: none;
-  border-style: solid;
+  --wave-l: 40px;
+  --wave-t: 10px;
+  background-color: var(--wave-color, var(--sbf-red));
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 40 10%27%3E%3Cpath d=%27M0 5 C2.5 0 7.5 0 10 5 S17.5 10 20 5 S27.5 0 30 5 S37.5 10 40 5%27 fill=%27none%27 stroke=%27%23000%27 stroke-width=%272.5%27/%3E%3C/svg%3E"), url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 40 10%27%3E%3Cpath d=%27M0 5 C2.5 0 7.5 0 10 5 S17.5 10 20 5 S27.5 0 30 5 S37.5 10 40 5%27 fill=%27none%27 stroke=%27%23000%27 stroke-width=%272.5%27/%3E%3C/svg%3E"), url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 10 40%27%3E%3Cpath d=%27M5 0 C0 2.5 0 7.5 5 10 S10 17.5 5 20 S0 27.5 5 30 S10 37.5 5 40%27 fill=%27none%27 stroke=%27%23000%27 stroke-width=%272.5%27/%3E%3C/svg%3E"), url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 10 40%27%3E%3Cpath d=%27M5 0 C0 2.5 0 7.5 5 10 S10 17.5 5 20 S0 27.5 5 30 S10 37.5 5 40%27 fill=%27none%27 stroke=%27%23000%27 stroke-width=%272.5%27/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 40 10%27%3E%3Cpath d=%27M0 5 C2.5 0 7.5 0 10 5 S17.5 10 20 5 S27.5 0 30 5 S37.5 10 40 5%27 fill=%27none%27 stroke=%27%23000%27 stroke-width=%272.5%27/%3E%3C/svg%3E"), url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 40 10%27%3E%3Cpath d=%27M0 5 C2.5 0 7.5 0 10 5 S17.5 10 20 5 S27.5 0 30 5 S37.5 10 40 5%27 fill=%27none%27 stroke=%27%23000%27 stroke-width=%272.5%27/%3E%3C/svg%3E"), url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 10 40%27%3E%3Cpath d=%27M5 0 C0 2.5 0 7.5 5 10 S10 17.5 5 20 S0 27.5 5 30 S10 37.5 5 40%27 fill=%27none%27 stroke=%27%23000%27 stroke-width=%272.5%27/%3E%3C/svg%3E"), url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 10 40%27%3E%3Cpath d=%27M5 0 C0 2.5 0 7.5 5 10 S10 17.5 5 20 S0 27.5 5 30 S10 37.5 5 40%27 fill=%27none%27 stroke=%27%23000%27 stroke-width=%272.5%27/%3E%3C/svg%3E");
+  -webkit-mask-position: left top, left bottom, left top, right top;
+  mask-position: left top, left bottom, left top, right top;
+  -webkit-mask-size: var(--wave-l) var(--wave-t), var(--wave-l) var(--wave-t), var(--wave-t) var(--wave-l), var(--wave-t) var(--wave-l);
+  mask-size: var(--wave-l) var(--wave-t), var(--wave-l) var(--wave-t), var(--wave-t) var(--wave-l), var(--wave-t) var(--wave-l);
+  -webkit-mask-repeat: round no-repeat, round no-repeat, no-repeat round, no-repeat round;
+  mask-repeat: round no-repeat, round no-repeat, no-repeat round, no-repeat round;
 }
-.wavy-squiggle.outer { border-width: 2.5px; border-color: var(--sbf-red); filter: url(#squiggleA); }
-.wavy-squiggle.inner { inset: 10px; border-radius: 19px; border-width: 2px; border-color: var(--sbf-coral); filter: url(#squiggleB); }
+.wavy-squiggle.outer { --wave-color: var(--sbf-red); }
+.wavy-squiggle.inner { --wave-color: var(--sbf-coral); inset: 14px; }
 .wavy-card-inner { position: relative; z-index: 1; padding: clamp(30px, 7%, 58px); }
 .wavy-card-inner p {
   font-family: var(--font-body);
@@ -687,14 +700,7 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
   position: relative;
   padding: clamp(32px, 6%, 56px);
 }
-.wavy-frame-border {
-  position: absolute;
-  inset: 0;
-  border: 9px solid var(--sbf-pink);
-  border-radius: 40px;
-  filter: url(#squiggleThick);
-  pointer-events: none;
-}
+.wavy-frame-border { --wave-color: var(--sbf-pink); --wave-l: 64px; --wave-t: 16px; } /* thick: 4px line */
 .wavy-frame-inner {
   position: relative;
   z-index: 1;
@@ -1062,7 +1068,7 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
 .hl-coral { color: var(--sbf-coral); }
 .squiggle-under {
   padding-bottom: 6px;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 10'%3E%3Cpath d='M0 5 Q5 0 10 5 T20 5 T30 5 T40 5' fill='none' stroke='%23F86201' stroke-width='2.5'/%3E%3C/svg%3E") left bottom / 40px 10px repeat-x;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 10'%3E%3Cpath d='M0 5 C2.5 0 7.5 0 10 5 S17.5 10 20 5 S27.5 0 30 5 S37.5 10 40 5' fill='none' stroke='%23E35A2B' stroke-width='2.5'/%3E%3C/svg%3E") left bottom / 40px 10px repeat-x;
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
 }
