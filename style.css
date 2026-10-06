@@ -1083,7 +1083,7 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
    so it reads, both taglines stacked bottom-left, badge centred under the photo. */
 @media (min-width: 761px) {
   .hero-giant-wrap { --photo-w: clamp(240px, 31vw, 440px); --photo-inset: calc(-1 * var(--gutter-page)); /* flush against the right edge of the screen (owner request) */ }
-  .hero-giant { justify-self: start; justify-items: start; text-align: left; }
+  .hero-giant { justify-self: start; justify-items: start; text-align: left; margin-top: clamp(40px, 7vw, 110px); } /* owner: title slightly further down */
   .hero-photo.photo-mask.arch { justify-self: end; width: var(--photo-w); margin-right: var(--photo-inset); }
   .hero-side { max-width: 24ch; }
   .hero-side.left { bottom: calc(clamp(20px, 3.5vw, 56px) + 3.6em); }
