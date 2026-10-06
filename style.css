@@ -1017,7 +1017,7 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
   align-self: start;
   align-content: start;
   justify-items: center;
-  font-size: clamp(40px, 9.67vw, 157px); /* owner: a third smaller (was 60 / 14.5vw / 236) */
+  font-size: clamp(48px, 12vw, 196px); /* owner: cut by a third, then "take up more space" — now between (was 60 / 14.5vw / 236) */
   line-height: .84;
   letter-spacing: -0.035em;
   color: var(--sbf-petal);
@@ -1030,7 +1030,8 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
   grid-area: 1 / 1;
   z-index: 2;
   align-self: start;
-  width: clamp(210px, 27vw, 380px);
+  width: clamp(240px, 31vw, 440px);
+  aspect-ratio: 3 / 4; /* owner: slightly taller than the standard 4:5 arch */
   margin-top: clamp(78px, 11vw, 186px);
   padding: 0;
   border-radius: var(--radius-pill) var(--radius-pill) 0 0;
@@ -1074,14 +1075,14 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
 @keyframes sbf-spin { to { transform: rotate(360deg); } }
 @media (prefers-reduced-motion: reduce) { .spin-badge svg { animation: none; } }
 @media (max-width: 760px) {
-  .hero-photo.photo-mask.arch { margin-top: calc(max(60px, 14.5vw) * 1.95); width: min(68vw, 280px); }
+  .hero-photo.photo-mask.arch { margin-top: calc(max(48px, 12vw) * 1.95); width: min(80vw, 340px); /* tracks the smaller hero title; owner: photo a little bigger */ }
   .hero-side { position: static; max-width: none; text-align: center; padding-top: var(--space-4); }
   .hero-side.right { text-align: center; padding-bottom: 90px; }
 }
 /* Desktop/tablet: photo on the right (owner request), giant name left-aligned
    so it reads, both taglines stacked bottom-left, badge centred under the photo. */
 @media (min-width: 761px) {
-  .hero-giant-wrap { --photo-w: clamp(210px, 27vw, 380px); --photo-inset: calc(-1 * var(--gutter-page)); /* flush against the right edge of the screen (owner request) */ }
+  .hero-giant-wrap { --photo-w: clamp(240px, 31vw, 440px); --photo-inset: calc(-1 * var(--gutter-page)); /* flush against the right edge of the screen (owner request) */ }
   .hero-giant { justify-self: start; justify-items: start; text-align: left; }
   .hero-photo.photo-mask.arch { justify-self: end; width: var(--photo-w); margin-right: var(--photo-inset); }
   .hero-side { max-width: 24ch; }
