@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&family=Fraunces:ital,opsz,wght@0,9..144,700..900;1,9..144,700..900&family=Anton&family=Mrs+Saint+Delafield&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&family=Fraunces:ital,opsz,wght,SOFT@0,9..144,700..900,0..100;1,9..144,700..900,0..100&family=Anton&family=Mrs+Saint+Delafield&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,600&display=swap");
 
 @font-face {
   font-family: "Brolia";
@@ -589,10 +589,10 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
 .stat-number {
   display: block;
   font-family: var(--font-numeral);
-  font-weight: 900;
-  font-variation-settings: "opsz" 144;
+  font-weight: 800;
+  font-variation-settings: "opsz" 24, "SOFT" 100; /* owner: match the soft rounded "Sophie & James" names — low contrast, rounded terminals */
   font-size: clamp(48px, 6.5vw, 88px);
-  letter-spacing: -0.03em;
+  letter-spacing: -0.01em;
   color: var(--sbf-red);
   line-height: 0.95;
 }
