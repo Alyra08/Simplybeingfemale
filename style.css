@@ -1091,7 +1091,8 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
   font-size: clamp(48px, 12vw, 196px); /* owner: cut by a third, then "take up more space" — now between (was 60 / 14.5vw / 236) */
   line-height: .84;
   letter-spacing: -0.035em;
-  color: var(--sbf-petal);
+  color: var(--sbf-petal); /* owner tried orange, reverted to pale pink */
+  -webkit-text-stroke: .012em currentColor; /* owner: slightly more weight — Silk Serif only ships ExtraLight */
   text-align: center;
   white-space: nowrap;
 }
@@ -1154,7 +1155,7 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
    so it reads, both taglines stacked bottom-left, badge centred under the photo. */
 @media (min-width: 761px) {
   .hero-giant-wrap { --photo-w: clamp(240px, 31vw, 440px); --photo-inset: calc(-1 * var(--gutter-page)); /* flush against the right edge of the screen (owner request) */ }
-  .hero-giant { justify-self: start; justify-items: start; text-align: left; margin-top: clamp(20px, 4vw, 64px); } /* owner: title further down, then nudged slightly back up */
+  .hero-giant { justify-self: start; justify-items: start; text-align: left; margin-top: clamp(20px, 4vw, 64px); margin-left: clamp(12px, 2vw, 36px); } /* owner: title further down, then nudged slightly back up; then slightly further right */
   .hero-photo.photo-mask.arch { justify-self: end; width: var(--photo-w); margin-right: var(--photo-inset); margin-top: clamp(10px, 1.2vw, 20px); aspect-ratio: auto; height: calc(var(--photo-w) * 4 / 3 + clamp(78px, 11vw, 186px) - clamp(10px, 1.2vw, 20px)); } /* owner: photo runs almost the full height of the red section — same width, top raised to just under the nav */
   /* owner: both taglines sit directly under the giant title — title in row 1,
      taglines in rows 2–3 of the same column, photo spanning all three behind. */
@@ -1163,8 +1164,8 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
   .hero-photo.photo-mask.arch { grid-area: 1 / 1 / 4 / 2; }
   .hero-side { position: static; grid-column: 1; justify-self: start; align-self: start; max-width: 24ch; text-align: left; }
   .hero-side.left { grid-row: 2; margin-top: clamp(16px, 2.2vw, 36px); } /* owner: tucked up under the title, then given more breathing room above */
-  .hero-side.right { grid-row: 3; margin-top: .3em; margin-left: calc(32vw - var(--gutter-page)); /* owner: about half way across, then brought further left so it stays on the red */ text-shadow: 0 1px 12px rgba(59, 10, 18, .45); /* keeps white legible where it runs onto the pale photo */ max-width: none; text-align: left; white-space: nowrap; font-size: clamp(20px, 2.05vw, 28px); padding-bottom: clamp(40px, 5vw, 80px); } /* owner: slightly larger */
-  .hero-side.right .script { display: block; font-size: 2.6em; line-height: .9; margin-left: 3.2em; color: var(--sbf-paper); } /* own line, larger, sweeping */
+  .hero-side.right { grid-row: 3; margin-top: .3em; margin-left: calc(32vw - var(--gutter-page)); /* owner: about half way across, then brought further left so it stays on the red */ text-shadow: 0 1px 12px rgba(59, 10, 18, .45); /* keeps white legible where it runs onto the pale photo */ max-width: none; text-align: left; white-space: nowrap; padding-bottom: clamp(40px, 5vw, 80px); } /* owner: same size and weight as the first tagline */
+  .hero-side.right .script { display: block; font-size: 3.15em; /* keeps "Together." the same size now the line is smaller */ line-height: .9; margin-left: 3.2em; color: var(--sbf-paper); } /* own line, larger, sweeping */
   .spin-badge { left: auto; right: calc(var(--gutter-page) + var(--photo-inset) + var(--photo-w) / 2); transform: translate(50%, 50%); }
 }
 
