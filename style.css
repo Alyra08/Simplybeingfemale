@@ -1163,15 +1163,18 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
   .hero-giant { grid-area: 1 / 1; }
   .hero-photo.photo-mask.arch { grid-area: 1 / 1 / 4 / 2; }
   .hero-side { position: static; grid-column: 1; justify-self: start; align-self: start; max-width: 24ch; text-align: left; }
-  .hero-side.left { grid-row: 2; margin-top: clamp(16px, 2.2vw, 36px); } /* owner: tucked up under the title, then given more breathing room above */
+  .hero-side.left { grid-row: 2; margin-top: clamp(28px, 4vw, 64px); } /* owner: tucked up under the title, then given more breathing room above */
   .hero-side.right { grid-row: 3; margin-top: .3em; margin-left: calc(32vw - var(--gutter-page)); /* owner: about half way across, then brought further left so it stays on the red */ text-shadow: 0 1px 12px rgba(59, 10, 18, .45); /* keeps white legible where it runs onto the pale photo */ max-width: none; text-align: left; white-space: nowrap; padding-bottom: clamp(40px, 5vw, 80px); } /* owner: same size and weight as the first tagline */
-  .hero-side.right .script { display: block; font-size: 3.15em; /* keeps "Together." the same size now the line is smaller */ line-height: .9; margin-left: 3.2em; color: var(--sbf-paper); } /* own line, larger, sweeping */
+  .hero-side.right .script { display: block; font-size: 3.15em; /* keeps "Together." the same size now the line is smaller */ line-height: .9; margin-left: 1.7em; color: var(--sbf-petal); } /* own line, larger; owner: starts partly under "doing it", pale pink like the title */
   .spin-badge { left: auto; right: calc(var(--gutter-page) + var(--photo-inset) + var(--photo-w) / 2); transform: translate(50%, 50%); }
 }
 
 /* Homepage founder heading (owner: drop the "Hello" label, open with the
    greeting, bolder and slightly larger). Silk Serif only ships ExtraLight,
    so this uses Cormorant Garamond semi-bold, a matching elegant serif. */
+/* owner: founder text pushed further right and a little narrower */
+.founder-copy { max-width: 780px; }
+@media (min-width: 861px) { .founder-copy { padding-left: clamp(24px, 4vw, 72px); } }
 .founder-heading {
   font-family: "Cormorant Garamond", var(--font-display);
   font-weight: 600;
