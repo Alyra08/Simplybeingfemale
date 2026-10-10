@@ -1169,26 +1169,67 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
   .spin-badge { left: auto; right: calc(var(--gutter-page) + var(--photo-inset) + var(--photo-w) / 2); transform: translate(50%, 50%); }
 }
 
-/* Homepage founder heading (owner: drop the "Hello" label, open with the
-   greeting, bolder and slightly larger). Silk Serif only ships ExtraLight,
-   so this uses Cormorant Garamond semi-bold, a matching elegant serif. */
-/* owner: founder text pushed further right and a little narrower */
-.founder-copy { max-width: 780px; }
-@media (min-width: 861px) { .founder-copy { padding-left: clamp(24px, 4vw, 72px); } }
-.founder-heading {
-  font-family: "Cormorant Garamond", var(--font-display);
-  font-weight: 600;
-  font-size: clamp(28px, 3.2vw, 40px);
-  line-height: 1.15;
-  letter-spacing: -0.005em;
+/* Homepage founder block — owner (2026-10-10): split layout modelled on a
+   reference she liked ("I am going to legit HELP YOU GROW"): photo fills the
+   left half edge to edge, right half has a small pink caps line, a big serif
+   heading mixing roman / italic / CAPS, short body and an outlined pill. */
+.founder-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  min-height: clamp(520px, 46vw, 720px);
+  background: var(--sbf-cream);
 }
-.founder-heading em { font-weight: 600; }
-.founder-hello { display: block; margin-bottom: .2em; color: var(--sbf-orange); } /* owner: orange greeting */
-.founder-line, .founder-line em { font-family: var(--font-display); font-weight: 400; font-style: italic; }
-.founder-line { display: block; font-size: .85em; } /* owner: slightly smaller, all italic */ /* owner: same font as the paragraph below (.lede) */
-.founder-btn { background: var(--sbf-candy); color: var(--sbf-red); border-color: transparent; -webkit-text-stroke: .03em currentColor; } /* owner: match the pink "Join the list" button (was orange with pink writing) */
-.founder-btn:hover { background: var(--sbf-red); color: var(--sbf-candy); } /* white hover would vanish on the pale pink section, so flip to red */
-@media (max-width: 600px) { .founder-btn { max-width: 100%; white-space: normal; text-align: center; } }
+.founder-split-photo { position: relative; overflow: hidden; }
+.founder-split-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 35%; }
+.founder-split-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: var(--space-6);
+  padding: clamp(48px, 6vw, 96px) clamp(28px, 6vw, 110px);
+  max-width: 720px;
+}
+.founder-eyebrow {
+  margin: 0;
+  font-family: var(--font-deco);
+  font-size: 13px;
+  letter-spacing: var(--tracking-deco);
+  text-transform: uppercase;
+  color: var(--sbf-pink);
+  -webkit-text-stroke: .02em currentColor;
+}
+.founder-split-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(40px, 4.6vw, 72px);
+  line-height: 1.02;
+  letter-spacing: -0.01em;
+  color: var(--sbf-ink);
+  -webkit-text-stroke: .012em currentColor;
+}
+.founder-split-title em { font-style: italic; }
+.founder-split-title .caps { text-transform: uppercase; letter-spacing: .01em; }
+.founder-split-body { margin: 0; max-width: 46ch; font-size: var(--text-body-md); line-height: 1.7; color: var(--sbf-ink); }
+.founder-split-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 14px 30px;
+  border: 1.5px solid var(--sbf-red);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-deco);
+  font-size: 14px;
+  letter-spacing: var(--tracking-deco);
+  text-transform: uppercase;
+  color: var(--sbf-red);
+  text-decoration: none;
+  transition: var(--transition-control);
+}
+.founder-split-btn:hover { background: var(--sbf-red); color: var(--sbf-paper); }
+@media (max-width: 860px) {
+  .founder-split { grid-template-columns: 1fr; min-height: 0; }
+  .founder-split-photo { height: min(110vw, 460px); }
+}
 
 /* Centred statement on white, with colour-highlighted phrases */
 .statement { padding-top: calc(var(--section-y) + 70px); }
