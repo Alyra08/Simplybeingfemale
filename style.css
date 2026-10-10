@@ -46,8 +46,8 @@
 
   --sbf-cream: #FAF6F3;      /* off-white page background */
   --sbf-paper: #FFFFFF;      /* white sections — the breathing room */
-  --sbf-ink: #616161;        /* owner (2026-10-10): neutral grey for all text — was berry-brown #6E4448, before that deep berry #3B0A12 */
-  --sbf-ink-soft: #616161;
+  --sbf-ink: #4A4544;        /* owner (2026-10-10): warm charcoal for all text — was grey #616161, berry-brown #6E4448, deep berry #3B0A12 */
+  --sbf-ink-soft: #4A4544;
   --sbf-line: #F5DADF;       /* hairline borders */
 
   --sbf-coral: #EC5534;      /* Papaya punch (owner-supplied) — highlight words: 3.6 on white, keep them large */
