@@ -1196,36 +1196,25 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
   font-size: 13px;
   letter-spacing: var(--tracking-deco);
   text-transform: uppercase;
-  color: var(--sbf-pink);
+  color: var(--sbf-red); /* owner: red (was pink) */
   -webkit-text-stroke: .02em currentColor;
 }
 .founder-split-title {
   margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(40px, 4.6vw, 72px);
-  line-height: 1.02;
-  letter-spacing: -0.01em;
+  font-size: clamp(34px, 4vw, 60px);
+  line-height: .98;
+  text-transform: uppercase; /* owner: same look as "Are you ready to be" — Silk Serif caps */
+  letter-spacing: .02em;
   color: var(--sbf-orange); /* owner: orange heading */
-  -webkit-text-stroke: .012em currentColor;
+  -webkit-text-stroke: .016em currentColor;
 }
-.founder-split-title em { font-style: italic; }
-.founder-split-title .caps { text-transform: uppercase; letter-spacing: .01em; }
+.founder-split-title em { font-style: normal; }
+.founder-split-title .caps { letter-spacing: inherit; }
+.founder-split-title .lower { text-transform: none; letter-spacing: -0.005em; } /* owner: first line in normal case, rest in caps */
 .founder-split-body { margin: 0; max-width: 46ch; font-size: var(--text-body-md); line-height: 1.7; color: var(--sbf-ink); }
-.founder-split-btn {
-  display: inline-flex;
-  align-items: center;
-  padding: 14px 30px;
-  border: 1.5px solid var(--sbf-red);
-  border-radius: var(--radius-pill);
-  font-family: var(--font-deco);
-  font-size: 14px;
-  letter-spacing: var(--tracking-deco);
-  text-transform: uppercase;
-  color: var(--sbf-red);
-  text-decoration: none;
-  transition: var(--transition-control);
-}
-.founder-split-btn:hover { background: var(--sbf-red); color: var(--sbf-paper); }
+.founder-split-btn { background: var(--sbf-candy); color: var(--sbf-red); border-color: transparent; -webkit-text-stroke: .03em currentColor; } /* owner: match the pink "Join the list" button (was an outlined pill) */
+.founder-split-btn:hover { background: var(--sbf-red); color: var(--sbf-candy); }
 @media (max-width: 860px) {
   .founder-split { grid-template-columns: 1fr; min-height: 0; }
   .founder-split-photo { height: min(110vw, 460px); }
@@ -1233,6 +1222,9 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
 
 /* Centred statement on white, with colour-highlighted phrases */
 .statement { padding-top: calc(var(--section-y) + 70px); }
+.statement-big { position: relative; isolation: isolate; } /* keeps the star behind the words but above the section background */
+.statement-i { position: relative; display: inline-block; }
+.statement-star { position: absolute; left: 50%; top: 50%; width: 1.6em; height: 1.6em; transform: translate(-85%, -95%) rotate(8deg); z-index: -1; color: var(--sbf-orange); -webkit-text-stroke: 0; pointer-events: none; } /* owner: large ✦ star tucked behind the opening "I", offset up and to the left */
 .statement-big {
   font-family: var(--font-display);
   font-size: clamp(27px, 3.5vw, 46px);
