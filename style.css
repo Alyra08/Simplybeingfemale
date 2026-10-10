@@ -536,7 +536,7 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
    your habits, change your life" reference she liked. White text on papaya is
    3.6:1 — fine for the heading and bold titles, below AA for the small links. */
 .site-footer {
-  background: var(--sbf-orange);
+  background: var(--sbf-red); /* owner: switched from papaya to the site red */
   color: var(--sbf-paper);
   border-top: 6px solid var(--sbf-red); /* owner: straight top edge with a red line above the orange (was rounded corners) */
   padding: clamp(56px, 7vw, 96px) var(--gutter-page) var(--space-8);
