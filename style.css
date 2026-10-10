@@ -530,82 +530,81 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
   .nav-utility-actions { margin-left: auto; }
 }
 
-/* Footer */
+/* Footer — owner (2026-10-10): papaya block with rounded top corners, a centred
+   heading with script accent words, three centred columns each topped by a white
+   icon (flower / heart / ✦ star), then a slim bottom row. Modelled on a "Change
+   your habits, change your life" reference she liked. White text on papaya is
+   3.6:1 — fine for the heading and bold titles, below AA for the small links. */
 .site-footer {
-  background: var(--sbf-red);
-  color: var(--sbf-blush);
-  padding: var(--space-16) var(--gutter-page) var(--space-8);
+  background: var(--sbf-orange);
+  color: var(--sbf-paper);
+  border-radius: 40px 40px 0 0;
+  padding: clamp(56px, 7vw, 96px) var(--gutter-page) var(--space-8);
+}
+.footer-inner { max-width: 1120px; margin: 0 auto; display: grid; gap: clamp(40px, 5vw, 64px); }
+.footer-heading {
+  margin: 0;
+  text-align: center;
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: clamp(30px, 3.6vw, 48px);
+  line-height: 1.15;
+  color: var(--sbf-paper);
+}
+.footer-heading .script {
+  font-family: var(--font-script);
+  font-weight: 400;
+  font-size: 1.45em;
+  line-height: .8;
+  color: var(--sbf-candy);
+  padding: 0 .08em;
 }
 .footer-grid {
-  max-width: var(--container-max);
-  margin: 0 auto;
   display: grid;
-  gap: var(--space-12);
-  grid-template-columns: minmax(200px, 1fr) repeat(auto-fit, minmax(140px, auto));
-}
-@media (max-width: 600px) {
-  .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-8); }
-  .footer-grid > :first-child { grid-column: 1 / -1; }
-}
-.footer-stamp {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  background: var(--sbf-blush);
-  color: var(--sbf-red);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-deco);
-  font-size: var(--text-micro);
-  letter-spacing: var(--tracking-micro);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-8);
   text-align: center;
-  text-transform: uppercase;
 }
-.footer-stamp img { width: 78%; height: auto; } /* real logo replaced the SBF text (owner request) */
-.footer-tagline {
-  font-family: var(--font-display);
-  font-size: var(--text-h3);
-  line-height: var(--leading-snug);
-  letter-spacing: var(--tracking-display);
-  max-width: 18ch;
-  margin-top: var(--space-5);
-}
+.footer-col { display: flex; flex-direction: column; align-items: center; gap: var(--space-3); }
+.footer-icon { width: 56px; height: 56px; color: var(--sbf-paper); margin-bottom: var(--space-3); }
 .footer-col-title {
   font-family: var(--font-deco);
-  font-size: var(--text-micro);
+  font-size: 15px;
   letter-spacing: var(--tracking-deco);
   text-transform: uppercase;
-  color: var(--sbf-cream);
-  display: block;
-  margin-bottom: var(--space-3);
+  color: var(--sbf-paper);
+  margin-bottom: var(--space-2);
 }
 .footer-col a {
   color: var(--sbf-paper);
   font-size: var(--text-body-sm);
+  font-weight: 600;
   text-decoration: none;
-  opacity: .85;
-  display: block;
-  margin-bottom: var(--space-3);
+  border-bottom: 1px solid transparent;
+  transition: var(--transition-control);
 }
-.footer-col a:hover { opacity: 1; color: var(--sbf-paper); }
+.footer-col a:hover { border-bottom-color: currentColor; }
 .footer-bottom {
-  max-width: var(--container-max);
-  margin: var(--space-12) auto 0;
   padding-top: var(--space-5);
-  border-top: 1px solid rgba(246, 220, 220, .28);
+  border-top: 1px solid rgba(255, 255, 255, .35);
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: var(--space-4);
   flex-wrap: wrap;
   font-family: var(--font-deco);
   font-size: var(--text-micro);
   letter-spacing: var(--tracking-wide);
   text-transform: uppercase;
-  opacity: .8;
 }
+.footer-tagline { font-family: var(--font-deco); }
 .footer-social { display: flex; gap: var(--space-5); }
 .footer-social a { color: inherit; text-decoration: none; }
+.footer-social a:hover { text-decoration: underline; }
+@media (max-width: 600px) {
+  .footer-grid { grid-template-columns: 1fr; gap: var(--space-10); }
+  .footer-bottom { flex-direction: column; text-align: center; }
+}
 
 /* Sections */
 .section {
