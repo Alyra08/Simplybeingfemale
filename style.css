@@ -650,10 +650,11 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
 .stats-band { padding: var(--space-16) 0 var(--space-12); background: var(--sbf-paper); }
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr)); /* four across, 2×2 on narrower screens (was auto-fit, which left one stat alone on a second row) */
   gap: var(--space-8);
   text-align: center;
 }
+@media (max-width: 900px) { .stats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: var(--space-10); } }
 .stat-number {
   display: block;
   font-family: var(--font-numeral);
@@ -661,7 +662,7 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
   font-variation-settings: "opsz" 24, "SOFT" 100; /* owner: match the soft rounded "Sophie & James" names — low contrast, rounded terminals */
   font-size: clamp(36px, 4.875vw, 66px); /* owner: a quarter smaller */
   letter-spacing: -0.01em;
-  color: var(--sbf-red); /* owner: red (was pink like the names) */
+  color: var(--sbf-orange); /* owner: orange (was red, before that pink) */
   line-height: 0.95;
 }
 .stat-label {
@@ -1182,9 +1183,12 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
   letter-spacing: -0.005em;
 }
 .founder-heading em { font-weight: 600; }
-.founder-hello { display: block; margin-bottom: .2em; }
+.founder-hello { display: block; margin-bottom: .2em; color: var(--sbf-orange); } /* owner: orange greeting */
 .founder-line, .founder-line em { font-family: var(--font-display); font-weight: 400; font-style: italic; }
 .founder-line { display: block; font-size: .85em; } /* owner: slightly smaller, all italic */ /* owner: same font as the paragraph below (.lede) */
+.founder-btn { background: var(--sbf-candy); color: var(--sbf-red); border-color: transparent; -webkit-text-stroke: .03em currentColor; } /* owner: match the pink "Join the list" button (was orange with pink writing) */
+.founder-btn:hover { background: var(--sbf-red); color: var(--sbf-candy); } /* white hover would vanish on the pale pink section, so flip to red */
+@media (max-width: 600px) { .founder-btn { max-width: 100%; white-space: normal; text-align: center; } }
 
 /* Centred statement on white, with colour-highlighted phrases */
 .statement { padding-top: calc(var(--section-y) + 70px); }
@@ -1195,13 +1199,15 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
   letter-spacing: -0.01em;
   max-width: 30ch;
   color: var(--sbf-ink);
+  -webkit-text-stroke: .016em currentColor; /* owner: slightly bolder — Silk Serif only ships ExtraLight */
 }
 .hl-cherry { color: var(--sbf-red); }
 .hl-rasp { color: var(--sbf-bubblegum); } /* rose blush on white 4.3 */
 .hl-coral { color: var(--sbf-coral); }
 .squiggle-under {
-  padding-bottom: 6px;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 10'%3E%3Cpath d='M0 5 C2.5 0 7.5 0 10 5 S17.5 10 20 5 S27.5 0 30 5 S37.5 10 40 5' fill='none' stroke='%23EC5534' stroke-width='2.5'/%3E%3C/svg%3E") left bottom / 40px 10px repeat-x;
+  padding-bottom: 9px;
+  /* owner: smoother, more seamless wave — taller tile so the crests aren't clipped flat, path runs past both tile edges so repeats join cleanly */
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 14'%3E%3Cpath d='M-10 7 Q-5 2.5 0 7 T10 7 T20 7 T30 7 T40 7 T50 7' fill='none' stroke='%23EC5534' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E") left bottom / 40px 14px repeat-x;
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
 }
