@@ -1334,8 +1334,8 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
   .quote-banner-btn { padding: 18px 26px; font-size: 15px; letter-spacing: .08em; white-space: nowrap; }
 }
 .ready-signup { display: flex; flex-wrap: wrap; gap: var(--space-3); width: 100%; max-width: 480px; }
-.ready-signup .btn-onred { background: var(--sbf-candy); justify-content: center; text-align: center; -webkit-text-stroke: .03em currentColor; } /* owner: pink like "heard?", text slightly bolder (Brolia only ships one weight) */
-.ready-signup .btn-onred:hover { background: var(--sbf-paper); }
+.ready-signup .btn-onred { background: var(--sbf-candy); color: var(--sbf-paper); justify-content: center; text-align: center; -webkit-text-stroke: .03em currentColor; } /* owner: pink like "heard?", text slightly bolder (Brolia only ships one weight) */
+.ready-signup .btn-onred:hover { background: var(--sbf-paper); color: var(--sbf-red); }
 .ready-signup input[type="email"] {
   flex: 1 1 220px;
   padding: 14px 20px;
