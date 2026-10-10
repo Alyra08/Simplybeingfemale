@@ -46,8 +46,8 @@
 
   --sbf-cream: #FAF6F3;      /* off-white page background */
   --sbf-paper: #FFFFFF;      /* white sections — the breathing room */
-  --sbf-ink: #6E4448;        /* owner: softer berry-brown for all text (was deep berry #3B0A12) — never grey/black */
-  --sbf-ink-soft: #6E4448;
+  --sbf-ink: #616161;        /* owner (2026-10-10): neutral grey for all text — was berry-brown #6E4448, before that deep berry #3B0A12 */
+  --sbf-ink-soft: #616161;
   --sbf-line: #F5DADF;       /* hairline borders */
 
   --sbf-coral: #EC5534;      /* Papaya punch (owner-supplied) — highlight words: 3.6 on white, keep them large */
@@ -538,7 +538,7 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
 .site-footer {
   background: var(--sbf-orange);
   color: var(--sbf-paper);
-  border-radius: 40px 40px 0 0;
+  border-top: 6px solid var(--sbf-red); /* owner: straight top edge with a red line above the orange (was rounded corners) */
   padding: clamp(56px, 7vw, 96px) var(--gutter-page) var(--space-8);
 }
 .footer-inner { max-width: 1120px; margin: 0 auto; display: grid; gap: clamp(40px, 5vw, 64px); }
@@ -1292,6 +1292,8 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
   .quote-banner-btn { padding: 18px 26px; font-size: 15px; letter-spacing: .08em; white-space: nowrap; }
 }
 .ready-signup { display: flex; flex-wrap: wrap; gap: var(--space-3); width: 100%; max-width: 480px; }
+.ready-signup .btn-onred { background: var(--sbf-candy); justify-content: center; text-align: center; -webkit-text-stroke: .03em currentColor; } /* owner: pink like "heard?", text slightly bolder (Brolia only ships one weight) */
+.ready-signup .btn-onred:hover { background: var(--sbf-paper); }
 .ready-signup input[type="email"] {
   flex: 1 1 220px;
   padding: 14px 20px;
