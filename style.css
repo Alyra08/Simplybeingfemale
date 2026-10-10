@@ -737,7 +737,7 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
   color: var(--sbf-red);
 }
 .card.tone-red .card-title { color: var(--sbf-blush); }
-.card-title-stack { font-family: var(--font-display); font-weight: 400; font-size: clamp(40px, 4.2vw, 56px); line-height: .92; letter-spacing: -0.035em; color: var(--sbf-paper); -webkit-text-stroke: .012em currentColor; } /* owner: same font as the "Simply being female" hero title, slightly larger, white (was chunky Fraunces) */
+.card-title-stack { font-family: var(--font-display); font-weight: 400; font-size: clamp(40px, 4.2vw, 56px); line-height: .92; letter-spacing: -0.03em; color: var(--sbf-paper); -webkit-text-stroke: .035em currentColor; } /* owner: bolder; same font as the "Simply being female" hero title, slightly larger, white (was chunky Fraunces) */
 .card.tone-red .card-title-stack { color: var(--sbf-paper); }
 .card-body p { font-size: var(--text-body-sm); line-height: var(--leading-body); opacity: .85; }
 .card-footer { margin-top: auto; padding-top: var(--space-3); }
@@ -1182,7 +1182,7 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
   min-height: clamp(520px, 46vw, 720px);
   background: var(--sbf-cream);
 }
-.founder-split-photo { position: relative; overflow: hidden; }
+.founder-split-photo { position: relative; overflow: hidden; margin: clamp(20px, 3.5vw, 56px); border-radius: var(--radius-lg); } /* owner: inset with equal space on all sides (was edge to edge) */
 .founder-split-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 35%; }
 .founder-split-copy {
   display: flex;
@@ -1202,6 +1202,11 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
   color: var(--sbf-red); /* owner: red (was pink) */
   -webkit-text-stroke: .02em currentColor;
 }
+/* owner (2026-10-10): every small caps label ("Hello beautiful human beings |
+   welcome home", "Why we're here", card labels like "Monthly") is one size and
+   the charcoal text grey, slightly bolder; on red/raspberry blocks it stays light. */
+.eyebrow, .card-eyebrow, .founder-eyebrow { font-size: 13px; color: var(--sbf-ink); -webkit-text-stroke: .02em currentColor; }
+.section.tone-raspberry .eyebrow, .section.tone-red .eyebrow, .eyebrow.on-blush, .card.tone-red .card-eyebrow { color: var(--sbf-cream); }
 .founder-split-title {
   margin: 0;
   font-family: var(--font-display);
@@ -1372,3 +1377,4 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
 }
 .starburst .rule { width: 34px; height: 1px; background: currentColor; opacity: .7; }
 .starburst small { font-family: var(--font-deco); font-size: 10px; letter-spacing: .16em; text-transform: uppercase; }
+.refuse-title { color: var(--sbf-red); -webkit-text-stroke: .025em currentColor; } /* owner: bolder red "We refuse to stay small." */
