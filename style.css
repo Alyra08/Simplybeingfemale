@@ -1205,7 +1205,7 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
   font-size: clamp(40px, 4.6vw, 72px);
   line-height: 1.02;
   letter-spacing: -0.01em;
-  color: var(--sbf-ink);
+  color: var(--sbf-orange); /* owner: orange heading */
   -webkit-text-stroke: .012em currentColor;
 }
 .founder-split-title em { font-style: italic; }
