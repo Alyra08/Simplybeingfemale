@@ -446,7 +446,7 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
   box-shadow: var(--shadow-lift);
 }
 .nav-topics.open .topics-menu { display: block; }
-@media (hover: hover) and (min-width: 1401px) {
+@media (hover: hover) and (min-width: 1081px) {
   .nav-topics:hover .topics-menu, .nav-topics:focus-within .topics-menu { display: block; }
 }
 .topics-inner {
@@ -502,7 +502,7 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
   padding: 0;
   cursor: pointer;
 }
-@media (max-width: 1400px) { /* ten menu items need ~1390px on one row; below that use the menu button */
+@media (max-width: 1080px) { /* seven menu items need ~1060px on one row; below that use the menu button */
   .nav-links-all { display: none; }
   .nav-links-all.open {
     display: flex;
@@ -1162,7 +1162,7 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
   .hero-giant { grid-area: 1 / 1; }
   .hero-photo.photo-mask.arch { grid-area: 1 / 1 / 4 / 2; }
   .hero-side { position: static; grid-column: 1; justify-self: start; align-self: start; max-width: 24ch; text-align: left; }
-  .hero-side.left { grid-row: 2; margin-top: clamp(-12px, -.6vw, -4px); } /* owner: tucked up close under the title */
+  .hero-side.left { grid-row: 2; margin-top: clamp(16px, 2.2vw, 36px); } /* owner: tucked up under the title, then given more breathing room above */
   .hero-side.right { grid-row: 3; margin-top: .3em; margin-left: calc(32vw - var(--gutter-page)); /* owner: about half way across, then brought further left so it stays on the red */ text-shadow: 0 1px 12px rgba(59, 10, 18, .45); /* keeps white legible where it runs onto the pale photo */ max-width: none; text-align: left; white-space: nowrap; font-size: clamp(20px, 2.05vw, 28px); padding-bottom: clamp(40px, 5vw, 80px); } /* owner: slightly larger */
   .hero-side.right .script { display: block; font-size: 2.6em; line-height: .9; margin-left: 3.2em; color: var(--sbf-paper); } /* own line, larger, sweeping */
   .spin-badge { left: auto; right: calc(var(--gutter-page) + var(--photo-inset) + var(--photo-w) / 2); transform: translate(50%, 50%); }
