@@ -1377,4 +1377,6 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
 }
 .starburst .rule { width: 34px; height: 1px; background: currentColor; opacity: .7; }
 .starburst small { font-family: var(--font-deco); font-size: 10px; letter-spacing: .16em; text-transform: uppercase; }
-.refuse-title { color: var(--sbf-red); -webkit-text-stroke: .025em currentColor; } /* owner: bolder red "We refuse to stay small." */
+.heading-orange { font-family: var(--font-display); font-size: clamp(34px, 4vw, 60px); line-height: 1.02; color: var(--sbf-orange); -webkit-text-stroke: .016em currentColor; } /* owner: shared spec for orange section headings ("We refuse to stay small.", "Four doors, no gatekeepers.") — same size, weight and orange as "I left the room first." */
+.heading-orange em { color: inherit; }
+.doors-grid .card-title:not(.card-title-stack) { font-family: var(--font-display); font-size: clamp(30px, 3.2vw, 46px); line-height: 1.02; color: var(--sbf-red); -webkit-text-stroke: .016em currentColor; } /* owner: card titles (The circle / Topics / The podcast) on the same size + weight spec, in red */
