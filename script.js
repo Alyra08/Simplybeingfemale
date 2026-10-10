@@ -6,6 +6,31 @@ document.querySelectorAll(".nav-toggle").forEach((btn) => {
   });
 });
 
+// Topics mega-menu: click to open/close, Escape or a click outside closes it
+document.querySelectorAll(".nav-topics").forEach((wrap) => {
+  const btn = wrap.querySelector(".nav-topics-toggle");
+  const setOpen = (open) => {
+    wrap.classList.toggle("open", open);
+    btn.setAttribute("aria-expanded", String(open));
+  };
+  btn.addEventListener("click", () => setOpen(!wrap.classList.contains("open")));
+  document.addEventListener("click", (e) => { if (!wrap.contains(e.target)) setOpen(false); });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && wrap.classList.contains("open")) { setOpen(false); btn.focus(); }
+  });
+});
+
+// Blog page: when arriving from a Topics link, say which topic was picked
+const topicNote = document.getElementById("topic-note");
+const topicSlug = new URLSearchParams(location.search).get("topic");
+if (topicNote && topicSlug) {
+  const link = document.querySelector(`.topics-col a[href="blog.html?topic=${CSS.escape(topicSlug)}"]`);
+  if (link) {
+    topicNote.querySelector("[data-topic-name]").textContent = link.textContent.replace(/^All /, "");
+    topicNote.hidden = false;
+  }
+}
+
 // Join dialog (shared across pages)
 const dialogScrim = document.getElementById("join-dialog");
 if (dialogScrim) {

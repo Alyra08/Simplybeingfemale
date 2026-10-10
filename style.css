@@ -417,6 +417,66 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
   transition: var(--transition-control);
 }
 .nav-link:hover, .nav-link.active { opacity: 1; border-bottom-color: currentColor; color: var(--sbf-red); }
+
+/* Topics mega-menu (owner: a "Topics" dropdown of female-specific article types,
+   laid out in columns like a magazine site). Opens on hover/focus on desktop and
+   on click everywhere; spans the full width of the sticky nav bar. */
+.nav-topics { display: flex; align-items: center; }
+.nav-topics-toggle { position: relative; display: inline-flex; align-items: center; gap: 6px; }
+.nav-topics-toggle::before { /* small chevron */
+  content: ""; order: 2; width: 6px; height: 6px;
+  border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor;
+  transform: translateY(-2px) rotate(45deg); transition: transform .2s ease;
+}
+.nav-topics-toggle::after { /* invisible bridge so the menu stays open while the pointer moves down to it */
+  content: ""; position: absolute; left: -12px; right: -12px; top: 100%; height: 34px;
+}
+.nav-topics.open .nav-topics-toggle, .nav-topics:hover .nav-topics-toggle { opacity: 1; color: var(--sbf-red); }
+.nav-topics.open .nav-topics-toggle::before { transform: translateY(1px) rotate(-135deg); }
+.topics-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 22;
+  background: var(--surface-page);
+  border-top: 1px solid var(--border-hairline);
+  border-bottom: 1px solid var(--border-hairline);
+  box-shadow: var(--shadow-lift);
+}
+.nav-topics.open .topics-menu { display: block; }
+@media (hover: hover) and (min-width: 1401px) {
+  .nav-topics:hover .topics-menu, .nav-topics:focus-within .topics-menu { display: block; }
+}
+.topics-inner {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: var(--space-8);
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: var(--space-10) var(--gutter-page) var(--space-12);
+}
+.topics-col { display: flex; flex-direction: column; gap: 14px; align-items: flex-start; }
+.topics-title {
+  font-family: var(--font-punch);
+  font-size: 30px;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: .01em;
+  color: var(--sbf-red);
+  margin-bottom: 10px;
+}
+.topics-col a {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--sbf-ink);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: var(--transition-control);
+}
+.topics-col a:hover { color: var(--sbf-red); border-bottom-color: currentColor; }
+.topics-col a:first-of-type { font-weight: 700; }
 .brand-wordmark {
   display: inline-flex;
   align-items: center;
@@ -442,7 +502,7 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
   padding: 0;
   cursor: pointer;
 }
-@media (max-width: 860px) {
+@media (max-width: 1400px) { /* ten menu items need ~1390px on one row; below that use the menu button */
   .nav-links-all { display: none; }
   .nav-links-all.open {
     display: flex;
@@ -456,6 +516,15 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
     border-bottom: 1px solid var(--border-hairline);
     z-index: 21;
   }
+  .nav-links-all.open { max-height: calc(100vh - 90px); overflow-y: auto; flex-wrap: nowrap; gap: var(--space-4); }
+  .nav-topics { width: 100%; }
+  .nav-topics { flex-direction: column; align-items: flex-start; }
+  .nav-topics-toggle::after { display: none; }
+  .topics-menu { position: static; box-shadow: none; border: none; background: none; }
+  .topics-inner { grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: var(--space-6); padding: var(--space-4) 0 var(--space-6); }
+  .topics-title { font-size: 22px; margin-bottom: 4px; }
+  .topics-col { gap: 10px; }
+  .topics-col a { font-size: 15px; }
   .nav-toggle { display: inline-flex; }
   .brand-wordmark img { height: 46px; }
   .nav-utility-actions { margin-left: auto; }
@@ -979,6 +1048,8 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
 .section.tone-petal { background: var(--sbf-petal); color: var(--sbf-berry); } /* owner: #FAC8D4 testimonial; red headline 3.7 (large), berry emphasis + caption 7.1 */
 .section.tone-petal h1, .section.tone-petal h2, .section.tone-petal h3 { color: var(--sbf-red); }
 .section.tone-petal em { color: var(--sbf-paper); }
+.petal-caption { font-family: var(--font-deco); font-size: var(--text-micro); letter-spacing: var(--tracking-deco); text-transform: uppercase; color: var(--sbf-berry); text-decoration: none; border-bottom: 1px solid transparent; transition: var(--transition-control); }
+.petal-caption:hover { color: var(--sbf-red); border-bottom-color: currentColor; }
 .section.tone-petal .badge-berry { background: var(--sbf-orange); color: var(--sbf-paper); font-size: 13px; padding: 8px 16px; } /* owner: orange badge on the pale pink testimonial (white text 2.9:1) */ /* owner: white "honey on the table" (only 1.5:1 on #FAC8D4) */
 .section.tone-rose { background: var(--sbf-pink); color: var(--sbf-ink); }
 .section.tone-rose h1, .section.tone-rose h2, .section.tone-rose h3 { color: var(--sbf-ink); }
@@ -1092,7 +1163,7 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
   .hero-photo.photo-mask.arch { grid-area: 1 / 1 / 4 / 2; }
   .hero-side { position: static; grid-column: 1; justify-self: start; align-self: start; max-width: 24ch; text-align: left; }
   .hero-side.left { grid-row: 2; margin-top: clamp(-12px, -.6vw, -4px); } /* owner: tucked up close under the title */
-  .hero-side.right { grid-row: 3; margin-top: .3em; margin-left: calc(50vw - var(--gutter-page)); /* owner: starts about half way across the page */ text-shadow: 0 1px 12px rgba(59, 10, 18, .45); /* keeps white legible where it runs onto the pale photo */ max-width: none; text-align: left; white-space: nowrap; font-size: clamp(20px, 2.05vw, 28px); padding-bottom: clamp(40px, 5vw, 80px); } /* owner: slightly larger */
+  .hero-side.right { grid-row: 3; margin-top: .3em; margin-left: calc(32vw - var(--gutter-page)); /* owner: about half way across, then brought further left so it stays on the red */ text-shadow: 0 1px 12px rgba(59, 10, 18, .45); /* keeps white legible where it runs onto the pale photo */ max-width: none; text-align: left; white-space: nowrap; font-size: clamp(20px, 2.05vw, 28px); padding-bottom: clamp(40px, 5vw, 80px); } /* owner: slightly larger */
   .hero-side.right .script { display: block; font-size: 2.6em; line-height: .9; margin-left: 3.2em; color: var(--sbf-paper); } /* own line, larger, sweeping */
   .spin-badge { left: auto; right: calc(var(--gutter-page) + var(--photo-inset) + var(--photo-w) / 2); transform: translate(50%, 50%); }
 }
@@ -1134,8 +1205,8 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
 .statement-copy { max-width: 62ch; font-size: var(--text-body-md); line-height: var(--leading-body); color: var(--text-muted); }
 
 /* Marquee bands */
-.marquee.tone-orange { background: var(--sbf-orange); color: var(--sbf-paper); } /* owner asked: white words */
-.marquee.tone-orange .marquee-track span::after { color: var(--sbf-red); opacity: 1; } /* owner: red stars on the papaya band */
+.marquee.tone-orange { background: var(--sbf-petal); color: var(--sbf-red); } /* owner: pale pink band like the testimonial (was papaya with white words — white is unreadable on pink, so words are red) */
+.marquee.tone-orange .marquee-track span::after { color: var(--sbf-orange); opacity: 1; } /* orange stars on the pink band */
 .marquee.tone-raspberry { background: var(--sbf-raspberry); color: var(--sbf-paper); }
 .marquee.tone-blush { background: var(--sbf-blush); color: var(--sbf-red-deep); } /* pastel pink band: scarlet words 5.4 */
 .marquee.tone-blush .marquee-track span::after { color: var(--sbf-pink); opacity: 1; }
@@ -1159,6 +1230,64 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
   line-height: .95;
 }
 .ready-copy { color: var(--sbf-paper); font-size: var(--text-body-lg); line-height: 1.7; max-width: 44ch; }
+
+/* Testimonial as a rounded papaya banner (owner: match a "What's your secret
+   sauce?" reference — thin serif caps line over a chunky pink Anton line,
+   short copy + white pill button on the right). White/pink text is large-only
+   on papaya (3.6:1), so the copy is set large and semi-bold. */
+.quote-banner-wrap { padding-top: var(--space-12); padding-bottom: var(--space-12); }
+.quote-banner {
+  max-width: 1440px;
+  margin: 0 auto;
+  background: var(--sbf-orange);
+  border-radius: 32px;
+  padding: clamp(36px, 5vw, 64px) clamp(28px, 6vw, 96px);
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: clamp(28px, 4vw, 64px);
+  align-items: center;
+}
+.quote-banner-title { display: grid; justify-items: center; text-align: center; line-height: .98; color: var(--sbf-paper); }
+.quote-banner-title span {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4.2vw, 64px);
+  text-transform: uppercase;
+  letter-spacing: .01em;
+  -webkit-text-stroke: .016em currentColor; /* same weight lift as "Are you ready" */
+}
+.quote-banner-title .punch {
+  font-family: var(--font-punch);
+  font-size: clamp(36px, 4.6vw, 70px);
+  color: var(--sbf-candy);
+  letter-spacing: .03em;
+  -webkit-text-stroke: 0;
+}
+.quote-banner-side { display: grid; gap: var(--space-6); justify-items: start; }
+.quote-banner-copy { color: var(--sbf-paper); font-size: clamp(18px, 1.4vw, 21px); font-weight: 600; line-height: 1.6; max-width: 40ch; margin: 0; }
+.quote-banner-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--sbf-paper);
+  color: var(--sbf-ink);
+  border-radius: var(--radius-pill);
+  padding: 22px 36px;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 17px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 6px 16px -6px rgba(84, 8, 14, .45);
+  transition: var(--transition-control);
+}
+.quote-banner-btn:hover { transform: translateY(-1px); color: var(--sbf-red); }
+@media (max-width: 860px) {
+  .quote-banner { grid-template-columns: 1fr; text-align: center; }
+  .quote-banner-side { justify-items: center; }
+  .quote-banner-copy { margin: 0 auto; }
+  .quote-banner-btn { padding: 18px 26px; font-size: 15px; letter-spacing: .08em; white-space: nowrap; }
+}
 .ready-signup { display: flex; flex-wrap: wrap; gap: var(--space-3); width: 100%; max-width: 480px; }
 .ready-signup input[type="email"] {
   flex: 1 1 220px;
