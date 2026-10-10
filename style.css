@@ -1085,10 +1085,15 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
   .hero-giant-wrap { --photo-w: clamp(240px, 31vw, 440px); --photo-inset: calc(-1 * var(--gutter-page)); /* flush against the right edge of the screen (owner request) */ }
   .hero-giant { justify-self: start; justify-items: start; text-align: left; margin-top: clamp(20px, 4vw, 64px); } /* owner: title further down, then nudged slightly back up */
   .hero-photo.photo-mask.arch { justify-self: end; width: var(--photo-w); margin-right: var(--photo-inset); margin-top: clamp(10px, 1.2vw, 20px); aspect-ratio: auto; height: calc(var(--photo-w) * 4 / 3 + clamp(78px, 11vw, 186px) - clamp(10px, 1.2vw, 20px)); } /* owner: photo runs almost the full height of the red section — same width, top raised to just under the nav */
-  .hero-side { max-width: 24ch; }
-  .hero-side.left { bottom: calc(clamp(20px, 3.5vw, 56px) + 3.6em); }
-  .hero-side.right { left: auto; right: calc(var(--photo-w) - 5em); bottom: clamp(60px, 7vw, 112px); max-width: none; white-space: nowrap; text-align: left; transform: translateX(-1.5em); font-size: clamp(20px, 2.05vw, 28px); text-shadow: 0 1px 12px rgba(59, 10, 18, .45); } /* owner: slightly larger, partly over the bottom of the photo; shadow keeps white legible on the pale photo */
-  .hero-side.right .script { display: block; font-size: 2.6em; line-height: .9; margin-left: 3.2em; color: var(--sbf-paper); } /* own line, larger, sweeping onto the photo; white so it reads on the pale confetti */
+  /* owner: both taglines sit directly under the giant title — title in row 1,
+     taglines in rows 2–3 of the same column, photo spanning all three behind. */
+  .hero-giant-wrap { grid-template-rows: auto auto 1fr; }
+  .hero-giant { grid-area: 1 / 1; }
+  .hero-photo.photo-mask.arch { grid-area: 1 / 1 / 4 / 2; }
+  .hero-side { position: static; grid-column: 1; justify-self: start; align-self: start; max-width: 24ch; text-align: left; }
+  .hero-side.left { grid-row: 2; margin-top: clamp(16px, 2vw, 32px); }
+  .hero-side.right { grid-row: 3; margin-top: .3em; max-width: none; text-align: left; white-space: nowrap; font-size: clamp(20px, 2.05vw, 28px); padding-bottom: clamp(40px, 5vw, 80px); } /* owner: slightly larger */
+  .hero-side.right .script { display: block; font-size: 2.6em; line-height: .9; margin-left: 3.2em; color: var(--sbf-paper); } /* own line, larger, sweeping */
   .spin-badge { left: auto; right: calc(var(--gutter-page) + var(--photo-inset) + var(--photo-w) / 2); transform: translate(50%, 50%); }
 }
 
