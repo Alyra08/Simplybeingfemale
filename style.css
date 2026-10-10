@@ -773,7 +773,7 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
 .wavy-squiggle.outer { --wave-mode: fill; --wave-fill: var(--wavy-bg); --wave-back: var(--sbf-orange); --wave-back-x: 10; --wave-back-y: 10; --wave-len: 100; --wave-amp: 7; z-index: 0; }
 .wavy-squiggle.inner { --wave-color: var(--sbf-red); inset: 16px; --wave-len: 80; --wave-amp: 4; --wave-stroke: 1.5; --wave-radius: 12; z-index: 0; }
 .wavy-card-inner { position: relative; z-index: 1; padding: clamp(30px, 7%, 58px); }
-.wavy-card-inner p {
+.wavy-card-inner > p:only-child { /* the single quote line (Contact); multi-element cards keep normal text styles */
   font-family: var(--font-body);
   font-weight: var(--weight-black);
   font-size: clamp(20px, 2.2vw, 30px);
