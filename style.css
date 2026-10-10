@@ -1206,12 +1206,12 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
   line-height: .98;
   text-transform: uppercase; /* owner: same look as "Are you ready to be" — Silk Serif caps */
   letter-spacing: .02em;
-  color: var(--sbf-orange); /* owner: orange heading */
+  color: var(--sbf-red); /* owner: "NOW I'M HOLDING THE DOOR." in red; first line stays orange (.lower) */
   -webkit-text-stroke: .016em currentColor;
 }
 .founder-split-title em { font-style: normal; }
 .founder-split-title .caps { letter-spacing: inherit; }
-.founder-split-title .lower { text-transform: none; letter-spacing: -0.005em; } /* owner: first line in normal case, rest in caps */
+.founder-split-title .lower { text-transform: none; letter-spacing: -0.005em; color: var(--sbf-orange); } /* owner: first line in normal case, rest in caps */
 .founder-star { display: inline-block; width: .8em; height: .8em; margin-left: .18em; vertical-align: .3em; color: var(--sbf-red); -webkit-text-stroke: 0; transform: rotate(8deg); } /* owner: a red ✦ star just after "first." */
 .founder-split-body { margin: 0; max-width: 46ch; font-size: var(--text-body-md); line-height: 1.7; color: var(--sbf-ink); }
 .founder-split-btn { background: var(--sbf-candy); color: var(--sbf-red); border-color: transparent; -webkit-text-stroke: .03em currentColor; } /* owner: match the pink "Join the list" button (was an outlined pill) */
