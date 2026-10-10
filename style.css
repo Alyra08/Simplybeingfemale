@@ -781,9 +781,9 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
 /* Wavy frame — thick, smooth, single-color wave border (invitation-card style) */
 .wavy-frame {
   position: relative;
-  padding: clamp(32px, 6%, 56px);
+  padding: clamp(48px, 8%, 84px); /* owner: more room between the wavy line and the text */
 }
-.wavy-frame-border { --wave-color: var(--sbf-pink); --wave-len: 110; --wave-amp: 7; --wave-stroke: 3; --wave-radius: 22; } /* RSVP-style line */
+.wavy-frame-border { --wave-color: var(--sbf-pink); --wave-len: 150; --wave-amp: 5; --wave-stroke: 3; --wave-radius: 46; } /* RSVP-style line; owner: smoother — longer, shallower waves and rounder corners so it flows round without lumps */
 .wavy-frame-inner {
   position: relative;
   z-index: 1;
@@ -1212,6 +1212,7 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
 .founder-split-title em { font-style: normal; }
 .founder-split-title .caps { letter-spacing: inherit; }
 .founder-split-title .lower { text-transform: none; letter-spacing: -0.005em; } /* owner: first line in normal case, rest in caps */
+.founder-star { display: inline-block; width: .8em; height: .8em; margin-left: .18em; vertical-align: .3em; color: var(--sbf-red); -webkit-text-stroke: 0; transform: rotate(8deg); } /* owner: a red ✦ star just after "first." */
 .founder-split-body { margin: 0; max-width: 46ch; font-size: var(--text-body-md); line-height: 1.7; color: var(--sbf-ink); }
 .founder-split-btn { background: var(--sbf-candy); color: var(--sbf-red); border-color: transparent; -webkit-text-stroke: .03em currentColor; } /* owner: match the pink "Join the list" button (was an outlined pill) */
 .founder-split-btn:hover { background: var(--sbf-red); color: var(--sbf-candy); }
