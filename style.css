@@ -385,7 +385,7 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
   display: flex;
   align-items: center;
   gap: var(--space-8);
-  padding: 10px var(--gutter-page);
+  padding: 18px var(--gutter-page); /* owner: more room above and below, equal */
   background: color-mix(in srgb, var(--surface-page) 50%, transparent);
   backdrop-filter: blur(6px);
   border-bottom: 1px solid var(--border-hairline);
@@ -593,7 +593,7 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
   font-variation-settings: "opsz" 24, "SOFT" 100; /* owner: match the soft rounded "Sophie & James" names — low contrast, rounded terminals */
   font-size: clamp(36px, 4.875vw, 66px); /* owner: a quarter smaller */
   letter-spacing: -0.01em;
-  color: var(--sbf-pink); /* owner: pink like the names (3.0 on white — large only) */
+  color: var(--sbf-red); /* owner: red (was pink like the names) */
   line-height: 0.95;
 }
 .stat-label {
@@ -1091,8 +1091,8 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
   .hero-giant { grid-area: 1 / 1; }
   .hero-photo.photo-mask.arch { grid-area: 1 / 1 / 4 / 2; }
   .hero-side { position: static; grid-column: 1; justify-self: start; align-self: start; max-width: 24ch; text-align: left; }
-  .hero-side.left { grid-row: 2; margin-top: clamp(16px, 2vw, 32px); }
-  .hero-side.right { grid-row: 3; margin-top: .3em; max-width: none; text-align: left; white-space: nowrap; font-size: clamp(20px, 2.05vw, 28px); padding-bottom: clamp(40px, 5vw, 80px); } /* owner: slightly larger */
+  .hero-side.left { grid-row: 2; margin-top: clamp(-12px, -.6vw, -4px); } /* owner: tucked up close under the title */
+  .hero-side.right { grid-row: 3; margin-top: .3em; margin-left: calc(50vw - var(--gutter-page)); /* owner: starts about half way across the page */ text-shadow: 0 1px 12px rgba(59, 10, 18, .45); /* keeps white legible where it runs onto the pale photo */ max-width: none; text-align: left; white-space: nowrap; font-size: clamp(20px, 2.05vw, 28px); padding-bottom: clamp(40px, 5vw, 80px); } /* owner: slightly larger */
   .hero-side.right .script { display: block; font-size: 2.6em; line-height: .9; margin-left: 3.2em; color: var(--sbf-paper); } /* own line, larger, sweeping */
   .spin-badge { left: auto; right: calc(var(--gutter-page) + var(--photo-inset) + var(--photo-w) / 2); transform: translate(50%, 50%); }
 }
