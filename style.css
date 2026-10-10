@@ -290,6 +290,8 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
 
 .btn-outline { background: var(--sbf-paper); color: var(--sbf-red); border-color: transparent; }
 .btn-outline:hover { background: var(--sbf-red); color: var(--sbf-paper); }
+.btn-orange { background: var(--sbf-orange); color: var(--sbf-paper); border-color: transparent; -webkit-text-stroke: .03em currentColor; } /* owner: orange button with white writing */
+.btn-orange:hover { background: var(--sbf-red); color: var(--sbf-paper); }
 
 .btn-ghost { background: transparent; color: var(--sbf-red); border-color: transparent; box-shadow: none; }
 .btn-ghost:hover { background: var(--sbf-blush); color: var(--sbf-red); box-shadow: none; }
@@ -783,7 +785,7 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
   position: relative;
   padding: clamp(48px, 8%, 84px); /* owner: more room between the wavy line and the text */
 }
-.wavy-frame-border { --wave-color: var(--sbf-pink); --wave-len: 150; --wave-amp: 5; --wave-stroke: 3; --wave-radius: 46; } /* RSVP-style line; owner: smoother — longer, shallower waves and rounder corners so it flows round without lumps */
+.wavy-frame-border { --wave-color: var(--sbf-pink); --wave-len: 120; --wave-amp: 9; --wave-stroke: 4.5; --wave-radius: 46; } /* RSVP-style line; owner: smooth round corners, then more swirl and a slightly thicker line */
 .wavy-frame-inner {
   position: relative;
   z-index: 1;
