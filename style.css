@@ -781,8 +781,8 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
 .section.stay-small-section { padding: clamp(36px, 5vw, 72px); } /* owner: rectangle runs the width of the page with the same space on all four sides */
 .wavy-raspberry { background: var(--sbf-candy); border-radius: 4px; }
 .wavy-raspberry .wavy-squiggle.outer { display: none; }
-.wavy-raspberry .wavy-squiggle.inner { --wave-color: var(--sbf-orange); --wave-len: 200; --wave-amp: 16; --wave-stroke: 5; --wave-radius: 30; inset: calc(-1px * (var(--wave-amp) + var(--wave-stroke) / 2)); }
-@media (max-width: 640px) { .wavy-raspberry .wavy-squiggle.inner { --wave-len: 140; --wave-amp: 10; --wave-stroke: 4; } }
+.wavy-raspberry .wavy-squiggle.inner { --wave-color: var(--sbf-orange); --wave-len: 200; --wave-amp: 16; --wave-stroke: 6.5; --wave-radius: 30; inset: calc(-1px * (var(--wave-amp) + var(--wave-stroke) / 2)); }
+@media (max-width: 640px) { .wavy-raspberry .wavy-squiggle.inner { --wave-len: 140; --wave-amp: 10; --wave-stroke: 5; } }
 .wavy-raspberry .heading-orange { color: var(--sbf-red-bright); }
 .wavy-raspberry .btn-orange { background: var(--sbf-red-bright); }
 .wavy-raspberry .btn-orange:hover { background: var(--sbf-pink-deep); }
