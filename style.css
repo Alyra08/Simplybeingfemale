@@ -666,7 +666,7 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
   font-variation-settings: "opsz" 24, "SOFT" 100; /* owner: match the soft rounded "Sophie & James" names — low contrast, rounded terminals */
   font-size: clamp(36px, 4.875vw, 66px); /* owner: a quarter smaller */
   letter-spacing: -0.01em;
-  color: var(--sbf-pink-deep); /* owner: dark strawberry pink (was orange, before that red, before that pink) */
+  color: var(--sbf-pink); /* owner: Strawberry pink (was dark strawberry, before that orange, red, pink) */
   line-height: 0.95;
 }
 .stat-label {
