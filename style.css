@@ -1306,7 +1306,7 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
    sauce?" reference — thin serif caps line over a chunky pink Anton line,
    short copy + white pill button on the right). White/pink text is large-only
    on papaya (3.6:1), so the copy is set large and semi-bold. */
-.quote-banner-wrap { padding-top: 0; padding-bottom: calc(var(--section-y) * .5); } /* owner: same space above and below the banner — above comes from the "Four doors" section's half-size bottom padding */
+.quote-banner-wrap { padding-top: 0; padding-bottom: calc(var(--section-y) * .25); } /* owner: same space above and below the banner — above comes from the "Four doors" section's half-size bottom padding */
 .quote-banner {
   max-width: 1440px;
   margin: 0 auto;
