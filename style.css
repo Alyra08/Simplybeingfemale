@@ -783,9 +783,7 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
 .wavy-raspberry .wavy-squiggle.outer { display: none; }
 .wavy-raspberry .wavy-squiggle.inner { --wave-color: var(--sbf-orange); --wave-len: 200; --wave-amp: 16; --wave-stroke: 6.5; --wave-radius: 30; inset: calc(-1px * (var(--wave-amp) + var(--wave-stroke) / 2)); }
 @media (max-width: 640px) { .wavy-raspberry .wavy-squiggle.inner { --wave-len: 140; --wave-amp: 10; --wave-stroke: 5; } }
-.wavy-raspberry .heading-orange { color: var(--sbf-red-bright); }
-.wavy-raspberry .btn-orange { background: var(--sbf-red-bright); }
-.wavy-raspberry .btn-orange:hover { background: var(--sbf-pink-deep); }
+.wavy-raspberry .heading-orange { color: var(--sbf-orange); } /* owner: heading back to papaya to match the swirl */
 .wavy-card-inner { position: relative; z-index: 1; padding: clamp(30px, 7%, 58px); }
 .wavy-card-inner > p:only-child { /* the single quote line (Contact); multi-element cards keep normal text styles */
   font-family: var(--font-body);
