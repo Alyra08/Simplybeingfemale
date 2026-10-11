@@ -1335,29 +1335,12 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
 }
 .quote-banner-side { display: grid; gap: var(--space-6); justify-items: start; }
 .quote-banner-copy { color: var(--sbf-paper); font-size: clamp(18px, 1.4vw, 21px); font-weight: 600; line-height: 1.6; max-width: 40ch; margin: 0; }
-.quote-banner-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  background: var(--sbf-paper);
-  color: var(--sbf-ink);
-  border-radius: var(--radius-pill);
-  padding: 22px 36px;
-  font-family: var(--font-body);
-  font-weight: 700;
-  font-size: 17px;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  text-decoration: none;
-  box-shadow: 0 6px 16px -6px rgba(84, 8, 14, .45);
-  transition: var(--transition-control);
-}
-.quote-banner-btn:hover { transform: translateY(-1px); color: var(--sbf-red); }
+.quote-banner-btn { background: var(--sbf-paper); color: var(--sbf-ink); } /* owner: same shape as the rest of the site (shared .btn .btn-lg) — was a custom oversized pill */
+.quote-banner-btn:hover { color: var(--sbf-red); }
 @media (max-width: 860px) {
   .quote-banner { grid-template-columns: 1fr; text-align: center; }
   .quote-banner-side { justify-items: center; }
   .quote-banner-copy { margin: 0 auto; }
-  .quote-banner-btn { padding: 18px 26px; font-size: 15px; letter-spacing: .08em; white-space: nowrap; }
 }
 .ready-signup { display: flex; flex-wrap: wrap; gap: var(--space-3); width: 100%; max-width: 480px; }
 .ready-signup .btn-onred { background: var(--sbf-candy); color: var(--sbf-red); justify-content: center; text-align: center; -webkit-text-stroke: .045em currentColor; } /* owner: pink like "heard?" with red writing, text slightly bolder (Brolia only ships one weight) */
