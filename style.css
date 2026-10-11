@@ -588,6 +588,12 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
   transition: var(--transition-control);
 }
 .footer-col a:hover { border-bottom-color: currentColor; }
+/* owner: Follow column as icons (Instagram, TikTok, Email) instead of words */
+.footer-social-icons { display: flex; gap: var(--space-5); justify-content: center; }
+.footer-col .footer-social-icons a { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; border: 0; color: var(--sbf-paper); transition: var(--transition-control); }
+.footer-col .footer-social-icons a:hover { background: var(--sbf-candy); color: var(--sbf-red); }
+.footer-social-icons svg { width: 28px; height: 28px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.footer-social-icons svg .dot { fill: currentColor; }
 .footer-bottom {
   padding-top: var(--space-5);
   border-top: 1px solid rgba(255, 255, 255, .35);
