@@ -1236,8 +1236,8 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
 .founder-split-title .lower { text-transform: none; letter-spacing: -0.005em; color: var(--sbf-orange); } /* owner: first line in normal case, rest in caps */
 .founder-star { display: inline-block; width: .8em; height: .8em; margin-left: .18em; vertical-align: .3em; color: var(--sbf-red); -webkit-text-stroke: 0; transform: rotate(8deg); } /* owner: a red ✦ star just after "first." */
 .founder-split-body { margin: 0; max-width: 46ch; font-size: var(--text-body-md); line-height: 1.7; color: var(--sbf-ink); }
-.founder-split-btn { background: var(--sbf-candy); color: var(--sbf-pink-deep); border-color: transparent; -webkit-text-stroke: .045em currentColor; } /* owner: match the pink "Join the list" button (was an outlined pill) */
-.founder-split-btn:hover { background: var(--sbf-pink-deep); color: var(--sbf-candy); }
+.founder-split-btn { background: var(--sbf-red); color: var(--sbf-paper); border-color: transparent; -webkit-text-stroke: .045em currentColor; } /* owner: red button with white writing */
+.founder-split-btn:hover { background: var(--sbf-red-deep); color: var(--sbf-paper); }
 @media (max-width: 860px) {
   .founder-split { grid-template-columns: 1fr; min-height: 0; }
   .founder-split-photo { height: min(110vw, 460px); width: auto; justify-self: stretch; }
