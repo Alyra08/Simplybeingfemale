@@ -570,7 +570,7 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
   text-align: center;
 }
 .footer-col { display: flex; flex-direction: column; align-items: center; gap: var(--space-3); }
-.footer-icon { width: 56px; height: 56px; color: var(--sbf-paper); margin-bottom: var(--space-3); }
+.footer-icon { width: 56px; height: 56px; color: var(--sbf-candy); margin-bottom: var(--space-3); } /* owner: pale pink icons (were white) */
 .footer-col-title {
   font-family: var(--font-deco);
   font-size: 15px;
@@ -1300,7 +1300,7 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
    sauce?" reference — thin serif caps line over a chunky pink Anton line,
    short copy + white pill button on the right). White/pink text is large-only
    on papaya (3.6:1), so the copy is set large and semi-bold. */
-.quote-banner-wrap { padding-top: var(--space-12); padding-bottom: var(--space-12); }
+.quote-banner-wrap { padding-top: 0; padding-bottom: var(--space-12); } /* owner: less space above the banner (was space-12 on top of the previous section's padding) */
 .quote-banner {
   max-width: 1440px;
   margin: 0 auto;
