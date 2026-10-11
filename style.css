@@ -303,13 +303,13 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
    papaya text (owner: "remove the swirl but make the text orange"). */
 .btn-ghost.btn-sm {
   background: var(--sbf-blush);
-  color: var(--sbf-red); /* owner: red writing (was papaya) */
+  color: var(--sbf-ink); /* owner: charcoal grey writing (was red, before that papaya) */
   font-size: 15px;
   -webkit-text-stroke: .055em currentColor;
   padding: 11px 21px;
   border-radius: 16px;
 }
-.btn-ghost.btn-sm:hover { background: var(--sbf-blush-deep); color: var(--sbf-red); }
+.btn-ghost.btn-sm:hover { background: var(--sbf-blush-deep); color: var(--sbf-ink); }
 
 .btn-onred { background: var(--sbf-paper); color: var(--sbf-red); border-color: transparent; }
 .btn-onred:hover { background: var(--sbf-blush); }
