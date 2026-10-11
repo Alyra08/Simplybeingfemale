@@ -774,8 +774,14 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
 .wave-frame svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
 .wavy-squiggle.outer { --wave-mode: fill; --wave-fill: var(--wavy-bg); --wave-back: var(--sbf-orange); --wave-back-x: 10; --wave-back-y: 10; --wave-len: 100; --wave-amp: 7; z-index: 0; }
 .wavy-squiggle.inner { --wave-color: var(--sbf-red); inset: 16px; --wave-len: 80; --wave-amp: 4; --wave-stroke: 1.5; --wave-radius: 12; z-index: 0; }
-/* owner: "Why we're here" card in raspberry instead of papaya — shadow, heading and button */
-.wavy-raspberry .wavy-squiggle.outer { --wave-back: var(--sbf-red-bright); }
+/* owner: "Why we're here" card in raspberry instead of papaya — heading and button.
+   Frame after the owner's pink-and-orange menu reference: a straight-edged pale
+   strawberry rectangle with a thick papaya wavy line centred on its edge, so the
+   swirl weaves inside and outside the rectangle all the way round. */
+.wavy-raspberry { background: var(--sbf-candy); border-radius: 4px; }
+.wavy-raspberry .wavy-squiggle.outer { display: none; }
+.wavy-raspberry .wavy-squiggle.inner { --wave-color: var(--sbf-orange); --wave-len: 200; --wave-amp: 16; --wave-stroke: 5; --wave-radius: 30; inset: calc(-1px * (var(--wave-amp) + var(--wave-stroke) / 2)); }
+@media (max-width: 640px) { .wavy-raspberry .wavy-squiggle.inner { --wave-len: 140; --wave-amp: 10; --wave-stroke: 4; } }
 .wavy-raspberry .heading-orange { color: var(--sbf-red-bright); }
 .wavy-raspberry .btn-orange { background: var(--sbf-red-bright); }
 .wavy-raspberry .btn-orange:hover { background: var(--sbf-pink-deep); }

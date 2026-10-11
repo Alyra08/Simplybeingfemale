@@ -184,8 +184,10 @@ document.querySelectorAll("form[data-netlify='true']").forEach((form) => {
       if (bx || by) svg += '<path d="' + d + '" transform="translate(' + bx + " " + by + ')" style="fill: var(--wave-back)"/>';
       svg += '<path d="' + d + '" style="fill: var(--wave-fill)"/>';
     } else {
+      // optional panel colour inside the line (--wave-panel)
+      const panel = cs.getPropertyValue("--wave-panel").trim() ? "var(--wave-panel)" : "none";
       svg += '<path d="' + shape(w, h, amp + stroke / 2, len, amp, radius) +
-        '" fill="none" stroke="currentColor" stroke-width="' + stroke + '" stroke-linejoin="round"/>';
+        '" style="fill: ' + panel + '" stroke="currentColor" stroke-width="' + stroke + '" stroke-linejoin="round"/>';
     }
     el.innerHTML = svg + "</svg>";
   }
