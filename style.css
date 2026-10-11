@@ -463,11 +463,11 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
 }
 .topics-col { display: flex; flex-direction: column; gap: 14px; align-items: flex-start; }
 .topics-title {
-  font-family: var(--font-punch);
-  font-size: 30px;
+  font-family: var(--font-display); /* owner: same Silk Serif as the "Simply being" hero title (was Anton caps) */
+  font-size: 34px;
   line-height: 1;
-  text-transform: uppercase;
-  letter-spacing: .01em;
+  letter-spacing: -0.02em;
+  -webkit-text-stroke: .016em currentColor;
   color: var(--sbf-red);
   margin-bottom: 10px;
 }
@@ -739,8 +739,8 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
   color: var(--sbf-red);
 }
 .card.tone-red .card-title { color: var(--sbf-blush); }
-.card-title-stack { font-family: var(--font-display); font-weight: 400; font-size: clamp(40px, 4.2vw, 56px); line-height: .92; letter-spacing: -0.03em; color: var(--sbf-paper); -webkit-text-stroke: .035em currentColor; } /* owner: bolder; same font as the "Simply being female" hero title, slightly larger, white (was chunky Fraunces) */
-.card.tone-red .card-title-stack { color: var(--sbf-paper); }
+.card-title-stack { font-family: var(--font-display); font-weight: 400; font-size: clamp(40px, 4.2vw, 56px); line-height: .92; letter-spacing: -0.03em; color: var(--sbf-petal); -webkit-text-stroke: .035em currentColor; } /* owner: bolder; same font as the "Simply being female" hero title, slightly larger, pale pink like the hero title (was white; before that chunky Fraunces) */
+.card.tone-red .card-title-stack { color: var(--sbf-petal); }
 .card-body p { font-size: var(--text-body-sm); line-height: var(--leading-body); opacity: .85; }
 .card-footer { margin-top: auto; padding-top: var(--space-3); }
 
