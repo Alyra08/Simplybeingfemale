@@ -741,6 +741,8 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
 .card.tone-red .card-title { color: var(--sbf-blush); }
 .card-title-stack { font-family: var(--font-display); font-weight: 400; font-size: clamp(40px, 4.2vw, 56px); line-height: .92; letter-spacing: -0.03em; color: var(--sbf-petal); -webkit-text-stroke: .035em currentColor; } /* owner: bolder; same font as the "Simply being female" hero title, slightly larger, pale pink like the hero title (was white; before that chunky Fraunces) */
 .card.tone-red .card-title-stack { color: var(--sbf-petal); }
+.card.tone-red .btn-onred { background: var(--sbf-candy); color: var(--sbf-red); } /* owner: pale pink Subscribe button, red writing (matches "Join the list") */
+.card.tone-red .btn-onred:hover { background: var(--sbf-paper); color: var(--sbf-red); }
 .card-body p { font-size: var(--text-body-sm); line-height: var(--leading-body); opacity: .85; }
 .card-footer { margin-top: auto; padding-top: var(--space-3); }
 
