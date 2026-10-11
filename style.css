@@ -1194,7 +1194,7 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   min-height: clamp(520px, 46vw, 720px);
-  background: var(--sbf-cream);
+  background: var(--sbf-paper); /* owner: white (was cream) */
 }
 .founder-split-photo { position: relative; overflow: hidden; margin: clamp(20px, 3.5vw, 56px); width: 70%; justify-self: center; border-radius: 0; } /* owner: inset with equal space on all sides (was edge to edge); narrower portrait with square corners (was full column width, rounded) */
 .founder-split-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 35%; }
