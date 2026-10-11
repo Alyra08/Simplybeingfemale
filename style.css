@@ -37,6 +37,7 @@
 
   --sbf-berry: #732235;      /* deep strawberry (strawberry at 48%) — high-contrast block: white 10.4, pale pink 7.1 */
   --sbf-pink: #EF476F;       /* Strawberry — blocks and accents (ink text 4.7) */
+  --sbf-pink-deep: #C91D56;  /* dark strawberry (strawberry's hue, deepened) — hover on pink, pink text on white; white text 5.5 */
   --sbf-candy: #FAC8D4;      /* pale strawberry — big words on reds */
   --sbf-bubblegum: #D94549;  /* Rose blush — highlight words on white (4.3) */
   --sbf-blush: #FEF6F6;      /* pale pink sections — half the tint of #FCEDEE (owner: "at least half lighter") */
@@ -274,6 +275,7 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
   border-color: transparent; /* owner: plain buttons, no outline, slight drop shadow (replaced the white-border sticker look) */
   padding: 13px 26px;
   font-size: var(--text-label);
+  -webkit-text-stroke: .045em currentColor; /* owner: slightly bolder button text — Brolia only ships one weight */
   box-shadow: 0 6px 16px -6px rgba(84, 8, 14, .45);
   transition: transform var(--duration-fast) var(--ease-out), box-shadow var(--duration-fast) var(--ease-out), background-color var(--duration-fast) var(--ease-out), border-color var(--duration-fast) var(--ease-out), color var(--duration-fast) var(--ease-out);
 }
@@ -290,7 +292,7 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
 
 .btn-outline { background: var(--sbf-paper); color: var(--sbf-red); border-color: transparent; }
 .btn-outline:hover { background: var(--sbf-red); color: var(--sbf-paper); }
-.btn-orange { background: var(--sbf-orange); color: var(--sbf-paper); border-color: transparent; -webkit-text-stroke: .03em currentColor; } /* owner: orange button with white writing */
+.btn-orange { background: var(--sbf-orange); color: var(--sbf-paper); border-color: transparent; -webkit-text-stroke: .045em currentColor; } /* owner: orange button with white writing */
 .btn-orange:hover { background: var(--sbf-red); color: var(--sbf-paper); }
 
 .btn-ghost { background: transparent; color: var(--sbf-red); border-color: transparent; box-shadow: none; }
@@ -303,7 +305,7 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
   background: var(--sbf-blush);
   color: var(--sbf-orange);
   font-size: 15px;
-  -webkit-text-stroke: 0.5px currentColor;
+  -webkit-text-stroke: .055em currentColor;
   padding: 11px 21px;
   border-radius: 16px;
 }
@@ -772,6 +774,11 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
 .wave-frame svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
 .wavy-squiggle.outer { --wave-mode: fill; --wave-fill: var(--wavy-bg); --wave-back: var(--sbf-orange); --wave-back-x: 10; --wave-back-y: 10; --wave-len: 100; --wave-amp: 7; z-index: 0; }
 .wavy-squiggle.inner { --wave-color: var(--sbf-red); inset: 16px; --wave-len: 80; --wave-amp: 4; --wave-stroke: 1.5; --wave-radius: 12; z-index: 0; }
+/* owner: "Why we're here" card in raspberry instead of papaya — shadow, heading and button */
+.wavy-raspberry .wavy-squiggle.outer { --wave-back: var(--sbf-red-bright); }
+.wavy-raspberry .heading-orange { color: var(--sbf-red-bright); }
+.wavy-raspberry .btn-orange { background: var(--sbf-red-bright); }
+.wavy-raspberry .btn-orange:hover { background: var(--sbf-pink-deep); }
 .wavy-card-inner { position: relative; z-index: 1; padding: clamp(30px, 7%, 58px); }
 .wavy-card-inner > p:only-child { /* the single quote line (Contact); multi-element cards keep normal text styles */
   font-family: var(--font-body);
@@ -1182,7 +1189,7 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
   min-height: clamp(520px, 46vw, 720px);
   background: var(--sbf-cream);
 }
-.founder-split-photo { position: relative; overflow: hidden; margin: clamp(20px, 3.5vw, 56px); border-radius: var(--radius-lg); } /* owner: inset with equal space on all sides (was edge to edge) */
+.founder-split-photo { position: relative; overflow: hidden; margin: clamp(20px, 3.5vw, 56px); width: 70%; justify-self: center; border-radius: 0; } /* owner: inset with equal space on all sides (was edge to edge); narrower portrait with square corners (was full column width, rounded) */
 .founder-split-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 35%; }
 .founder-split-copy {
   display: flex;
@@ -1222,11 +1229,11 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
 .founder-split-title .lower { text-transform: none; letter-spacing: -0.005em; color: var(--sbf-orange); } /* owner: first line in normal case, rest in caps */
 .founder-star { display: inline-block; width: .8em; height: .8em; margin-left: .18em; vertical-align: .3em; color: var(--sbf-red); -webkit-text-stroke: 0; transform: rotate(8deg); } /* owner: a red ✦ star just after "first." */
 .founder-split-body { margin: 0; max-width: 46ch; font-size: var(--text-body-md); line-height: 1.7; color: var(--sbf-ink); }
-.founder-split-btn { background: var(--sbf-candy); color: var(--sbf-red); border-color: transparent; -webkit-text-stroke: .03em currentColor; } /* owner: match the pink "Join the list" button (was an outlined pill) */
+.founder-split-btn { background: var(--sbf-candy); color: var(--sbf-red); border-color: transparent; -webkit-text-stroke: .045em currentColor; } /* owner: match the pink "Join the list" button (was an outlined pill) */
 .founder-split-btn:hover { background: var(--sbf-red); color: var(--sbf-candy); }
 @media (max-width: 860px) {
   .founder-split { grid-template-columns: 1fr; min-height: 0; }
-  .founder-split-photo { height: min(110vw, 460px); }
+  .founder-split-photo { height: min(110vw, 460px); width: auto; justify-self: stretch; }
 }
 
 /* Centred statement on white, with colour-highlighted phrases */
@@ -1340,7 +1347,7 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
   .quote-banner-btn { padding: 18px 26px; font-size: 15px; letter-spacing: .08em; white-space: nowrap; }
 }
 .ready-signup { display: flex; flex-wrap: wrap; gap: var(--space-3); width: 100%; max-width: 480px; }
-.ready-signup .btn-onred { background: var(--sbf-candy); color: var(--sbf-paper); justify-content: center; text-align: center; -webkit-text-stroke: .03em currentColor; } /* owner: pink like "heard?", text slightly bolder (Brolia only ships one weight) */
+.ready-signup .btn-onred { background: var(--sbf-candy); color: var(--sbf-paper); justify-content: center; text-align: center; -webkit-text-stroke: .045em currentColor; } /* owner: pink like "heard?", text slightly bolder (Brolia only ships one weight) */
 .ready-signup .btn-onred:hover { background: var(--sbf-paper); color: var(--sbf-red); }
 .ready-signup input[type="email"] {
   flex: 1 1 220px;
@@ -1379,4 +1386,4 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
 .starburst small { font-family: var(--font-deco); font-size: 10px; letter-spacing: .16em; text-transform: uppercase; }
 .heading-orange { font-family: var(--font-display); font-size: clamp(34px, 4vw, 60px); line-height: 1.02; color: var(--sbf-orange); -webkit-text-stroke: .016em currentColor; } /* owner: shared spec for orange section headings ("We refuse to stay small.", "Four doors, no gatekeepers.") — same size, weight and orange as "I left the room first." */
 .heading-orange em { color: inherit; }
-.doors-grid .card-title:not(.card-title-stack) { font-family: var(--font-display); font-size: clamp(30px, 3.2vw, 46px); line-height: 1.02; color: var(--sbf-red); -webkit-text-stroke: .016em currentColor; } /* owner: card titles (The circle / Topics / The podcast) on the same size + weight spec, in red */
+.doors-grid .card-title:not(.card-title-stack) { font-family: var(--font-display); font-size: clamp(26px, 2.8vw, 40px); line-height: 1.02; color: var(--sbf-red); -webkit-text-stroke: .016em currentColor; } /* owner: card titles (The circle / Topics / The podcast) on the same size + weight spec, in red */
