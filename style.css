@@ -29,34 +29,41 @@
      take INK text (white on them is only 2-3:1); white / off-white / pale
      pink sections take cherry headings + ink body. Alternate one bold block
      with one white or pale section. Full table in CLAUDE.md. */
+  /* 2026-11-21 PALETTE: Poster Pink + Tangerine (owner chose option C on the palette page).
+     Poster pink canvas #F2C4CB, logo red #D20D1A, vermilion #EF3B24 for display type on white,
+     tangerine #FF8A3D for blocks (deep ink text only), no burgundy. Legacy token names kept and
+     re-pointed so existing rules follow. White text only on red. */
+  --sbf-vermilion: #EF3B24;  /* display type on white (3.9, large only) */
+  --sbf-orange-text: #E0480F; /* orange words on white (4.1, large only) */
+  --sbf-ink-deep: #2A1A1D;   /* text on tangerine (7.1) */
   --sbf-red: #D20D1A;        /* Crimson apple — signature (~ logo red) */
-  --sbf-red-deep: #BF0C18;   /* Scarlet — hover; red text on pale pink */
+  --sbf-red-deep: #A80A15;   /* Scarlet — hover; red text on pale pink */
   --sbf-red-bright: #D81A51; /* bright raspberry — large display only */
   --sbf-cherry: #D20D1A;     /* alias of red */
-  --sbf-raspberry: #BF0C18;  /* Scarlet — bold block (white text 6.4) */
+  --sbf-raspberry: #D20D1A;  /* Scarlet — bold block (white text 6.4) */
 
-  --sbf-berry: #732235;      /* deep strawberry (strawberry at 48%) — high-contrast block: white 10.4, pale pink 7.1 */
-  --sbf-pink: #EF476F;       /* Strawberry — blocks and accents (ink text 4.7) */
-  --sbf-pink-deep: #C91D56;  /* dark strawberry (strawberry's hue, deepened) — hover on pink, pink text on white; white text 5.5 */
-  --sbf-candy: #FAC8D4;      /* pale strawberry — big words on reds */
-  --sbf-bubblegum: #D94549;  /* Rose blush — highlight words on white (4.3) */
-  --sbf-blush: #FEF6F6;      /* pale pink sections — half the tint of #FCEDEE (owner: "at least half lighter") */
-  --sbf-petal: #FAC8D4;      /* pale strawberry — giant hero lettering, photo placeholders */
-  --sbf-blush-deep: #FAE6E7; /* hover on blush */
-  --sbf-cotton: #FAE6E7;     /* alias of blush-deep */
+  --sbf-berry: #2A1A1D;      /* deep strawberry (strawberry at 48%) — high-contrast block: white 10.4, pale pink 7.1 */
+  --sbf-pink: #EF3B24;       /* Strawberry — blocks and accents (ink text 4.7) */
+  --sbf-pink-deep: #D20D1A;  /* dark strawberry (strawberry's hue, deepened) — hover on pink, pink text on white; white text 5.5 */
+  --sbf-candy: #F2C4CB;      /* pale strawberry — big words on reds */
+  --sbf-bubblegum: #EF3B24;  /* Rose blush — highlight words on white (4.3) */
+  --sbf-blush: #F2C4CB;      /* pale pink sections — half the tint of #FCEDEE (owner: "at least half lighter") */
+  --sbf-petal: #F2C4CB;      /* pale strawberry — giant hero lettering, photo placeholders */
+  --sbf-blush-deep: #F8DCE1; /* hover on blush */
+  --sbf-cotton: #F8DCE1;     /* alias of blush-deep */
 
-  --sbf-cream: #FAF6F3;      /* off-white page background */
+  --sbf-cream: #F2C4CB;      /* off-white page background */
   --sbf-paper: #FFFFFF;      /* white sections — the breathing room */
   --sbf-ink: #4A4544;        /* owner (2026-10-10): warm charcoal for all text — was grey #616161, berry-brown #6E4448, deep berry #3B0A12 */
   --sbf-ink-soft: #4A4544;
-  --sbf-line: #F5DADF;       /* hairline borders */
+  --sbf-line: #E8A7B4;       /* hairline borders */
 
-  --sbf-coral: #EC5534;      /* Papaya punch (owner-supplied) — highlight words: 3.6 on white, keep them large */
-  --sbf-orange: #EC5534;     /* Papaya punch — bands, blocks (ink text 4.8; white only 3.6) */
-  --sbf-apricot: #FFF0EB;    /* pale papaya tint (unused so far) */
-  --sbf-yellow: #FFBE00;     /* golden yellow — sampled from owner ref (säge); small pops: badge, starburst (ink text 10:1, never white) */
-  --sbf-wine: #BF0C18;       /* legacy name — Scarlet */
-  --sbf-burnt: #BF0C18;      /* legacy name — Scarlet */
+  --sbf-coral: #FF8A3D;      /* Papaya punch (owner-supplied) — highlight words: 3.6 on white, keep them large */
+  --sbf-orange: #FF8A3D;     /* Papaya punch — bands, blocks (ink text 4.8; white only 3.6) */
+  --sbf-apricot: #FFE3CF;    /* pale papaya tint (unused so far) */
+  --sbf-yellow: #FF8A3D;     /* golden yellow — sampled from owner ref (säge); small pops: badge, starburst (ink text 10:1, never white) */
+  --sbf-wine: #D20D1A;       /* legacy name — Scarlet */
+  --sbf-burnt: #D20D1A;      /* legacy name — Scarlet */
 
   --text-heading: var(--sbf-red);
   --text-body: var(--sbf-ink);
@@ -1436,3 +1443,72 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
 .prose-meta { font-size: var(--text-body-sm); color: var(--text-muted); margin-top: var(--space-8); }
 .closing-seat-title em { color: var(--sbf-red-deep); }
 @media (max-width: 600px) { .hide-sm { display: none; } }
+
+/* ---------------------------------------------------------------
+   2026-11-21 Poster Pink + Tangerine: component overrides
+   --------------------------------------------------------------- */
+/* Hero: a pink poster, giant words in logo red (3.5, display only) */
+.hero-giant-wrap { background: var(--sbf-cream); color: var(--sbf-ink); }
+.hero-giant { color: var(--sbf-red); }
+.hero-side { color: var(--sbf-ink); }
+.hero-side em { color: var(--sbf-red); }
+.hero-side .script { color: var(--sbf-red); }
+@media (min-width: 761px) { .hero-side.right { text-shadow: none; } .hero-side.right .script { color: var(--sbf-red); } }
+
+/* Spinning badge: tangerine with deep ink lettering (7.1) */
+.spin-badge { background: var(--sbf-orange); box-shadow: 0 14px 30px -12px rgba(120, 30, 0, .5); }
+.spin-badge text { fill: var(--sbf-ink-deep); }
+.spin-badge-mark { color: var(--sbf-ink-deep); }
+
+/* Statement on white: coloured phrases stay large */
+.hl-rasp { color: var(--sbf-vermilion); }
+.hl-coral { color: var(--sbf-orange-text); }
+.heading-orange { color: var(--sbf-red); }
+.founder-split-title .lower { color: var(--sbf-vermilion); }
+
+/* Pink sections: charcoal text, red headings */
+.section.tone-blush { color: var(--sbf-ink); }
+.section.tone-blush h1, .section.tone-blush h2 { color: var(--sbf-red); }
+.section.tone-petal { color: var(--sbf-ink); }
+.section.tone-petal em { color: var(--sbf-red-deep); }
+.provocation-line { color: var(--sbf-red); }
+.provocation-line em { color: var(--sbf-ink); }
+.empty-note { background: var(--sbf-blush-deep); }
+
+/* Signup block on red: white button with red text, tangerine starburst */
+.ready-signup .btn-onred { background: var(--sbf-paper); color: var(--sbf-red); }
+.ready-signup .btn-onred:hover { background: var(--sbf-orange); color: var(--sbf-ink-deep); }
+.starburst { background: var(--sbf-orange); color: var(--sbf-ink-deep); }
+
+/* Quote banner: tangerine with deep ink (7.1) */
+.quote-banner { background: var(--sbf-orange); }
+.quote-banner-title { color: var(--sbf-ink-deep); }
+.quote-banner-title .punch { color: var(--sbf-ink-deep); }
+.quote-banner-copy { color: var(--sbf-ink-deep); }
+.quote-banner-btn { background: var(--sbf-red); color: var(--sbf-paper); }
+.quote-banner-btn:hover { background: var(--sbf-red-deep); color: var(--sbf-paper); }
+
+/* Closing band on white so it doesn't merge with the pink canvas */
+.section.closing-seat { background: var(--sbf-paper); }
+
+/* Footer: white small text on red (5.5); tangerine and pink candy stripe on top */
+.footer-col-title { color: var(--sbf-paper); }
+.site-footer { position: relative; }
+.site-footer::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 14px; background: repeating-linear-gradient(90deg, var(--sbf-orange) 0 28px, var(--sbf-cream) 28px 56px); }
+/* Contrast fixes from the page-by-page audit (small text needs 4.5:1) */
+.nav-link:hover, .nav-link.active { color: var(--sbf-red-deep); }            /* 5.0 on pink */
+.belief-num { color: var(--sbf-red-deep); }
+.btn-secondary { background: var(--sbf-paper); color: var(--sbf-red); }     /* 5.5 */
+.btn-secondary:hover { background: var(--sbf-blush-deep); color: var(--sbf-red-deep); }
+.tag.active { color: var(--sbf-paper); }                                     /* 5.5 */
+.badge-pink { background: var(--sbf-blush); color: var(--sbf-red-deep); }   /* 5.0 */
+.badge-yellow { color: var(--sbf-ink-deep); }                                /* 7.1 */
+.feature-mark { color: var(--sbf-red); }
+.card.tone-red, .card.tone-red .card-eyebrow, .card.tone-red p { color: var(--sbf-paper); }
+.section.tone-raspberry .eyebrow, .section.tone-red .eyebrow, .eyebrow.on-blush { color: var(--sbf-paper); }
+.section.tone-red, .section.tone-red .lede { color: var(--sbf-paper); }
+.marquee.tone-pink { background: var(--sbf-blush); color: var(--sbf-red-deep); }
+.badge-outline { color: var(--sbf-red-deep); box-shadow: inset 0 0 0 1px var(--sbf-red-deep); }
+/* Poster moment: the question band in giant condensed type, second line outlined (from the "What's this?" reference) */
+.provocation-line { font-family: var(--font-punch); font-weight: 400; text-transform: uppercase; font-size: clamp(44px, 7.6vw, 112px); line-height: .9; letter-spacing: .005em; max-width: 14ch; color: var(--sbf-red); -webkit-text-stroke: 0; }
+.provocation-line em { display: block; font-style: normal; color: transparent; -webkit-text-stroke: max(1.5px, .018em) var(--sbf-red); margin-top: .08em; }

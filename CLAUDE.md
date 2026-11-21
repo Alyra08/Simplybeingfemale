@@ -65,6 +65,29 @@ Full UX/UI/copy review (published as a claude.ai artifact) then implemented:
   hacks fake a heavier Silk Serif. The real fix is a Regular weight
   of the font if the owner can get one.
 
+## CURRENT PALETTE: Poster Pink + Tangerine (2026-11-21, supersedes all palette notes below)
+Owner supplied a moodboard (red/vermilion type on pink posters, cherry +
+bubblegum, magenta + tangerine place cards, stripes, flowers, hearts) and
+picked option C of "Poster Pink, four ways" on the palette artifact. Owner
+explicitly does NOT want burgundy.
+- Canvas / page / pale sections: poster pink #F2C4CB (`--sbf-cream`,
+  `--sbf-blush`, `--sbf-petal`, `--sbf-candy` all point here). White is
+  for cards, the statement and the closing band.
+- Logo red #D20D1A: hero giant words (3.5 on pink, display only), buttons,
+  signup block, footer. White text only on red. Hover/deep #A80A15.
+- Vermilion #EF3B24 (`--sbf-vermilion`, also `--sbf-pink`): display type on
+  white only (3.9). Orange words on white use `--sbf-orange-text` #E0480F.
+- Tangerine #FF8A3D (`--sbf-orange`/`--sbf-coral`/`--sbf-yellow`): spin
+  badge, quote banner, starburst, footer stripe. Text on it is
+  `--sbf-ink-deep` #2A1A1D (7.1). Never white, never the #4A4544 charcoal
+  (4.0).
+- Body text stays warm charcoal #4A4544 (6.1 on pink). `--sbf-berry` now
+  points at #2A1A1D, so nothing is burgundy.
+- Small text on pink uses `--sbf-red-deep` (5.0), not red (3.55).
+- Overrides live at the end of style.css. A page-by-page contrast audit
+  (walk text nodes, compare to nearest opaque background) passed on every
+  page. Re-run it after colour changes.
+
 ## Pages
 - Home REDESIGNED 2026-10-05 (owner: "love this website vibe, want this to
   emulate" — jennakutcher.com + a "Club Paradiso" jewellery site — "with
