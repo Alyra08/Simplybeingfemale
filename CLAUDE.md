@@ -101,6 +101,14 @@ footer is rose with deep ink. Overrides are in the "PALETTE v3" block and
 its audit rules at the end of style.css. Brand guide and PDF updated to
 match (token names signal-red, hot-pink, rose, tangerine, deep-red, blush…).
 
+TEXT ON BRIGHTS (owner, 2026-11-21: dark text on the brights "isn't
+working"): text on signal red, hot pink and tangerine is WHITE, set 24px+
+or 19px bold. Small labels go on deep red pills (white 6.06). Rose carries
+no text (white is 1.9 on it). The footer is deep red with white text. The
+`--sbf-ink-hot` token is retired. Collateral examples:
+https://claude.ai/artifact/NRQPEUJKrz7FzEg6VqTX16, also as a PDF in
+../Brand Style Guide/.
+
 ## Brand style guide + colour system (2026-11-21, authoritative)
 The brand style guide is a claude.ai Design System artifact (brand overview,
 colour breakdown, voice, outline-pill Button, tokens):
