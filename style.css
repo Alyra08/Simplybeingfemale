@@ -1651,3 +1651,38 @@ h3, .card-title, .tag, .tab, .tab.active, .price-label, .feature-mark, .field-la
 .card.tone-red .card-title, .card.tone-fierce .card-title { color: var(--sbf-paper); }
 .card.tint-salmon { background: var(--sbf-butter); }   /* hot-pink tint: deep red 4.9 */
 figcaption { color: var(--sbf-red-deep); }
+
+/* ===============================================================
+   2026-11-21 WHITE TEXT ON BRIGHTS (owner: dark text wasn't working).
+   White reads at headline size on every bright (red 4.05, hot pink
+   3.84, tangerine 3.00), so text on brights is white AND large/bold
+   (24px+, or 19px+ bold). Small labels move onto Deep Red pills
+   (white 6.06). Rose is too pale for white at any size, so it stays a
+   decorative fill; the footer moves to Deep Red.
+   =============================================================== */
+/* Tangerine: badge, quote banner, starburst */
+.spin-badge text { fill: #fff; font-weight: 700; }
+.spin-badge-mark { color: #fff; }
+.starburst { color: #fff; }
+.starburst span:first-child { font-size: 26px; }
+.starburst small { font-weight: 800; }
+.quote-banner-title, .quote-banner-title .punch { color: #fff; }
+.quote-banner-copy { color: #fff; font-size: 20px; font-weight: 700; line-height: 1.45; }
+.badge-yellow { background: var(--sbf-red-deep); color: #fff; }
+
+/* Hot pink Sunday note card: white, large and bold; the "Free" label becomes a deep red pill */
+.card.tone-fierce p { color: #fff; font-size: 19px; font-weight: 700; line-height: 1.35; opacity: 1; }
+.card.tone-fierce .card-eyebrow { justify-self: start; align-self: start; width: max-content; background: var(--sbf-red-deep); color: #fff; padding: 6px 12px; border-radius: 999px; }
+.card.tone-fierce .btn:hover { background: var(--sbf-red-deep); border-color: var(--sbf-red-deep); color: #fff; }
+
+/* Small labels that sat on rose become deep red pills */
+.badge-pink { background: var(--sbf-red-deep); color: #fff; }
+
+/* Footer: Deep Red with white text, rose icons, stripe on top */
+.site-footer { background: var(--sbf-red-deep); color: #fff; }
+.site-footer a, .footer-col a, .footer-col-title, .footer-bottom, .footer-bottom a, .footer-tagline { color: #fff; }
+.footer-icon { color: var(--sbf-rose); }
+.section.tone-orange, .section.tone-orange h1, .section.tone-orange h2, .section.tone-orange h3 { color: #fff; }
+.section.tone-orange h2 em { color: #fff; }
+main figure figcaption { color: var(--sbf-red-deep); }
+.taped-photo figcaption { color: var(--sbf-red-deep); }
