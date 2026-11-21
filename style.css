@@ -36,6 +36,15 @@
   --sbf-vermilion: #EF3B24;  /* display type on white (3.9, large only) */
   --sbf-orange-text: #E0480F; /* orange words on white (4.1, large only) */
   --sbf-ink-deep: #2A1A1D;   /* text on tangerine (7.1) */
+  /* Colour system 2026-11-21 additions (see the brand style guide) */
+  --sbf-fierce: #D4106C;     /* fierce pink: white text 5.1 */
+  --sbf-neon: #FF4F8B;       /* neon pink: deep ink text only (5.3) */
+  --sbf-mist: #F8DFE2;       /* pink mist: alternate light sections */
+  --sbf-peach: #FFD6BB;      /* cards, chips */
+  --sbf-peach-cream: #FFEDE2;
+  --sbf-salmon: #F9BAB2;
+  --sbf-sorbet: #FDE2DE;
+  --sbf-butter: #FFE7B3;     /* flower centres only */
   --sbf-red: #D20D1A;        /* Crimson apple — signature (~ logo red) */
   --sbf-red-deep: #A80A15;   /* Scarlet — hover; red text on pale pink */
   --sbf-red-bright: #D81A51; /* bright raspberry — large display only */
@@ -53,7 +62,7 @@
   --sbf-cotton: #F8DCE1;     /* alias of blush-deep */
 
   --sbf-cream: #F2C4CB;      /* off-white page background */
-  --sbf-paper: #FFFFFF;      /* white sections — the breathing room */
+  --sbf-paper: #FDF8F9; /* 2026-11-21 shell, replaces pure white (colour system) */      /* white sections — the breathing room */
   --sbf-ink: #4A4544;        /* owner (2026-10-10): warm charcoal for all text — was grey #616161, berry-brown #6E4448, deep berry #3B0A12 */
   --sbf-ink-soft: #4A4544;
   --sbf-line: #E8A7B4;       /* hairline borders */
@@ -1512,3 +1521,63 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
 /* Poster moment: the question band in giant condensed type, second line outlined (from the "What's this?" reference) */
 .provocation-line { font-family: var(--font-punch); font-weight: 400; text-transform: uppercase; font-size: clamp(44px, 7.6vw, 112px); line-height: .9; letter-spacing: .005em; max-width: 14ch; color: var(--sbf-red); -webkit-text-stroke: 0; }
 .provocation-line em { display: block; font-style: normal; color: transparent; -webkit-text-stroke: max(1.5px, .018em) var(--sbf-red); margin-top: .08em; }
+
+/* ===============================================================
+   2026-11-21 BUTTONS: the outline pill (owner chose option 2 on the
+   button page; spec lives in the brand style guide, Button component).
+   One solid lipstick-red primary per view; everything else a 1.5px
+   outline that fills on hover. Nunito Sans 700, sentence case, no
+   shadow, no faux-bold stroke. Replaces every earlier .btn look.
+   =============================================================== */
+.btn, .btn-ghost.btn-sm, .ready-signup .btn-onred, .founder-split-btn, .btn-orange, .wavy-raspberry .btn-orange {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: .04em;
+  text-transform: none;
+  -webkit-text-stroke: 0;
+  border-radius: 999px;
+  border: 1.5px solid var(--sbf-red-deep);
+  background: transparent;
+  color: var(--sbf-red-deep);           /* 5.0 on poster pink, 7.3 on shell */
+  min-height: 44px;
+  padding: 0 24px;
+  box-shadow: none;
+}
+.btn:hover, .btn-ghost.btn-sm:hover, .btn-orange:hover, .wavy-raspberry .btn-orange:hover { background: var(--sbf-red-deep); border-color: var(--sbf-red-deep); color: var(--sbf-paper); transform: none; box-shadow: none; }
+.btn:active { transform: none; box-shadow: none; }
+.btn:focus-visible { outline: 3px solid var(--sbf-ink-deep); outline-offset: 3px; box-shadow: none; }
+.btn-sm, .btn-ghost.btn-sm { min-height: 36px; padding: 0 18px; font-size: 13px; }
+.btn-lg { min-height: 52px; padding: 0 30px; font-size: 15px; }
+
+/* Primary: the one solid button */
+.btn-primary, .founder-split-btn, .quote-banner-btn { background: var(--sbf-red); border-color: var(--sbf-red); color: var(--sbf-paper); }
+.btn-primary:hover, .founder-split-btn:hover, .quote-banner-btn:hover { background: var(--sbf-red-deep); border-color: var(--sbf-red-deep); color: var(--sbf-paper); }
+
+/* On red, fierce pink or deep blocks: white outline; primary becomes white */
+.section.tone-raspberry .btn, .section.tone-red .btn, .section.tone-fierce .btn, .card.tone-red .btn, .card.tone-fierce .btn, .ready .btn, .btn-onred, .btn-ghost.on-dark { background: transparent; border-color: var(--sbf-paper); color: var(--sbf-paper); }
+.section.tone-raspberry .btn:hover, .section.tone-red .btn:hover, .section.tone-fierce .btn:hover, .card.tone-red .btn:hover, .card.tone-fierce .btn:hover, .ready .btn:hover, .btn-onred:hover, .btn-ghost.on-dark:hover { background: var(--sbf-paper); border-color: var(--sbf-paper); color: var(--sbf-red); }
+.ready-signup .btn-onred, .section.tone-raspberry .btn-primary, .section.tone-fierce .btn-primary, .card.tone-fierce .btn-onred { background: var(--sbf-paper); border-color: var(--sbf-paper); color: var(--sbf-red); }
+.ready-signup .btn-onred:hover, .section.tone-raspberry .btn-primary:hover, .section.tone-fierce .btn-primary:hover { background: var(--sbf-candy); border-color: var(--sbf-candy); color: var(--sbf-red-deep); }
+.section.tone-raspberry .btn:focus-visible, .section.tone-red .btn:focus-visible, .section.tone-fierce .btn:focus-visible, .card.tone-red .btn:focus-visible, .card.tone-fierce .btn:focus-visible, .ready .btn:focus-visible { outline-color: var(--sbf-paper); }
+
+/* Colour system 2026-11-21: fierce pink, neon pink and the light tints in use */
+.section.tone-fierce { background: var(--sbf-fierce); color: var(--sbf-paper); }
+.section.tone-fierce h1, .section.tone-fierce h2, .section.tone-fierce h3, .section.tone-fierce .eyebrow, .section.tone-fierce .lede { color: var(--sbf-paper); }
+.section.tone-fierce em { color: var(--sbf-candy); }
+.section.tone-mist { background: var(--sbf-mist); color: var(--sbf-ink); }
+.section.tone-mist h1, .section.tone-mist h2 { color: var(--sbf-red); }
+.card.tone-fierce { background: var(--sbf-fierce); color: var(--sbf-paper); }
+.card.tone-fierce .card-eyebrow, .card.tone-fierce p, .card.tone-fierce .card-title { color: var(--sbf-paper); }
+.card.tone-fierce .card-title-stack { color: var(--sbf-candy); }
+.card.tint-peach { background: var(--sbf-peach); }
+.card.tint-salmon { background: var(--sbf-salmon); }
+.card.tint-peach .card-eyebrow, .card.tint-salmon .card-eyebrow { color: var(--sbf-ink-deep); }
+.card.tint-peach .card-title, .card.tint-salmon .card-title { color: var(--sbf-ink-deep); }
+.card.tint-peach p, .card.tint-salmon p { color: var(--sbf-ink); }
+.badge-pink { background: var(--sbf-neon); color: var(--sbf-ink-deep); }
+.empty-note { background: var(--sbf-mist); }
+.tag { background: var(--sbf-paper); }
+.site-footer::before { background: repeating-linear-gradient(90deg, var(--sbf-orange) 0 28px, var(--sbf-neon) 28px 56px, var(--sbf-cream) 56px 84px); }
+.section .ready-signup .btn-onred { background: var(--sbf-paper); border-color: var(--sbf-paper); color: var(--sbf-red); }  /* primary on red = white pill (beats .section.tone-raspberry .btn) */
+.section .ready-signup .btn-onred:hover { background: var(--sbf-candy); border-color: var(--sbf-candy); color: var(--sbf-red-deep); }

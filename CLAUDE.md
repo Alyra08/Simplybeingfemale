@@ -88,6 +88,24 @@ explicitly does NOT want burgundy.
   (walk text nodes, compare to nearest opaque background) passed on every
   page. Re-run it after colour changes.
 
+## Brand style guide + colour system (2026-11-21, authoritative)
+The brand style guide is a claude.ai Design System artifact (brand overview,
+colour breakdown, voice, outline-pill Button, tokens):
+https://claude.ai/artifact/AEWxkFFP2SrdDtqXoJu8WU. Read its README and
+tokens before changing colour, type or buttons. The site uses those values:
+`--sbf-paper` is now shell #FDF8F9 (no pure white), plus `--sbf-fierce`
+#D4106C (white text), `--sbf-neon` #FF4F8B (deep ink text), `--sbf-mist`,
+`--sbf-peach`, `--sbf-salmon`, `--sbf-sorbet`, `--sbf-butter`. New classes:
+`.section.tone-fierce`, `.section.tone-mist`, `.card.tone-fierce`,
+`.card.tint-peach`, `.card.tint-salmon`.
+BUTTONS: the outline pill (owner chose it from five options). One solid
+lipstick-red `.btn-primary` per view; every other `.btn` is a 1.5px
+`--sbf-red-deep` outline that fills on hover. On red/fierce blocks it's a
+white outline, and the primary is a white pill. Nunito Sans 700, 14px,
+sentence case, no shadow, no text-stroke. The rules are in the last button
+block of style.css. GOTCHA: `.section.tone-raspberry .btn` outranks
+`.ready-signup .btn-onred`; use `.section .ready-signup .btn-onred`.
+
 ## Pages
 - Home REDESIGNED 2026-10-05 (owner: "love this website vibe, want this to
   emulate" — jennakutcher.com + a "Club Paradiso" jewellery site — "with
