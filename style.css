@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&family=Fraunces:ital,opsz,wght,SOFT@0,9..144,700..900,0..100;1,9..144,700..900,0..100&family=Anton&family=Mrs+Saint+Delafield&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Anton&family=Mrs+Saint+Delafield&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap");
 
 @font-face {
   font-family: "Brolia";
@@ -29,34 +29,50 @@
      take INK text (white on them is only 2-3:1); white / off-white / pale
      pink sections take cherry headings + ink body. Alternate one bold block
      with one white or pale section. Full table in CLAUDE.md. */
+  /* 2026-11-21 PALETTE: Poster Pink + Tangerine (owner chose option C on the palette page).
+     Poster pink canvas #F2C4CB, logo red #D20D1A, vermilion #EF3B24 for display type on white,
+     tangerine #FF8A3D for blocks (deep ink text only), no burgundy. Legacy token names kept and
+     re-pointed so existing rules follow. White text only on red. */
+  --sbf-vermilion: #EF3B24;  /* display type on white (3.9, large only) */
+  --sbf-orange-text: #E0480F; /* orange words on white (4.1, large only) */
+  --sbf-ink-deep: #2A1A1D;   /* text on tangerine (7.1) */
+  /* Colour system 2026-11-21 additions (see the brand style guide) */
+  --sbf-fierce: #D4106C;     /* fierce pink: white text 5.1 */
+  --sbf-neon: #FF4F8B;       /* neon pink: deep ink text only (5.3) */
+  --sbf-mist: #F8DFE2;       /* pink mist: alternate light sections */
+  --sbf-peach: #FFD6BB;      /* cards, chips */
+  --sbf-peach-cream: #FFEDE2;
+  --sbf-salmon: #F9BAB2;
+  --sbf-sorbet: #FDE2DE;
+  --sbf-butter: #FFE7B3;     /* flower centres only */
   --sbf-red: #D20D1A;        /* Crimson apple — signature (~ logo red) */
-  --sbf-red-deep: #BF0C18;   /* Scarlet — hover; red text on pale pink */
-  --sbf-red-bright: #D81A51; /* bright raspberry — large display only */
+  --sbf-red-deep: #A80A15;   /* Scarlet — hover; red text on pale pink */
+  --sbf-red-bright: #D20D1A; /* 2026-11-21: was raspberry #D81A51; now lipstick red (colour system has one red) */
   --sbf-cherry: #D20D1A;     /* alias of red */
-  --sbf-raspberry: #BF0C18;  /* Scarlet — bold block (white text 6.4) */
+  --sbf-raspberry: #D20D1A;  /* Scarlet — bold block (white text 6.4) */
 
-  --sbf-berry: #732235;      /* deep strawberry (strawberry at 48%) — high-contrast block: white 10.4, pale pink 7.1 */
-  --sbf-pink: #EF476F;       /* Strawberry — blocks and accents (ink text 4.7) */
-  --sbf-pink-deep: #C91D56;  /* dark strawberry (strawberry's hue, deepened) — hover on pink, pink text on white; white text 5.5 */
-  --sbf-candy: #FAC8D4;      /* pale strawberry — big words on reds */
-  --sbf-bubblegum: #D94549;  /* Rose blush — highlight words on white (4.3) */
-  --sbf-blush: #FEF6F6;      /* pale pink sections — half the tint of #FCEDEE (owner: "at least half lighter") */
-  --sbf-petal: #FAC8D4;      /* pale strawberry — giant hero lettering, photo placeholders */
-  --sbf-blush-deep: #FAE6E7; /* hover on blush */
-  --sbf-cotton: #FAE6E7;     /* alias of blush-deep */
+  --sbf-berry: #2A1A1D;      /* deep strawberry (strawberry at 48%) — high-contrast block: white 10.4, pale pink 7.1 */
+  --sbf-pink: #EF3B24;       /* Strawberry — blocks and accents (ink text 4.7) */
+  --sbf-pink-deep: #D20D1A;  /* dark strawberry (strawberry's hue, deepened) — hover on pink, pink text on white; white text 5.5 */
+  --sbf-candy: #F2C4CB;      /* pale strawberry — big words on reds */
+  --sbf-bubblegum: #EF3B24;  /* Rose blush — highlight words on white (4.3) */
+  --sbf-blush: #F2C4CB;      /* pale pink sections — half the tint of #FCEDEE (owner: "at least half lighter") */
+  --sbf-petal: #F2C4CB;      /* pale strawberry — giant hero lettering, photo placeholders */
+  --sbf-blush-deep: #F8DFE2; /* pink mist: hover on blush */
+  --sbf-cotton: #F8DFE2;     /* alias of blush-deep */
 
-  --sbf-cream: #FAF6F3;      /* off-white page background */
-  --sbf-paper: #FFFFFF;      /* white sections — the breathing room */
+  --sbf-cream: #F2C4CB;      /* off-white page background */
+  --sbf-paper: #FDF8F9; /* 2026-11-21 shell, replaces pure white (colour system) */      /* white sections — the breathing room */
   --sbf-ink: #4A4544;        /* owner (2026-10-10): warm charcoal for all text — was grey #616161, berry-brown #6E4448, deep berry #3B0A12 */
   --sbf-ink-soft: #4A4544;
-  --sbf-line: #F5DADF;       /* hairline borders */
+  --sbf-line: #E8A7B4;       /* hairline borders */
 
-  --sbf-coral: #EC5534;      /* Papaya punch (owner-supplied) — highlight words: 3.6 on white, keep them large */
-  --sbf-orange: #EC5534;     /* Papaya punch — bands, blocks (ink text 4.8; white only 3.6) */
-  --sbf-apricot: #FFF0EB;    /* pale papaya tint (unused so far) */
-  --sbf-yellow: #FFBE00;     /* golden yellow — sampled from owner ref (säge); small pops: badge, starburst (ink text 10:1, never white) */
-  --sbf-wine: #BF0C18;       /* legacy name — Scarlet */
-  --sbf-burnt: #BF0C18;      /* legacy name — Scarlet */
+  --sbf-coral: #FF8A3D;      /* Papaya punch (owner-supplied) — highlight words: 3.6 on white, keep them large */
+  --sbf-orange: #FF8A3D;     /* Papaya punch — bands, blocks (ink text 4.8; white only 3.6) */
+  --sbf-apricot: #FFB98B;    /* apricot (colour system): badges, tags */
+  --sbf-yellow: #FF8A3D;     /* golden yellow — sampled from owner ref (säge); small pops: badge, starburst (ink text 10:1, never white) */
+  --sbf-wine: #D20D1A;       /* legacy name — Scarlet */
+  --sbf-burnt: #D20D1A;      /* legacy name — Scarlet */
 
   --text-heading: var(--sbf-red);
   --text-body: var(--sbf-ink);
@@ -80,24 +96,24 @@
   --action-bg-hover: var(--sbf-red-deep);
 
   --focus-ring: var(--sbf-pink);
-  --state-disabled-fg: #B79495;
-  --state-disabled-bg: #F0E3E3;
+  --state-disabled-fg: #4A4544; /* charcoal on pink mist, used with reduced opacity */
+  --state-disabled-bg: #F8DFE2;
 
   --font-display: "Silk Serif", "Cormorant Garamond", Georgia, serif;
   --font-deco: "Brolia", "Silk Serif", Georgia, serif;
-  --font-numeral: "Fraunces", "Silk Serif", Georgia, serif; /* chunky soft serif — big stat numbers only */
+  --font-numeral: "Silk Serif", "Cormorant Garamond", Georgia, serif; /* chunky soft serif — big stat numbers only */
   --font-punch: "Anton", Impact, "Arial Narrow", sans-serif; /* chunky condensed caps — one punch word per section */
   --font-script: "Mrs Saint Delafield", "Brush Script MT", cursive; /* handwritten accent — one word at a time */
   --font-body: "Nunito Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
 
   --text-hero: clamp(40px, 8vw, 100px);
   --text-display: clamp(32px, 5.5vw, 68px);
-  --text-h1: clamp(28px, 4vw, 46px);
-  --text-h2: clamp(23px, 2.6vw, 32px);
-  --text-h3: 22px;
-  --text-lead: 20px;
-  --text-body-lg: 18px;
-  --text-body-md: 16px;
+  --text-h1: clamp(40px, 5.6vw, 76px); /* 2026-11-21: inner-page titles were 46px max next to a 100px home hero */
+  --text-h2: clamp(30px, 3.6vw, 48px); /* was 32px max, too small for a 200-weight serif */
+  --text-h3: clamp(22px, 1.9vw, 26px);
+  --text-lead: clamp(18px, 1.5vw, 21px);
+  --text-body-lg: 19px;
+  --text-body-md: 17px;
   --text-body-sm: 14px;
   --text-label: 12px;
   --text-micro: 11px;
@@ -105,7 +121,7 @@
   --leading-tight: 0.92;
   --leading-display: 1.06;
   --leading-snug: 1.24;
-  --leading-body: 1.62;
+  --leading-body: 1.65;
   --leading-loose: 1.8;
 
   --tracking-display: -0.01em;
@@ -157,9 +173,9 @@
   --border-width-bold: 3px;
 
   --shadow-none: none;
-  --shadow-soft: 0 2px 10px rgba(143, 20, 25, .06);
-  --shadow-card: 0 10px 30px -12px rgba(143, 20, 25, .16);
-  --shadow-lift: 0 18px 44px -16px rgba(143, 20, 25, .22);
+  --shadow-soft: 0 2px 10px rgba(168, 10, 21, .06);
+  --shadow-card: 0 10px 30px -12px rgba(168, 10, 21, .16);
+  --shadow-lift: 0 18px 44px -16px rgba(168, 10, 21, .22);
   --shadow-focus: 0 0 0 3px var(--sbf-pink);
 
   --ease-out: cubic-bezier(.2, .7, .25, 1);
@@ -202,6 +218,8 @@ h1, h2, h3, h4 {
   margin: 0;
 }
 
+h1, h2 { text-wrap: balance; }
+p { text-wrap: pretty; }
 h1 { font-size: var(--text-h1); }
 h2 { font-size: var(--text-h2); }
 h3 { font-size: var(--text-h3); line-height: var(--leading-snug); }
@@ -276,11 +294,11 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
   padding: 13px 26px;
   font-size: var(--text-label);
   -webkit-text-stroke: .045em currentColor; /* owner: slightly bolder button text — Brolia only ships one weight */
-  box-shadow: 0 6px 16px -6px rgba(84, 8, 14, .45);
+  box-shadow: 0 6px 16px -6px rgba(42, 26, 29, .45);
   transition: transform var(--duration-fast) var(--ease-out), box-shadow var(--duration-fast) var(--ease-out), background-color var(--duration-fast) var(--ease-out), border-color var(--duration-fast) var(--ease-out), color var(--duration-fast) var(--ease-out);
 }
-.btn:hover { transform: translateY(-1px); box-shadow: 0 10px 22px -8px rgba(84, 8, 14, .5); }
-.btn:active { transform: translateY(0); box-shadow: 0 3px 8px -4px rgba(84, 8, 14, .45); }
+.btn:hover { transform: translateY(-1px); box-shadow: 0 10px 22px -8px rgba(42, 26, 29, .5); }
+.btn:active { transform: translateY(0); box-shadow: 0 3px 8px -4px rgba(42, 26, 29, .45); }
 .btn-sm { padding: 9px 18px; font-size: 13px; border-width: 2px; border-radius: 14px; }
 .btn-lg { padding: 17px 34px; font-size: var(--text-body-sm); border-radius: 20px; }
 
@@ -416,7 +434,7 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
   text-transform: uppercase;
   color: inherit;
   text-decoration: none;
-  opacity: .62;
+  opacity: .85; /* was .62: too faint to read comfortably */
   border-bottom: 1px solid transparent;
   transition: var(--transition-control);
 }
@@ -635,12 +653,15 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
 .stack.center { justify-items: center; text-align: center; }
 .stack.right { justify-items: end; text-align: right; }
 .lede {
-  font-family: var(--font-display);
+  /* 2026-11-21: was the 200-weight display serif in red at 88% opacity, which
+     read as faint and spindly. Intro paragraphs are reading text, so they use
+     the body face at a larger size and the section text colour. */
+  font-family: var(--font-body);
   font-weight: 400;
-  font-size: calc(var(--text-lead) + 1px);
-  line-height: var(--leading-snug);
-  max-width: 44ch;
-  opacity: .88;
+  font-size: var(--text-lead);
+  line-height: 1.55;
+  max-width: 48ch;
+  color: inherit;
 }
 
 /* Two-up layout */
@@ -963,7 +984,7 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
   display: none;
   align-items: center;
   justify-content: center;
-  background: rgba(142, 21, 25, .28);
+  background: rgba(168, 10, 21, .28);
   backdrop-filter: blur(3px);
   padding: var(--space-6);
   z-index: 40;
@@ -1012,7 +1033,7 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
 }
 .taped-photo .tape {
   position: absolute; top: -11px; left: 50%; transform: translateX(-50%) rotate(4deg);
-  width: 74px; height: 22px; background: rgba(246, 220, 220, .78); box-shadow: inset 0 0 0 1px rgba(191, 32, 38, .14);
+  width: 74px; height: 22px; background: rgba(248, 223, 226, .85); box-shadow: inset 0 0 0 1px rgba(168, 10, 21, .14);
 }
 .taped-photo .photo-mask { aspect-ratio: 4/5; border-radius: 0; }
 .taped-photo figcaption {
@@ -1153,20 +1174,21 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
   width: clamp(124px, 12vw, 160px);
   aspect-ratio: 1;
   border-radius: 50%;
-  background: var(--sbf-orange); /* owner: papaya (was golden yellow) */
-  border: 3px solid var(--sbf-paper);
+  background: var(--sbf-berry); /* 2026-11-21 owner: "elevate, more contrast". Was papaya with charcoal text (2.7:1); deep berry takes pale pink (7.1) and white (10.4) */
+  border: 4px solid var(--sbf-paper);
+  box-shadow: inset 0 0 0 7px var(--sbf-berry), inset 0 0 0 8px rgba(242, 196, 203, .55), 0 14px 30px -12px rgba(42, 26, 29, .55); /* fine inner ring + soft lift */
   display: grid;
   place-items: center;
 }
 .spin-badge svg { position: absolute; inset: 0; width: 100%; height: 100%; animation: sbf-spin 22s linear infinite; }
 .spin-badge text {
-  fill: var(--sbf-ink);
+  fill: var(--sbf-candy);
   font-family: var(--font-deco);
-  font-size: 12.5px;
+  font-size: 13px;
   letter-spacing: .18em;
   text-transform: uppercase;
 }
-.spin-badge-mark { font-family: var(--font-display); font-style: italic; font-size: 30px; color: var(--sbf-ink); letter-spacing: .02em; }
+.spin-badge-mark { font-family: var(--font-display); font-style: italic; font-size: 34px; color: var(--sbf-paper); letter-spacing: .02em; -webkit-text-stroke: .02em currentColor; }
 @keyframes sbf-spin { to { transform: rotate(360deg); } }
 @media (prefers-reduced-motion: reduce) { .spin-badge svg { animation: none; } }
 @media (max-width: 760px) {
@@ -1187,7 +1209,7 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
   .hero-photo.photo-mask.arch { grid-area: 1 / 1 / 4 / 2; }
   .hero-side { position: static; grid-column: 1; justify-self: start; align-self: start; max-width: 24ch; text-align: left; }
   .hero-side.left { grid-row: 2; margin-top: clamp(28px, 4vw, 64px); } /* owner: tucked up under the title, then given more breathing room above */
-  .hero-side.right { grid-row: 3; margin-top: .3em; margin-left: calc(32vw - var(--gutter-page)); /* owner: about half way across, then brought further left so it stays on the red */ text-shadow: 0 1px 12px rgba(59, 10, 18, .45); /* keeps white legible where it runs onto the pale photo */ max-width: none; text-align: left; white-space: nowrap; padding-bottom: clamp(40px, 5vw, 80px); } /* owner: same size and weight as the first tagline */
+  .hero-side.right { grid-row: 3; margin-top: .3em; margin-left: calc(32vw - var(--gutter-page)); /* owner: about half way across, then brought further left so it stays on the red */ text-shadow: 0 1px 12px rgba(42, 26, 29, .45); /* keeps white legible where it runs onto the pale photo */ max-width: none; text-align: left; white-space: nowrap; padding-bottom: clamp(40px, 5vw, 80px); } /* owner: same size and weight as the first tagline */
   .hero-side.right .script { display: block; font-size: 3.15em; /* keeps "Together." the same size now the line is smaller */ line-height: .9; margin-left: 1.7em; color: var(--sbf-petal); } /* own line, larger; owner: starts partly under "doing it", pale pink like the title */
   .spin-badge { left: auto; right: calc(var(--gutter-page) + var(--photo-inset) + var(--photo-w) / 2); transform: translate(50%, 50%); }
 }
@@ -1253,7 +1275,7 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
 .statement { padding-top: calc(var(--section-y) + 70px); }
 .statement-big { position: relative; isolation: isolate; } /* keeps the star behind the words but above the section background */
 .statement-i { position: relative; display: inline-block; }
-.statement-star { position: absolute; left: 50%; top: 50%; width: 1.6em; height: 1.6em; transform: translate(-85%, -95%) rotate(8deg); z-index: -1; color: var(--sbf-orange); -webkit-text-stroke: 0; pointer-events: none; } /* owner: large ✦ star tucked behind the opening "I", offset up and to the left */
+.statement-star { position: absolute; left: 50%; top: 50%; width: 1.1em; height: 1.1em; transform: translate(-80%, -150%) rotate(8deg); /* 2026-11-21 owner: smaller and higher, clear of the opening letter (was 1.6em, -95%) */ z-index: -1; color: var(--sbf-orange); -webkit-text-stroke: 0; pointer-events: none; } /* owner: large ✦ star tucked behind the opening "I", offset up and to the left */
 .statement-big {
   font-family: var(--font-display);
   font-size: clamp(27px, 3.5vw, 46px);
@@ -1287,7 +1309,7 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
 .ready-title { display: grid; color: var(--sbf-paper); line-height: .98; }
 .ready-title span {
   font-family: var(--font-display);
-  font-size: clamp(34px, 4.6vw, 64px); /* owner: slightly smaller */
+  font-size: clamp(38px, 5.1vw, 72px); /* 2026-11-21 owner: slightly larger again (was 34-64px) */
   text-transform: uppercase;
   letter-spacing: .02em;
   -webkit-text-stroke: .016em currentColor; /* owner: slightly more weight — Silk Serif only ships ExtraLight, so thicken with a stroke rather than faux bold */
@@ -1300,7 +1322,7 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
   -webkit-text-stroke: 0;
   line-height: .95;
 }
-.ready-copy { color: var(--sbf-paper); font-size: var(--text-body-lg); line-height: 1.7; max-width: 44ch; }
+.ready-copy { color: var(--sbf-paper); font-size: var(--text-body-md); line-height: 1.5; max-width: 46ch; } /* 2026-11-21 owner: smaller, tighter (was 19px / 1.7) */
 
 /* Testimonial as a rounded papaya banner (owner: match a "What's your secret
    sauce?" reference — thin serif caps line over a chunky pink Anton line,
@@ -1347,12 +1369,14 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
 .ready-signup .btn-onred:hover { background: var(--sbf-paper); color: var(--sbf-red); }
 .ready-signup input[type="email"] {
   flex: 1 1 220px;
-  padding: 14px 20px;
+  padding: 9px 18px; /* 2026-11-21 owner: slimmer field (was 14px 20px) */
   border-radius: var(--radius-pill);
-  border: 2px solid var(--sbf-paper);
+  border: 1px solid var(--sbf-paper);
   background: var(--sbf-paper);
   color: var(--sbf-ink);
   font: inherit;
+  font-size: 15px;
+  line-height: 1.4;
 }
 .ready-art { position: relative; width: 100%; max-width: 380px; justify-self: center; }
 .ready-art .photo-mask { background: var(--sbf-blush); color: var(--sbf-red-deep); }
@@ -1383,3 +1407,182 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
 .heading-orange { font-family: var(--font-display); font-size: clamp(34px, 4vw, 60px); line-height: 1.02; color: var(--sbf-orange); -webkit-text-stroke: .016em currentColor; } /* owner: shared spec for orange section headings ("We refuse to stay small.", "Four doors, no gatekeepers.") — same size, weight and orange as "I left the room first." */
 .heading-orange em { color: inherit; }
 .doors-grid .card-title:not(.card-title-stack) { font-family: var(--font-display); font-size: clamp(26px, 2.8vw, 40px); line-height: 1.02; color: var(--sbf-red); -webkit-text-stroke: .016em currentColor; } /* owner: card titles (The circle / Topics / The podcast) on the same size + weight spec, in red */
+
+/* ---------------------------------------------------------------
+   2026-11-21 review pass: new home sections, Read filters,
+   placeholders, privacy page
+   --------------------------------------------------------------- */
+.page-title { font-size: var(--text-display); }
+
+/* Home: the question band that replaced the placeholder stats */
+.provocation { text-align: center; padding-block: clamp(64px, 9vw, 120px); }
+.provocation-line { font-size: var(--text-display); max-width: 20ch; margin-inline: auto; line-height: 1.04; }
+.provocation-line em { color: var(--sbf-bubblegum); }
+
+.doors-section { padding-top: var(--section-y); padding-bottom: calc(var(--section-y) * .5); }
+.doors-head { margin-bottom: var(--space-10); }
+
+/* Home: closing band now carries a button */
+.closing-seat { text-align: center; padding-block: clamp(56px, 7vw, 96px); }
+.closing-seat .stack { gap: var(--space-8); }
+.closing-seat-title { max-width: 20ch; font-size: var(--text-display); margin-inline: auto; }
+
+/* Read page filter row and empty topic note */
+.tag-row { display: flex; gap: var(--space-3); flex-wrap: wrap; align-items: center; }
+.tag-count { margin-left: auto; font-size: var(--text-body-sm); color: var(--text-muted); }
+.empty-note { background: var(--sbf-blush); border-radius: var(--radius-card, 22px); padding: clamp(28px, 4vw, 48px); display: grid; gap: var(--space-4); justify-items: start; }
+.empty-note h2 { font-size: var(--text-h2); }
+.empty-note[hidden] { display: none; }
+
+/* Not-yet-live posts and episodes */
+.soon { font-family: var(--font-deco); font-size: var(--text-label); letter-spacing: var(--tracking-deco); text-transform: uppercase; color: var(--text-muted); }
+
+/* Typographic episode covers in place of grey placeholder boxes */
+.type-cover { display: flex; align-items: baseline; justify-content: center; gap: .15em; background: var(--sbf-red); color: var(--sbf-petal); aspect-ratio: 4 / 3; }
+.type-cover-ep { font-family: var(--font-display); font-style: italic; font-size: clamp(28px, 3vw, 40px); }
+.type-cover-num { font-family: var(--font-display); font-size: clamp(96px, 11vw, 150px); line-height: 1; }
+
+/* Join dialog small print */
+.join-small { font-size: var(--text-body-sm); color: var(--text-muted); }
+
+/* Privacy page */
+.prose { display: grid; gap: var(--space-4); max-width: 68ch; }
+.prose h2 { font-size: var(--text-h3); margin-top: var(--space-6); }
+.prose h2:first-child { margin-top: 0; }
+.prose-meta { font-size: var(--text-body-sm); color: var(--text-muted); margin-top: var(--space-8); }
+.closing-seat-title em { color: var(--sbf-red-deep); }
+@media (max-width: 600px) { .hide-sm { display: none; } }
+
+/* ---------------------------------------------------------------
+   2026-11-21 Poster Pink + Tangerine: component overrides
+   --------------------------------------------------------------- */
+/* Hero: a pink poster, giant words in logo red (3.5, display only) */
+.hero-giant-wrap { background: var(--sbf-cream); color: var(--sbf-ink); }
+.hero-giant { color: var(--sbf-red); }
+.hero-side { color: var(--sbf-ink); }
+.hero-side em { color: var(--sbf-red); }
+.hero-side .script { color: var(--sbf-red); }
+@media (min-width: 761px) { .hero-side.right { text-shadow: none; } .hero-side.right .script { color: var(--sbf-red); } }
+
+/* Spinning badge: tangerine with deep ink lettering (7.1) */
+.spin-badge { background: var(--sbf-orange); box-shadow: 0 14px 30px -12px rgba(42, 26, 29, .5); }
+.spin-badge text { fill: var(--sbf-ink-deep); }
+.spin-badge-mark { color: var(--sbf-ink-deep); }
+
+/* Statement on white: coloured phrases stay large */
+.hl-rasp { color: var(--sbf-vermilion); }
+.hl-coral { color: var(--sbf-orange-text); }
+.heading-orange { color: var(--sbf-red); }
+.founder-split-title .lower { color: var(--sbf-vermilion); }
+
+/* Pink sections: charcoal text, red headings */
+.section.tone-blush { color: var(--sbf-ink); }
+.section.tone-blush h1, .section.tone-blush h2 { color: var(--sbf-red); }
+.section.tone-petal { color: var(--sbf-ink); }
+.section.tone-petal em { color: var(--sbf-red-deep); }
+.provocation-line { color: var(--sbf-red); }
+.provocation-line em { color: var(--sbf-ink); }
+.empty-note { background: var(--sbf-blush-deep); }
+
+/* Signup block on red: white button with red text, tangerine starburst */
+.ready-signup .btn-onred { background: var(--sbf-paper); color: var(--sbf-red); }
+.ready-signup .btn-onred:hover { background: var(--sbf-orange); color: var(--sbf-ink-deep); }
+.starburst { background: var(--sbf-orange); color: var(--sbf-ink-deep); }
+
+/* Quote banner: tangerine with deep ink (7.1) */
+.quote-banner { background: var(--sbf-orange); }
+.quote-banner-title { color: var(--sbf-ink-deep); }
+.quote-banner-title .punch { color: var(--sbf-ink-deep); }
+.quote-banner-copy { color: var(--sbf-ink-deep); }
+.quote-banner-btn { background: var(--sbf-red); color: var(--sbf-paper); }
+.quote-banner-btn:hover { background: var(--sbf-red-deep); color: var(--sbf-paper); }
+
+/* Closing band on white so it doesn't merge with the pink canvas */
+.section.closing-seat { background: var(--sbf-paper); }
+
+/* Footer: white small text on red (5.5); tangerine and pink candy stripe on top */
+.footer-col-title { color: var(--sbf-paper); }
+.site-footer { position: relative; }
+.site-footer::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 14px; background: repeating-linear-gradient(90deg, var(--sbf-orange) 0 28px, var(--sbf-cream) 28px 56px); }
+/* Contrast fixes from the page-by-page audit (small text needs 4.5:1) */
+.nav-link:hover, .nav-link.active { color: var(--sbf-red-deep); }            /* 5.0 on pink */
+.belief-num { color: var(--sbf-red-deep); }
+.btn-secondary { background: var(--sbf-paper); color: var(--sbf-red); }     /* 5.5 */
+.btn-secondary:hover { background: var(--sbf-blush-deep); color: var(--sbf-red-deep); }
+.tag.active { color: var(--sbf-paper); }                                     /* 5.5 */
+.badge-pink { background: var(--sbf-blush); color: var(--sbf-red-deep); }   /* 5.0 */
+.badge-yellow { color: var(--sbf-ink-deep); }                                /* 7.1 */
+.feature-mark { color: var(--sbf-red); }
+.card.tone-red, .card.tone-red .card-eyebrow, .card.tone-red p { color: var(--sbf-paper); }
+.section.tone-raspberry .eyebrow, .section.tone-red .eyebrow, .eyebrow.on-blush { color: var(--sbf-paper); }
+.section.tone-red, .section.tone-red .lede { color: var(--sbf-paper); }
+.marquee.tone-pink { background: var(--sbf-blush); color: var(--sbf-red-deep); }
+.badge-outline { color: var(--sbf-red-deep); box-shadow: inset 0 0 0 1px var(--sbf-red-deep); }
+/* Poster moment: the question band in giant condensed type, second line outlined (from the "What's this?" reference) */
+.provocation-line { font-family: var(--font-punch); font-weight: 400; text-transform: uppercase; font-size: clamp(44px, 7.6vw, 112px); line-height: .9; letter-spacing: .005em; max-width: 14ch; color: var(--sbf-red); -webkit-text-stroke: 0; }
+.provocation-line em { display: block; font-style: normal; color: transparent; -webkit-text-stroke: max(1.5px, .018em) var(--sbf-red); margin-top: .08em; }
+
+/* ===============================================================
+   2026-11-21 BUTTONS: the outline pill (owner chose option 2 on the
+   button page; spec lives in the brand style guide, Button component).
+   One solid lipstick-red primary per view; everything else a 1.5px
+   outline that fills on hover. Nunito Sans 700, sentence case, no
+   shadow, no faux-bold stroke. Replaces every earlier .btn look.
+   =============================================================== */
+.btn, .btn-ghost.btn-sm, .ready-signup .btn-onred, .founder-split-btn, .btn-orange, .wavy-raspberry .btn-orange {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: .04em;
+  text-transform: none;
+  -webkit-text-stroke: 0;
+  border-radius: 999px;
+  border: 1.5px solid var(--sbf-red-deep);
+  background: transparent;
+  color: var(--sbf-red-deep);           /* 5.0 on poster pink, 7.3 on shell */
+  min-height: 44px;
+  padding: 0 24px;
+  box-shadow: none;
+}
+.btn:hover, .btn-ghost.btn-sm:hover, .btn-orange:hover, .wavy-raspberry .btn-orange:hover { background: var(--sbf-red-deep); border-color: var(--sbf-red-deep); color: var(--sbf-paper); transform: none; box-shadow: none; }
+.btn:active { transform: none; box-shadow: none; }
+.btn:focus-visible { outline: 3px solid var(--sbf-ink-deep); outline-offset: 3px; box-shadow: none; }
+.btn-sm, .btn-ghost.btn-sm { min-height: 36px; padding: 0 18px; font-size: 13px; }
+.btn-lg { min-height: 52px; padding: 0 30px; font-size: 15px; }
+
+/* Primary: the one solid button */
+.btn-primary, .founder-split-btn, .quote-banner-btn { background: var(--sbf-red); border-color: var(--sbf-red); color: var(--sbf-paper); }
+.btn-primary:hover, .founder-split-btn:hover, .quote-banner-btn:hover { background: var(--sbf-red-deep); border-color: var(--sbf-red-deep); color: var(--sbf-paper); }
+
+/* On red, fierce pink or deep blocks: white outline; primary becomes white */
+.section.tone-raspberry .btn, .section.tone-red .btn, .section.tone-fierce .btn, .card.tone-red .btn, .card.tone-fierce .btn, .ready .btn, .btn-onred, .btn-ghost.on-dark { background: transparent; border-color: var(--sbf-paper); color: var(--sbf-paper); }
+.section.tone-raspberry .btn:hover, .section.tone-red .btn:hover, .section.tone-fierce .btn:hover, .card.tone-red .btn:hover, .card.tone-fierce .btn:hover, .ready .btn:hover, .btn-onred:hover, .btn-ghost.on-dark:hover { background: var(--sbf-paper); border-color: var(--sbf-paper); color: var(--sbf-red); }
+.ready-signup .btn-onred, .section.tone-raspberry .btn-primary, .section.tone-fierce .btn-primary, .card.tone-fierce .btn-onred { background: var(--sbf-paper); border-color: var(--sbf-paper); color: var(--sbf-red); }
+.ready-signup .btn-onred:hover, .section.tone-raspberry .btn-primary:hover, .section.tone-fierce .btn-primary:hover { background: var(--sbf-candy); border-color: var(--sbf-candy); color: var(--sbf-red-deep); }
+.section.tone-raspberry .btn:focus-visible, .section.tone-red .btn:focus-visible, .section.tone-fierce .btn:focus-visible, .card.tone-red .btn:focus-visible, .card.tone-fierce .btn:focus-visible, .ready .btn:focus-visible { outline-color: var(--sbf-paper); }
+
+/* Colour system 2026-11-21: fierce pink, neon pink and the light tints in use */
+.section.tone-fierce { background: var(--sbf-fierce); color: var(--sbf-paper); }
+.section.tone-fierce h1, .section.tone-fierce h2, .section.tone-fierce h3, .section.tone-fierce .eyebrow, .section.tone-fierce .lede { color: var(--sbf-paper); }
+.section.tone-fierce em { color: var(--sbf-candy); }
+.section.tone-mist { background: var(--sbf-mist); color: var(--sbf-ink); }
+.section.tone-mist h1, .section.tone-mist h2 { color: var(--sbf-red); }
+.card.tone-fierce { background: var(--sbf-fierce); color: var(--sbf-paper); }
+.card.tone-fierce .card-eyebrow, .card.tone-fierce p, .card.tone-fierce .card-title { color: var(--sbf-paper); }
+.card.tone-fierce .card-title-stack { color: var(--sbf-candy); }
+.card.tint-peach { background: var(--sbf-peach); }
+.card.tint-salmon { background: var(--sbf-salmon); }
+.card.tint-peach .card-eyebrow, .card.tint-salmon .card-eyebrow { color: var(--sbf-ink-deep); }
+.card.tint-peach .card-title, .card.tint-salmon .card-title { color: var(--sbf-ink-deep); }
+.card.tint-peach p, .card.tint-salmon p { color: var(--sbf-ink); }
+.badge-pink { background: var(--sbf-neon); color: var(--sbf-ink-deep); }
+.empty-note { background: var(--sbf-mist); }
+.tag { background: var(--sbf-paper); }
+.site-footer::before { background: repeating-linear-gradient(90deg, var(--sbf-orange) 0 28px, var(--sbf-neon) 28px 56px, var(--sbf-cream) 56px 84px); }
+.section .ready-signup .btn-onred { background: var(--sbf-paper); border-color: var(--sbf-paper); color: var(--sbf-red); }  /* primary on red = white pill (beats .section.tone-raspberry .btn) */
+.section .ready-signup .btn-onred:hover { background: var(--sbf-candy); border-color: var(--sbf-candy); color: var(--sbf-red-deep); }
+/* Phone-width contrast fixes (2026-11-21 audit at 375px) */
+.nav-toggle { color: var(--sbf-red-deep); }                          /* 5.0 on pink, was 2.5 */
+.section.tone-mist h3 { color: var(--sbf-red-deep); }                /* 6.1 on mist */
+.card.tone-red .card-title { color: var(--sbf-paper); }              /* 5.3 on red */
+.hero-side em { color: var(--sbf-red-deep); }                        /* 5.0 on pink at any size */

@@ -40,6 +40,75 @@ gatekeepers, out loud, holding the door. The client's own artwork lines
 (the manifesto line, "honey on the table" testimonial, footer tagline)
 were deliberately left unchanged.
 
+## Review pass 2026-11-21 (branch `review-fixes`)
+Full UX/UI/copy review (published as a claude.ai artifact) then implemented:
+- Menu is now The circle · Read (5 topic links) · Podcast · About, plus a
+  "Get the Sunday note" button ("Sunday note" on phones via `.hide-sm`).
+  Contact lives in the footer. The 45-topic mega-menu was cut to the five
+  themes; add a sub-topic back only once it has 3+ posts.
+- Me merged into About, Journal merged into Blog ("Read"); both files deleted,
+  `_redirects` sends old URLs on. The Day is still unlinked: owner to decide.
+- Join dialog is now a real Netlify form (`name="sunday-note"`) and only
+  shows "You're in" after the POST succeeds.
+- Invented claims removed: stats band, press band, "Renée, Manchester".
+  Past circle dates removed. Every `href="#"` now opens the Join dialog or
+  goes somewhere real; social icons removed until real URLs are supplied.
+  Unpublished posts/episodes show "Coming soon".
+- New privacy.html (UK GDPR plain-English template; owner to confirm).
+- Voice brief from owner: Taylor Swift-like storytelling with more sass and
+  more thought-provoking. Specific details, a twist line, confessional
+  founder, dry wit; never quote or name her on the site.
+- Typography: `.lede` moved from the 200-weight display serif in red at 88%
+  opacity to the body face in the section text colour. Heading scale
+  raised (h1 76px max, h2 48px max), body 17px, nav links .85 opacity.
+  Fraunces dropped from the font import. The many `-webkit-text-stroke`
+  hacks fake a heavier Silk Serif. The real fix is a Regular weight
+  of the font if the owner can get one.
+
+## CURRENT PALETTE: Poster Pink + Tangerine (2026-11-21, supersedes all palette notes below)
+Owner supplied a moodboard (red/vermilion type on pink posters, cherry +
+bubblegum, magenta + tangerine place cards, stripes, flowers, hearts) and
+picked option C of "Poster Pink, four ways" on the palette artifact. Owner
+explicitly does NOT want burgundy.
+- Canvas / page / pale sections: poster pink #F2C4CB (`--sbf-cream`,
+  `--sbf-blush`, `--sbf-petal`, `--sbf-candy` all point here). White is
+  for cards, the statement and the closing band.
+- Logo red #D20D1A: hero giant words (3.5 on pink, display only), buttons,
+  signup block, footer. White text only on red. Hover/deep #A80A15.
+- Vermilion #EF3B24 (`--sbf-vermilion`, also `--sbf-pink`): display type on
+  white only (3.9). Orange words on white use `--sbf-orange-text` #E0480F.
+- Tangerine #FF8A3D (`--sbf-orange`/`--sbf-coral`/`--sbf-yellow`): spin
+  badge, quote banner, starburst, footer stripe. Text on it is
+  `--sbf-ink-deep` #2A1A1D (7.1). Never white, never the #4A4544 charcoal
+  (4.0).
+- Body text stays warm charcoal #4A4544 (6.1 on pink). `--sbf-berry` now
+  points at #2A1A1D, so nothing is burgundy.
+- Small text on pink uses `--sbf-red-deep` (5.0), not red (3.55).
+- Overrides live at the end of style.css. A page-by-page contrast audit
+  (walk text nodes, compare to nearest opaque background) passed on every
+  page. Re-run it after colour changes.
+
+## Brand style guide + colour system (2026-11-21, authoritative)
+The brand style guide is a claude.ai Design System artifact (brand overview,
+colour breakdown, voice, outline-pill Button, tokens):
+https://claude.ai/artifact/AEWxkFFP2SrdDtqXoJu8WU. Read its README and
+tokens before changing colour, type or buttons. The site uses those values:
+`--sbf-paper` is now shell #FDF8F9 (no pure white), plus `--sbf-fierce`
+#D4106C (white text), `--sbf-neon` #FF4F8B (deep ink text), `--sbf-mist`,
+`--sbf-peach`, `--sbf-salmon`, `--sbf-sorbet`, `--sbf-butter`. New classes:
+`.section.tone-fierce`, `.section.tone-mist`, `.card.tone-fierce`,
+`.card.tint-peach`, `.card.tint-salmon`.
+NO GREEN anywhere (owner, 2026-11-21), not even for success messages.
+Success = `--sbf-ink-deep` text with a ✓ on `--sbf-peach`; error = deep
+red on sorbet; warning = #A84300 on peach cream.
+BUTTONS: the outline pill (owner chose it from five options). One solid
+lipstick-red `.btn-primary` per view; every other `.btn` is a 1.5px
+`--sbf-red-deep` outline that fills on hover. On red/fierce blocks it's a
+white outline, and the primary is a white pill. Nunito Sans 700, 14px,
+sentence case, no shadow, no text-stroke. The rules are in the last button
+block of style.css. GOTCHA: `.section.tone-raspberry .btn` outranks
+`.ready-signup .btn-onred`; use `.section .ready-signup .btn-onred`.
+
 ## Pages
 - Home REDESIGNED 2026-10-05 (owner: "love this website vibe, want this to
   emulate" — jennakutcher.com + a "Club Paradiso" jewellery site — "with
