@@ -1305,7 +1305,7 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
   -webkit-text-stroke: 0;
   line-height: .95;
 }
-.ready-copy { color: var(--sbf-paper); font-size: var(--text-body-lg); line-height: 1.7; max-width: 44ch; }
+.ready-copy { color: var(--sbf-paper); font-size: var(--text-body-md); line-height: 1.5; max-width: 46ch; } /* 2026-11-21 owner: smaller, tighter (was 19px / 1.7) */
 
 /* Testimonial as a rounded papaya banner (owner: match a "What's your secret
    sauce?" reference — thin serif caps line over a chunky pink Anton line,
