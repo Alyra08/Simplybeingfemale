@@ -1686,3 +1686,20 @@ figcaption { color: var(--sbf-red-deep); }
 .section.tone-orange h2 em { color: #fff; }
 main figure figcaption { color: var(--sbf-red-deep); }
 .taped-photo figcaption { color: var(--sbf-red-deep); }
+
+/* 2026-11-21 Quote: orange box removed (owner); the quote sits on blush with
+   brand-colour confetti bursting along the top and bottom edges. The
+   middle stays clear so the text reads cleanly. */
+.section.quote-banner-wrap {
+  background-color: var(--sbf-cream);
+  background-image: url("assets/imagery/confetti-band.svg"), url("assets/imagery/confetti-band-bottom.svg");
+  background-repeat: repeat-x, repeat-x;
+  background-position: left top, left bottom;
+  background-size: 480px 150px, 480px 150px;
+  padding-block: clamp(130px, 11vw, 150px);
+}
+.quote-banner { background: transparent; border-radius: 0; box-shadow: none; padding-block: 0; }
+.quote-banner-title, .quote-banner-title span { color: var(--sbf-red); }
+.quote-banner-title .punch { color: var(--sbf-red); }
+.quote-banner-copy { color: var(--sbf-ink); font-size: 20px; font-weight: 600; }
+.section.quote-banner-wrap { background-size: 960px 110px, 960px 110px; padding-block: clamp(120px, 10vw, 140px); }
