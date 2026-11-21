@@ -1258,7 +1258,7 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
 .statement { padding-top: calc(var(--section-y) + 70px); }
 .statement-big { position: relative; isolation: isolate; } /* keeps the star behind the words but above the section background */
 .statement-i { position: relative; display: inline-block; }
-.statement-star { position: absolute; left: 50%; top: 50%; width: 1.6em; height: 1.6em; transform: translate(-85%, -95%) rotate(8deg); z-index: -1; color: var(--sbf-orange); -webkit-text-stroke: 0; pointer-events: none; } /* owner: large ✦ star tucked behind the opening "I", offset up and to the left */
+.statement-star { position: absolute; left: 50%; top: 50%; width: 1.1em; height: 1.1em; transform: translate(-80%, -150%) rotate(8deg); /* 2026-11-21 owner: smaller and higher, clear of the opening letter (was 1.6em, -95%) */ z-index: -1; color: var(--sbf-orange); -webkit-text-stroke: 0; pointer-events: none; } /* owner: large ✦ star tucked behind the opening "I", offset up and to the left */
 .statement-big {
   font-family: var(--font-display);
   font-size: clamp(27px, 3.5vw, 46px);
