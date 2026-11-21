@@ -1586,3 +1586,18 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
 .section.tone-mist h3 { color: var(--sbf-red-deep); }                /* 6.1 on mist */
 .card.tone-red .card-title { color: var(--sbf-paper); }              /* 5.3 on red */
 .hero-side em { color: var(--sbf-red-deep); }                        /* 5.0 on pink at any size */
+
+/* ---------------------------------------------------------------
+   2026-11-21 SPACING RHYTHM. One unit, --section-y (56px phone to
+   112px desktop), above and below every section. Where two sections
+   share a background they split it (half each) so the gap is never
+   doubled. A floating element between sections gets half above and
+   below.
+   --------------------------------------------------------------- */
+/* Home: poster band and Four doors are both pink, so they share one gap (was 216px of pink) */
+.section.provocation { padding-top: var(--section-y); padding-bottom: calc(var(--section-y) * .5); }
+.section.doors-section { padding-top: calc(var(--section-y) * .5); padding-bottom: var(--section-y); }
+/* Quote banner floats on pink between the red signup and the closing band: equal half-gaps */
+.section.quote-banner-wrap { padding-top: calc(var(--section-y) * .5); padding-bottom: calc(var(--section-y) * .5); }
+/* Closing band: the standard unit */
+.section.closing-seat { padding-block: var(--section-y); }
