@@ -33,46 +33,52 @@
      Poster pink canvas #F2C4CB, logo red #D20D1A, vermilion #EF3B24 for display type on white,
      tangerine #FF8A3D for blocks (deep ink text only), no burgundy. Legacy token names kept and
      re-pointed so existing rules follow. White text only on red. */
-  --sbf-vermilion: #EF3B24;  /* display type on white (3.9, large only) */
+  --sbf-vermilion: #FF006C;  /* display type on white (3.9, large only) */
   --sbf-orange-text: #E0480F; /* orange words on white (4.1, large only) */
   --sbf-ink-deep: #2A1A1D;   /* text on tangerine (7.1) */
+  /* 2026-11-21 PALETTE v3 (owner-supplied): Signal Red #FD0019, Hot Pink #FF006C, Rose #FEA0AE,
+     Tangerine #FB6526, plus very light tints. Brights are colour fields and large type only
+     (white on them is 3.0-4.05). Small text and buttons on red use Deep Red #C80014 (white 6.06). */
+  --sbf-hot: #FF006C;
+  --sbf-rose: #FEA0AE;
+  --sbf-ink-hot: #1A0D10;    /* small text on hot pink (4.93) */
   /* Colour system 2026-11-21 additions (see the brand style guide) */
-  --sbf-fierce: #D4106C;     /* fierce pink: white text 5.1 */
-  --sbf-neon: #FF4F8B;       /* neon pink: deep ink text only (5.3) */
-  --sbf-mist: #F8DFE2;       /* pink mist: alternate light sections */
-  --sbf-peach: #FFD6BB;      /* cards, chips */
-  --sbf-peach-cream: #FFEDE2;
-  --sbf-salmon: #F9BAB2;
-  --sbf-sorbet: #FDE2DE;
-  --sbf-butter: #FFE7B3;     /* flower centres only */
-  --sbf-red: #D20D1A;        /* Crimson apple — signature (~ logo red) */
-  --sbf-red-deep: #A80A15;   /* Scarlet — hover; red text on pale pink */
-  --sbf-red-bright: #D20D1A; /* 2026-11-21: was raspberry #D81A51; now lipstick red (colour system has one red) */
+  --sbf-fierce: #FF006C;     /* fierce pink: white text 5.1 */
+  --sbf-neon: #FEA0AE;       /* neon pink: deep ink text only (5.3) */
+  --sbf-mist: #FFE0E3;       /* pink mist: alternate light sections */
+  --sbf-peach: #FEE0D4;      /* cards, chips */
+  --sbf-peach-cream: #FFF6F2;
+  --sbf-salmon: #FFCCD1;
+  --sbf-sorbet: #FFF0F1;
+  --sbf-butter: #FFE0ED;     /* flower centres only */
+  --sbf-red: #FD0019;        /* Crimson apple — signature (~ logo red) */
+  --sbf-red-deep: #C80014;   /* Scarlet — hover; red text on pale pink */
+  --sbf-red-bright: #FD0019; /* 2026-11-21: was raspberry #D81A51; now lipstick red (colour system has one red) */
   --sbf-cherry: #D20D1A;     /* alias of red */
-  --sbf-raspberry: #D20D1A;  /* Scarlet — bold block (white text 6.4) */
+  --sbf-raspberry: #C80014;  /* Scarlet — bold block (white text 6.4) */
 
   --sbf-berry: #2A1A1D;      /* deep strawberry (strawberry at 48%) — high-contrast block: white 10.4, pale pink 7.1 */
-  --sbf-pink: #EF3B24;       /* Strawberry — blocks and accents (ink text 4.7) */
-  --sbf-pink-deep: #D20D1A;  /* dark strawberry (strawberry's hue, deepened) — hover on pink, pink text on white; white text 5.5 */
-  --sbf-candy: #F2C4CB;      /* pale strawberry — big words on reds */
-  --sbf-bubblegum: #EF3B24;  /* Rose blush — highlight words on white (4.3) */
-  --sbf-blush: #F2C4CB;      /* pale pink sections — half the tint of #FCEDEE (owner: "at least half lighter") */
-  --sbf-petal: #F2C4CB;      /* pale strawberry — giant hero lettering, photo placeholders */
-  --sbf-blush-deep: #F8DFE2; /* pink mist: hover on blush */
-  --sbf-cotton: #F8DFE2;     /* alias of blush-deep */
+  --sbf-pink: #FF006C;       /* Strawberry — blocks and accents (ink text 4.7) */
+  --sbf-pink-deep: #C80014;  /* dark strawberry (strawberry's hue, deepened) — hover on pink, pink text on white; white text 5.5 */
+  --sbf-candy: #FFE0E3;      /* pale strawberry — big words on reds */
+  --sbf-bubblegum: #FF006C;  /* Rose blush — highlight words on white (4.3) */
+  --sbf-blush: #FFECEF;      /* pale pink sections — half the tint of #FCEDEE (owner: "at least half lighter") */
+  --sbf-petal: #FFE0E3;      /* pale strawberry — giant hero lettering, photo placeholders */
+  --sbf-blush-deep: #FFE0E3; /* pink mist: hover on blush */
+  --sbf-cotton: #FFE0E3;     /* alias of blush-deep */
 
-  --sbf-cream: #F2C4CB;      /* off-white page background */
-  --sbf-paper: #FDF8F9; /* 2026-11-21 shell, replaces pure white (colour system) */      /* white sections — the breathing room */
+  --sbf-cream: #FFECEF;      /* off-white page background */
+  --sbf-paper: #FFF9FA; /* 2026-11-21 shell, replaces pure white (colour system) */      /* white sections — the breathing room */
   --sbf-ink: #4A4544;        /* owner (2026-10-10): warm charcoal for all text — was grey #616161, berry-brown #6E4448, deep berry #3B0A12 */
   --sbf-ink-soft: #4A4544;
-  --sbf-line: #E8A7B4;       /* hairline borders */
+  --sbf-line: #FFCCD1;       /* hairline borders */
 
-  --sbf-coral: #FF8A3D;      /* Papaya punch (owner-supplied) — highlight words: 3.6 on white, keep them large */
-  --sbf-orange: #FF8A3D;     /* Papaya punch — bands, blocks (ink text 4.8; white only 3.6) */
-  --sbf-apricot: #FFB98B;    /* apricot (colour system): badges, tags */
-  --sbf-yellow: #FF8A3D;     /* golden yellow — sampled from owner ref (säge); small pops: badge, starburst (ink text 10:1, never white) */
-  --sbf-wine: #D20D1A;       /* legacy name — Scarlet */
-  --sbf-burnt: #D20D1A;      /* legacy name — Scarlet */
+  --sbf-coral: #FB6526;      /* Papaya punch (owner-supplied) — highlight words: 3.6 on white, keep them large */
+  --sbf-orange: #FB6526;     /* Papaya punch — bands, blocks (ink text 4.8; white only 3.6) */
+  --sbf-apricot: #FEE0D4;    /* apricot (colour system): badges, tags */
+  --sbf-yellow: #FB6526;     /* golden yellow — sampled from owner ref (säge); small pops: badge, starburst (ink text 10:1, never white) */
+  --sbf-wine: #C80014;       /* legacy name — Scarlet */
+  --sbf-burnt: #C80014;      /* legacy name — Scarlet */
 
   --text-heading: var(--sbf-red);
   --text-body: var(--sbf-ink);
@@ -1601,3 +1607,47 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
 .section.quote-banner-wrap { padding-top: calc(var(--section-y) * .5); padding-bottom: calc(var(--section-y) * .5); }
 /* Closing band: the standard unit */
 .section.closing-seat { padding-block: var(--section-y); }
+
+/* ===============================================================
+   2026-11-21 PALETTE v3: owner's Signal Red / Hot Pink / Rose /
+   Tangerine with very light tints. Lights carry the page; brights
+   are fields and big type. Overrides below keep every text pair
+   readable (small text 4.5:1, large 3:1).
+   =============================================================== */
+/* Buttons: solid primary uses Deep Red (white 6.06); Signal Red is too bright for small white text */
+.btn-primary, .founder-split-btn, .quote-banner-btn { background: var(--sbf-red-deep); border-color: var(--sbf-red-deep); }
+.btn-primary:hover, .founder-split-btn:hover, .quote-banner-btn:hover { background: #A3000E; border-color: #A3000E; }
+.tag.active { background: var(--sbf-red-deep); border-color: var(--sbf-red-deep); }
+
+/* Signup block: a Signal Red field, copy large and bold so white reads (4.05 at 19px bold) */
+.section.ready { background: var(--sbf-red); }
+.ready-copy { font-size: 19px; font-weight: 700; line-height: 1.45; }
+.section .ready-signup .btn-onred { color: var(--sbf-red-deep); }
+
+/* Sunday note card: a Hot Pink field, small text in near-black */
+.card.tone-fierce .card-eyebrow, .card.tone-fierce p { color: var(--sbf-ink-hot); }
+.card.tone-fierce .btn, .card.tone-fierce .btn-onred { background: var(--sbf-paper); border-color: var(--sbf-paper); color: var(--sbf-red-deep); }
+.card.tone-fierce .btn:hover { background: var(--sbf-ink-hot); border-color: var(--sbf-ink-hot); color: var(--sbf-paper); }
+
+/* Former hot-pink bands (Podcast hero, Read signup) become a light candy tint */
+.section.tone-fierce { background: var(--sbf-butter); color: var(--sbf-ink); }
+.section.tone-fierce h1, .section.tone-fierce h2, .section.tone-fierce h3 { color: var(--sbf-hot); }
+.section.tone-fierce .eyebrow, .section.tone-fierce em { color: var(--sbf-red-deep); }
+.section.tone-fierce .lede { color: var(--sbf-ink); }
+.section.tone-fierce .btn { background: transparent; border-color: var(--sbf-red-deep); color: var(--sbf-red-deep); }
+.section.tone-fierce .btn:hover, .section.tone-fierce .btn-primary { background: var(--sbf-red-deep); border-color: var(--sbf-red-deep); color: var(--sbf-paper); }
+.section.tone-fierce .btn:focus-visible { outline-color: var(--sbf-ink-deep); }
+
+/* Red cards and red bands that carry small text use Deep Red */
+.card.tone-red, .section.tone-red { background: var(--sbf-red-deep); }
+
+/* Footer: light Rose with deep ink, red/hot/tangerine stripe on top */
+.site-footer { background: var(--sbf-rose); color: var(--sbf-ink-deep); }
+.site-footer a, .footer-col a, .footer-col-title, .footer-bottom, .footer-bottom a, .footer-tagline { color: var(--sbf-ink-deep); }
+.footer-icon { color: var(--sbf-red); }
+.site-footer::before { background: repeating-linear-gradient(90deg, var(--sbf-red) 0 28px, var(--sbf-hot) 28px 56px, var(--sbf-orange) 56px 84px, var(--sbf-paper) 84px 112px); }
+/* v3 audit: small red text uses Deep Red (5.3-5.8 on the lights); big headlines keep Signal Red */
+h3, .card-title, .tag, .tab, .tab.active, .price-label, .feature-mark, .field-label, .checklist-title, .checklist-price, .belief-item h3, .prose h2, main a:not(.btn), .stage-label { color: var(--sbf-red-deep); }
+.card.tone-red .card-title, .card.tone-fierce .card-title { color: var(--sbf-paper); }
+.card.tint-salmon { background: var(--sbf-butter); }   /* hot-pink tint: deep red 4.9 */
+figcaption { color: var(--sbf-red-deep); }
