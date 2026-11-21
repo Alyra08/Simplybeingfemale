@@ -88,6 +88,19 @@ explicitly does NOT want burgundy.
   (walk text nodes, compare to nearest opaque background) passed on every
   page. Re-run it after colour changes.
 
+## PALETTE v3 (2026-11-21, CURRENT; supersedes Poster Pink notes below)
+Owner-supplied: Signal Red #FD0019, Hot Pink #FF006C, Rose #FEA0AE,
+Tangerine #FB6526, "with very light tones". Lights carry the page: blush
+#FFECEF canvas (`--sbf-cream`/`--sbf-blush`), shell #FFF9FA (`--sbf-paper`),
+rose mist #FFE0E3, candy #FFE0ED, peach #FEE0D4, peach cream #FFF6F2.
+The brights are near-neon: white text on them is 3.0-4.05, so they are
+colour fields and big type only. Deep Red #C80014 (`--sbf-red-deep`) is
+the working red for solid buttons, links and all small red text (white
+on it 6.06). Small text on hot pink uses `--sbf-ink-hot` #1A0D10. The
+footer is rose with deep ink. Overrides are in the "PALETTE v3" block and
+its audit rules at the end of style.css. Brand guide and PDF updated to
+match (token names signal-red, hot-pink, rose, tangerine, deep-red, blush…).
+
 ## Brand style guide + colour system (2026-11-21, authoritative)
 The brand style guide is a claude.ai Design System artifact (brand overview,
 colour breakdown, voice, outline-pill Button, tokens):
