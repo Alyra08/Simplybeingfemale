@@ -98,6 +98,9 @@ tokens before changing colour, type or buttons. The site uses those values:
 `--sbf-peach`, `--sbf-salmon`, `--sbf-sorbet`, `--sbf-butter`. New classes:
 `.section.tone-fierce`, `.section.tone-mist`, `.card.tone-fierce`,
 `.card.tint-peach`, `.card.tint-salmon`.
+NO GREEN anywhere (owner, 2026-11-21), not even for success messages.
+Success = `--sbf-ink-deep` text with a ✓ on `--sbf-peach`; error = deep
+red on sorbet; warning = #A84300 on peach cream.
 BUTTONS: the outline pill (owner chose it from five options). One solid
 lipstick-red `.btn-primary` per view; every other `.btn` is a 1.5px
 `--sbf-red-deep` outline that fills on hover. On red/fierce blocks it's a
