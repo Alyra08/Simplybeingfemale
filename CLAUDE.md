@@ -40,6 +40,31 @@ gatekeepers, out loud, holding the door. The client's own artwork lines
 (the manifesto line, "honey on the table" testimonial, footer tagline)
 were deliberately left unchanged.
 
+## Review pass 2026-11-21 (branch `review-fixes`)
+Full UX/UI/copy review (published as a claude.ai artifact) then implemented:
+- Menu is now The circle · Read (5 topic links) · Podcast · About, plus a
+  "Get the Sunday note" button ("Sunday note" on phones via `.hide-sm`).
+  Contact lives in the footer. The 45-topic mega-menu was cut to the five
+  themes; add a sub-topic back only once it has 3+ posts.
+- Me merged into About, Journal merged into Blog ("Read"); both files deleted,
+  `_redirects` sends old URLs on. The Day is still unlinked: owner to decide.
+- Join dialog is now a real Netlify form (`name="sunday-note"`) and only
+  shows "You're in" after the POST succeeds.
+- Invented claims removed: stats band, press band, "Renée, Manchester".
+  Past circle dates removed. Every `href="#"` now opens the Join dialog or
+  goes somewhere real; social icons removed until real URLs are supplied.
+  Unpublished posts/episodes show "Coming soon".
+- New privacy.html (UK GDPR plain-English template; owner to confirm).
+- Voice brief from owner: Taylor Swift-like storytelling with more sass and
+  more thought-provoking. Specific details, a twist line, confessional
+  founder, dry wit; never quote or name her on the site.
+- Typography: `.lede` moved from the 200-weight display serif in red at 88%
+  opacity to the body face in the section text colour. Heading scale
+  raised (h1 76px max, h2 48px max), body 17px, nav links .85 opacity.
+  Fraunces dropped from the font import. The many `-webkit-text-stroke`
+  hacks fake a heavier Silk Serif. The real fix is a Regular weight
+  of the font if the owner can get one.
+
 ## Pages
 - Home REDESIGNED 2026-10-05 (owner: "love this website vibe, want this to
   emulate" — jennakutcher.com + a "Club Paradiso" jewellery site — "with

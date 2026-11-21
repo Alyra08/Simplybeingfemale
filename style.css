@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&family=Fraunces:ital,opsz,wght,SOFT@0,9..144,700..900,0..100;1,9..144,700..900,0..100&family=Anton&family=Mrs+Saint+Delafield&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Anton&family=Mrs+Saint+Delafield&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap");
 
 @font-face {
   font-family: "Brolia";
@@ -85,19 +85,19 @@
 
   --font-display: "Silk Serif", "Cormorant Garamond", Georgia, serif;
   --font-deco: "Brolia", "Silk Serif", Georgia, serif;
-  --font-numeral: "Fraunces", "Silk Serif", Georgia, serif; /* chunky soft serif — big stat numbers only */
+  --font-numeral: "Silk Serif", "Cormorant Garamond", Georgia, serif; /* chunky soft serif — big stat numbers only */
   --font-punch: "Anton", Impact, "Arial Narrow", sans-serif; /* chunky condensed caps — one punch word per section */
   --font-script: "Mrs Saint Delafield", "Brush Script MT", cursive; /* handwritten accent — one word at a time */
   --font-body: "Nunito Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
 
   --text-hero: clamp(40px, 8vw, 100px);
   --text-display: clamp(32px, 5.5vw, 68px);
-  --text-h1: clamp(28px, 4vw, 46px);
-  --text-h2: clamp(23px, 2.6vw, 32px);
-  --text-h3: 22px;
-  --text-lead: 20px;
-  --text-body-lg: 18px;
-  --text-body-md: 16px;
+  --text-h1: clamp(40px, 5.6vw, 76px); /* 2026-11-21: inner-page titles were 46px max next to a 100px home hero */
+  --text-h2: clamp(30px, 3.6vw, 48px); /* was 32px max, too small for a 200-weight serif */
+  --text-h3: clamp(22px, 1.9vw, 26px);
+  --text-lead: clamp(18px, 1.5vw, 21px);
+  --text-body-lg: 19px;
+  --text-body-md: 17px;
   --text-body-sm: 14px;
   --text-label: 12px;
   --text-micro: 11px;
@@ -105,7 +105,7 @@
   --leading-tight: 0.92;
   --leading-display: 1.06;
   --leading-snug: 1.24;
-  --leading-body: 1.62;
+  --leading-body: 1.65;
   --leading-loose: 1.8;
 
   --tracking-display: -0.01em;
@@ -202,6 +202,8 @@ h1, h2, h3, h4 {
   margin: 0;
 }
 
+h1, h2 { text-wrap: balance; }
+p { text-wrap: pretty; }
 h1 { font-size: var(--text-h1); }
 h2 { font-size: var(--text-h2); }
 h3 { font-size: var(--text-h3); line-height: var(--leading-snug); }
@@ -416,7 +418,7 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
   text-transform: uppercase;
   color: inherit;
   text-decoration: none;
-  opacity: .62;
+  opacity: .85; /* was .62: too faint to read comfortably */
   border-bottom: 1px solid transparent;
   transition: var(--transition-control);
 }
@@ -635,12 +637,15 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
 .stack.center { justify-items: center; text-align: center; }
 .stack.right { justify-items: end; text-align: right; }
 .lede {
-  font-family: var(--font-display);
+  /* 2026-11-21: was the 200-weight display serif in red at 88% opacity, which
+     read as faint and spindly. Intro paragraphs are reading text, so they use
+     the body face at a larger size and the section text colour. */
+  font-family: var(--font-body);
   font-weight: 400;
-  font-size: calc(var(--text-lead) + 1px);
-  line-height: var(--leading-snug);
-  max-width: 44ch;
-  opacity: .88;
+  font-size: var(--text-lead);
+  line-height: 1.55;
+  max-width: 48ch;
+  color: inherit;
 }
 
 /* Two-up layout */
@@ -1383,3 +1388,48 @@ main { overflow-x: clip; } /* stops tilted/offset decorations causing sideways s
 .heading-orange { font-family: var(--font-display); font-size: clamp(34px, 4vw, 60px); line-height: 1.02; color: var(--sbf-orange); -webkit-text-stroke: .016em currentColor; } /* owner: shared spec for orange section headings ("We refuse to stay small.", "Four doors, no gatekeepers.") — same size, weight and orange as "I left the room first." */
 .heading-orange em { color: inherit; }
 .doors-grid .card-title:not(.card-title-stack) { font-family: var(--font-display); font-size: clamp(26px, 2.8vw, 40px); line-height: 1.02; color: var(--sbf-red); -webkit-text-stroke: .016em currentColor; } /* owner: card titles (The circle / Topics / The podcast) on the same size + weight spec, in red */
+
+/* ---------------------------------------------------------------
+   2026-11-21 review pass: new home sections, Read filters,
+   placeholders, privacy page
+   --------------------------------------------------------------- */
+.page-title { font-size: var(--text-display); }
+
+/* Home: the question band that replaced the placeholder stats */
+.provocation { text-align: center; padding-block: clamp(64px, 9vw, 120px); }
+.provocation-line { font-size: var(--text-display); max-width: 20ch; margin-inline: auto; line-height: 1.04; }
+.provocation-line em { color: var(--sbf-bubblegum); }
+
+.doors-section { padding-top: var(--section-y); padding-bottom: calc(var(--section-y) * .5); }
+.doors-head { margin-bottom: var(--space-10); }
+
+/* Home: closing band now carries a button */
+.closing-seat { text-align: center; padding-block: clamp(56px, 7vw, 96px); }
+.closing-seat .stack { gap: var(--space-8); }
+.closing-seat-title { max-width: 20ch; font-size: var(--text-display); margin-inline: auto; }
+
+/* Read page filter row and empty topic note */
+.tag-row { display: flex; gap: var(--space-3); flex-wrap: wrap; align-items: center; }
+.tag-count { margin-left: auto; font-size: var(--text-body-sm); color: var(--text-muted); }
+.empty-note { background: var(--sbf-blush); border-radius: var(--radius-card, 22px); padding: clamp(28px, 4vw, 48px); display: grid; gap: var(--space-4); justify-items: start; }
+.empty-note h2 { font-size: var(--text-h2); }
+.empty-note[hidden] { display: none; }
+
+/* Not-yet-live posts and episodes */
+.soon { font-family: var(--font-deco); font-size: var(--text-label); letter-spacing: var(--tracking-deco); text-transform: uppercase; color: var(--text-muted); }
+
+/* Typographic episode covers in place of grey placeholder boxes */
+.type-cover { display: flex; align-items: baseline; justify-content: center; gap: .15em; background: var(--sbf-red); color: var(--sbf-petal); aspect-ratio: 4 / 3; }
+.type-cover-ep { font-family: var(--font-display); font-style: italic; font-size: clamp(28px, 3vw, 40px); }
+.type-cover-num { font-family: var(--font-display); font-size: clamp(96px, 11vw, 150px); line-height: 1; }
+
+/* Join dialog small print */
+.join-small { font-size: var(--text-body-sm); color: var(--text-muted); }
+
+/* Privacy page */
+.prose { display: grid; gap: var(--space-4); max-width: 68ch; }
+.prose h2 { font-size: var(--text-h3); margin-top: var(--space-6); }
+.prose h2:first-child { margin-top: 0; }
+.prose-meta { font-size: var(--text-body-sm); color: var(--text-muted); margin-top: var(--space-8); }
+.closing-seat-title em { color: var(--sbf-red-deep); }
+@media (max-width: 600px) { .hide-sm { display: none; } }

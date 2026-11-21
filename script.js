@@ -2,7 +2,10 @@
 document.querySelectorAll(".nav-toggle").forEach((btn) => {
   btn.addEventListener("click", () => {
     const target = document.getElementById(btn.getAttribute("aria-controls"));
-    if (target) target.classList.toggle("open");
+    if (!target) return;
+    const open = target.classList.toggle("open");
+    btn.setAttribute("aria-expanded", String(open));
+    btn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
   });
 });
 
@@ -20,40 +23,37 @@ document.querySelectorAll(".nav-topics").forEach((wrap) => {
   });
 });
 
-// Blog page: when arriving from a Topics link, say which topic was picked
-const topicNote = document.getElementById("topic-note");
-const topicSlug = new URLSearchParams(location.search).get("topic");
-if (topicNote && topicSlug) {
-  const link = document.querySelector(`.topics-col a[href="blog.html?topic=${CSS.escape(topicSlug)}"]`);
-  if (link) {
-    topicNote.querySelector("[data-topic-name]").textContent = link.textContent.replace(/^All /, "");
-    topicNote.hidden = false;
-  }
+// Contact page: preselect "I'm here for" from ?interest= (e.g. from a Reserve button)
+const interest = new URLSearchParams(location.search).get("interest");
+const interestSelect = document.querySelector('select[name="interest"]');
+if (interest && interestSelect) {
+  const opt = [...interestSelect.options].find((o) => o.value.toLowerCase().includes(interest.toLowerCase()));
+  if (opt) interestSelect.value = opt.value;
 }
 
-// Join dialog (shared across pages)
+// Join dialog (shared across pages). Submission is handled by the Netlify
+// form handler below, which shows step 2 only once the email has saved.
 const dialogScrim = document.getElementById("join-dialog");
+let lastOpener = null;
+const closeJoin = () => {
+  dialogScrim.classList.remove("open");
+  if (lastOpener) lastOpener.focus();
+};
 if (dialogScrim) {
-  const openers = document.querySelectorAll("[data-open-join]");
-  const closers = dialogScrim.querySelectorAll("[data-close-join]");
-  openers.forEach((el) => el.addEventListener("click", (e) => {
+  document.querySelectorAll("[data-open-join]").forEach((el) => el.addEventListener("click", (e) => {
     e.preventDefault();
+    lastOpener = el;
+    document.getElementById("join-step-1").style.display = "";
+    document.getElementById("join-step-2").style.display = "none";
     dialogScrim.classList.add("open");
+    const email = dialogScrim.querySelector('input[type="email"]');
+    if (email) setTimeout(() => email.focus(), 50);
   }));
-  closers.forEach((el) => el.addEventListener("click", () => dialogScrim.classList.remove("open")));
-  dialogScrim.addEventListener("click", (e) => {
-    if (e.target === dialogScrim) dialogScrim.classList.remove("open");
+  dialogScrim.querySelectorAll("[data-close-join]").forEach((el) => el.addEventListener("click", closeJoin));
+  dialogScrim.addEventListener("click", (e) => { if (e.target === dialogScrim) closeJoin(); });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && dialogScrim.classList.contains("open")) closeJoin();
   });
-  const joinForm = document.getElementById("join-form");
-  const joinStep1 = document.getElementById("join-step-1");
-  const joinStep2 = document.getElementById("join-step-2");
-  if (joinForm) {
-    joinForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      joinStep1.style.display = "none";
-      joinStep2.style.display = "grid";
-    });
-  }
 }
 
 // Accordion
@@ -81,25 +81,36 @@ document.querySelectorAll("[data-tabs]").forEach((tabGroup) => {
   });
 });
 
-// Journal tag filter
+// Read page: topic filter. ?topic=<slug> (from the menu) preselects a topic;
+// a topic with no pieces yet shows the empty note with a Sunday note signup.
 const tagRow = document.getElementById("journal-tags");
 if (tagRow) {
   const posts = document.querySelectorAll("#journal-grid [data-cat]");
   const countEl = document.getElementById("journal-count");
-  tagRow.querySelectorAll(".tag").forEach((tag) => {
-    tag.addEventListener("click", () => {
-      tagRow.querySelectorAll(".tag").forEach((t) => t.classList.remove("active"));
-      tag.classList.add("active");
-      const cat = tag.dataset.cat;
-      let shown = 0;
-      posts.forEach((p) => {
-        const match = cat === "All" || p.dataset.cat === cat;
-        p.style.display = match ? "" : "none";
-        if (match) shown++;
-      });
-      if (countEl) countEl.textContent = `${shown} piece${shown === 1 ? "" : "s"}`;
+  const empty = document.getElementById("journal-empty");
+  const select = (tag) => {
+    tagRow.querySelectorAll(".tag").forEach((t) => {
+      t.classList.toggle("active", t === tag);
+      t.setAttribute("aria-pressed", String(t === tag));
     });
-  });
+    const cat = tag.dataset.cat;
+    let shown = 0;
+    posts.forEach((p) => {
+      const match = cat === "all" || p.dataset.cat === cat;
+      p.style.display = match ? "" : "none";
+      if (match) shown++;
+    });
+    if (countEl) countEl.textContent = `${shown} piece${shown === 1 ? "" : "s"}`;
+    if (empty) {
+      empty.hidden = shown > 0;
+      const name = empty.querySelector("[data-topic-name]");
+      if (name) name.textContent = tag.textContent.toLowerCase();
+    }
+  };
+  tagRow.querySelectorAll(".tag").forEach((tag) => tag.addEventListener("click", () => select(tag)));
+  const slug = new URLSearchParams(location.search).get("topic");
+  const start = slug && tagRow.querySelector(`.tag[data-cat="${CSS.escape(slug)}"]`);
+  if (start) select(start);
 }
 
 // Netlify form submission via fetch, with toast/success message
@@ -113,7 +124,12 @@ document.querySelectorAll("form[data-netlify='true']").forEach((form) => {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams(formData).toString(),
     })
-      .then(() => {
+      .then((res) => {
+        if (!res.ok) throw new Error(res.status);
+        if (form.id === "join-form") {
+          document.getElementById("join-step-1").style.display = "none";
+          document.getElementById("join-step-2").style.display = "grid";
+        }
         const toast = document.getElementById(form.dataset.successToast);
         if (toast) {
           toast.classList.add("open");
@@ -124,7 +140,7 @@ document.querySelectorAll("form[data-netlify='true']").forEach((form) => {
         form.reset();
       })
       .catch(() => {
-        alert("Something went wrong. Please try again or email us directly.");
+        alert("That didn't send. Check your connection and try again in a minute.");
       });
   });
 });
